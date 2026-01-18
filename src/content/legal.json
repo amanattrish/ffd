@@ -1,0 +1,103 @@
+{
+  "privacyPolicy": {
+    "pageTitle": "Privacy Policy",
+    "pageDescription": "Our commitment to protecting your privacy",
+    "lastUpdated": "January 1, 2025",
+    "content": [
+      {
+        "title": "Introduction",
+        "text": "Freeport Family Dentistry (\"we\", \"our\", or \"us\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services."
+      },
+      {
+        "title": "Information We Collect",
+        "text": "We may collect personal information that you voluntarily provide to us when you schedule an appointment, fill out a contact form, or otherwise interact with our services. This may include your name, email address, phone number, address, insurance information, and medical/dental history."
+      },
+      {
+        "title": "How We Use Your Information",
+        "text": "We use the information we collect to provide and maintain our dental services, communicate with you about appointments and treatment, process payments, send promotional communications (with your consent), and comply with legal obligations."
+      },
+      {
+        "title": "Information Sharing",
+        "text": "We do not sell, trade, or rent your personal information to third parties. We may share your information with service providers who assist us in operating our practice, insurance companies for claims processing, and as required by law."
+      },
+      {
+        "title": "Data Security",
+        "text": "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction."
+      },
+      {
+        "title": "Your Rights",
+        "text": "You have the right to access, correct, or delete your personal information. You may also opt out of marketing communications at any time. To exercise these rights, please contact us using the information provided below."
+      },
+      {
+        "title": "Contact Us",
+        "text": "If you have questions about this Privacy Policy, please contact us at info@freeportfamilydentistry.com or call +1 (516) 123-5467."
+      }
+    ]
+  },
+  "termsOfService": {
+    "pageTitle": "Terms of Service",
+    "pageDescription": "Terms and conditions for using our services",
+    "lastUpdated": "January 1, 2025",
+    "content": [
+      {
+        "title": "Acceptance of Terms",
+        "text": "By accessing or using the Freeport Family Dentistry website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services."
+      },
+      {
+        "title": "Services",
+        "text": "Freeport Family Dentistry provides dental care services. The information on our website is for general informational purposes only and should not be considered medical advice. Always consult with a qualified dental professional for specific dental concerns."
+      },
+      {
+        "title": "Appointments",
+        "text": "Appointments can be scheduled online or by phone. We require 24 hours notice for appointment cancellations. Repeated no-shows or late cancellations may result in a cancellation fee."
+      },
+      {
+        "title": "Payment",
+        "text": "Payment is due at the time of service unless prior arrangements have been made. We accept cash, credit cards, and most major insurance plans. Patients are responsible for any amounts not covered by insurance."
+      },
+      {
+        "title": "Limitation of Liability",
+        "text": "Freeport Family Dentistry is not liable for any indirect, incidental, or consequential damages arising from the use of our services or website. Our total liability is limited to the amount paid for the specific service in question."
+      },
+      {
+        "title": "Changes to Terms",
+        "text": "We reserve the right to modify these Terms of Service at any time. Changes will be effective immediately upon posting to our website. Your continued use of our services constitutes acceptance of any changes."
+      },
+      {
+        "title": "Governing Law",
+        "text": "These Terms of Service are governed by the laws of the State of New York. Any disputes shall be resolved in the courts of Nassau County, New York."
+      }
+    ]
+  },
+  "hipaa": {
+    "pageTitle": "HIPAA Compliance",
+    "pageDescription": "Our commitment to protecting your health information",
+    "lastUpdated": "January 1, 2025",
+    "content": [
+      {
+        "title": "Notice of Privacy Practices",
+        "text": "This notice describes how medical information about you may be used and disclosed and how you can get access to this information. Please review it carefully."
+      },
+      {
+        "title": "Our Responsibilities",
+        "text": "We are required by law to maintain the privacy of your protected health information (PHI), provide you with this notice of our legal duties and privacy practices, and follow the terms of the notice that is currently in effect."
+      },
+      {
+        "title": "How We May Use and Disclose Your Information",
+        "text": "We may use and disclose your PHI for treatment purposes, payment activities, and healthcare operations. We may also disclose your information as required by law, for public health activities, and in certain other situations as permitted by HIPAA."
+      },
+      {
+        "title": "Your Rights",
+        "text": "You have the right to request restrictions on how we use or disclose your PHI, request confidential communications, inspect and obtain a copy of your PHI, request amendments to your PHI, receive an accounting of disclosures, and receive a paper copy of this notice."
+      },
+      {
+        "title": "Complaints",
+        "text": "If you believe your privacy rights have been violated, you may file a complaint with our Privacy Officer or with the Secretary of the Department of Health and Human Services. You will not be penalized for filing a complaint."
+      },
+      {
+        "title": "Contact Information",
+        "text": "To exercise any of your rights or if you have questions about our privacy practices, please contact our Privacy Officer at info@freeportfamilydentistry.com or +1 (516) 123-5467."
+      }
+    ]
+  }
+}

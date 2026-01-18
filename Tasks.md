@@ -8,34 +8,34 @@
 - [x] 1.5 Set up ESLint and Prettier configurations
 
 ## Phase 2: Design System & Global Configuration
-- [ ] 2.1 Create global color variables/theme file with brand colors:
+- [x] 2.1 Create global color variables/theme file with brand colors:
   - Primary: #117598
   - Secondary: #A1C65D
   - Accent 1: #74C6D1
   - Accent 2: #70CCB9
   - White: #FFFFFF
   - Black: #000000
-- [ ] 2.2 Configure Poppins font family
-- [ ] 2.3 Create global CSS styles (buttons, borders, shadows, typography)
-- [ ] 2.4 Set up JSON content structure for all pages
-- [ ] 2.5 Add FFD_Logo.jpeg to assets and create logo component
+- [x] 2.2 Configure Poppins font family
+- [x] 2.3 Create global CSS styles (buttons, borders, shadows, typography)
+- [x] 2.4 Set up JSON content structure for all pages
+- [x] 2.5 Add FFD_Logo.jpeg to assets and create logo component
 
 ## Phase 3: Core Components
-- [ ] 3.1 Header/Navigation component (responsive with mobile menu)
-- [ ] 3.2 Footer component
-- [ ] 3.3 Button component (primary, secondary, CTA variants)
-- [ ] 3.4 Card component (for services, testimonials, blog)
-- [ ] 3.5 Section wrapper component
-- [ ] 3.6 Hero component
-- [ ] 3.7 CTA Banner component
-- [ ] 3.8 Testimonial card component
-- [ ] 3.9 Service card component
-- [ ] 3.10 Team member card component
-- [ ] 3.11 FAQ accordion component
-- [ ] 3.12 Gallery/Image modal component
-- [ ] 3.13 Contact form component
-- [ ] 3.14 Map embed component
-- [ ] 3.15 Calendly embed component
+- [x] 3.1 Header/Navigation component (responsive with mobile menu)
+- [x] 3.2 Footer component
+- [x] 3.3 Button component (primary, secondary, CTA variants)
+- [x] 3.4 Card component (for services, testimonials, blog)
+- [x] 3.5 Section wrapper component
+- [x] 3.6 Hero component
+- [x] 3.7 CTA Banner component
+- [x] 3.8 Testimonial card component
+- [x] 3.9 Service card component
+- [x] 3.10 Team member card component
+- [x] 3.11 FAQ accordion component
+- [x] 3.12 Gallery/Image modal component
+- [x] 3.13 Contact form component
+- [x] 3.14 Map embed component
+- [x] 3.15 Calendly embed component
 
 ## Phase 4: Page Development
 
@@ -163,8 +163,8 @@ Each page structure: Overview, Symptoms, Procedure, FAQs, Before/After (optional
 | Phase | Status | Completion |
 |-------|--------|------------|
 | Phase 1: Project Setup | Completed | 100% |
-| Phase 2: Design System | Not Started | 0% |
-| Phase 3: Core Components | Not Started | 0% |
+| Phase 2: Design System | Completed | 100% |
+| Phase 3: Core Components | Completed | 100% |
 | Phase 4: Page Development | Not Started | 0% |
 | Phase 5: Integrations | Not Started | 0% |
 | Phase 6: SEO & Performance | Not Started | 0% |

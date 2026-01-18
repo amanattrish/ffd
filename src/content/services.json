@@ -1,0 +1,476 @@
+{
+  "pageTitle": "Our Services",
+  "pageDescription": "Comprehensive dental services for the whole family",
+  "hero": {
+    "title": "Our Dental Services",
+    "subtitle": "Comprehensive Care for Your Smile",
+    "description": "From routine cleanings to advanced restorative procedures, we offer a full range of dental services to meet your needs."
+  },
+  "categories": [
+    {
+      "id": "general-dentistry",
+      "title": "General Dentistry",
+      "description": "Preventive and routine dental care to maintain your oral health.",
+      "icon": "Stethoscope",
+      "href": "/services/general-dentistry",
+      "image": "/images/services/general-dentistry.jpg",
+      "services": [
+        {
+          "id": "dental-exams-cleanings",
+          "title": "Dental Exams & Cleanings",
+          "shortDescription": "Regular checkups and professional cleanings to prevent dental problems.",
+          "href": "/services/general-dentistry/dental-exams-cleanings",
+          "overview": "Regular dental exams and cleanings are essential for maintaining good oral health. During your visit, our team will thoroughly examine your teeth and gums, remove plaque and tartar buildup, and help you prevent future dental problems.",
+          "symptoms": [],
+          "procedure": [
+            "Comprehensive oral examination",
+            "Digital X-rays as needed",
+            "Professional cleaning and polishing",
+            "Fluoride treatment",
+            "Personalized oral hygiene instructions"
+          ],
+          "faqs": [
+            {
+              "question": "How often should I have a dental exam?",
+              "answer": "We recommend visiting the dentist every 6 months for routine exams and cleanings. However, some patients may need more frequent visits based on their oral health needs."
+            },
+            {
+              "question": "What happens during a dental cleaning?",
+              "answer": "During a cleaning, our hygienist removes plaque and tartar from your teeth, polishes them, and flosses between each tooth. We also check for signs of gum disease and other oral health issues."
+            }
+          ]
+        },
+        {
+          "id": "x-rays",
+          "title": "X-rays",
+          "shortDescription": "Digital imaging for accurate diagnosis and treatment planning.",
+          "href": "/services/general-dentistry/x-rays",
+          "overview": "Digital X-rays are an essential diagnostic tool that allows us to see areas of your teeth and mouth that aren't visible during a regular exam. Our digital X-ray technology uses significantly less radiation than traditional film X-rays.",
+          "symptoms": [],
+          "procedure": [
+            "Positioning of digital sensor",
+            "Quick, painless image capture",
+            "Instant image review",
+            "Diagnosis and treatment planning"
+          ],
+          "faqs": [
+            {
+              "question": "Are dental X-rays safe?",
+              "answer": "Yes, digital X-rays use very low levels of radiation. We also use protective aprons and only take X-rays when necessary for your treatment."
+            }
+          ]
+        },
+        {
+          "id": "fillings",
+          "title": "Fillings",
+          "shortDescription": "Tooth-colored fillings to restore cavities and damaged teeth.",
+          "href": "/services/general-dentistry/fillings",
+          "overview": "Dental fillings restore teeth damaged by decay back to their normal function and shape. We use tooth-colored composite fillings that blend seamlessly with your natural teeth.",
+          "symptoms": [
+            "Tooth sensitivity to hot, cold, or sweet foods",
+            "Visible holes or dark spots on teeth",
+            "Pain when biting or chewing",
+            "Food getting stuck between teeth"
+          ],
+          "procedure": [
+            "Numbing the area with local anesthesia",
+            "Removing the decayed portion of the tooth",
+            "Cleaning the cavity",
+            "Placing and shaping the filling material",
+            "Polishing for a natural look"
+          ],
+          "faqs": [
+            {
+              "question": "How long do fillings last?",
+              "answer": "With proper care, composite fillings can last 7-10 years or longer. Regular dental visits help us monitor your fillings and replace them when needed."
+            }
+          ]
+        },
+        {
+          "id": "root-canal",
+          "title": "Root Canal Treatment",
+          "shortDescription": "Save infected teeth with comfortable root canal therapy.",
+          "href": "/services/general-dentistry/root-canal",
+          "overview": "Root canal treatment saves teeth that would otherwise need to be extracted due to infection or damage to the tooth's pulp. Modern techniques make this procedure comfortable and effective.",
+          "symptoms": [
+            "Severe toothache",
+            "Prolonged sensitivity to hot or cold",
+            "Darkening of the tooth",
+            "Swelling and tenderness in nearby gums",
+            "Persistent pimple on the gums"
+          ],
+          "procedure": [
+            "Local anesthesia for comfort",
+            "Accessing the tooth's pulp chamber",
+            "Removing infected tissue",
+            "Cleaning and shaping the root canals",
+            "Filling and sealing the canals",
+            "Placing a crown for protection"
+          ],
+          "faqs": [
+            {
+              "question": "Is a root canal painful?",
+              "answer": "With modern anesthesia and techniques, root canal treatment is no more uncomfortable than getting a filling. Most patients report feeling much better after the procedure."
+            }
+          ]
+        },
+        {
+          "id": "tooth-extraction",
+          "title": "Tooth Extraction",
+          "shortDescription": "Gentle tooth removal when necessary.",
+          "href": "/services/general-dentistry/tooth-extraction",
+          "overview": "While we always try to save natural teeth, sometimes extraction is the best option. We perform both simple and surgical extractions with care and precision.",
+          "symptoms": [
+            "Severe decay beyond repair",
+            "Advanced gum disease",
+            "Crowding issues",
+            "Impacted wisdom teeth",
+            "Fractured teeth"
+          ],
+          "procedure": [
+            "Local anesthesia or sedation",
+            "Careful loosening of the tooth",
+            "Gentle extraction",
+            "Post-procedure care instructions",
+            "Discussion of replacement options"
+          ],
+          "faqs": [
+            {
+              "question": "What should I expect after an extraction?",
+              "answer": "Some swelling and discomfort is normal. We'll provide detailed aftercare instructions and pain management recommendations. Most patients recover fully within a few days."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cosmetic-dentistry",
+      "title": "Cosmetic Dentistry",
+      "description": "Enhance your smile with our cosmetic dental services.",
+      "icon": "Sparkles",
+      "href": "/services/cosmetic-dentistry",
+      "image": "/images/services/cosmetic-dentistry.jpg",
+      "services": [
+        {
+          "id": "teeth-whitening",
+          "title": "Teeth Whitening",
+          "shortDescription": "Professional whitening for a brighter, more confident smile.",
+          "href": "/services/cosmetic-dentistry/teeth-whitening",
+          "overview": "Our professional teeth whitening treatments can brighten your smile by several shades in just one visit. We offer both in-office and take-home whitening options.",
+          "symptoms": [],
+          "procedure": [
+            "Initial shade assessment",
+            "Protective preparation of gums",
+            "Application of whitening gel",
+            "LED light activation",
+            "Multiple treatment cycles",
+            "Final shade comparison"
+          ],
+          "faqs": [
+            {
+              "question": "How long does whitening last?",
+              "answer": "Results can last 6 months to 2 years depending on your diet and oral care habits. Touch-up treatments can help maintain your bright smile."
+            }
+          ]
+        },
+        {
+          "id": "veneers",
+          "title": "Veneers",
+          "shortDescription": "Custom porcelain veneers for a perfect smile transformation.",
+          "href": "/services/cosmetic-dentistry/veneers",
+          "overview": "Porcelain veneers are thin shells that cover the front surface of your teeth to improve their appearance. They can correct chips, stains, gaps, and misalignment.",
+          "symptoms": [],
+          "procedure": [
+            "Consultation and smile design",
+            "Tooth preparation",
+            "Impressions and temporary veneers",
+            "Custom veneer fabrication",
+            "Final bonding and adjustments"
+          ],
+          "faqs": [
+            {
+              "question": "How long do veneers last?",
+              "answer": "With proper care, porcelain veneers can last 10-15 years or longer. They're resistant to staining and provide a natural-looking result."
+            }
+          ]
+        },
+        {
+          "id": "cosmetic-bonding",
+          "title": "Cosmetic Bonding",
+          "shortDescription": "Quick repairs for chips, cracks, and gaps.",
+          "href": "/services/cosmetic-dentistry/cosmetic-bonding",
+          "overview": "Dental bonding uses tooth-colored composite resin to repair minor imperfections in your teeth. It's a quick, affordable way to improve your smile.",
+          "symptoms": [],
+          "procedure": [
+            "Shade matching to your teeth",
+            "Surface preparation",
+            "Application of bonding material",
+            "Shaping and sculpting",
+            "Curing with special light",
+            "Polishing for natural appearance"
+          ],
+          "faqs": [
+            {
+              "question": "Is bonding better than veneers?",
+              "answer": "Bonding is great for minor repairs and is more affordable, but veneers offer more dramatic, longer-lasting results. We'll help you choose the best option for your needs."
+            }
+          ]
+        },
+        {
+          "id": "smile-makeover",
+          "title": "Smile Makeover",
+          "shortDescription": "Comprehensive treatment plans for complete smile transformations.",
+          "href": "/services/cosmetic-dentistry/smile-makeover",
+          "overview": "A smile makeover combines multiple cosmetic procedures to achieve your ideal smile. We create a personalized treatment plan based on your goals and budget.",
+          "symptoms": [],
+          "procedure": [
+            "Comprehensive consultation",
+            "Digital smile design",
+            "Treatment planning",
+            "Phased procedures as needed",
+            "Final results and maintenance plan"
+          ],
+          "faqs": [
+            {
+              "question": "What procedures are included in a smile makeover?",
+              "answer": "A smile makeover may include whitening, veneers, bonding, crowns, orthodontics, and other procedures depending on your specific needs and goals."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "restorative-dentistry",
+      "title": "Restorative Dentistry",
+      "description": "Restore function and aesthetics with our restorative services.",
+      "icon": "Wrench",
+      "href": "/services/restorative-dentistry",
+      "image": "/images/services/restorative-dentistry.jpg",
+      "services": [
+        {
+          "id": "crowns",
+          "title": "Crowns",
+          "shortDescription": "Durable, natural-looking crowns to protect damaged teeth.",
+          "href": "/services/restorative-dentistry/crowns",
+          "overview": "Dental crowns are caps that cover damaged teeth, restoring their shape, size, strength, and appearance. We offer same-day crowns with our CEREC technology.",
+          "symptoms": [
+            "Cracked or broken tooth",
+            "Large filling that needs replacement",
+            "Weakened tooth after root canal",
+            "Severely worn teeth"
+          ],
+          "procedure": [
+            "Tooth preparation",
+            "Digital impressions",
+            "Crown design and fabrication",
+            "Fitting and adjustments",
+            "Permanent bonding"
+          ],
+          "faqs": [
+            {
+              "question": "How long do crowns last?",
+              "answer": "With proper care, dental crowns typically last 10-15 years or longer. Regular checkups help us monitor your crown's condition."
+            }
+          ]
+        },
+        {
+          "id": "bridges",
+          "title": "Bridges",
+          "shortDescription": "Replace missing teeth with fixed dental bridges.",
+          "href": "/services/restorative-dentistry/bridges",
+          "overview": "A dental bridge replaces one or more missing teeth by anchoring to the adjacent teeth. It restores your ability to chew properly and maintains your facial shape.",
+          "symptoms": [
+            "One or more missing teeth",
+            "Difficulty chewing",
+            "Speech problems from missing teeth",
+            "Shifting of remaining teeth"
+          ],
+          "procedure": [
+            "Preparation of anchor teeth",
+            "Impressions for custom bridge",
+            "Temporary bridge placement",
+            "Final bridge fitting",
+            "Cementation and adjustments"
+          ],
+          "faqs": [
+            {
+              "question": "How do I care for a dental bridge?",
+              "answer": "Care for your bridge like natural teeth with regular brushing and flossing. Special floss threaders help clean under the bridge. Regular dental visits are important."
+            }
+          ]
+        },
+        {
+          "id": "dental-implants",
+          "title": "Dental Implants",
+          "shortDescription": "Permanent, natural-looking tooth replacement.",
+          "href": "/services/restorative-dentistry/dental-implants",
+          "overview": "Dental implants are the gold standard for tooth replacement. They consist of a titanium post that fuses with your jawbone, topped with a natural-looking crown.",
+          "symptoms": [
+            "Missing one or more teeth",
+            "Loose dentures",
+            "Difficulty eating or speaking",
+            "Jawbone deterioration"
+          ],
+          "procedure": [
+            "Consultation and planning with 3D imaging",
+            "Implant placement surgery",
+            "Healing period (3-6 months)",
+            "Abutment placement",
+            "Custom crown attachment"
+          ],
+          "faqs": [
+            {
+              "question": "Am I a candidate for dental implants?",
+              "answer": "Most adults with good general health are candidates for implants. Adequate jawbone density is needed, but bone grafting can help if necessary."
+            },
+            {
+              "question": "How long do implants last?",
+              "answer": "With proper care, dental implants can last a lifetime. The crown may need replacement after 10-15 years due to normal wear."
+            }
+          ]
+        },
+        {
+          "id": "dentures",
+          "title": "Dentures & Partials",
+          "shortDescription": "Custom dentures for a complete, natural-looking smile.",
+          "href": "/services/restorative-dentistry/dentures",
+          "overview": "We offer both full and partial dentures custom-made to fit comfortably and look natural. Implant-supported options provide added stability.",
+          "symptoms": [
+            "Multiple missing teeth",
+            "Difficulty chewing with natural teeth",
+            "Self-consciousness about missing teeth"
+          ],
+          "procedure": [
+            "Initial consultation and impressions",
+            "Jaw measurements and bite registration",
+            "Try-in appointments for fit and appearance",
+            "Final denture delivery",
+            "Adjustment appointments as needed"
+          ],
+          "faqs": [
+            {
+              "question": "How long does it take to get used to dentures?",
+              "answer": "Most people adjust to new dentures within a few weeks. Eating soft foods and practicing speaking can help during the adjustment period."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "orthodontics",
+      "title": "Orthodontics",
+      "description": "Straighten your teeth for a healthier, more beautiful smile.",
+      "icon": "AlignCenter",
+      "href": "/services/orthodontics",
+      "image": "/images/services/orthodontics.jpg",
+      "services": [
+        {
+          "id": "invisalign",
+          "title": "Invisalign / Clear Aligners",
+          "shortDescription": "Straighten teeth discreetly with clear aligners.",
+          "href": "/services/orthodontics/invisalign",
+          "overview": "Invisalign uses a series of clear, removable aligners to gradually straighten your teeth without metal brackets or wires. They're virtually invisible and can be removed for eating and cleaning.",
+          "symptoms": [
+            "Crooked or misaligned teeth",
+            "Gaps between teeth",
+            "Overcrowding",
+            "Bite issues"
+          ],
+          "procedure": [
+            "Consultation and digital scan",
+            "Custom treatment plan creation",
+            "Aligner fabrication",
+            "Wearing aligners 20-22 hours daily",
+            "Progress checks every 6-8 weeks",
+            "Retainer for maintaining results"
+          ],
+          "faqs": [
+            {
+              "question": "How long does Invisalign treatment take?",
+              "answer": "Treatment typically takes 12-18 months, depending on the complexity of your case. Some cases can be completed in as little as 6 months."
+            },
+            {
+              "question": "Can I eat with Invisalign?",
+              "answer": "You should remove your aligners when eating or drinking anything other than water. This allows you to enjoy all your favorite foods without restrictions."
+            }
+          ]
+        },
+        {
+          "id": "braces",
+          "title": "Braces",
+          "shortDescription": "Traditional and clear braces for effective teeth straightening.",
+          "href": "/services/orthodontics/braces",
+          "overview": "Traditional braces are an effective way to correct complex orthodontic issues. We offer both metal and clear ceramic bracket options.",
+          "symptoms": [
+            "Severe misalignment",
+            "Complex bite issues",
+            "Overcrowding requiring extractions"
+          ],
+          "procedure": [
+            "Orthodontic evaluation",
+            "Treatment planning",
+            "Bracket placement",
+            "Regular adjustment appointments",
+            "Retainer fitting after treatment"
+          ],
+          "faqs": [
+            {
+              "question": "How long do braces take?",
+              "answer": "Treatment typically takes 18-24 months, but can vary based on the complexity of your case. Regular adjustment appointments are necessary throughout treatment."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "emergency-dentistry",
+      "title": "Emergency Dentistry",
+      "description": "Urgent dental care when you need it most.",
+      "icon": "AlertCircle",
+      "href": "/services/emergency-dentistry",
+      "image": "/images/services/emergency-dentistry.jpg",
+      "services": [
+        {
+          "id": "emergency-care",
+          "title": "Emergency Dental Care",
+          "shortDescription": "Same-day appointments for dental emergencies.",
+          "href": "/services/emergency-dentistry/emergency-care",
+          "overview": "Dental emergencies can happen at any time. We offer same-day appointments for urgent dental issues to relieve your pain and prevent further damage.",
+          "symptoms": [
+            "Severe toothache",
+            "Knocked-out tooth",
+            "Broken or cracked tooth",
+            "Lost filling or crown",
+            "Dental abscess",
+            "Severe swelling"
+          ],
+          "procedure": [
+            "Emergency evaluation",
+            "Pain management",
+            "Diagnostic imaging",
+            "Immediate treatment",
+            "Follow-up care planning"
+          ],
+          "faqs": [
+            {
+              "question": "What should I do if I knock out a tooth?",
+              "answer": "Keep the tooth moist by placing it in milk or holding it in your cheek. Don't touch the root. Call us immediately - the tooth may be able to be re-implanted if treated within an hour."
+            },
+            {
+              "question": "Do you have an emergency hotline?",
+              "answer": "Yes, call our main number and follow the prompts for emergency care. We have staff available to help you with urgent dental needs."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Ready to Schedule Your Visit?",
+    "description": "Contact us today to book an appointment or learn more about our services.",
+    "buttons": {
+      "primary": { "label": "Book Appointment", "href": "/book-appointment" },
+      "secondary": { "label": "Contact Us", "href": "/contact" }
+    }
+  }
+}

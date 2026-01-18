@@ -1,0 +1,255 @@
+{
+  "newPatients": {
+    "pageTitle": "New Patient Information",
+    "pageDescription": "Everything you need to know for your first visit",
+    "hero": {
+      "title": "Welcome New Patients",
+      "subtitle": "We're excited to meet you!",
+      "description": "Thank you for choosing Freeport Family Dentistry. We're committed to making your first visit comfortable and stress-free."
+    },
+    "whatToExpect": {
+      "title": "What to Expect",
+      "items": [
+        {
+          "title": "Warm Welcome",
+          "description": "Our friendly staff will greet you and help you complete any necessary paperwork."
+        },
+        {
+          "title": "Comprehensive Exam",
+          "description": "Dr. Smith will perform a thorough examination of your teeth, gums, and oral health."
+        },
+        {
+          "title": "Digital X-Rays",
+          "description": "We'll take digital X-rays to get a complete picture of your oral health."
+        },
+        {
+          "title": "Treatment Plan",
+          "description": "We'll discuss our findings and create a personalized treatment plan for your needs."
+        }
+      ]
+    },
+    "firstVisit": {
+      "title": "Your First Visit",
+      "description": "Please plan to arrive 15 minutes early to complete paperwork. Your first visit will typically last about 60-90 minutes.",
+      "items": [
+        "Bring your photo ID and insurance card",
+        "Complete patient forms (available online)",
+        "List of current medications",
+        "Any relevant dental or medical records",
+        "Questions you'd like to ask the dentist"
+      ]
+    },
+    "paperwork": {
+      "title": "Patient Forms",
+      "description": "Save time by completing your forms before your visit. You can download and print them below, or fill them out electronically.",
+      "forms": [
+        {
+          "title": "New Patient Registration",
+          "description": "Basic contact and demographic information",
+          "downloadUrl": "/forms/new-patient-registration.pdf"
+        },
+        {
+          "title": "Medical History Form",
+          "description": "Your complete medical and dental history",
+          "downloadUrl": "/forms/medical-history.pdf"
+        },
+        {
+          "title": "HIPAA Privacy Notice",
+          "description": "Information about your privacy rights",
+          "downloadUrl": "/forms/hipaa-notice.pdf"
+        },
+        {
+          "title": "Financial Policy",
+          "description": "Our payment and insurance policies",
+          "downloadUrl": "/forms/financial-policy.pdf"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Schedule?",
+      "description": "Contact us today to book your first appointment.",
+      "button": { "label": "Book Appointment", "href": "/book-appointment" }
+    }
+  },
+  "insurance": {
+    "pageTitle": "Insurance & Financing",
+    "pageDescription": "Affordable dental care options for every budget",
+    "hero": {
+      "title": "Insurance & Financing",
+      "subtitle": "Making Quality Dental Care Affordable",
+      "description": "We believe everyone deserves access to quality dental care. We accept most insurance plans and offer flexible financing options."
+    },
+    "providers": {
+      "title": "Insurance Providers Accepted",
+      "description": "We are in-network with the following insurance providers:",
+      "list": [
+        { "name": "Cigna", "logo": "/images/insurance/cigna.png" },
+        { "name": "MetLife", "logo": "/images/insurance/metlife.png" },
+        { "name": "Aetna", "logo": "/images/insurance/aetna.png" },
+        { "name": "Guardian", "logo": "/images/insurance/guardian.png" },
+        { "name": "Delta Dental", "logo": "/images/insurance/delta-dental.png" },
+        { "name": "United Healthcare", "logo": "/images/insurance/united.png" },
+        { "name": "Blue Cross Blue Shield", "logo": "/images/insurance/bcbs.png" },
+        { "name": "Humana", "logo": "/images/insurance/humana.png" }
+      ],
+      "note": "Don't see your insurance listed? Contact us to verify your coverage."
+    },
+    "outOfNetwork": {
+      "title": "Out-of-Network Benefits",
+      "description": "Even if we're not in your insurance network, you may still have out-of-network benefits. We'll help you maximize your coverage and file claims on your behalf."
+    },
+    "financing": {
+      "title": "Financing Options",
+      "description": "We offer several financing options to help make your dental care affordable:",
+      "options": [
+        {
+          "title": "CareCredit",
+          "description": "Healthcare financing with promotional interest-free periods",
+          "features": [
+            "0% interest for 6, 12, 18, or 24 months",
+            "Low monthly payments",
+            "Quick online application",
+            "Use for the whole family"
+          ]
+        },
+        {
+          "title": "In-House Payment Plans",
+          "description": "We offer customized payment plans for extensive treatments",
+          "features": [
+            "No credit check required",
+            "Flexible monthly payments",
+            "No interest charges",
+            "Personalized to your budget"
+          ]
+        }
+      ]
+    },
+    "membership": {
+      "title": "Dental Membership Plan",
+      "description": "No insurance? No problem! Our membership plan makes dental care affordable for everyone.",
+      "plans": [
+        {
+          "title": "Individual Plan",
+          "price": "$299/year",
+          "features": [
+            "2 dental exams per year",
+            "2 professional cleanings",
+            "All necessary X-rays",
+            "15% off all other treatments",
+            "No waiting periods",
+            "No annual maximums"
+          ]
+        },
+        {
+          "title": "Family Plan",
+          "price": "$599/year",
+          "features": [
+            "Coverage for up to 4 family members",
+            "2 dental exams per year per person",
+            "2 cleanings per year per person",
+            "All necessary X-rays",
+            "20% off all other treatments",
+            "No waiting periods"
+          ]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Questions About Insurance or Financing?",
+      "description": "Our team is happy to help you understand your options and maximize your benefits.",
+      "button": { "label": "Contact Us", "href": "/contact" }
+    }
+  },
+  "faqs": {
+    "pageTitle": "Frequently Asked Questions",
+    "pageDescription": "Answers to common questions about dental care",
+    "hero": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "We're Here to Help",
+      "description": "Find answers to common questions about our practice, procedures, and dental care."
+    },
+    "categories": [
+      {
+        "title": "General Questions",
+        "questions": [
+          {
+            "question": "How often should I visit the dentist?",
+            "answer": "We recommend visiting the dentist every 6 months for routine exams and cleanings. However, some patients may need more frequent visits based on their oral health needs."
+          },
+          {
+            "question": "Do you accept new patients?",
+            "answer": "Yes! We welcome new patients of all ages. Call us or book online to schedule your first appointment."
+          },
+          {
+            "question": "What are your office hours?",
+            "answer": "We're open Monday through Thursday from 9 AM to 6 PM, Friday from 9 AM to 5 PM, and Saturday from 9 AM to 2 PM. We're closed on Sundays."
+          },
+          {
+            "question": "Do you offer emergency dental services?",
+            "answer": "Yes, we offer same-day emergency appointments for urgent dental issues. Call our office and follow the prompts for emergency care."
+          }
+        ]
+      },
+      {
+        "title": "Insurance & Payment",
+        "questions": [
+          {
+            "question": "What insurance do you accept?",
+            "answer": "We accept most major insurance plans including Cigna, MetLife, Aetna, Guardian, Delta Dental, and more. Contact us to verify your coverage."
+          },
+          {
+            "question": "What if I don't have insurance?",
+            "answer": "We offer an affordable membership plan for patients without insurance, as well as financing options through CareCredit and in-house payment plans."
+          },
+          {
+            "question": "Do you offer payment plans?",
+            "answer": "Yes, we offer flexible payment plans through CareCredit and in-house financing options to help make dental care affordable."
+          }
+        ]
+      },
+      {
+        "title": "Procedures & Treatments",
+        "questions": [
+          {
+            "question": "Is teeth whitening safe?",
+            "answer": "Yes, professional teeth whitening is safe when performed by a dental professional. We use proven whitening systems that protect your enamel while brightening your smile."
+          },
+          {
+            "question": "How long do dental implants last?",
+            "answer": "With proper care, dental implants can last a lifetime. The crown attached to the implant may need replacement after 10-15 years due to normal wear."
+          },
+          {
+            "question": "Does getting a filling hurt?",
+            "answer": "We use local anesthesia to numb the area before any filling procedure. Most patients feel little to no discomfort during the procedure."
+          },
+          {
+            "question": "How long does Invisalign treatment take?",
+            "answer": "Invisalign treatment typically takes 12-18 months, depending on the complexity of your case. Some minor cases can be completed in as little as 6 months."
+          }
+        ]
+      },
+      {
+        "title": "Dental Health Tips",
+        "questions": [
+          {
+            "question": "How often should I brush my teeth?",
+            "answer": "You should brush your teeth at least twice a day, ideally in the morning and before bed. Use a soft-bristled brush and fluoride toothpaste."
+          },
+          {
+            "question": "Is flossing really necessary?",
+            "answer": "Yes! Flossing removes plaque and food particles from between teeth where your toothbrush can't reach. Floss at least once a day for optimal oral health."
+          },
+          {
+            "question": "What foods should I avoid for healthy teeth?",
+            "answer": "Limit sugary and acidic foods and drinks, which can cause tooth decay. Sticky candies, soda, and citrus fruits can be particularly harmful if consumed frequently."
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "title": "Still Have Questions?",
+      "description": "We're happy to answer any questions you may have. Contact us or schedule a consultation.",
+      "button": { "label": "Contact Us", "href": "/contact" }
+    }
+  }
+}

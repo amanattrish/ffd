@@ -1,0 +1,78 @@
+{
+  "siteName": "Freeport Family Dentistry",
+  "tagline": "Your Trusted Family Dental Care Provider",
+  "phone": "+1 (516) 123-5467",
+  "email": "info@freeportfamilydentistry.com",
+  "address": {
+    "street": "123 Main Street",
+    "city": "Freeport",
+    "state": "NY",
+    "zip": "11520",
+    "full": "123 Main Street, Freeport, NY 11520"
+  },
+  "hours": {
+    "monday": "9:00 AM - 6:00 PM",
+    "tuesday": "9:00 AM - 6:00 PM",
+    "wednesday": "9:00 AM - 6:00 PM",
+    "thursday": "9:00 AM - 6:00 PM",
+    "friday": "9:00 AM - 5:00 PM",
+    "saturday": "9:00 AM - 2:00 PM",
+    "sunday": "Closed"
+  },
+  "social": {
+    "facebook": "https://facebook.com/freeportfamilydentistry",
+    "instagram": "https://instagram.com/freeportfamilydentistry",
+    "twitter": "https://twitter.com/freeportdental",
+    "linkedin": "https://linkedin.com/company/freeportfamilydentistry"
+  },
+  "navigation": {
+    "main": [
+      { "label": "Home", "href": "/" },
+      { "label": "About", "href": "/about", "submenu": [
+        { "label": "About the Dentist", "href": "/about/dentist" },
+        { "label": "Meet the Team", "href": "/about/team" },
+        { "label": "Our Clinic", "href": "/about/clinic" }
+      ]},
+      { "label": "Services", "href": "/services", "submenu": [
+        { "label": "General Dentistry", "href": "/services/general-dentistry" },
+        { "label": "Cosmetic Dentistry", "href": "/services/cosmetic-dentistry" },
+        { "label": "Restorative Dentistry", "href": "/services/restorative-dentistry" },
+        { "label": "Orthodontics", "href": "/services/orthodontics" },
+        { "label": "Emergency Dentistry", "href": "/services/emergency-dentistry" }
+      ]},
+      { "label": "Patient Info", "href": "/patient-info", "submenu": [
+        { "label": "New Patients", "href": "/patient-info/new-patients" },
+        { "label": "Insurance & Financing", "href": "/patient-info/insurance" },
+        { "label": "FAQs", "href": "/patient-info/faqs" }
+      ]},
+      { "label": "Gallery", "href": "/gallery" },
+      { "label": "Testimonials", "href": "/testimonials" },
+      { "label": "Contact", "href": "/contact" }
+    ],
+    "cta": { "label": "Book Appointment", "href": "/book-appointment" }
+  },
+  "footer": {
+    "description": "Providing quality dental care for the whole family in Freeport and surrounding areas. Our experienced team is dedicated to your oral health and beautiful smile.",
+    "quickLinks": [
+      { "label": "About Us", "href": "/about" },
+      { "label": "Services", "href": "/services" },
+      { "label": "Patient Info", "href": "/patient-info" },
+      { "label": "Contact", "href": "/contact" }
+    ],
+    "services": [
+      { "label": "General Dentistry", "href": "/services/general-dentistry" },
+      { "label": "Cosmetic Dentistry", "href": "/services/cosmetic-dentistry" },
+      { "label": "Emergency Care", "href": "/services/emergency-dentistry" },
+      { "label": "Orthodontics", "href": "/services/orthodontics" }
+    ],
+    "legal": [
+      { "label": "Privacy Policy", "href": "/privacy-policy" },
+      { "label": "Terms of Service", "href": "/terms-of-service" },
+      { "label": "HIPAA Compliance", "href": "/hipaa" }
+    ],
+    "copyright": "Freeport Family Dentistry. All rights reserved."
+  },
+  "calendlyUrl": "https://calendly.com/freeportfamilydentistry",
+  "googleMapsUrl": "https://maps.google.com/?q=123+Main+Street+Freeport+NY+11520",
+  "googleMapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.123456789!2d-73.123456!3d40.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sFreeport%20Family%20Dentistry!5e0!3m2!1sen!2sus!4v1234567890"
+}

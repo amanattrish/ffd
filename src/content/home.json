@@ -1,0 +1,179 @@
+{
+  "hero": {
+    "title": "Make your perfect",
+    "titleHighlight": "smile",
+    "subtitle": "even better",
+    "description": "Experience exceptional dental care in a comfortable, family-friendly environment. Our team is dedicated to helping you achieve and maintain a healthy, beautiful smile.",
+    "cta": {
+      "primary": { "label": "Book Appointment", "href": "/book-appointment" },
+      "secondary": { "label": "Call Us", "href": "tel:+15161235467" }
+    },
+    "image": "/images/hero-dentist.jpg"
+  },
+  "about": {
+    "sectionLabel": "About Us",
+    "title": "The Modern & Clinical Approach",
+    "subtitle": "To Dental Care",
+    "description": "At Freeport Family Dentistry, we combine state-of-the-art technology with compassionate care to provide you with the best dental experience possible. Our modern facility and experienced team ensure that every visit is comfortable and effective.",
+    "features": [
+      "State-of-the-art equipment",
+      "Experienced dental professionals",
+      "Comfortable environment",
+      "Personalized treatment plans"
+    ],
+    "cta": { "label": "Learn More About Us", "href": "/about" },
+    "image": "/images/about-clinic.jpg"
+  },
+  "services": {
+    "sectionLabel": "What We Offer",
+    "title": "High Quality Services",
+    "titleHighlight": "For You",
+    "description": "We offer comprehensive dental services to meet all your oral health needs, from routine cleanings to advanced restorative procedures.",
+    "items": [
+      {
+        "id": "general-dental-care",
+        "title": "General Dental Care",
+        "description": "Comprehensive exams, cleanings, fillings, and preventive care to maintain your oral health.",
+        "icon": "Stethoscope",
+        "href": "/services/general-dentistry"
+      },
+      {
+        "id": "dental-implants",
+        "title": "Dental Implants",
+        "description": "Permanent tooth replacement solutions that look, feel, and function like natural teeth.",
+        "icon": "CircleDot",
+        "href": "/services/restorative-dentistry/dental-implants"
+      },
+      {
+        "id": "cosmetic-dentistry",
+        "title": "Cosmetic Dentistry",
+        "description": "Enhance your smile with teeth whitening, veneers, and other cosmetic treatments.",
+        "icon": "Sparkles",
+        "href": "/services/cosmetic-dentistry"
+      },
+      {
+        "id": "orthodontics",
+        "title": "Orthodontics",
+        "description": "Straighten your teeth with Invisalign clear aligners or traditional braces.",
+        "icon": "AlignCenter",
+        "href": "/services/orthodontics"
+      }
+    ],
+    "cta": { "label": "View All Services", "href": "/services" }
+  },
+  "testimonials": {
+    "sectionLabel": "Testimonials",
+    "title": "WHAT OUR CLIENTS SAYS",
+    "items": [
+      {
+        "id": "1",
+        "name": "Sarah Johnson",
+        "role": "Patient since 2020",
+        "content": "I had an excellent experience at Freeport Family Dentistry. The staff was friendly and professional, and Dr. Smith made me feel completely at ease during my procedure.",
+        "rating": 5,
+        "image": "/images/testimonials/sarah.jpg"
+      },
+      {
+        "id": "2",
+        "name": "Michael Chen",
+        "role": "Patient since 2019",
+        "content": "Best dental office I've ever been to! They really take the time to explain everything and make sure you're comfortable. Highly recommend their teeth whitening service.",
+        "rating": 5,
+        "image": "/images/testimonials/michael.jpg"
+      },
+      {
+        "id": "3",
+        "name": "Emily Rodriguez",
+        "role": "Patient since 2021",
+        "content": "The entire team is wonderful. They're great with my kids and make dental visits something we actually look forward to. Thank you for taking such great care of our family!",
+        "rating": 5,
+        "image": "/images/testimonials/emily.jpg"
+      }
+    ],
+    "cta": { "label": "Read More Reviews", "href": "/testimonials" }
+  },
+  "cta": {
+    "title": "Get a FREE Consultation",
+    "description": "Ready to transform your smile? Schedule a free consultation with our dental experts today.",
+    "phone": "+1 (516) 123-5467",
+    "buttons": {
+      "primary": { "label": "Book Appointment", "href": "/book-appointment" },
+      "secondary": { "label": "Call Now", "href": "tel:+15161235467" }
+    }
+  },
+  "insurance": {
+    "sectionLabel": "Insurance",
+    "title": "Insurance Providers",
+    "titleHighlight": "Accepted",
+    "description": "We are in-network with the following insurance carriers:",
+    "providers": [
+      { "name": "Cigna", "logo": "/images/insurance/cigna.png" },
+      { "name": "MetLife", "logo": "/images/insurance/metlife.png" },
+      { "name": "Aetna", "logo": "/images/insurance/aetna.png" },
+      { "name": "Guardian", "logo": "/images/insurance/guardian.png" },
+      { "name": "Delta Dental", "logo": "/images/insurance/delta-dental.png" }
+    ],
+    "additionalInfo": [
+      "We accept most major insurance plans",
+      "Flexible payment options available",
+      "In-house membership plans for uninsured patients"
+    ],
+    "cta": { "label": "View Insurance Info", "href": "/patient-info/insurance" }
+  },
+  "careCredit": {
+    "title": "CareCredit",
+    "sectionLabel": "Financing",
+    "subtitle": "Discounts & Memberships",
+    "description": "For patients without insurance, we offer flexible financing options through CareCredit and our in-house membership plans.",
+    "features": [
+      "0% interest financing available",
+      "Flexible payment terms",
+      "Quick and easy application",
+      "Use for the whole family"
+    ],
+    "specialOffer": {
+      "title": "Special Offer",
+      "description": "NEW PATIENT SPECIAL - Save on your first visit with our new patient package!"
+    },
+    "cta": { "label": "Learn About Financing", "href": "/patient-info/insurance" }
+  },
+  "blog": {
+    "sectionLabel": "Blog",
+    "title": "BRIGHTEN YOUR OUTLOOK WITH OUR LATEST DENTAL",
+    "titleHighlight": "INSIGHTS",
+    "items": [
+      {
+        "id": "1",
+        "title": "The Science of a Perfect Smile",
+        "excerpt": "Discover the latest advancements in cosmetic dentistry and how they can transform your smile.",
+        "image": "/images/blog/perfect-smile.jpg",
+        "href": "/blog/science-of-perfect-smile",
+        "date": "2025-01-15"
+      },
+      {
+        "id": "2",
+        "title": "Innovations in Modern Restoration",
+        "excerpt": "Learn about the cutting-edge technologies we use for dental restorations.",
+        "image": "/images/blog/modern-restoration.jpg",
+        "href": "/blog/innovations-modern-restoration",
+        "date": "2025-01-10"
+      },
+      {
+        "id": "3",
+        "title": "Investing in Long-Term Health",
+        "excerpt": "Why preventive dental care is the best investment for your overall health.",
+        "image": "/images/blog/long-term-health.jpg",
+        "href": "/blog/investing-long-term-health",
+        "date": "2025-01-05"
+      }
+    ],
+    "cta": { "label": "Read More Articles", "href": "/blog" }
+  },
+  "booking": {
+    "sectionLabel": "Appointments",
+    "title": "BOOK APPOINTMENT",
+    "subtitle": "Select Date & Time",
+    "description": "Choose a convenient time for your visit. We'll confirm your appointment within 24 hours.",
+    "cta": { "label": "Schedule Now", "href": "/book-appointment" }
+  }
+}

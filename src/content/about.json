@@ -1,0 +1,195 @@
+{
+  "dentist": {
+    "pageTitle": "About the Dentist",
+    "pageDescription": "Meet Dr. Smith, your trusted family dentist in Freeport",
+    "hero": {
+      "title": "Meet Dr. John Smith",
+      "subtitle": "DDS, FAGD",
+      "image": "/images/about/dr-smith.jpg"
+    },
+    "bio": {
+      "title": "About Dr. Smith",
+      "content": [
+        "Dr. John Smith has been providing exceptional dental care to families in Freeport and surrounding communities for over 15 years. His commitment to patient comfort and cutting-edge dental techniques has made Freeport Family Dentistry a trusted name in oral healthcare.",
+        "After graduating with honors from the New York University College of Dentistry, Dr. Smith completed advanced training in implant dentistry and cosmetic procedures. He is passionate about continuing education and regularly attends conferences to stay current with the latest advancements in dental care."
+      ]
+    },
+    "qualifications": {
+      "title": "Education & Qualifications",
+      "items": [
+        "Doctor of Dental Surgery (DDS) - New York University",
+        "Bachelor of Science in Biology - Cornell University",
+        "Advanced Implant Training - Implant Institute of America",
+        "Invisalign Certified Provider",
+        "Fellow, Academy of General Dentistry (FAGD)"
+      ]
+    },
+    "associations": {
+      "title": "Professional Associations",
+      "items": [
+        "American Dental Association (ADA)",
+        "New York State Dental Association",
+        "Academy of General Dentistry",
+        "American Academy of Cosmetic Dentistry",
+        "Nassau County Dental Society"
+      ]
+    },
+    "awards": {
+      "title": "Awards & Recognition",
+      "items": [
+        "Top Dentist - Long Island Magazine (2020-2024)",
+        "Patient Choice Award - Dental Excellence",
+        "Community Service Award - Freeport Chamber of Commerce"
+      ]
+    },
+    "philosophy": {
+      "title": "My Philosophy",
+      "content": "I believe that every patient deserves personalized care in a comfortable, welcoming environment. My goal is not just to treat dental problems, but to educate and empower my patients to maintain optimal oral health for life."
+    }
+  },
+  "team": {
+    "pageTitle": "Meet the Team",
+    "pageDescription": "Our dedicated team of dental professionals",
+    "hero": {
+      "title": "Meet Our Team",
+      "subtitle": "Dedicated professionals committed to your smile",
+      "description": "Our team of experienced dental professionals is here to provide you with the highest quality care in a friendly, comfortable environment."
+    },
+    "members": [
+      {
+        "id": "1",
+        "name": "Dr. John Smith",
+        "role": "Lead Dentist",
+        "credentials": "DDS, FAGD",
+        "bio": "Dr. Smith has over 15 years of experience in family and cosmetic dentistry.",
+        "image": "/images/team/dr-smith.jpg"
+      },
+      {
+        "id": "2",
+        "name": "Maria Garcia",
+        "role": "Dental Hygienist",
+        "credentials": "RDH",
+        "bio": "Maria has been with our practice for 8 years and specializes in periodontal care.",
+        "image": "/images/team/maria.jpg"
+      },
+      {
+        "id": "3",
+        "name": "Jennifer Lee",
+        "role": "Dental Hygienist",
+        "credentials": "RDH",
+        "bio": "Jennifer is known for her gentle touch and patient education skills.",
+        "image": "/images/team/jennifer.jpg"
+      },
+      {
+        "id": "4",
+        "name": "David Wilson",
+        "role": "Dental Assistant",
+        "credentials": "CDA",
+        "bio": "David assists with all procedures and ensures patient comfort throughout visits.",
+        "image": "/images/team/david.jpg"
+      },
+      {
+        "id": "5",
+        "name": "Sarah Thompson",
+        "role": "Office Manager",
+        "credentials": "",
+        "bio": "Sarah manages our front office and helps coordinate patient scheduling and insurance.",
+        "image": "/images/team/sarah.jpg"
+      },
+      {
+        "id": "6",
+        "name": "Lisa Martinez",
+        "role": "Patient Coordinator",
+        "credentials": "",
+        "bio": "Lisa is your first point of contact and ensures a smooth experience from check-in to check-out.",
+        "image": "/images/team/lisa.jpg"
+      }
+    ]
+  },
+  "clinic": {
+    "pageTitle": "Our Clinic",
+    "pageDescription": "State-of-the-art dental facility in Freeport",
+    "hero": {
+      "title": "Our Clinic",
+      "subtitle": "Why Choose Freeport Family Dentistry",
+      "description": "Experience dental care in a modern, comfortable environment equipped with the latest technology."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "content": "To provide exceptional dental care that improves the oral health and overall well-being of our patients and community. We are committed to creating a welcoming environment where every patient feels valued and receives personalized care."
+    },
+    "values": {
+      "title": "Our Values",
+      "items": [
+        {
+          "title": "Patient-Centered Care",
+          "description": "Your comfort and satisfaction are our top priorities."
+        },
+        {
+          "title": "Excellence",
+          "description": "We strive for the highest standards in dental care and service."
+        },
+        {
+          "title": "Integrity",
+          "description": "We provide honest, transparent communication about your treatment options."
+        },
+        {
+          "title": "Compassion",
+          "description": "We treat every patient with kindness, respect, and understanding."
+        },
+        {
+          "title": "Innovation",
+          "description": "We embrace the latest technologies and techniques in dentistry."
+        }
+      ]
+    },
+    "facility": {
+      "title": "Our Facility",
+      "description": "Our modern dental office features comfortable treatment rooms, the latest diagnostic equipment, and a relaxing atmosphere designed to put you at ease.",
+      "images": [
+        { "src": "/images/clinic/reception.jpg", "alt": "Reception Area" },
+        { "src": "/images/clinic/treatment-room.jpg", "alt": "Treatment Room" },
+        { "src": "/images/clinic/waiting-area.jpg", "alt": "Waiting Area" },
+        { "src": "/images/clinic/equipment.jpg", "alt": "Modern Equipment" }
+      ]
+    },
+    "technology": {
+      "title": "Our Technology",
+      "items": [
+        {
+          "title": "Digital X-Rays",
+          "description": "Lower radiation exposure and instant results for accurate diagnosis."
+        },
+        {
+          "title": "Intraoral Cameras",
+          "description": "See what we see with detailed images of your teeth and gums."
+        },
+        {
+          "title": "CEREC Same-Day Crowns",
+          "description": "Get your crown in a single visit with our CAD/CAM technology."
+        },
+        {
+          "title": "Laser Dentistry",
+          "description": "Minimally invasive procedures with faster healing times."
+        },
+        {
+          "title": "3D Imaging",
+          "description": "Precise planning for implants and complex procedures."
+        }
+      ]
+    },
+    "whyChooseUs": {
+      "title": "Why Choose Us",
+      "items": [
+        "Experienced, caring dental team",
+        "State-of-the-art technology",
+        "Comfortable, relaxing environment",
+        "Flexible scheduling including evenings and weekends",
+        "Comprehensive range of dental services",
+        "Convenient location with free parking",
+        "Most insurance plans accepted",
+        "Financing options available"
+      ]
+    }
+  }
+}
