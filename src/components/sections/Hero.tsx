@@ -21,10 +21,12 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-white">
+    <section
+      className="relative overflow-hidden bg-primary/10 bg-cover bg-center hero-bg"
+    >
       {/* Curved Background Shape */}
       <div className="absolute top-0 right-0 w-full h-full pointer-events-none">
-        <svg
+        {/* <svg
           className="absolute top-0 right-0 h-full w-2/3 lg:w-1/2"
           viewBox="0 0 600 800"
           fill="none"
@@ -39,7 +41,7 @@ export default function Hero() {
             fill="#D4EEF2"
             opacity="0.5"
           />
-        </svg>
+        </svg> */}
       </div>
 
       {/* Decorative + Elements */}
@@ -55,7 +57,7 @@ export default function Hero() {
               <span className="text-primary italic">{hero.titleHighlight}</span>{" "}
               <span className="text-secondary">{hero.subtitle}</span>
             </h1>
-            <p className="mt-4 text-sm md:text-base text-secondary max-w-sm">
+            <p className="mt-4 text-sm md:text-base text-black max-w-sm">
               {hero.description}
             </p>
 
@@ -78,18 +80,18 @@ export default function Hero() {
           <div className="relative flex justify-center lg:justify-end">
             {/* Book Appointment Button - Positioned near doctor */}
             <div className="absolute top-4 right-4 lg:top-50 lg:right-8 z-20">
-              <Button href="/book-appointment" size="md" className="shadow-lg bg-transparent py-2 px-4 border-2 border-black text-primary hover:bg-primary hover:text-white">
+              <Button href="/book-appointment" className="shadow-lg bg-transparent px-10 py-3 rounded border border-black text-primary whitespace-nowrap hover:bg-primary hover:text-white">
                 Book Appointment
               </Button>
             </div>
 
             {/* Doctor Image */}
-            <div className="relative w-full max-w-sm lg:max-w-md aspect-3/4">
+            <div className="relative w-full max-w-sm lg:max-w-md h-80 sm:h-96 lg:h-100 bg-accent-1/46">
               <Image
                 src={hero.image || "/images/hero-dentist.png"}
                 alt="Dental care professional"
                 fill
-                className="object-contain object-bottom h-5"
+                className="object-contain object-bottom h-20"
                 priority
                 sizes="(max-width: 768px) 100vw, 400px"
               />

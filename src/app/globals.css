@@ -208,3 +208,11 @@ textarea:focus,
 select:focus {
   border-color: var(--color-primary);
 }
+
+/* Hero Background Image */
+.hero-bg {
+  background-image: url('/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
