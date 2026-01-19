@@ -96,7 +96,7 @@ export default function InsuranceSection() {
             <div className="absolute top-0 right-0 w-3/4 h-3/4 bg-[var(--color-accent-1)]/10 rounded-3xl" />
           </div>
 
-          <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative aspect-4/5 rounded-2xl overflow-hidden shadow-2xl">
             <Image
               src="/images/insurance-person.png"
               alt="Friendly dental staff"

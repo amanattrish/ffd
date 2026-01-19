@@ -146,7 +146,7 @@
         "id": "1",
         "title": "The Science of a Perfect Smile",
         "excerpt": "Discover the latest advancements in cosmetic dentistry and how they can transform your smile.",
-        "image": "/images/blog/perfect-smile.jpg",
+        "image": "/images/blog/perfect-smile.png",
         "href": "/blog/science-of-perfect-smile",
         "date": "2025-01-15"
       },
@@ -154,7 +154,7 @@
         "id": "2",
         "title": "Innovations in Modern Restoration",
         "excerpt": "Learn about the cutting-edge technologies we use for dental restorations.",
-        "image": "/images/blog/modern-restoration.jpg",
+        "image": "/images/blog/modern-restoration.png",
         "href": "/blog/innovations-modern-restoration",
         "date": "2025-01-10"
       },
@@ -162,7 +162,7 @@
         "id": "3",
         "title": "Investing in Long-Term Health",
         "excerpt": "Why preventive dental care is the best investment for your overall health.",
-        "image": "/images/blog/long-term-health.jpg",
+        "image": "/images/blog/long-term-health.png",
         "href": "/blog/investing-long-term-health",
         "date": "2025-01-05"
       }

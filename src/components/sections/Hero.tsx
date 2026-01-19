@@ -43,20 +43,19 @@ export default function Hero() {
       </div>
 
       {/* Decorative + Elements */}
-      <div className="absolute top-24 left-8 text-[var(--color-accent-1)] text-3xl font-light hidden lg:block">+</div>
-      <div className="absolute top-1/2 right-1/3 text-[var(--color-accent-1)] text-2xl font-light hidden lg:block">+</div>
+      <div className="absolute top-5 right-100 text-primary text-5xl font-medium hidden lg:block">+</div>
 
       <div className="container mx-auto px-4 pt-8 pb-4 lg:pt-12 lg:pb-8 relative">
         <div className="grid lg:grid-cols-2 gap-8 items-start">
           {/* Left Content */}
           <div className="relative z-10 pt-4 lg:pt-8">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.1]">
-              <span className="text-[var(--color-primary)]">{hero.title}</span>
+              <span className="text-primary">{hero.title}</span>
               <br />
-              <span className="text-[var(--color-primary)] italic">{hero.titleHighlight}</span>{" "}
-              <span className="text-[var(--color-secondary)]">{hero.subtitle}</span>
+              <span className="text-primary italic">{hero.titleHighlight}</span>{" "}
+              <span className="text-secondary">{hero.subtitle}</span>
             </h1>
-            <p className="mt-4 text-sm md:text-base text-[var(--text-secondary)] max-w-sm">
+            <p className="mt-4 text-sm md:text-base text-secondary max-w-sm">
               {hero.description}
             </p>
 
@@ -71,26 +70,26 @@ export default function Hero() {
                   sizes="160px"
                 />
               </div>
-              <div className="text-[var(--color-accent-1)] text-2xl font-light">+</div>
+              <div className="text-primary text-5xl font-medium">+</div>
             </div>
           </div>
 
           {/* Right - Doctor Image with Book Button */}
           <div className="relative flex justify-center lg:justify-end">
             {/* Book Appointment Button - Positioned near doctor */}
-            <div className="absolute top-4 right-4 lg:top-8 lg:right-8 z-20">
-              <Button href="/book-appointment" size="md" className="shadow-lg">
+            <div className="absolute top-4 right-4 lg:top-50 lg:right-8 z-20">
+              <Button href="/book-appointment" size="md" className="shadow-lg bg-transparent py-2 px-4 border-2 border-black text-primary hover:bg-primary hover:text-white">
                 Book Appointment
               </Button>
             </div>
 
             {/* Doctor Image */}
-            <div className="relative w-full max-w-sm lg:max-w-md aspect-[3/4]">
+            <div className="relative w-full max-w-sm lg:max-w-md aspect-3/4">
               <Image
                 src={hero.image || "/images/hero-dentist.png"}
                 alt="Dental care professional"
                 fill
-                className="object-contain object-bottom"
+                className="object-contain object-bottom h-5"
                 priority
                 sizes="(max-width: 768px) 100vw, 400px"
               />
@@ -106,7 +105,7 @@ export default function Hero() {
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
               <div>
-                <label htmlFor="hero-name" className="block text-xs font-medium text-[var(--text-primary)] mb-1.5">
+                <label htmlFor="hero-name" className="block text-xs font-medium text-primary mb-1.5">
                   Name
                 </label>
                 <input
@@ -115,11 +114,11 @@ export default function Hero() {
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full text-sm py-2 px-3 border border-gray-200 rounded-md focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+                  className="w-full text-sm py-2 px-3 border border-gray-200 rounded-md focus:border-primary focus:ring-1 focus:ring-primary"
                 />
               </div>
               <div>
-                <label htmlFor="hero-email" className="block text-xs font-medium text-[var(--text-primary)] mb-1.5">
+                <label htmlFor="hero-email" className="block text-xs font-medium text-primary mb-1.5">
                   Email
                 </label>
                 <input
@@ -128,11 +127,11 @@ export default function Hero() {
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full text-sm py-2 px-3 border border-gray-200 rounded-md focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+                  className="w-full text-sm py-2 px-3 border border-gray-200 rounded-md focus:border-primary focus:ring-1 focus:ring-primary"
                 />
               </div>
               <div>
-                <label htmlFor="hero-date" className="block text-xs font-medium text-[var(--text-primary)] mb-1.5">
+                <label htmlFor="hero-date" className="block text-xs font-medium text-primary mb-1.5">
                   Date
                 </label>
                 <input
@@ -141,11 +140,11 @@ export default function Hero() {
                   placeholder="DD/MM/YYYY"
                   value={formData.date}
                   onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                  className="w-full text-sm py-2 px-3 border border-gray-200 rounded-md focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+                  className="w-full text-sm py-2 px-3 border border-gray-200 rounded-md focus:border-primary focus:ring-1 focus:ring-primary"
                 />
               </div>
               <div>
-                <label htmlFor="hero-location" className="block text-xs font-medium text-[var(--text-primary)] mb-1.5">
+                <label htmlFor="hero-location" className="block text-xs font-medium text-primary mb-1.5">
                   Location
                 </label>
                 <input
@@ -154,7 +153,7 @@ export default function Hero() {
                   placeholder="Your Location"
                   value={formData.location}
                   onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                  className="w-full text-sm py-2 px-3 border border-gray-200 rounded-md focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+                  className="w-full text-sm py-2 px-3 border border-gray-200 rounded-md focus:border-primary focus:ring-1 focus:ring-primary"
                 />
               </div>
               <Button type="submit" className="w-full">

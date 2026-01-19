@@ -62,9 +62,9 @@ export default function ServicesPreview() {
             <div className="w-2 h-2 rounded-full bg-[var(--color-accent-2)]" />
           </div>
 
-          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl max-w-md w-full">
+          <div className="relative aspect-4/3 rounded-2xl overflow-hidden shadow-xl max-w-md w-full">
             <Image
-              src="/images/services/dental-care.png"
+              src="/images/dental-care.png"
               alt="Dental services"
               fill
               className="object-cover"
