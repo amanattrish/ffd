@@ -1,0 +1,74 @@
+import Link from "next/link";
+import { ArrowLeft, Shield } from "lucide-react";
+import Section from "@/components/ui/Section";
+import { legalContent } from "@/content";
+
+export const metadata = {
+  title: legalContent.privacyPolicy.pageTitle,
+  description: legalContent.privacyPolicy.pageDescription,
+};
+
+export default function PrivacyPolicyPage() {
+  const { privacyPolicy } = legalContent;
+
+  return (
+    <>
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent-1)] py-16 overflow-hidden">
+        <div className="absolute top-10 right-10 text-white/10 text-4xl font-light">+</div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex items-center gap-3 mb-4">
+            <Shield className="w-8 h-8 text-white" />
+            <span className="text-white/80 text-sm">Legal</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            {privacyPolicy.pageTitle}
+          </h1>
+          <p className="text-white/80">
+            Last updated: {privacyPolicy.lastUpdated}
+          </p>
+        </div>
+      </section>
+
+      {/* Content */}
+      <Section background="white">
+        <div className="max-w-3xl mx-auto">
+          <div className="prose prose-lg">
+            {privacyPolicy.content.map((section, index) => (
+              <div key={index} className="mb-8">
+                <h2 className="text-xl font-bold text-[var(--text-primary)] mb-3">
+                  {section.title}
+                </h2>
+                <p className="text-[var(--text-secondary)] leading-relaxed">
+                  {section.text}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Related Links */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <h3 className="font-bold text-[var(--text-primary)] mb-4">
+              Related Legal Documents
+            </h3>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/terms-of-service"
+                className="text-[var(--color-primary)] hover:underline"
+              >
+                Terms of Service
+              </Link>
+              <Link
+                href="/hipaa"
+                className="text-[var(--color-primary)] hover:underline"
+              >
+                HIPAA Compliance
+              </Link>
+            </div>
+          </div>
+        </div>
+      </Section>
+    </>
+  );
+}

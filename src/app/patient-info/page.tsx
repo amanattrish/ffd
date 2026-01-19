@@ -1,0 +1,115 @@
+import Link from "next/link";
+import { ArrowRight, FileText, CreditCard, HelpCircle } from "lucide-react";
+import Section from "@/components/ui/Section";
+
+export const metadata = {
+  title: "Patient Information | Freeport Family Dentistry",
+  description: "Everything you need to know about your visit to Freeport Family Dentistry",
+};
+
+const patientInfoLinks = [
+  {
+    title: "New Patient Information",
+    description: "What to expect on your first visit, required documents, and patient forms.",
+    href: "/patient-info/new-patients",
+    icon: FileText,
+    color: "var(--color-primary)",
+  },
+  {
+    title: "Insurance & Financing",
+    description: "Accepted insurance providers, payment options, and membership plans.",
+    href: "/patient-info/insurance",
+    icon: CreditCard,
+    color: "var(--color-secondary)",
+  },
+  {
+    title: "FAQs",
+    description: "Answers to commonly asked questions about dental care and our practice.",
+    href: "/patient-info/faqs",
+    icon: HelpCircle,
+    color: "var(--color-accent-1)",
+  },
+];
+
+export default function PatientInfoPage() {
+  return (
+    <>
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent-1)] py-20 overflow-hidden">
+        <div className="absolute top-10 right-10 text-white/10 text-4xl font-light">+</div>
+        <div className="absolute bottom-10 left-10 text-white/10 text-3xl font-light">+</div>
+
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Patient Information
+          </h1>
+          <p className="text-xl text-white/90 max-w-2xl mx-auto">
+            Everything you need to know for a smooth and comfortable visit
+          </p>
+        </div>
+      </section>
+
+      {/* Info Cards */}
+      <Section background="white">
+        <div className="grid md:grid-cols-3 gap-8">
+          {patientInfoLinks.map((item) => {
+            const IconComponent = item.icon;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
+                <span
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
+                  style={{ backgroundColor: `${item.color}15` }}
+                >
+                  <IconComponent
+                    className="w-7 h-7"
+                    style={{ color: item.color }}
+                  />
+                </span>
+                <h2 className="text-xl font-bold text-[var(--text-primary)] mb-3 group-hover:text-[var(--color-primary)] transition-colors">
+                  {item.title}
+                </h2>
+                <p className="text-[var(--text-secondary)] mb-4">
+                  {item.description}
+                </p>
+                <span className="inline-flex items-center text-[var(--color-primary)] font-semibold">
+                  Learn More
+                  <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-2 transition-transform duration-300" />
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+      </Section>
+
+      {/* Contact CTA */}
+      <section className="bg-gray-50 py-16">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-4">
+            Need More Information?
+          </h2>
+          <p className="text-[var(--text-secondary)] mb-8 max-w-xl mx-auto">
+            Our friendly staff is happy to answer any questions you may have about your visit.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-lg border-2 border-[var(--color-primary)] text-[var(--color-primary)] font-semibold hover:bg-[var(--color-primary)] hover:text-white transition-colors"
+            >
+              Contact Us
+            </Link>
+            <Link
+              href="/book-appointment"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[var(--color-primary)] text-white font-semibold hover:bg-[var(--color-primary)]/90 transition-colors"
+            >
+              Book Appointment
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
