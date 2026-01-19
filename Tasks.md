@@ -40,18 +40,18 @@
 ## Phase 4: Page Development
 
 ### 4.1 Home Page
-- [ ] 4.1.1 Hero section with CTA (Book Appointment via Calendly)
-- [ ] 4.1.2 Overview of practice section
-- [ ] 4.1.3 Highlighted services section
-- [ ] 4.1.4 Testimonials preview section
-- [ ] 4.1.5 Insurance/financing highlights section
+- [x] 4.1.1 Hero section with CTA (Book Appointment via Calendly)
+- [x] 4.1.2 Overview of practice section
+- [x] 4.1.3 Highlighted services section
+- [x] 4.1.4 Testimonials preview section
+- [x] 4.1.5 Insurance/financing highlights section
 - [ ] 4.1.6 Google Reviews widget integration
-- [ ] 4.1.7 CTA buttons (Call / Book Appointment)
+- [x] 4.1.7 CTA buttons (Call / Book Appointment)
 
 ### 4.2 About Pages
-- [ ] 4.2.1 About the Dentist page (Bio, Qualifications, Associations/awards)
-- [ ] 4.2.2 Meet the Team page (Hygienists, Assistants, Staff photos)
-- [ ] 4.2.3 Our Clinic / Why Choose Us page (Mission, Facility tour, Technology)
+- [x] 4.2.1 About the Dentist page (Bio, Qualifications, Associations/awards)
+- [x] 4.2.2 Meet the Team page (Hygienists, Assistants, Staff photos)
+- [x] 4.2.3 Our Clinic / Why Choose Us page (Mission, Facility tour, Technology)
 
 ### 4.3 Services Pages (Individual pages for SEO)
 Each page structure: Overview, Symptoms, Procedure, FAQs, Before/After (optional)

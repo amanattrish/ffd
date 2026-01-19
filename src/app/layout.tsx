@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -10,8 +12,20 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Freeport Family Dentistry",
-  description: "Your trusted family dental care provider in Freeport. Quality dental services including general dentistry, cosmetic dentistry, and emergency care.",
+  title: {
+    default: "Freeport Family Dentistry",
+    template: "%s | Freeport Family Dentistry",
+  },
+  description:
+    "Your trusted family dental care provider in Freeport. Quality dental services including general dentistry, cosmetic dentistry, and emergency care.",
+  keywords: [
+    "dentist",
+    "dental care",
+    "family dentistry",
+    "Freeport",
+    "cosmetic dentistry",
+    "emergency dentist",
+  ],
 };
 
 export default function RootLayout({
@@ -22,7 +36,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} antialiased`}>
-        {children}
+        <Header />
+        <main className="min-h-screen">{children}</main>
+        <Footer />
       </body>
     </html>
   );
