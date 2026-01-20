@@ -5,3 +5,4 @@ export { default as ServicesPreview } from "./ServicesPreview";
 export { default as TestimonialsPreview } from "./TestimonialsPreview";
 export { default as InsuranceSection } from "./InsuranceSection";
 export { default as BlogPreview } from "./BlogPreview";
+export { default as BookAppointmentSection } from "./BookAppointmentSection";

@@ -24,7 +24,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent-1)] py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary to-[var(--color-accent-1)] py-20 overflow-hidden">
         <div className="absolute top-10 right-10 text-white/10 text-4xl font-light">+</div>
         <div className="absolute bottom-10 left-10 text-white/10 text-3xl font-light">+</div>
         <div className="absolute top-1/2 right-1/4 w-32 h-32 rounded-full border border-white/10" />
@@ -64,17 +64,17 @@ export default function ServicesPage() {
                   {/* Icon Badge */}
                   <div className="absolute bottom-4 left-4">
                     <span className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center">
-                      <IconComponent className="w-6 h-6 text-[var(--color-primary)]" />
+                      <IconComponent className="w-6 h-6 text-primary" />
                     </span>
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="p-6">
-                  <h2 className="text-xl font-bold text-[var(--text-primary)] mb-2 group-hover:text-[var(--color-primary)] transition-colors">
+                  <h2 className="text-xl font-bold text-primary mb-2 group-hover:text-primary transition-colors">
                     {category.title}
                   </h2>
-                  <p className="text-[var(--text-secondary)] mb-4 line-clamp-2">
+                  <p className="text-secondary mb-4 line-clamp-2">
                     {category.description}
                   </p>
 
@@ -85,18 +85,18 @@ export default function ServicesPage() {
                         key={service.id}
                         className="text-sm text-[var(--text-muted)] flex items-center gap-2"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-secondary)]" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
                         {service.title}
                       </li>
                     ))}
                     {category.services.length > 3 && (
-                      <li className="text-sm text-[var(--color-primary)] font-medium">
+                      <li className="text-sm text-primary font-medium">
                         +{category.services.length - 3} more services
                       </li>
                     )}
                   </ul>
 
-                  <span className="inline-flex items-center text-[var(--color-primary)] font-semibold">
+                  <span className="inline-flex items-center text-primary font-semibold">
                     View Services
                     <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-2 transition-transform duration-300" />
                   </span>
@@ -108,7 +108,7 @@ export default function ServicesPage() {
       </Section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-1)] py-16">
+      <section className="bg-gradient-to-r from-primary to-[var(--color-accent-1)] py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">{cta.title}</h2>
           <p className="text-white/90 mb-8 max-w-xl mx-auto">{cta.description}</p>
@@ -120,7 +120,7 @@ export default function ServicesPage() {
               href={cta.buttons.secondary.href}
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-[var(--color-primary)]"
+              className="border-white text-white hover:bg-white hover:text-primary"
             >
               {cta.buttons.secondary.label}
             </Button>

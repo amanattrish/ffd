@@ -31,13 +31,13 @@ type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-[var(--color-primary)] text-white hover:bg-[#0d5f7a] active:bg-[#0a4d63]",
+    "bg-primary text-white hover:bg-[#0d5f7a] active:bg-[#0a4d63]",
   secondary:
-    "bg-[var(--color-secondary)] text-white hover:bg-[#8ab34d] active:bg-[#7aa043]",
+    "bg-secondary text-white hover:bg-[#8ab34d] active:bg-[#7aa043]",
   outline:
-    "bg-transparent border-2 border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white",
+    "bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white",
   ghost:
-    "bg-transparent text-[var(--color-primary)] hover:bg-[var(--color-primary)]/10",
+    "bg-transparent text-primary hover:bg-primary/10",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
@@ -55,7 +55,7 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const baseStyles = clsx(
-    "inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2",
+    "inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
     variantStyles[variant],
     sizeStyles[size],
     fullWidth && "w-full",

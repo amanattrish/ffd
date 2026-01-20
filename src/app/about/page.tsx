@@ -35,7 +35,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary)]/80 text-white py-16 md:py-24">
+      <section className="bg-gradient-to-br from-primary to-primary/80 text-white py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>
@@ -61,20 +61,20 @@ export default function AboutPage() {
               className="group block bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/60 to-[var(--color-accent-1)]/60 flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/60 to-[var(--color-accent-1)]/60 flex items-center justify-center">
                   <span className="text-white text-6xl font-bold opacity-20">
                     {page.title.charAt(0)}
                   </span>
                 </div>
               </div>
               <div className="p-6">
-                <h2 className="text-xl font-semibold text-[var(--text-primary)] group-hover:text-[var(--color-primary)] transition-colors mb-2">
+                <h2 className="text-xl font-semibold text-primary group-hover:text-primary transition-colors mb-2">
                   {page.title}
                 </h2>
-                <p className="text-[var(--text-secondary)] text-sm mb-4">
+                <p className="text-secondary text-sm mb-4">
                   {page.description}
                 </p>
-                <span className="inline-flex items-center text-[var(--color-primary)] font-medium text-sm">
+                <span className="inline-flex items-center text-primary font-medium text-sm">
                   Learn More
                   <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </span>

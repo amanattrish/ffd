@@ -6,11 +6,12 @@ import {
   CTABanner,
   InsuranceSection,
   BlogPreview,
+  BookAppointmentSection,
 } from "@/components/sections";
 
 export default function HomePage() {
   return (
-    <>
+    <main className="flex flex-col">
       <Hero />
       <AboutPreview />
       <ServicesPreview />
@@ -18,6 +19,7 @@ export default function HomePage() {
       <CTABanner />
       <InsuranceSection />
       <BlogPreview />
-    </>
+      <BookAppointmentSection />
+    </main>
   );
 }

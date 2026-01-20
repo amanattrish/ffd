@@ -49,7 +49,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent-1)] py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary to-[var(--color-accent-1)] py-20 overflow-hidden">
         <div className="absolute top-10 right-10 text-white/10 text-4xl font-light">+</div>
         <div className="absolute bottom-10 left-10 text-white/10 text-3xl font-light">+</div>
 
@@ -67,7 +67,7 @@ export default function ContactPage() {
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Contact Information */}
           <div className="lg:col-span-1">
-            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+            <h2 className="text-2xl font-bold text-primary mb-6">
               {contactInfo.title}
             </h2>
 
@@ -82,14 +82,14 @@ export default function ContactPage() {
                     rel={item.type === "address" ? "noopener noreferrer" : undefined}
                     className="flex items-start gap-4 group"
                   >
-                    <span className="w-12 h-12 rounded-xl bg-[var(--color-primary)]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--color-primary)] transition-colors">
-                      <IconComponent className="w-5 h-5 text-[var(--color-primary)] group-hover:text-white transition-colors" />
+                    <span className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-colors">
+                      <IconComponent className="w-5 h-5 text-primary group-hover:text-white transition-colors" />
                     </span>
                     <div>
-                      <p className="font-semibold text-[var(--text-primary)]">
+                      <p className="font-semibold text-primary">
                         {item.label}
                       </p>
-                      <p className="text-[var(--text-secondary)] group-hover:text-[var(--color-primary)] transition-colors">
+                      <p className="text-secondary group-hover:text-primary transition-colors">
                         {item.value}
                       </p>
                     </div>
@@ -101,18 +101,18 @@ export default function ContactPage() {
             {/* Office Hours */}
             <div className="bg-gray-50 rounded-2xl p-6">
               <div className="flex items-center gap-3 mb-4">
-                <Clock className="w-5 h-5 text-[var(--color-primary)]" />
-                <h3 className="font-bold text-[var(--text-primary)]">{hours.title}</h3>
+                <Clock className="w-5 h-5 text-primary" />
+                <h3 className="font-bold text-primary">{hours.title}</h3>
               </div>
               <div className="space-y-2">
                 {hours.schedule.map((item, index) => (
                   <div key={index} className="flex justify-between text-sm">
-                    <span className="text-[var(--text-secondary)]">{item.day}</span>
+                    <span className="text-secondary">{item.day}</span>
                     <span
                       className={
                         item.hours === "Closed"
                           ? "text-red-500"
-                          : "text-[var(--text-primary)] font-medium"
+                          : "text-primary font-medium"
                       }
                     >
                       {item.hours}
@@ -126,20 +126,20 @@ export default function ContactPage() {
           {/* Contact Form */}
           <div className="lg:col-span-2">
             <div className="bg-gray-50 rounded-2xl p-8">
-              <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-2">
+              <h2 className="text-2xl font-bold text-primary mb-2">
                 {form.title}
               </h2>
-              <p className="text-[var(--text-secondary)] mb-6">{form.description}</p>
+              <p className="text-secondary mb-6">{form.description}</p>
 
               {isSubmitted ? (
                 <div className="text-center py-12">
-                  <span className="w-16 h-16 rounded-full bg-[var(--color-secondary)] flex items-center justify-center mx-auto mb-4">
+                  <span className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mx-auto mb-4">
                     <Check className="w-8 h-8 text-white" />
                   </span>
-                  <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">
+                  <h3 className="text-xl font-bold text-primary mb-2">
                     Message Sent!
                   </h3>
-                  <p className="text-[var(--text-secondary)]">{form.successMessage}</p>
+                  <p className="text-secondary">{form.successMessage}</p>
                   <Button
                     onClick={() => setIsSubmitted(false)}
                     variant="outline"
@@ -154,7 +154,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="firstName"
-                        className="block text-sm font-medium text-[var(--text-primary)] mb-1"
+                        className="block text-sm font-medium text-primary mb-1"
                       >
                         First Name *
                       </label>
@@ -166,14 +166,14 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, firstName: e.target.value })
                         }
-                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/20 outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                         placeholder="John"
                       />
                     </div>
                     <div>
                       <label
                         htmlFor="lastName"
-                        className="block text-sm font-medium text-[var(--text-primary)] mb-1"
+                        className="block text-sm font-medium text-primary mb-1"
                       >
                         Last Name *
                       </label>
@@ -185,7 +185,7 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, lastName: e.target.value })
                         }
-                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/20 outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                         placeholder="Doe"
                       />
                     </div>
@@ -195,7 +195,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="email"
-                        className="block text-sm font-medium text-[var(--text-primary)] mb-1"
+                        className="block text-sm font-medium text-primary mb-1"
                       >
                         Email Address *
                       </label>
@@ -207,14 +207,14 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, email: e.target.value })
                         }
-                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/20 outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                         placeholder="john@example.com"
                       />
                     </div>
                     <div>
                       <label
                         htmlFor="phone"
-                        className="block text-sm font-medium text-[var(--text-primary)] mb-1"
+                        className="block text-sm font-medium text-primary mb-1"
                       >
                         Phone Number
                       </label>
@@ -225,7 +225,7 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, phone: e.target.value })
                         }
-                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/20 outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                         placeholder="(555) 123-4567"
                       />
                     </div>
@@ -234,7 +234,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="subject"
-                      className="block text-sm font-medium text-[var(--text-primary)] mb-1"
+                      className="block text-sm font-medium text-primary mb-1"
                     >
                       Subject *
                     </label>
@@ -245,7 +245,7 @@ export default function ContactPage() {
                       onChange={(e) =>
                         setFormData({ ...formData, subject: e.target.value })
                       }
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/20 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                     >
                       <option value="">Select a subject</option>
                       <option value="appointment">Schedule an Appointment</option>
@@ -259,7 +259,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-sm font-medium text-[var(--text-primary)] mb-1"
+                      className="block text-sm font-medium text-primary mb-1"
                     >
                       Message *
                     </label>
@@ -271,7 +271,7 @@ export default function ContactPage() {
                       onChange={(e) =>
                         setFormData({ ...formData, message: e.target.value })
                       }
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/20 outline-none transition-all resize-none"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
                       placeholder="How can we help you?"
                     />
                   </div>
@@ -299,7 +299,7 @@ export default function ContactPage() {
 
       {/* Map Section */}
       <Section background="gray">
-        <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6 text-center">
+        <h2 className="text-2xl font-bold text-primary mb-6 text-center">
           {map.title}
         </h2>
         <div className="rounded-2xl overflow-hidden shadow-lg">

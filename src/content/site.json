@@ -27,27 +27,39 @@
   },
   "navigation": {
     "main": [
-      { "label": "Home", "href": "/" },
-      { "label": "About", "href": "/about", "submenu": [
-        { "label": "About the Dentist", "href": "/about/dentist" },
-        { "label": "Meet the Team", "href": "/about/team" },
-        { "label": "Our Clinic", "href": "/about/clinic" }
-      ]},
-      { "label": "Services", "href": "/services", "submenu": [
-        { "label": "General Dentistry", "href": "/services/general-dentistry" },
-        { "label": "Cosmetic Dentistry", "href": "/services/cosmetic-dentistry" },
-        { "label": "Restorative Dentistry", "href": "/services/restorative-dentistry" },
-        { "label": "Orthodontics", "href": "/services/orthodontics" },
-        { "label": "Emergency Dentistry", "href": "/services/emergency-dentistry" }
-      ]},
-      { "label": "Patient Info", "href": "/patient-info", "submenu": [
-        { "label": "New Patients", "href": "/patient-info/new-patients" },
-        { "label": "Insurance & Financing", "href": "/patient-info/insurance" },
-        { "label": "FAQs", "href": "/patient-info/faqs" }
-      ]},
+      { 
+        "label": "About Us", 
+        "href": "/about",
+        "submenu": [
+          { "label": "About the Dentist", "href": "/about/dentist" },
+          { "label": "Meet the Team", "href": "/about/team" },
+          { "label": "Our Clinic", "href": "/about/clinic" }
+        ]
+      },
+      { 
+        "label": "Services", 
+        "href": "/services",
+        "submenu": [
+          { "label": "General Dentistry", "href": "/services/general-dentistry" },
+          { "label": "Cosmetic Dentistry", "href": "/services/cosmetic-dentistry" },
+          { "label": "Restorative Dentistry", "href": "/services/restorative-dentistry" },
+          { "label": "Orthodontics", "href": "/services/orthodontics" },
+          { "label": "Emergency Dentistry", "href": "/services/emergency-dentistry" }
+        ]
+      },
       { "label": "Gallery", "href": "/gallery" },
       { "label": "Testimonials", "href": "/testimonials" },
-      { "label": "Contact", "href": "/contact" }
+      { "label": "Blogs", "href": "/blog" },
+      { "label": "Contact Us", "href": "/contact" },
+      { 
+        "label": "Legal Pages", 
+        "href": "/legal",
+        "submenu": [
+          { "label": "Privacy Policy", "href": "/privacy-policy" },
+          { "label": "Terms of Service", "href": "/terms-of-service" },
+          { "label": "HIPAA Compliance", "href": "/hipaa" }
+        ]
+      }
     ],
     "cta": { "label": "Book Appointment", "href": "/book-appointment" }
   },

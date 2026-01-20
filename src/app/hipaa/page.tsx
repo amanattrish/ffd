@@ -14,7 +14,7 @@ export default function HIPAAPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent-1)] py-16 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary to-[var(--color-accent-1)] py-16 overflow-hidden">
         <div className="absolute top-10 right-10 text-white/10 text-4xl font-light">+</div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -35,13 +35,13 @@ export default function HIPAAPage() {
       <Section background="white">
         <div className="max-w-3xl mx-auto">
           {/* HIPAA Badge */}
-          <div className="bg-gradient-to-r from-[var(--color-primary)]/10 to-[var(--color-accent-1)]/10 rounded-2xl p-6 mb-10 flex items-center gap-4">
-            <div className="w-16 h-16 rounded-full bg-[var(--color-primary)] flex items-center justify-center flex-shrink-0">
+          <div className="bg-gradient-to-r from-primary/10 to-[var(--color-accent-1)]/10 rounded-2xl p-6 mb-10 flex items-center gap-4">
+            <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
               <ShieldCheck className="w-8 h-8 text-white" />
             </div>
             <div>
-              <h2 className="font-bold text-[var(--text-primary)]">HIPAA Compliant Practice</h2>
-              <p className="text-[var(--text-secondary)] text-sm">
+              <h2 className="font-bold text-primary">HIPAA Compliant Practice</h2>
+              <p className="text-secondary text-sm">
                 We are committed to protecting your health information in accordance with federal law.
               </p>
             </div>
@@ -50,10 +50,10 @@ export default function HIPAAPage() {
           <div className="prose prose-lg">
             {hipaa.content.map((section, index) => (
               <div key={index} className="mb-8">
-                <h2 className="text-xl font-bold text-[var(--text-primary)] mb-3">
+                <h2 className="text-xl font-bold text-primary mb-3">
                   {section.title}
                 </h2>
-                <p className="text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-secondary leading-relaxed">
                   {section.text}
                 </p>
               </div>
@@ -62,19 +62,19 @@ export default function HIPAAPage() {
 
           {/* Related Links */}
           <div className="mt-12 pt-8 border-t border-gray-200">
-            <h3 className="font-bold text-[var(--text-primary)] mb-4">
+            <h3 className="font-bold text-primary mb-4">
               Related Legal Documents
             </h3>
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/privacy-policy"
-                className="text-[var(--color-primary)] hover:underline"
+                className="text-primary hover:underline"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms-of-service"
-                className="text-[var(--color-primary)] hover:underline"
+                className="text-primary hover:underline"
               >
                 Terms of Service
               </Link>

@@ -52,15 +52,15 @@ function FAQItem({ question, answer, isOpen, onToggle }: FAQItemProps) {
         className={clsx(
           "w-full flex items-center justify-between gap-4 p-4 text-left",
           "hover:bg-gray-50 transition-colors",
-          isOpen && "bg-[var(--color-primary)]/5"
+          isOpen && "bg-primary/5"
         )}
         onClick={onToggle}
         aria-expanded={isOpen}
       >
-        <span className="font-medium text-[var(--text-primary)]">{question}</span>
+        <span className="font-medium text-primary">{question}</span>
         <ChevronDown
           className={clsx(
-            "w-5 h-5 flex-shrink-0 text-[var(--color-primary)] transition-transform duration-200",
+            "w-5 h-5 flex-shrink-0 text-primary transition-transform duration-200",
             isOpen && "rotate-180"
           )}
         />
@@ -71,7 +71,7 @@ function FAQItem({ question, answer, isOpen, onToggle }: FAQItemProps) {
           isOpen ? "max-h-96" : "max-h-0"
         )}
       >
-        <div className="p-4 pt-0 text-[var(--text-secondary)]">{answer}</div>
+        <div className="p-4 pt-0 text-secondary">{answer}</div>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronDown, Phone } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import Button from "@/components/ui/Button";
 import { siteConfig } from "@/content";
@@ -23,32 +23,31 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm">
+    <header className="sticky top-0 z-50 bg-white border-y border-gray-200">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Logo width={140} height={45} />
+          <Logo />
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-6">
             {navigation.main.map((item) => (
               <div key={item.label} className="relative group">
                 {item.submenu ? (
                   <>
-                    <button
-                      className="flex items-center gap-1 px-4 py-2 text-[var(--text-primary)] hover:text-[var(--color-primary)] transition-colors font-medium"
-                      onClick={() => toggleSubmenu(item.label)}
+                    <Link
+                      href={item.href}
+                      className="text-gray-800 hover:text-primary transition-colors font-normal text-base"
                     >
                       {item.label}
-                      <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
-                    </button>
+                    </Link>
                     <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                       <div className="bg-white rounded-lg shadow-lg border border-gray-100 py-2 min-w-[200px]">
                         {item.submenu.map((subitem) => (
                           <Link
                             key={subitem.label}
                             href={subitem.href}
-                            className="block px-4 py-2 text-[var(--text-primary)] hover:bg-[var(--color-primary)]/5 hover:text-[var(--color-primary)] transition-colors"
+                            className="block px-4 py-2 text-gray-800 hover:bg-primary/5 hover:text-primary transition-colors"
                           >
                             {subitem.label}
                           </Link>
@@ -59,7 +58,7 @@ export default function Header() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="px-4 py-2 text-[var(--text-primary)] hover:text-[var(--color-primary)] transition-colors font-medium"
+                    className="text-gray-800 hover:text-primary transition-colors font-normal text-base"
                   >
                     {item.label}
                   </Link>
@@ -69,10 +68,10 @@ export default function Header() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-4">
+          {/* <div className="hidden lg:flex items-center gap-4">
             <a
               href={`tel:${phone.replace(/[^0-9+]/g, "")}`}
-              className="flex items-center gap-2 text-[var(--color-primary)] font-medium hover:text-[#0d5f7a] transition-colors"
+              className="flex items-center gap-2 text-primary font-medium hover:text-primary/80 transition-colors"
             >
               <Phone className="w-5 h-5" />
               <span>{phone}</span>
@@ -80,11 +79,11 @@ export default function Header() {
             <Button href={navigation.cta.href} size="md">
               {navigation.cta.label}
             </Button>
-          </div>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-[var(--text-primary)]"
+            className="lg:hidden p-2 text-gray-800"
             onClick={toggleMobileMenu}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           >
@@ -99,17 +98,19 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100">
+        <div className="lg:hidden bg-white border-t border-gray-200">
           <nav className="container mx-auto px-4 py-4">
             {navigation.main.map((item) => (
               <div key={item.label} className="border-b border-gray-100 last:border-0">
                 {item.submenu ? (
                   <>
                     <button
-                      className="flex items-center justify-between w-full py-3 text-[var(--text-primary)] font-medium"
+                      className="flex items-center justify-between w-full py-3 text-gray-800 font-normal"
                       onClick={() => toggleSubmenu(item.label)}
                     >
-                      {item.label}
+                      <Link href={item.href} className="flex-1 text-left">
+                        {item.label}
+                      </Link>
                       <ChevronDown
                         className={`w-5 h-5 transition-transform ${
                           openSubmenu === item.label ? "rotate-180" : ""
@@ -122,7 +123,7 @@ export default function Header() {
                           <Link
                             key={subitem.label}
                             href={subitem.href}
-                            className="block py-2 text-[var(--text-secondary)] hover:text-[var(--color-primary)] transition-colors"
+                            className="block py-2 text-gray-600 hover:text-primary transition-colors"
                             onClick={toggleMobileMenu}
                           >
                             {subitem.label}
@@ -134,7 +135,7 @@ export default function Header() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="block py-3 text-[var(--text-primary)] font-medium hover:text-[var(--color-primary)] transition-colors"
+                    className="block py-3 text-gray-800 font-normal hover:text-primary transition-colors"
                     onClick={toggleMobileMenu}
                   >
                     {item.label}
@@ -147,7 +148,7 @@ export default function Header() {
             <div className="mt-4 space-y-3">
               <a
                 href={`tel:${phone.replace(/[^0-9+]/g, "")}`}
-                className="flex items-center justify-center gap-2 py-3 text-[var(--color-primary)] font-medium"
+                className="flex items-center justify-center gap-2 py-3 text-primary font-medium"
               >
                 <Phone className="w-5 h-5" />
                 <span>{phone}</span>

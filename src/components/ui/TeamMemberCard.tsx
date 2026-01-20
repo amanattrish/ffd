@@ -21,7 +21,7 @@ export default function TeamMemberCard({ member }: TeamMemberCardProps) {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
           />
         ) : (
-          <div className="w-full h-full bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent-1)] flex items-center justify-center">
+          <div className="w-full h-full bg-gradient-to-br from-primary to-[var(--color-accent-1)] flex items-center justify-center">
             <span className="text-white text-6xl font-bold">{name.charAt(0)}</span>
           </div>
         )}
@@ -30,12 +30,12 @@ export default function TeamMemberCard({ member }: TeamMemberCardProps) {
 
       {/* Content */}
       <div className="p-5">
-        <h3 className="text-lg font-semibold text-[var(--text-primary)]">{name}</h3>
-        <p className="text-[var(--color-primary)] font-medium text-sm">
+        <h3 className="text-lg font-semibold text-primary">{name}</h3>
+        <p className="text-primary font-medium text-sm">
           {role}
           {credentials && <span className="text-[var(--text-muted)]">, {credentials}</span>}
         </p>
-        <p className="mt-3 text-[var(--text-secondary)] text-sm line-clamp-3">
+        <p className="mt-3 text-secondary text-sm line-clamp-3">
           {bio}
         </p>
       </div>

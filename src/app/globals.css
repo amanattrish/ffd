@@ -40,10 +40,20 @@
   --shadow-xl: 0 20px 25px -5px var(--shadow-color);
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  padding: 0;
+}
+
+/* Reset margins and padding only for specific elements, not all */
+html,
+body,
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, li,
+blockquote, pre {
   margin: 0;
+  padding: 0;
 }
 
 html,
@@ -69,6 +79,7 @@ a {
 img {
   max-width: 100%;
   height: auto;
+  vertical-align: top;
 }
 
 /* Button Base Styles */
@@ -207,4 +218,43 @@ input:focus,
 textarea:focus,
 select:focus {
   border-color: var(--color-primary);
+}
+
+/* Hero Background Image */
+.hero-bg {
+  background-image: url('/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Ensure spacing utilities work properly */
+section {
+  display: block;
+}
+
+/* Footer logo alignment fix */
+footer img {
+  vertical-align: top;
+  display: block;
+}
+
+/* Fix Next.js Image wrapper alignment in footer */
+footer span[style*="display: inline-block"] {
+  display: block !important;
+  vertical-align: top;
+  line-height: 0;
+}
+
+/* Force spacing to work even with reset */
+[class*="mb-"],
+[class*="mt-"],
+[class*="my-"],
+[class*="py-"],
+[class*="pt-"],
+[class*="pb-"],
+[class*="px-"],
+[class*="pl-"],
+[class*="pr-"] {
+  /* These will be overridden by Tailwind utilities */
 }

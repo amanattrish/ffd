@@ -35,7 +35,7 @@ export default function PatientInfoPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent-1)] py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary to-[var(--color-accent-1)] py-20 overflow-hidden">
         <div className="absolute top-10 right-10 text-white/10 text-4xl font-light">+</div>
         <div className="absolute bottom-10 left-10 text-white/10 text-3xl font-light">+</div>
 
@@ -69,13 +69,13 @@ export default function PatientInfoPage() {
                     style={{ color: item.color }}
                   />
                 </span>
-                <h2 className="text-xl font-bold text-[var(--text-primary)] mb-3 group-hover:text-[var(--color-primary)] transition-colors">
+                <h2 className="text-xl font-bold text-primary mb-3 group-hover:text-primary transition-colors">
                   {item.title}
                 </h2>
-                <p className="text-[var(--text-secondary)] mb-4">
+                <p className="text-secondary mb-4">
                   {item.description}
                 </p>
-                <span className="inline-flex items-center text-[var(--color-primary)] font-semibold">
+                <span className="inline-flex items-center text-primary font-semibold">
                   Learn More
                   <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-2 transition-transform duration-300" />
                 </span>
@@ -88,22 +88,22 @@ export default function PatientInfoPage() {
       {/* Contact CTA */}
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-4">
+          <h2 className="text-3xl font-bold text-primary mb-4">
             Need More Information?
           </h2>
-          <p className="text-[var(--text-secondary)] mb-8 max-w-xl mx-auto">
+          <p className="text-secondary mb-8 max-w-xl mx-auto">
             Our friendly staff is happy to answer any questions you may have about your visit.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-lg border-2 border-[var(--color-primary)] text-[var(--color-primary)] font-semibold hover:bg-[var(--color-primary)] hover:text-white transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-lg border-2 border-primary text-primary font-semibold hover:bg-primary hover:text-white transition-colors"
             >
               Contact Us
             </Link>
             <Link
               href="/book-appointment"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[var(--color-primary)] text-white font-semibold hover:bg-[var(--color-primary)]/90 transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-primary text-white font-semibold hover:bg-primary/90 transition-colors"
             >
               Book Appointment
             </Link>

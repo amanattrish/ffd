@@ -3,7 +3,7 @@
     "title": "Make your perfect",
     "titleHighlight": "smile",
     "subtitle": "even better",
-    "description": "Experience exceptional dental care in a comfortable, family-friendly environment. Our team is dedicated to helping you achieve and maintain a healthy, beautiful smile.",
+    "description": "Experience the gold standard in oral health, delivered by a highly skilled medical collective.",
     "cta": {
       "primary": { "label": "Book Appointment", "href": "/book-appointment" },
       "secondary": { "label": "Call Us", "href": "tel:+15161235467" }
@@ -33,30 +33,30 @@
       {
         "id": "general-dental-care",
         "title": "General Dental Care",
-        "description": "Comprehensive exams, cleanings, fillings, and preventive care to maintain your oral health.",
+        "description": "Comprehensive clinical care focused on long-term health. We use precise medical techniques to maintain your oral well-being.",
         "icon": "Stethoscope",
         "href": "/services/general-dentistry"
       },
       {
         "id": "dental-implants",
         "title": "Dental Implants",
-        "description": "Permanent tooth replacement solutions that look, feel, and function like natural teeth.",
+        "description": "Advanced restorative solutions for a permanent smile. We integrate the latest technology to ensure high-quality, durable results.",
         "icon": "CircleDot",
         "href": "/services/restorative-dentistry/dental-implants"
       },
       {
         "id": "cosmetic-dentistry",
         "title": "Cosmetic Dentistry",
-        "description": "Enhance your smile with teeth whitening, veneers, and other cosmetic treatments.",
+        "description": "Precision smile design tailored for you. Our specialized expertise enhances your natural aesthetics through modern dental innovations.",
         "icon": "Sparkles",
         "href": "/services/cosmetic-dentistry"
       },
       {
-        "id": "orthodontics",
-        "title": "Orthodontics",
-        "description": "Straighten your teeth with Invisalign clear aligners or traditional braces.",
-        "icon": "AlignCenter",
-        "href": "/services/orthodontics"
+        "id": "teeth-whitening",
+        "title": "Teeth Whitening",
+        "description": "Safe, effective brightening for transformative results. Achieve a radiant smile using our professional-grade clinical standards.",
+        "icon": "Sparkles",
+        "href": "/services/cosmetic-dentistry/teeth-whitening"
       }
     ],
     "cta": { "label": "View All Services", "href": "/services" }
@@ -71,7 +71,7 @@
         "role": "Patient since 2020",
         "content": "I had an excellent experience at Freeport Family Dentistry. The staff was friendly and professional, and Dr. Smith made me feel completely at ease during my procedure.",
         "rating": 5,
-        "image": "/images/testimonials/sarah.jpg"
+        "image": "/images/testimonials/sarah.png"
       },
       {
         "id": "2",
@@ -79,7 +79,7 @@
         "role": "Patient since 2019",
         "content": "Best dental office I've ever been to! They really take the time to explain everything and make sure you're comfortable. Highly recommend their teeth whitening service.",
         "rating": 5,
-        "image": "/images/testimonials/michael.jpg"
+        "image": "/images/testimonials/michael.png"
       },
       {
         "id": "3",
@@ -87,7 +87,7 @@
         "role": "Patient since 2021",
         "content": "The entire team is wonderful. They're great with my kids and make dental visits something we actually look forward to. Thank you for taking such great care of our family!",
         "rating": 5,
-        "image": "/images/testimonials/emily.jpg"
+        "image": "/images/testimonials/sarah.png"
       }
     ],
     "cta": { "label": "Read More Reviews", "href": "/testimonials" }
@@ -146,7 +146,7 @@
         "id": "1",
         "title": "The Science of a Perfect Smile",
         "excerpt": "Discover the latest advancements in cosmetic dentistry and how they can transform your smile.",
-        "image": "/images/blog/perfect-smile.jpg",
+        "image": "/images/blog/perfect-smile.png",
         "href": "/blog/science-of-perfect-smile",
         "date": "2025-01-15"
       },
@@ -154,7 +154,7 @@
         "id": "2",
         "title": "Innovations in Modern Restoration",
         "excerpt": "Learn about the cutting-edge technologies we use for dental restorations.",
-        "image": "/images/blog/modern-restoration.jpg",
+        "image": "/images/blog/modern-restoration.png",
         "href": "/blog/innovations-modern-restoration",
         "date": "2025-01-10"
       },
@@ -162,7 +162,7 @@
         "id": "3",
         "title": "Investing in Long-Term Health",
         "excerpt": "Why preventive dental care is the best investment for your overall health.",
-        "image": "/images/blog/long-term-health.jpg",
+        "image": "/images/blog/long-term-health.png",
         "href": "/blog/investing-long-term-health",
         "date": "2025-01-05"
       }

@@ -16,7 +16,7 @@ export default function InsurancePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent-1)] py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary to-[var(--color-accent-1)] py-20 overflow-hidden">
         <div className="absolute top-10 right-10 text-white/10 text-4xl font-light">+</div>
         <div className="absolute bottom-10 left-10 text-white/10 text-3xl font-light">+</div>
 
@@ -40,14 +40,14 @@ export default function InsurancePage() {
       {/* Insurance Providers */}
       <Section background="white">
         <div className="flex items-center gap-3 mb-6">
-          <span className="w-12 h-12 rounded-full bg-[var(--color-primary)]/10 flex items-center justify-center">
-            <Shield className="w-6 h-6 text-[var(--color-primary)]" />
+          <span className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+            <Shield className="w-6 h-6 text-primary" />
           </span>
-          <h2 className="text-2xl font-bold text-[var(--text-primary)]">
+          <h2 className="text-2xl font-bold text-primary">
             {insurance.providers.title}
           </h2>
         </div>
-        <p className="text-[var(--text-secondary)] mb-8">
+        <p className="text-secondary mb-8">
           {insurance.providers.description}
         </p>
 
@@ -66,7 +66,7 @@ export default function InsurancePage() {
                   className="object-contain h-10"
                 />
               ) : (
-                <span className="font-semibold text-[var(--text-secondary)]">
+                <span className="font-semibold text-secondary">
                   {provider.name}
                 </span>
               )}
@@ -82,10 +82,10 @@ export default function InsurancePage() {
       {/* Out of Network */}
       <Section background="gray">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
+          <h2 className="text-2xl font-bold text-primary mb-4">
             {insurance.outOfNetwork.title}
           </h2>
-          <p className="text-[var(--text-secondary)]">
+          <p className="text-secondary">
             {insurance.outOfNetwork.description}
           </p>
         </div>
@@ -94,14 +94,14 @@ export default function InsurancePage() {
       {/* Financing Options */}
       <Section background="white">
         <div className="flex items-center gap-3 mb-6">
-          <span className="w-12 h-12 rounded-full bg-[var(--color-secondary)]/10 flex items-center justify-center">
-            <CreditCard className="w-6 h-6 text-[var(--color-secondary)]" />
+          <span className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
+            <CreditCard className="w-6 h-6 text-secondary" />
           </span>
-          <h2 className="text-2xl font-bold text-[var(--text-primary)]">
+          <h2 className="text-2xl font-bold text-primary">
             {insurance.financing.title}
           </h2>
         </div>
-        <p className="text-[var(--text-secondary)] mb-8">
+        <p className="text-secondary mb-8">
           {insurance.financing.description}
         </p>
 
@@ -111,19 +111,19 @@ export default function InsurancePage() {
               key={index}
               className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-shadow"
             >
-              <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">
+              <h3 className="text-xl font-bold text-primary mb-2">
                 {option.title}
               </h3>
-              <p className="text-[var(--text-secondary)] mb-4 text-sm">
+              <p className="text-secondary mb-4 text-sm">
                 {option.description}
               </p>
               <ul className="space-y-2">
                 {option.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center gap-2 text-sm">
-                    <span className="w-5 h-5 rounded-full bg-[var(--color-secondary)] flex items-center justify-center flex-shrink-0">
+                    <span className="w-5 h-5 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                       <Check className="w-3 h-3 text-white" strokeWidth={3} />
                     </span>
-                    <span className="text-[var(--text-primary)]">{feature}</span>
+                    <span className="text-primary">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -138,10 +138,10 @@ export default function InsurancePage() {
           <span className="w-14 h-14 rounded-full bg-[var(--color-accent-1)]/10 flex items-center justify-center mx-auto mb-4">
             <Percent className="w-7 h-7 text-[var(--color-accent-1)]" />
           </span>
-          <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-4">
+          <h2 className="text-3xl font-bold text-primary mb-4">
             {insurance.membership.title}
           </h2>
-          <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
+          <p className="text-secondary max-w-2xl mx-auto">
             {insurance.membership.description}
           </p>
         </div>
@@ -152,28 +152,28 @@ export default function InsurancePage() {
               key={index}
               className={`bg-white rounded-2xl p-8 shadow-sm border-2 ${
                 index === 1
-                  ? "border-[var(--color-secondary)]"
+                  ? "border-secondary"
                   : "border-transparent"
               }`}
             >
               {index === 1 && (
-                <span className="inline-block bg-[var(--color-secondary)] text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase">
+                <span className="inline-block bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase">
                   Best Value
                 </span>
               )}
-              <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">
+              <h3 className="text-xl font-bold text-primary mb-2">
                 {plan.title}
               </h3>
-              <p className="text-3xl font-bold text-[var(--color-primary)] mb-6">
+              <p className="text-3xl font-bold text-primary mb-6">
                 {plan.price}
               </p>
               <ul className="space-y-3 mb-6">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-2 text-sm">
-                    <span className="w-5 h-5 rounded-full bg-[var(--color-secondary)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="w-5 h-5 rounded-full bg-secondary flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="w-3 h-3 text-white" strokeWidth={3} />
                     </span>
-                    <span className="text-[var(--text-primary)]">{feature}</span>
+                    <span className="text-primary">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -190,7 +190,7 @@ export default function InsurancePage() {
       </Section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-1)] py-16">
+      <section className="bg-gradient-to-r from-primary to-[var(--color-accent-1)] py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             {insurance.cta.title}
