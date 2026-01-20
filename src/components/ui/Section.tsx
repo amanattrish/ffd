@@ -11,7 +11,7 @@ interface SectionProps {
 const backgroundStyles: Record<string, string> = {
   white: "bg-white",
   gray: "bg-gray-50",
-  primary: "bg-[var(--color-primary)] text-white",
+  primary: "bg-primary text-white",
   accent: "bg-[var(--color-accent-1)]/10",
 };
 
@@ -25,7 +25,7 @@ export default function Section({
   return (
     <section
       id={id}
-      className={clsx("py-16 md:py-20 lg:py-24", backgroundStyles[background], className)}
+      className={clsx("py-16 md:py-4 lg:py-12 mb-8 md:mb-12 lg:mb-16", backgroundStyles[background], className)}
     >
       <div className={clsx("container mx-auto px-4", containerClassName)}>
         {children}
@@ -54,18 +54,18 @@ export function SectionHeader({
   return (
     <div className={clsx("mb-12", centered && "text-center", className)}>
       {label && (
-        <span className="inline-block text-[var(--color-secondary)] font-medium text-sm uppercase tracking-wider mb-2">
+        <span className="inline-block text-secondary font-medium text-sm uppercase tracking-wider mb-2">
           {label}
         </span>
       )}
-      <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)]">
+      <h2 className="text-3xl md:text-4xl font-bold text-primary">
         {title}{" "}
         {titleHighlight && (
-          <span className="text-[var(--color-primary)]">{titleHighlight}</span>
+          <span className="text-primary">{titleHighlight}</span>
         )}
       </h2>
       {description && (
-        <p className="mt-4 text-[var(--text-secondary)] max-w-2xl mx-auto">
+        <p className="mt-4 text-secondary max-w-2xl mx-auto">
           {description}
         </p>
       )}

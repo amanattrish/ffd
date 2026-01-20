@@ -24,7 +24,7 @@ export default function OurClinicPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary)]/80 text-white py-16 md:py-24">
+      <section className="bg-gradient-to-br from-primary to-primary/80 text-white py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -39,10 +39,10 @@ export default function OurClinicPage() {
       {/* Mission Section */}
       <Section background="white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-6">
+          <h2 className="text-3xl font-bold text-primary mb-6">
             {clinic.mission.title}
           </h2>
-          <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
+          <p className="text-lg text-secondary leading-relaxed">
             {clinic.mission.content}
           </p>
         </div>
@@ -63,13 +63,13 @@ export default function OurClinicPage() {
                 key={index}
                 className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow"
               >
-                <div className="w-12 h-12 rounded-xl bg-[var(--color-primary)]/10 flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-[var(--color-primary)]" />
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <Icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
+                <h3 className="text-lg font-semibold text-primary mb-2">
                   {value.title}
                 </h3>
-                <p className="text-[var(--text-secondary)] text-sm">
+                <p className="text-secondary text-sm">
                   {value.description}
                 </p>
               </div>
@@ -82,10 +82,10 @@ export default function OurClinicPage() {
       <Section background="white">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-4">
+            <h2 className="text-3xl font-bold text-primary mb-4">
               {clinic.facility.title}
             </h2>
-            <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
+            <p className="text-secondary leading-relaxed mb-6">
               {clinic.facility.description}
             </p>
 
@@ -94,10 +94,10 @@ export default function OurClinicPage() {
               {clinic.facility.images.map((image, index) => (
                 <div
                   key={index}
-                  className="relative aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-[var(--color-primary)]/20 to-[var(--color-accent-1)]/20"
+                  className="relative aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-primary/20 to-[var(--color-accent-1)]/20"
                 >
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-[var(--color-primary)]/30 text-sm font-medium">
+                    <span className="text-primary/30 text-sm font-medium">
                       {image.alt}
                     </span>
                   </div>
@@ -108,23 +108,23 @@ export default function OurClinicPage() {
 
           {/* Technology Section */}
           <div>
-            <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-6">
+            <h2 className="text-3xl font-bold text-primary mb-6">
               {clinic.technology.title}
             </h2>
             <div className="space-y-4">
               {clinic.technology.items.map((tech, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-4 p-4 rounded-lg bg-[var(--color-primary)]/5 hover:bg-[var(--color-primary)]/10 transition-colors"
+                  className="flex items-start gap-4 p-4 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-[var(--color-primary)] flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center flex-shrink-0">
                     <Sparkles className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[var(--text-primary)]">
+                    <h4 className="font-semibold text-primary">
                       {tech.title}
                     </h4>
-                    <p className="text-sm text-[var(--text-secondary)] mt-1">
+                    <p className="text-sm text-secondary mt-1">
                       {tech.description}
                     </p>
                   </div>
@@ -148,10 +148,10 @@ export default function OurClinicPage() {
               key={index}
               className="flex items-center gap-3 bg-white rounded-lg p-4 shadow-sm"
             >
-              <div className="w-8 h-8 rounded-full bg-[var(--color-secondary)] flex items-center justify-center flex-shrink-0">
+              <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                 <Check className="w-5 h-5 text-white" />
               </div>
-              <span className="text-[var(--text-primary)] text-sm font-medium">
+              <span className="text-primary text-sm font-medium">
                 {item}
               </span>
             </div>
@@ -176,7 +176,7 @@ export default function OurClinicPage() {
               href="/contact"
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-[var(--color-primary)]"
+              className="border-white text-white hover:bg-white hover:text-primary"
             >
               Get Directions
             </Button>

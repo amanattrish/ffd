@@ -26,7 +26,7 @@ export default function FAQsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent-1)] py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary to-[var(--color-accent-1)] py-20 overflow-hidden">
         <div className="absolute top-10 right-10 text-white/10 text-4xl font-light">+</div>
         <div className="absolute bottom-10 left-10 text-white/10 text-3xl font-light">+</div>
 
@@ -57,7 +57,7 @@ export default function FAQsPage() {
               placeholder="Search frequently asked questions..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 rounded-xl border border-gray-200 focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/20 outline-none transition-all"
+              className="w-full pl-12 pr-4 py-4 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
             />
           </div>
         </div>
@@ -68,7 +68,7 @@ export default function FAQsPage() {
         <div className="max-w-3xl mx-auto">
           {filteredCategories.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-[var(--text-secondary)]">
+              <p className="text-secondary">
                 No questions found matching your search.
               </p>
             </div>
@@ -76,7 +76,7 @@ export default function FAQsPage() {
             <div className="space-y-10">
               {filteredCategories.map((category, catIndex) => (
                 <div key={catIndex}>
-                  <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">
+                  <h2 className="text-2xl font-bold text-primary mb-6">
                     {category.title}
                   </h2>
                   <div className="space-y-3">
@@ -93,11 +93,11 @@ export default function FAQsPage() {
                             onClick={() => setOpenFaq(isOpen ? null : faqId)}
                             className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition-colors"
                           >
-                            <span className="font-semibold text-[var(--text-primary)] pr-4">
+                            <span className="font-semibold text-primary pr-4">
                               {faq.question}
                             </span>
                             <ChevronDown
-                              className={`w-5 h-5 text-[var(--color-primary)] flex-shrink-0 transition-transform duration-200 ${
+                              className={`w-5 h-5 text-primary flex-shrink-0 transition-transform duration-200 ${
                                 isOpen ? "rotate-180" : ""
                               }`}
                             />
@@ -107,7 +107,7 @@ export default function FAQsPage() {
                               isOpen ? "max-h-96" : "max-h-0"
                             }`}
                           >
-                            <div className="px-5 pb-5 text-[var(--text-secondary)] leading-relaxed">
+                            <div className="px-5 pb-5 text-secondary leading-relaxed">
                               {faq.answer}
                             </div>
                           </div>
@@ -123,7 +123,7 @@ export default function FAQsPage() {
       </Section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-1)] py-16">
+      <section className="bg-gradient-to-r from-primary to-[var(--color-accent-1)] py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             {faqs.cta.title}

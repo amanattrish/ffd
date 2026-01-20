@@ -40,16 +40,16 @@ export default function ServiceCard({
     return (
       <Link
         href={href}
-        className="group flex items-start gap-4 p-4 rounded-lg hover:bg-[var(--color-primary)]/5 transition-colors"
+        className="group flex items-start gap-4 p-4 rounded-lg hover:bg-primary/5 transition-colors"
       >
-        <div className="w-10 h-10 rounded-lg bg-[var(--color-primary)]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--color-primary)] transition-colors">
-          <Icon className="w-5 h-5 text-[var(--color-primary)] group-hover:text-white transition-colors" />
+        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-colors">
+          <Icon className="w-5 h-5 text-primary group-hover:text-white transition-colors" />
         </div>
         <div>
-          <h4 className="font-semibold text-[var(--text-primary)] group-hover:text-[var(--color-primary)] transition-colors">
+          <h4 className="font-semibold text-primary group-hover:text-primary transition-colors">
             {title}
           </h4>
-          <p className="text-sm text-[var(--text-secondary)] mt-1 line-clamp-2">
+          <p className="text-sm text-secondary mt-1 line-clamp-2">
             {description}
           </p>
         </div>
@@ -66,16 +66,16 @@ export default function ServiceCard({
         "transition-all duration-300"
       )}
     >
-      <div className="w-14 h-14 rounded-xl bg-[var(--color-primary)]/10 flex items-center justify-center mb-4 group-hover:bg-[var(--color-primary)] transition-colors">
-        <Icon className="w-7 h-7 text-[var(--color-primary)] group-hover:text-white transition-colors" />
+      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
+        <Icon className="w-7 h-7 text-primary group-hover:text-white transition-colors" />
       </div>
-      <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2 group-hover:text-[var(--color-primary)] transition-colors">
+      <h3 className="text-xl font-semibold text-primary mb-2 group-hover:text-primary transition-colors">
         {title}
       </h3>
-      <p className="text-[var(--text-secondary)] text-sm line-clamp-3">
+      <p className="text-secondary text-sm line-clamp-3">
         {description}
       </p>
-      <span className="inline-flex items-center mt-4 text-[var(--color-primary)] font-medium text-sm group-hover:underline">
+      <span className="inline-flex items-center mt-4 text-primary font-medium text-sm group-hover:underline">
         Learn More
         <svg
           className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"

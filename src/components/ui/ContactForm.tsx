@@ -60,11 +60,11 @@ export default function ContactForm() {
   if (status === "success") {
     return (
       <div className="text-center py-12">
-        <CheckCircle className="w-16 h-16 text-[var(--color-secondary)] mx-auto mb-4" />
-        <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2">
+        <CheckCircle className="w-16 h-16 text-secondary mx-auto mb-4" />
+        <h3 className="text-xl font-semibold text-primary mb-2">
           Message Sent!
         </h3>
-        <p className="text-[var(--text-secondary)]">{form.successMessage}</p>
+        <p className="text-secondary">{form.successMessage}</p>
         <Button
           variant="outline"
           className="mt-6"
@@ -88,7 +88,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* First Name */}
         <div>
-          <label htmlFor="firstName" className="block text-sm font-medium text-[var(--text-primary)] mb-2">
+          <label htmlFor="firstName" className="block text-sm font-medium text-primary mb-2">
             First Name <span className="text-red-500">*</span>
           </label>
           <input
@@ -105,7 +105,7 @@ export default function ContactForm() {
 
         {/* Last Name */}
         <div>
-          <label htmlFor="lastName" className="block text-sm font-medium text-[var(--text-primary)] mb-2">
+          <label htmlFor="lastName" className="block text-sm font-medium text-primary mb-2">
             Last Name <span className="text-red-500">*</span>
           </label>
           <input
@@ -124,7 +124,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Email */}
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-[var(--text-primary)] mb-2">
+          <label htmlFor="email" className="block text-sm font-medium text-primary mb-2">
             Email Address <span className="text-red-500">*</span>
           </label>
           <input
@@ -141,7 +141,7 @@ export default function ContactForm() {
 
         {/* Phone */}
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-[var(--text-primary)] mb-2">
+          <label htmlFor="phone" className="block text-sm font-medium text-primary mb-2">
             Phone Number
           </label>
           <input
@@ -158,7 +158,7 @@ export default function ContactForm() {
 
       {/* Subject */}
       <div>
-        <label htmlFor="subject" className="block text-sm font-medium text-[var(--text-primary)] mb-2">
+        <label htmlFor="subject" className="block text-sm font-medium text-primary mb-2">
           Subject <span className="text-red-500">*</span>
         </label>
         <select
@@ -180,7 +180,7 @@ export default function ContactForm() {
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-[var(--text-primary)] mb-2">
+        <label htmlFor="message" className="block text-sm font-medium text-primary mb-2">
           Message <span className="text-red-500">*</span>
         </label>
         <textarea

@@ -20,7 +20,7 @@ export default function BookAppointmentPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent-1)] py-16 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary to-[var(--color-accent-1)] py-16 overflow-hidden">
         <div className="absolute top-10 right-10 text-white/10 text-4xl font-light">+</div>
         <div className="absolute bottom-10 left-10 text-white/10 text-3xl font-light">+</div>
 
@@ -40,7 +40,7 @@ export default function BookAppointmentPage() {
           {/* Left Sidebar - Info */}
           <div className="lg:col-span-1 order-2 lg:order-1">
             {/* Benefits */}
-            <div className="bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent-1)] rounded-2xl p-6 text-white mb-6">
+            <div className="bg-gradient-to-br from-primary to-[var(--color-accent-1)] rounded-2xl p-6 text-white mb-6">
               <h3 className="text-lg font-bold mb-4">Why Book Online?</h3>
               <ul className="space-y-3">
                 {benefits.map((benefit, index) => (
@@ -56,12 +56,12 @@ export default function BookAppointmentPage() {
 
             {/* Contact Info */}
             <div className="bg-gray-50 rounded-2xl p-6 mb-6">
-              <h3 className="font-bold text-[var(--text-primary)] mb-4">
+              <h3 className="font-bold text-primary mb-4">
                 Prefer to Call?
               </h3>
               <a
                 href={`tel:${siteConfig.phone.replace(/[^0-9+]/g, "")}`}
-                className="flex items-center gap-3 text-[var(--color-primary)] font-semibold hover:underline"
+                className="flex items-center gap-3 text-primary font-semibold hover:underline"
               >
                 <Phone className="w-5 h-5" />
                 {siteConfig.phone}
@@ -71,18 +71,18 @@ export default function BookAppointmentPage() {
             {/* Office Hours */}
             <div className="bg-gray-50 rounded-2xl p-6 mb-6">
               <div className="flex items-center gap-3 mb-4">
-                <Clock className="w-5 h-5 text-[var(--color-primary)]" />
-                <h3 className="font-bold text-[var(--text-primary)]">{hours.title}</h3>
+                <Clock className="w-5 h-5 text-primary" />
+                <h3 className="font-bold text-primary">{hours.title}</h3>
               </div>
               <div className="space-y-2">
                 {hours.schedule.map((item, index) => (
                   <div key={index} className="flex justify-between text-sm">
-                    <span className="text-[var(--text-secondary)]">{item.day}</span>
+                    <span className="text-secondary">{item.day}</span>
                     <span
                       className={
                         item.hours === "Closed"
                           ? "text-red-500"
-                          : "text-[var(--text-primary)] font-medium"
+                          : "text-primary font-medium"
                       }
                     >
                       {item.hours}
@@ -95,10 +95,10 @@ export default function BookAppointmentPage() {
             {/* Location */}
             <div className="bg-gray-50 rounded-2xl p-6">
               <div className="flex items-center gap-3 mb-4">
-                <MapPin className="w-5 h-5 text-[var(--color-primary)]" />
-                <h3 className="font-bold text-[var(--text-primary)]">Our Location</h3>
+                <MapPin className="w-5 h-5 text-primary" />
+                <h3 className="font-bold text-primary">Our Location</h3>
               </div>
-              <p className="text-[var(--text-secondary)] text-sm">
+              <p className="text-secondary text-sm">
                 {siteConfig.address.street}
                 <br />
                 {siteConfig.address.city}, {siteConfig.address.state}{" "}
@@ -110,23 +110,23 @@ export default function BookAppointmentPage() {
           {/* Calendly Embed */}
           <div className="lg:col-span-2 order-1 lg:order-2">
             <div className="bg-gray-50 rounded-2xl p-6 lg:p-8">
-              <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-2">
+              <h2 className="text-2xl font-bold text-primary mb-2">
                 Select a Date & Time
               </h2>
-              <p className="text-[var(--text-secondary)] mb-6">
+              <p className="text-secondary mb-6">
                 Choose a convenient time slot for your visit. You will receive a confirmation email once your appointment is booked.
               </p>
 
               {/* Calendly Placeholder - Replace with actual Calendly embed */}
               <div className="bg-white rounded-xl border border-gray-200 min-h-[600px] flex items-center justify-center">
                 <div className="text-center p-8">
-                  <div className="w-16 h-16 rounded-full bg-[var(--color-primary)]/10 flex items-center justify-center mx-auto mb-4">
-                    <Clock className="w-8 h-8 text-[var(--color-primary)]" />
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <Clock className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">
+                  <h3 className="text-xl font-bold text-primary mb-2">
                     Calendly Booking Widget
                   </h3>
-                  <p className="text-[var(--text-secondary)] mb-4 max-w-md">
+                  <p className="text-secondary mb-4 max-w-md">
                     The Calendly scheduling widget will be embedded here.
                     Replace this placeholder with your Calendly embed code.
                   </p>
@@ -155,10 +155,10 @@ export default function BookAppointmentPage() {
       {/* Emergency CTA */}
       <Section background="gray">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
+          <h2 className="text-2xl font-bold text-primary mb-4">
             Dental Emergency?
           </h2>
-          <p className="text-[var(--text-secondary)] mb-6">
+          <p className="text-secondary mb-6">
             If you are experiencing a dental emergency, please call us immediately.
             We offer same-day emergency appointments.
           </p>

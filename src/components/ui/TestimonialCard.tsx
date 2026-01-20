@@ -18,7 +18,7 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
             key={i}
             className={`w-5 h-5 ${
               i < rating
-                ? "fill-[var(--color-secondary)] text-[var(--color-secondary)]"
+                ? "fill-secondary text-secondary"
                 : "fill-gray-200 text-gray-200"
             }`}
           />
@@ -26,7 +26,7 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
       </div>
 
       {/* Content */}
-      <p className="text-[var(--text-secondary)] flex-grow mb-6 italic">
+      <p className="text-secondary flex-grow mb-6 italic">
         &ldquo;{content}&rdquo;
       </p>
 
@@ -42,13 +42,13 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
               className="object-cover w-full h-full"
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center bg-[var(--color-primary)] text-white font-semibold">
+            <div className="w-full h-full flex items-center justify-center bg-primary text-white font-semibold">
               {name.charAt(0)}
             </div>
           )}
         </div>
         <div>
-          <p className="font-semibold text-[var(--text-primary)]">{name}</p>
+          <p className="font-semibold text-primary">{name}</p>
           <p className="text-sm text-[var(--text-muted)]">{role}</p>
         </div>
       </div>

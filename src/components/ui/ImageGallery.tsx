@@ -54,7 +54,7 @@ export default function ImageGallery({ images, columns = 3 }: ImageGalleryProps)
         {images.map((image, index) => (
           <button
             key={index}
-            className="group relative aspect-square overflow-hidden rounded-xl bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2"
+            className="group relative aspect-square overflow-hidden rounded-xl bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
             onClick={() => openLightbox(index)}
           >
             <Image

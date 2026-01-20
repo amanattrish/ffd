@@ -16,7 +16,7 @@ export default function MeetTheTeamPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary)]/80 text-white py-16 md:py-24">
+      <section className="bg-gradient-to-br from-primary to-primary/80 text-white py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -45,10 +45,10 @@ export default function MeetTheTeamPage() {
       {/* Join Our Team CTA */}
       <Section background="white">
         <div className="bg-gradient-to-br from-[var(--color-accent-1)]/10 to-[var(--color-accent-2)]/10 rounded-2xl p-8 md:p-12 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)] mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
             Join Our Team
           </h2>
-          <p className="text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto">
+          <p className="text-secondary mb-8 max-w-2xl mx-auto">
             We&apos;re always looking for talented and compassionate dental professionals to join our growing team. If you&apos;re passionate about patient care, we&apos;d love to hear from you.
           </p>
           <Button href="/contact" variant="primary" size="lg">

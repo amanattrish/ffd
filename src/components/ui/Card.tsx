@@ -72,7 +72,7 @@ interface CardTitleProps {
 
 export function CardTitle({ children, className = "", as: Tag = "h3" }: CardTitleProps) {
   return (
-    <Tag className={clsx("font-semibold text-[var(--text-primary)]", className)}>
+    <Tag className={clsx("font-semibold text-primary", className)}>
       {children}
     </Tag>
   );
@@ -85,7 +85,7 @@ interface CardDescriptionProps {
 
 export function CardDescription({ children, className = "" }: CardDescriptionProps) {
   return (
-    <p className={clsx("text-[var(--text-secondary)] text-sm mt-2", className)}>
+    <p className={clsx("text-secondary text-sm mt-2", className)}>
       {children}
     </p>
   );

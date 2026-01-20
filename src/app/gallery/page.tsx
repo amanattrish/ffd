@@ -90,7 +90,7 @@ export default function GalleryPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent-1)] py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary to-[var(--color-accent-1)] py-20 overflow-hidden">
         <div className="absolute top-10 right-10 text-white/10 text-4xl font-light">+</div>
         <div className="absolute bottom-10 left-10 text-white/10 text-3xl font-light">+</div>
 
@@ -114,8 +114,8 @@ export default function GalleryPage() {
               onClick={() => setActiveCategory(category.id)}
               className={`px-5 py-2 rounded-full font-medium transition-all ${
                 activeCategory === category.id
-                  ? "bg-[var(--color-primary)] text-white"
-                  : "bg-gray-100 text-[var(--text-secondary)] hover:bg-gray-200"
+                  ? "bg-primary text-white"
+                  : "bg-gray-100 text-secondary hover:bg-gray-200"
               }`}
             >
               {category.label}
@@ -154,7 +154,7 @@ export default function GalleryPage() {
                       className="object-cover"
                       sizes="200px"
                     />
-                    <span className="absolute bottom-2 right-2 bg-[var(--color-secondary)] text-white text-xs px-2 py-1 rounded">
+                    <span className="absolute bottom-2 right-2 bg-secondary text-white text-xs px-2 py-1 rounded">
                       After
                     </span>
                   </div>
@@ -162,10 +162,10 @@ export default function GalleryPage() {
               </div>
 
               <div className="p-4">
-                <h3 className="font-bold text-[var(--text-primary)] group-hover:text-[var(--color-primary)] transition-colors">
+                <h3 className="font-bold text-primary group-hover:text-primary transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-sm text-[var(--text-secondary)] mt-1">
+                <p className="text-sm text-secondary mt-1">
                   {item.description}
                 </p>
               </div>
@@ -220,7 +220,7 @@ export default function GalleryPage() {
                   className="object-cover"
                   sizes="600px"
                 />
-                <span className="absolute bottom-4 right-4 bg-[var(--color-secondary)] text-white px-3 py-1 rounded-lg">
+                <span className="absolute bottom-4 right-4 bg-secondary text-white px-3 py-1 rounded-lg">
                   After
                 </span>
               </div>
@@ -234,7 +234,7 @@ export default function GalleryPage() {
       )}
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-1)] py-16">
+      <section className="bg-gradient-to-r from-primary to-[var(--color-accent-1)] py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Ready for Your Transformation?

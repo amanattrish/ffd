@@ -41,7 +41,7 @@ export default async function ServiceCategoryPage({ params }: Props) {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent-1)] py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary to-[var(--color-accent-1)] py-20 overflow-hidden">
         <div className="absolute top-10 right-10 text-white/10 text-4xl font-light">+</div>
         <div className="absolute bottom-10 left-10 text-white/10 text-3xl font-light">+</div>
 
@@ -84,13 +84,13 @@ export default async function ServiceCategoryPage({ params }: Props) {
 
               {/* Content */}
               <div className="p-6">
-                <h2 className="text-lg font-bold text-[var(--text-primary)] mb-2 group-hover:text-[var(--color-primary)] transition-colors">
+                <h2 className="text-lg font-bold text-primary mb-2 group-hover:text-primary transition-colors">
                   {service.title}
                 </h2>
-                <p className="text-[var(--text-secondary)] text-sm mb-4 line-clamp-2">
+                <p className="text-secondary text-sm mb-4 line-clamp-2">
                   {service.shortDescription}
                 </p>
-                <span className="inline-flex items-center text-[var(--color-primary)] font-semibold text-sm">
+                <span className="inline-flex items-center text-primary font-semibold text-sm">
                   Learn More
                   <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-2 transition-transform duration-300" />
                 </span>
@@ -103,7 +103,7 @@ export default async function ServiceCategoryPage({ params }: Props) {
       {/* Why Choose Us */}
       <Section background="gray">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-6">
+          <h2 className="text-3xl font-bold text-primary mb-6">
             Why Choose Us for {category.title}
           </h2>
           <div className="grid sm:grid-cols-2 gap-4 text-left">
@@ -116,10 +116,10 @@ export default async function ServiceCategoryPage({ params }: Props) {
               "Affordable financing available",
             ].map((item, index) => (
               <div key={index} className="flex items-center gap-3 bg-white rounded-lg p-4 shadow-sm">
-                <span className="w-8 h-8 rounded-full bg-[var(--color-secondary)] flex items-center justify-center flex-shrink-0">
+                <span className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                   <Check className="w-4 h-4 text-white" />
                 </span>
-                <span className="text-[var(--text-primary)]">{item}</span>
+                <span className="text-primary">{item}</span>
               </div>
             ))}
           </div>
@@ -127,7 +127,7 @@ export default async function ServiceCategoryPage({ params }: Props) {
       </Section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-1)] py-16">
+      <section className="bg-gradient-to-r from-primary to-[var(--color-accent-1)] py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Ready to Get Started?

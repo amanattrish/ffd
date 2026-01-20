@@ -16,11 +16,11 @@ export default function AboutDentistPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary)]/80 text-white py-16 md:py-24">
+      <section className="bg-gradient-to-br from-primary to-primary/80 text-white py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-[var(--color-secondary)] font-medium mb-2">
+              <p className="text-secondary font-medium mb-2">
                 {dentist.pageTitle}
               </p>
               <h1 className="text-4xl md:text-5xl font-bold mb-2">
@@ -30,7 +30,7 @@ export default function AboutDentistPage() {
             </div>
             <div className="relative">
               <div className="relative aspect-[3/4] max-w-sm mx-auto rounded-2xl overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/40 to-transparent z-10" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-transparent z-10" />
                 <div className="w-full h-full bg-gradient-to-br from-[var(--color-accent-1)] to-[var(--color-accent-2)] flex items-center justify-center">
                   <span className="text-white text-8xl font-bold opacity-30">Dr</span>
                 </div>
@@ -43,10 +43,10 @@ export default function AboutDentistPage() {
       {/* Bio Section */}
       <Section background="white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-6">
+          <h2 className="text-3xl font-bold text-primary mb-6">
             {dentist.bio.title}
           </h2>
-          <div className="space-y-4 text-[var(--text-secondary)] text-lg leading-relaxed">
+          <div className="space-y-4 text-secondary text-lg leading-relaxed">
             {dentist.bio.content.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}
@@ -60,18 +60,18 @@ export default function AboutDentistPage() {
           {/* Education */}
           <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[var(--color-primary)]/10 flex items-center justify-center">
-                <GraduationCap className="w-6 h-6 text-[var(--color-primary)]" />
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                <GraduationCap className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-[var(--text-primary)]">
+              <h3 className="text-xl font-bold text-primary">
                 {dentist.qualifications.title}
               </h3>
             </div>
             <ul className="space-y-3">
               {dentist.qualifications.items.map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <span className="w-2 h-2 rounded-full bg-[var(--color-secondary)] mt-2 flex-shrink-0" />
-                  <span className="text-[var(--text-secondary)]">{item}</span>
+                  <span className="w-2 h-2 rounded-full bg-secondary mt-2 flex-shrink-0" />
+                  <span className="text-secondary">{item}</span>
                 </li>
               ))}
             </ul>
@@ -80,18 +80,18 @@ export default function AboutDentistPage() {
           {/* Associations */}
           <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[var(--color-primary)]/10 flex items-center justify-center">
-                <Users className="w-6 h-6 text-[var(--color-primary)]" />
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                <Users className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-[var(--text-primary)]">
+              <h3 className="text-xl font-bold text-primary">
                 {dentist.associations.title}
               </h3>
             </div>
             <ul className="space-y-3">
               {dentist.associations.items.map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <span className="w-2 h-2 rounded-full bg-[var(--color-secondary)] mt-2 flex-shrink-0" />
-                  <span className="text-[var(--text-secondary)]">{item}</span>
+                  <span className="w-2 h-2 rounded-full bg-secondary mt-2 flex-shrink-0" />
+                  <span className="text-secondary">{item}</span>
                 </li>
               ))}
             </ul>
@@ -103,10 +103,10 @@ export default function AboutDentistPage() {
       <Section background="white">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-3 mb-8 justify-center">
-            <div className="w-12 h-12 rounded-xl bg-[var(--color-secondary)]/10 flex items-center justify-center">
-              <Award className="w-6 h-6 text-[var(--color-secondary)]" />
+            <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
+              <Award className="w-6 h-6 text-secondary" />
             </div>
-            <h2 className="text-2xl font-bold text-[var(--text-primary)]">
+            <h2 className="text-2xl font-bold text-primary">
               {dentist.awards.title}
             </h2>
           </div>
@@ -114,10 +114,10 @@ export default function AboutDentistPage() {
             {dentist.awards.items.map((award, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-[var(--color-primary)]/5 to-[var(--color-accent-1)]/5 rounded-xl p-6 text-center border border-[var(--color-primary)]/10"
+                className="bg-gradient-to-br from-primary/5 to-[var(--color-accent-1)]/5 rounded-xl p-6 text-center border border-primary/10"
               >
-                <Award className="w-8 h-8 text-[var(--color-secondary)] mx-auto mb-3" />
-                <p className="text-[var(--text-primary)] font-medium">{award}</p>
+                <Award className="w-8 h-8 text-secondary mx-auto mb-3" />
+                <p className="text-primary font-medium">{award}</p>
               </div>
             ))}
           </div>
@@ -141,10 +141,10 @@ export default function AboutDentistPage() {
       {/* CTA */}
       <Section background="white">
         <div className="text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)] mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
             Ready to Meet Dr. Smith?
           </h2>
-          <p className="text-[var(--text-secondary)] mb-8 max-w-xl mx-auto">
+          <p className="text-secondary mb-8 max-w-xl mx-auto">
             Schedule your appointment today and experience personalized dental care.
           </p>
           <div className="flex flex-wrap justify-center gap-4">

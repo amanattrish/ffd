@@ -14,7 +14,7 @@ export default function TermsOfServicePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent-1)] py-16 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary to-[var(--color-accent-1)] py-16 overflow-hidden">
         <div className="absolute top-10 right-10 text-white/10 text-4xl font-light">+</div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -37,10 +37,10 @@ export default function TermsOfServicePage() {
           <div className="prose prose-lg">
             {termsOfService.content.map((section, index) => (
               <div key={index} className="mb-8">
-                <h2 className="text-xl font-bold text-[var(--text-primary)] mb-3">
+                <h2 className="text-xl font-bold text-primary mb-3">
                   {section.title}
                 </h2>
-                <p className="text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-secondary leading-relaxed">
                   {section.text}
                 </p>
               </div>
@@ -49,19 +49,19 @@ export default function TermsOfServicePage() {
 
           {/* Related Links */}
           <div className="mt-12 pt-8 border-t border-gray-200">
-            <h3 className="font-bold text-[var(--text-primary)] mb-4">
+            <h3 className="font-bold text-primary mb-4">
               Related Legal Documents
             </h3>
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/privacy-policy"
-                className="text-[var(--color-primary)] hover:underline"
+                className="text-primary hover:underline"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/hipaa"
-                className="text-[var(--color-primary)] hover:underline"
+                className="text-primary hover:underline"
               >
                 HIPAA Compliance
               </Link>

@@ -40,19 +40,19 @@ export default function TestimonialsPreview() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
         <div>
-          <span className="inline-block text-[var(--color-secondary)] font-medium text-sm uppercase tracking-wider mb-2">
+          <span className="inline-block text-secondary font-medium text-sm uppercase tracking-wider mb-2">
             {testimonials.sectionLabel}
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)]">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary">
             {testimonials.title}
           </h2>
-          <p className="text-[var(--text-secondary)] mt-2 max-w-xl">
+          <p className="text-secondary mt-2 max-w-xl">
             Real stories from our valued patients who trust us with their smiles
           </p>
         </div>
         <Link
           href={testimonials.cta.href}
-          className="inline-flex items-center gap-2 text-[var(--color-primary)] font-semibold hover:gap-3 transition-all"
+          className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
         >
           View All Reviews
           <ArrowRight className="w-4 h-4" />
@@ -88,7 +88,7 @@ export default function TestimonialsPreview() {
             </div>
 
             {/* Content */}
-            <p className="text-[var(--text-secondary)] mb-6 leading-relaxed line-clamp-4">
+            <p className="text-secondary mb-6 leading-relaxed line-clamp-4">
               {testimonial.content}
             </p>
 
@@ -111,7 +111,7 @@ export default function TestimonialsPreview() {
                   )}
                 </div>
                 <div>
-                  <p className="font-semibold text-[var(--text-primary)]">
+                  <p className="font-semibold text-primary">
                     {testimonial.name}
                   </p>
                   <p className="text-xs text-[var(--text-muted)]">Verified Patient</p>

@@ -17,20 +17,20 @@ export default function BlogPreview() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
         <div>
-          <span className="inline-block text-[var(--color-secondary)] font-medium text-sm uppercase tracking-wider mb-2">
+          <span className="inline-block text-secondary font-medium text-sm uppercase tracking-wider mb-2">
             {blog.sectionLabel}
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)]">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary">
             {blog.title}{" "}
-            <span className="text-[var(--color-primary)]">{blog.titleHighlight}</span>
+            <span className="text-primary">{blog.titleHighlight}</span>
           </h2>
-          <p className="text-[var(--text-secondary)] mt-2 max-w-xl">
+          <p className="text-secondary mt-2 max-w-xl">
             Stay informed with the latest dental health tips and news from our experts
           </p>
         </div>
         <Link
           href={blog.cta.href}
-          className="inline-flex items-center gap-2 text-[var(--color-primary)] font-semibold hover:gap-3 transition-all"
+          className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
         >
           View All Articles
           <ArrowRight className="w-4 h-4" />
@@ -60,7 +60,7 @@ export default function BlogPreview() {
 
               {/* Category badge */}
               <div className="absolute top-4 left-4">
-                <span className="inline-block bg-[var(--color-primary)] text-white text-xs font-semibold px-3 py-1 rounded-full">
+                <span className="inline-block bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">
                   Dental Tips
                 </span>
               </div>
@@ -84,13 +84,13 @@ export default function BlogPreview() {
                 </span>
               </div>
 
-              <h3 className="text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--color-primary)] transition-colors line-clamp-2 mb-2">
+              <h3 className="text-lg font-bold text-primary group-hover:text-primary transition-colors line-clamp-2 mb-2">
                 {post.title}
               </h3>
-              <p className="text-sm text-[var(--text-secondary)] line-clamp-2 mb-4 leading-relaxed">
+              <p className="text-sm text-secondary line-clamp-2 mb-4 leading-relaxed">
                 {post.excerpt}
               </p>
-              <span className="inline-flex items-center text-[var(--color-primary)] font-semibold text-sm">
+              <span className="inline-flex items-center text-primary font-semibold text-sm">
                 Read Article
                 <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-2 transition-transform duration-300" />
               </span>

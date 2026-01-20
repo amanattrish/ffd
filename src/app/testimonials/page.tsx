@@ -88,7 +88,7 @@ export default function TestimonialsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent-1)] py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary to-[var(--color-accent-1)] py-20 overflow-hidden">
         <div className="absolute top-10 right-10 text-white/10 text-4xl font-light">+</div>
         <div className="absolute bottom-10 left-10 text-white/10 text-3xl font-light">+</div>
 
@@ -147,7 +147,7 @@ export default function TestimonialsPage() {
               </div>
 
               {/* Content */}
-              <p className="text-[var(--text-secondary)] mb-6 leading-relaxed">
+              <p className="text-secondary mb-6 leading-relaxed">
                 {testimonial.content}
               </p>
 
@@ -169,7 +169,7 @@ export default function TestimonialsPage() {
                   )}
                 </div>
                 <div>
-                  <p className="font-semibold text-[var(--text-primary)]">
+                  <p className="font-semibold text-primary">
                     {testimonial.name}
                   </p>
                   <p className="text-xs text-[var(--text-muted)]">Verified Patient</p>
@@ -184,10 +184,10 @@ export default function TestimonialsPage() {
       <Section background="gray">
         <div className="max-w-2xl mx-auto text-center">
           <GoogleIcon className="w-16 h-16 mx-auto mb-6" />
-          <h2 className="text-3xl font-bold text-[var(--text-primary)] mb-4">
+          <h2 className="text-3xl font-bold text-primary mb-4">
             Share Your Experience
           </h2>
-          <p className="text-[var(--text-secondary)] mb-8">
+          <p className="text-secondary mb-8">
             We value your feedback! If you&apos;ve had a positive experience at our practice,
             we&apos;d appreciate it if you could share your story on Google.
           </p>
@@ -195,7 +195,7 @@ export default function TestimonialsPage() {
             href="https://g.page/r/review"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white border-2 border-gray-200 text-[var(--text-primary)] font-semibold hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white border-2 border-gray-200 text-primary font-semibold hover:border-primary hover:text-primary transition-colors"
           >
             <GoogleIcon className="w-5 h-5 mr-2" />
             Leave a Google Review
@@ -204,7 +204,7 @@ export default function TestimonialsPage() {
       </Section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-1)] py-16">
+      <section className="bg-gradient-to-r from-primary to-[var(--color-accent-1)] py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Ready to Join Our Happy Patients?
