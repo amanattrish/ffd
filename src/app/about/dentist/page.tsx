@@ -31,9 +31,22 @@ export default function AboutDentistPage() {
             <div className="relative">
               <div className="relative aspect-[3/4] max-w-sm mx-auto rounded-2xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-transparent z-10" />
-                <div className="w-full h-full bg-gradient-to-br from-[var(--color-accent-1)] to-[var(--color-accent-2)] flex items-center justify-center">
-                  <span className="text-white text-8xl font-bold opacity-30">Dr</span>
-                </div>
+                {dentist.hero.image ? (
+                  <Image
+                    src={dentist.hero.image}
+                    alt={dentist.hero.displayName ?? dentist.hero.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 90vw, 400px"
+                    priority
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-[var(--color-accent-1)] to-[var(--color-accent-2)] flex items-center justify-center">
+                    <span className="text-white text-8xl font-bold opacity-30">
+                      Dr
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
           </div>
