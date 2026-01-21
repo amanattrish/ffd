@@ -1,42 +1,61 @@
-"use client";
-
-import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { useParams } from "next/navigation";
-import { ArrowLeft, Check, ChevronDown, Phone } from "lucide-react";
+import { notFound } from "next/navigation";
+import { ArrowLeft, Phone } from "lucide-react";
 import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
+import ServiceFaqAccordion from "@/components/ServiceFaqAccordion";
 import { servicesContent } from "@/content";
 
-export default function ServiceDetailPage() {
-  const params = useParams();
-  const categoryId = params.category as string;
-  const serviceId = params.service as string;
+interface Props {
+  params: Promise<{ category: string; service: string }>;
+}
 
+export async function generateStaticParams() {
+  const params: { category: string; service: string }[] = [];
+
+  servicesContent.categories.forEach((category) => {
+    category.services.forEach((service) => {
+      params.push({
+        category: category.id,
+        service: service.id,
+      });
+    });
+  });
+
+  return params;
+}
+
+export async function generateMetadata({ params }: Props) {
+  const { category: categoryId, service: serviceId } = await params;
   const category = servicesContent.categories.find((c) => c.id === categoryId);
   const service = category?.services.find((s) => s.id === serviceId);
 
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  if (!category || !service) {
+    return { title: "Service Not Found" };
+  }
+
+  return {
+    title: `${service.title} | ${category.title} | Freeport Family Dentistry`,
+    description: service.shortDescription,
+  };
+}
+
+export default async function ServiceDetailPage({ params }: Props) {
+  const { category: categoryId, service: serviceId } = await params;
+  const category = servicesContent.categories.find((c) => c.id === categoryId);
+  const service = category?.services.find((s) => s.id === serviceId);
 
   if (!category || !service) {
-    return (
-      <Section background="white">
-        <div className="text-center py-20">
-          <h1 className="text-2xl font-bold text-primary mb-4">
-            Service Not Found
-          </h1>
-          <Button href="/services">Back to Services</Button>
-        </div>
-      </Section>
-    );
+    notFound();
   }
 
   return (
     <>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary to-[var(--color-accent-1)] py-16 overflow-hidden">
-        <div className="absolute top-10 right-10 text-white/10 text-4xl font-light">+</div>
+        <div className="absolute top-10 right-10 text-white/10 text-4xl font-light">
+          +
+        </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <Link
@@ -63,9 +82,7 @@ export default function ServiceDetailPage() {
           <div className="lg:col-span-2">
             {/* Overview */}
             <div className="mb-10">
-              <h2 className="text-2xl font-bold text-primary mb-4">
-                Overview
-              </h2>
+              <h2 className="text-2xl font-bold text-primary mb-4">Overview</h2>
               <p className="text-secondary leading-relaxed">
                 {service.overview}
               </p>
@@ -117,33 +134,7 @@ export default function ServiceDetailPage() {
                 <h2 className="text-2xl font-bold text-primary mb-4">
                   Frequently Asked Questions
                 </h2>
-                <div className="space-y-3">
-                  {service.faqs.map((faq, index) => (
-                    <div
-                      key={index}
-                      className="border border-gray-200 rounded-xl overflow-hidden"
-                    >
-                      <button
-                        onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                        className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition-colors"
-                      >
-                        <span className="font-semibold text-primary pr-4">
-                          {faq.question}
-                        </span>
-                        <ChevronDown
-                          className={`w-5 h-5 text-primary flex-shrink-0 transition-transform ${
-                            openFaq === index ? "rotate-180" : ""
-                          }`}
-                        />
-                      </button>
-                      {openFaq === index && (
-                        <div className="px-4 pb-4 text-secondary">
-                          {faq.answer}
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
+                <ServiceFaqAccordion faqs={service.faqs} />
               </div>
             )}
           </div>
@@ -154,7 +145,8 @@ export default function ServiceDetailPage() {
             <div className="bg-gradient-to-br from-primary to-[var(--color-accent-1)] rounded-2xl p-6 text-white sticky top-24">
               <h3 className="text-xl font-bold mb-3">Ready to Schedule?</h3>
               <p className="text-white/90 mb-6 text-sm">
-                Book your appointment today and take the first step towards better oral health.
+                Book your appointment today and take the first step towards
+                better oral health.
               </p>
               <Button
                 href="/book-appointment"
@@ -206,15 +198,14 @@ export default function ServiceDetailPage() {
               Have Questions About {service.title}?
             </h2>
             <p className="text-secondary mb-8">
-              Our team is here to help. Contact us for a consultation and learn how we can help you achieve your dental goals.
+              Our team is here to help. Contact us for a consultation and learn
+              how we can help you achieve your dental goals.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button href="/contact" variant="outline">
                 Contact Us
               </Button>
-              <Button href="/book-appointment">
-                Book Consultation
-              </Button>
+              <Button href="/book-appointment">Book Consultation</Button>
             </div>
           </div>
         </div>
