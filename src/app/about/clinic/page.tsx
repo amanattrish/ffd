@@ -96,11 +96,21 @@ export default function OurClinicPage() {
                   key={index}
                   className="relative aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-primary/20 to-[var(--color-accent-1)]/20"
                 >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-primary/30 text-sm font-medium">
-                      {image.alt}
-                    </span>
-                  </div>
+                  {image.src ? (
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 45vw, 260px"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-primary/30 text-sm font-medium">
+                        {image.alt}
+                      </span>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

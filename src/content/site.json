@@ -29,12 +29,7 @@
     "main": [
       { 
         "label": "About Us", 
-        "href": "/about",
-        "submenu": [
-          { "label": "About the Dentist", "href": "/about/dentist" },
-          { "label": "Meet the Team", "href": "/about/team" },
-          { "label": "Our Clinic", "href": "/about/clinic" }
-        ]
+        "href": "/about"
       },
       { 
         "label": "Services", 

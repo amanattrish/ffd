@@ -95,19 +95,19 @@ export default function GalleryPage() {
         <div className="absolute bottom-10 left-10 text-white/10 text-3xl font-light">+</div>
 
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
             Smile Gallery
           </h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto">
+          {/* <p className="text-xl text-white/90 max-w-2xl mx-auto">
             See the transformative results we achieve for our patients
-          </p>
+          </p> */}
         </div>
       </section>
 
       {/* Gallery */}
       <Section background="white">
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        {/* <div className="flex flex-wrap justify-center gap-3 mb-10">
           {categories.map((category) => (
             <button
               key={category.id}
@@ -121,7 +121,7 @@ export default function GalleryPage() {
               {category.label}
             </button>
           ))}
-        </div>
+        </div> */}
 
         {/* Gallery Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

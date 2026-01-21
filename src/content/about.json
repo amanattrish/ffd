@@ -4,8 +4,10 @@
     "pageDescription": "Meet Dr. Smith, your trusted family dentist in Freeport",
     "hero": {
       "title": "Meet Dr. John Smith",
+      "displayName": "Dr. John Smith",
       "subtitle": "DDS, FAGD",
-      "image": "/images/about/dr-smith.jpg"
+      "role": "Founder & Chief Dental Surgeon",
+      "image": "/images/about/dr-smith.png"
     },
     "bio": {
       "title": "About Dr. Smith",
@@ -62,7 +64,7 @@
         "role": "Lead Dentist",
         "credentials": "DDS, FAGD",
         "bio": "Dr. Smith has over 15 years of experience in family and cosmetic dentistry.",
-        "image": "/images/team/dr-smith.jpg"
+        "image": "/images/about/team-1.png"
       },
       {
         "id": "2",
@@ -70,7 +72,7 @@
         "role": "Dental Hygienist",
         "credentials": "RDH",
         "bio": "Maria has been with our practice for 8 years and specializes in periodontal care.",
-        "image": "/images/team/maria.jpg"
+        "image": "/images/about/team-2.png"
       },
       {
         "id": "3",
@@ -78,7 +80,7 @@
         "role": "Dental Hygienist",
         "credentials": "RDH",
         "bio": "Jennifer is known for her gentle touch and patient education skills.",
-        "image": "/images/team/jennifer.jpg"
+        "image": "/images/about/team-3.png"
       },
       {
         "id": "4",
@@ -86,7 +88,7 @@
         "role": "Dental Assistant",
         "credentials": "CDA",
         "bio": "David assists with all procedures and ensures patient comfort throughout visits.",
-        "image": "/images/team/david.jpg"
+        "image": "/images/about/team-4.png"
       },
       {
         "id": "5",
@@ -94,7 +96,7 @@
         "role": "Office Manager",
         "credentials": "",
         "bio": "Sarah manages our front office and helps coordinate patient scheduling and insurance.",
-        "image": "/images/team/sarah.jpg"
+        "image": "/images/insurance-person.png"
       },
       {
         "id": "6",
@@ -102,7 +104,7 @@
         "role": "Patient Coordinator",
         "credentials": "",
         "bio": "Lisa is your first point of contact and ensures a smooth experience from check-in to check-out.",
-        "image": "/images/team/lisa.jpg"
+        "image": "/images/about-clinic.png"
       }
     ]
   },
@@ -147,34 +149,38 @@
       "title": "Our Facility",
       "description": "Our modern dental office features comfortable treatment rooms, the latest diagnostic equipment, and a relaxing atmosphere designed to put you at ease.",
       "images": [
-        { "src": "/images/clinic/reception.jpg", "alt": "Reception Area" },
-        { "src": "/images/clinic/treatment-room.jpg", "alt": "Treatment Room" },
-        { "src": "/images/clinic/waiting-area.jpg", "alt": "Waiting Area" },
-        { "src": "/images/clinic/equipment.jpg", "alt": "Modern Equipment" }
+        { "src": "/images/about-clinic.png", "alt": "Reception Area" },
+        { "src": "/images/dentist-doing-check-up-patient.png", "alt": "Treatment Room" },
+        { "src": "/images/smile-preview.png", "alt": "Waiting Area" },
+        { "src": "/images/dental-care.png", "alt": "Modern Equipment" }
       ]
     },
     "technology": {
       "title": "Our Technology",
       "items": [
         {
-          "title": "Digital X-Rays",
-          "description": "Lower radiation exposure and instant results for accurate diagnosis."
-        },
-        {
           "title": "Intraoral Cameras",
-          "description": "See what we see with detailed images of your teeth and gums."
+          "description": "See what we see with detailed images of your teeth and gums.",
+          "image": "/images/about/intraoral.png",
+          "imageAlt": "Intraoral camera view on screen"
         },
         {
           "title": "CEREC Same-Day Crowns",
-          "description": "Get your crown in a single visit with our CAD/CAM technology."
+          "description": "Get your crown in a single visit with our CAD/CAM technology.",
+          "image": "/images/about/sterilization.png",
+          "imageAlt": "Chairside CAD/CAM crown equipment"
         },
         {
           "title": "Laser Dentistry",
-          "description": "Minimally invasive procedures with faster healing times."
+          "description": "Minimally invasive procedures with faster healing times.",
+          "image": "/images/about/dental-chair.png",
+          "imageAlt": "Laser dentistry setup"
         },
         {
-          "title": "3D Imaging",
-          "description": "Precise planning for implants and complex procedures."
+          "title": "Digital X-Rays",
+          "description": "Lower radiation exposure and instant results for accurate diagnosis.",
+          "image": "/images/about/x-ray.png",
+          "imageAlt": "Digital dental X-ray and imaging"
         }
       ]
     },
@@ -190,6 +196,88 @@
         "Most insurance plans accepted",
         "Financing options available"
       ]
+    }
+  },
+  "overview": {
+    "pageTitle": "About Us",
+    "pageDescription": "Learn about Freeport Family Dentistry, our experienced team, and our commitment to quality dental care.",
+    "hero": {
+      "title": "About Freeport Family Dentistry",
+      "subtitle": "Compassionate care. Modern dentistry.",
+      "description": "Get to know our dentist, our team, and our clinic—everything designed around your comfort and long-term oral health."
+    },
+    "pages": [
+      {
+        "key": "dentist",
+        "title": "About the Dentist",
+        "description": "Meet Dr. Smith and learn about his qualifications, experience, and approach to dental care.",
+        "href": "/about/dentist",
+        "image": "/images/about/dr-smith.png",
+        "imageAlt": "Dentist"
+      },
+      {
+        "key": "team",
+        "title": "Meet the Team",
+        "description": "Get to know our friendly and experienced dental team dedicated to your care.",
+        "href": "/about/team",
+        "image": "/images/smile-preview.png",
+        "imageAlt": "Team"
+      },
+      {
+        "key": "clinic",
+        "title": "Our Clinic",
+        "description": "Tour our modern facility and discover why patients choose Freeport Family Dentistry.",
+        "href": "/about/clinic",
+        "image": "/images/about-clinic.png",
+        "imageAlt": "Clinic"
+      }
+    ],
+    "teamSection": {
+      "title": "Meet Our Team",
+      "subtitle": "Meet the Team at Freeport Family Dentistry",
+      "previewCount": 4
+    },
+    "qualificationsIcon": {
+      "src": "/images/about/qualification.png",
+      "alt": "Qualifications"
+    },
+    "staffSections": [
+      {
+        "id": "hygienists",
+        "title": "Hygienists",
+        "description": "Our skilled dental hygienists focus on preventative care and patient education. Using state-of-the-art equipment, they provide thorough cleanings and perform important periodontal assessments to keep your smile healthy and bright.",
+        "bullets": [
+          "Gentle care protocol: focused approach",
+          "Advanced scaling and root planing techniques",
+          "Patient education on oral hygiene techniques"
+        ],
+        "image": "/images/about/hygenie.png",
+        "imageAlt": "Hygienist Office"
+      },
+      {
+        "id": "front-desk-support",
+        "titleLines": ["Front Desk &", "Support Staff"],
+        "description": "Our friendly front desk team ensures a warm welcome and smooth administrative experience. From appointment scheduling to insurance processing, our dedicated staff are committed to making your visits hassle-free. We believe excellent customer service is the foundation of our practice's reputation.",
+        "bullets": [
+          "Efficient appointment scheduling",
+          "Insurance processing assistance",
+          "Patient reception and support services"
+        ],
+        "image": "/images/about/support-staff.png",
+        "imageAlt": "Support Staff Team"
+      }
+    ],
+    "missionValuesSection": {
+      "title": "Why Choose Us",
+      "subtitle": "Our Mission & Values",
+      "mission": "Our mission is to provide affordable, comprehensive dental care in a relaxed and positive environment, utilizing the latest techniques and technologies. We are dedicated to delivering superior quality restorative and cosmetic dental care to patients of all ages.",
+      "coreValuesLabel": "Our Core Values:",
+      "images": ["/images/about/dr-smith.png", "/images/smile-preview.png"]
+    },
+    "technologySection": {
+      "title": "Advanced Dental Technology",
+      "description": "We invest in cutting-edge dental technology to provide superior treatment outcomes and a comfortable patient experience.",
+      "imageAlt": "Tech Image"
     }
   }
 }
