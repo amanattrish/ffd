@@ -29,6 +29,7 @@
             "Fluoride treatment",
             "Personalized oral hygiene instructions"
           ],
+          "image": "/images/services/dental-checkup.png",
           "faqs": [
             {
               "question": "How often should I have a dental exam?",
@@ -53,6 +54,7 @@
             "Instant image review",
             "Diagnosis and treatment planning"
           ],
+          "image": "/images/services/xrays.png",
           "faqs": [
             {
               "question": "Are dental X-rays safe?",
@@ -79,6 +81,7 @@
             "Placing and shaping the filling material",
             "Polishing for a natural look"
           ],
+          "image": "/images/services/xrays.png",
           "faqs": [
             {
               "question": "How long do fillings last?",
@@ -107,6 +110,7 @@
             "Filling and sealing the canals",
             "Placing a crown for protection"
           ],
+          "image": "/images/services/root-canal-treatment.png",
           "faqs": [
             {
               "question": "Is a root canal painful?",
@@ -134,6 +138,7 @@
             "Post-procedure care instructions",
             "Discussion of replacement options"
           ],
+          "image": "/images/services/tooth-extraction.png",
           "faqs": [
             {
               "question": "What should I expect after an extraction?",
@@ -166,6 +171,7 @@
             "Multiple treatment cycles",
             "Final shade comparison"
           ],
+          "image": "/images/services/teeth-whitening.png",
           "faqs": [
             {
               "question": "How long does whitening last?",
@@ -187,6 +193,7 @@
             "Custom veneer fabrication",
             "Final bonding and adjustments"
           ],
+          "image": "/images/services/veneers.png",
           "faqs": [
             {
               "question": "How long do veneers last?",
@@ -209,6 +216,7 @@
             "Curing with special light",
             "Polishing for natural appearance"
           ],
+          "image": "/images/services/cosmetic-bonding.png",
           "faqs": [
             {
               "question": "Is bonding better than veneers?",
@@ -230,6 +238,7 @@
             "Phased procedures as needed",
             "Final results and maintenance plan"
           ],
+          "image": "/images/services/smile-makeover.png",
           "faqs": [
             {
               "question": "What procedures are included in a smile makeover?",
@@ -266,6 +275,7 @@
             "Fitting and adjustments",
             "Permanent bonding"
           ],
+          "image": "/images/services/crowns.png",
           "faqs": [
             {
               "question": "How long do crowns last?",
@@ -292,6 +302,7 @@
             "Final bridge fitting",
             "Cementation and adjustments"
           ],
+          "image": "/images/services/bridges.png",
           "faqs": [
             {
               "question": "How do I care for a dental bridge?",
@@ -318,6 +329,7 @@
             "Abutment placement",
             "Custom crown attachment"
           ],
+          "image": "/images/services/dental-implants.png",
           "faqs": [
             {
               "question": "Am I a candidate for dental implants?",
@@ -347,6 +359,7 @@
             "Final denture delivery",
             "Adjustment appointments as needed"
           ],
+          "image": "/images/services/dentures.png",
           "faqs": [
             {
               "question": "How long does it take to get used to dentures?",
@@ -384,6 +397,7 @@
             "Progress checks every 6-8 weeks",
             "Retainer for maintaining results"
           ],
+          "image": "/images/services/invisalign.png",
           "faqs": [
             {
               "question": "How long does Invisalign treatment take?",
@@ -413,6 +427,7 @@
             "Regular adjustment appointments",
             "Retainer fitting after treatment"
           ],
+          "image": "/images/services/braces.png",
           "faqs": [
             {
               "question": "How long do braces take?",
@@ -451,6 +466,40 @@
             "Immediate treatment",
             "Follow-up care planning"
           ],
+          "image": "/images/services/emergency.png",
+          "faqs": [
+            {
+              "question": "What should I do if I knock out a tooth?",
+              "answer": "Keep the tooth moist by placing it in milk or holding it in your cheek. Don't touch the root. Call us immediately - the tooth may be able to be re-implanted if treated within an hour."
+            },
+            {
+              "question": "Do you have an emergency hotline?",
+              "answer": "Yes, call our main number and follow the prompts for emergency care. We have staff available to help you with urgent dental needs."
+            }
+          ]
+        },
+        {
+          "id": "emergency-care",
+          "title": "Emergency Dental Care",
+          "shortDescription": "Same-day appointments for dental emergencies.",
+          "href": "/services/emergency-dentistry/emergency-care",
+          "overview": "Dental emergencies can happen at any time. We offer same-day appointments for urgent dental issues to relieve your pain and prevent further damage.",
+          "symptoms": [
+            "Severe toothache",
+            "Knocked-out tooth",
+            "Broken or cracked tooth",
+            "Lost filling or crown",
+            "Dental abscess",
+            "Severe swelling"
+          ],
+          "procedure": [
+            "Emergency evaluation",
+            "Pain management",
+            "Diagnostic imaging",
+            "Immediate treatment",
+            "Follow-up care planning"
+          ],
+          "image": "/images/services/same-day.png",
           "faqs": [
             {
               "question": "What should I do if I knock out a tooth?",
