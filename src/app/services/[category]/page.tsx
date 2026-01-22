@@ -1,9 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, ArrowLeft, Check } from "lucide-react";
-import Section from "@/components/ui/Section";
-import Button from "@/components/ui/Button";
+import ServiceFaqAccordion from "@/components/ServiceFaqAccordion";
 import { servicesContent } from "@/content";
 
 interface Props {
@@ -41,105 +39,213 @@ export default async function ServiceCategoryPage({ params }: Props) {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary to-[var(--color-accent-1)] py-20 overflow-hidden">
-        <div className="absolute top-10 right-10 text-white/10 text-4xl font-light">+</div>
-        <div className="absolute bottom-10 left-10 text-white/10 text-3xl font-light">+</div>
+      <section className="relative bg-linear-to-br from-[#F2FDFF] py-16 overflow-hidden">
 
-        <div className="container mx-auto px-4 relative z-10">
-          <Link
+
+        
+          {/* <Link
             href="/services"
-            className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors"
+            className="inline-flex items-center text-white/80 hover:text-white !mb-6 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to All Services
-          </Link>
+          </Link> */}
 
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-3xl font-bold text-black text-center !mb-4 bg-linear-to-br from-[#F2FDFF] to-white">
             {category.title}
           </h1>
-          <p className="text-xl text-white/90 max-w-2xl">{category.description}</p>
+          {/* <p className="text-xl text-white/90 max-w-2xl">{category.description}</p> */}
+
+      </section>
+
+      {/* Services - Detailed Sections */}
+      <section className="bg-white py-12">
+        <div className="container mx-auto px-4">
+          {category.services.map((service, idx) => {
+            const titleParts = service.title.split("&");
+            const leftTitle = titleParts[0]?.trim();
+            const rightTitle = titleParts[1]?.trim();
+
+            return (
+              <div key={service.id} className="!mb-16 lg:!mb-20">
+                {/* Service Header */}
+                <div className="flex flex-col lg:flex-row gap-8 !mb-12">
+                  {/* Main Content */}
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 !mb-8">
+                      <h2 className="text-3xl lg:text-4xl font-bold">
+                        <span className="text-primary">{leftTitle}</span>
+                        {service.title.includes("&") && (
+                          <>
+                            <span className="text-primary px-2">&</span>
+                            <span className="text-[#A1C65D]">{rightTitle}</span>
+                          </>
+                        )}
+                      </h2>
+                    </div>
+
+                    {/* Service Image */}
+                    <div className="!mb-8">
+                      <div className="relative w-full lg:w-72 h-64 rounded-lg overflow-hidden">
+                        <Image
+                          src={service.image || "/images/about-clinic.png"}
+                          alt={service.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-gray-700 !mb-6 leading-relaxed">
+                      {service.overview}
+                    </p>
+
+                    {/* Symptoms Section */}
+                    {service.symptoms && service.symptoms.length > 0 && (
+                      <div className="!mb-6">
+                        <h3 className="text-xl font-bold text-gray-900 !mb-3">Symptoms:</h3>
+                        <ul className="space-y-2">
+                          {service.symptoms.map((symptom, sIdx) => (
+                            <li key={sIdx} className="flex items-start gap-2 text-gray-700">
+                              <span className="text-[#2d7a9e] font-bold mt-1">•</span>
+                              <span>{symptom}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Procedures Section */}
+                    {service.procedure && service.procedure.length > 0 && (
+                      <div className="!mb-6">
+                        <h3 className="text-xl font-bold text-gray-900 !mb-3">Procedure:</h3>
+                        <div className="space-y-2 text-gray-700 leading-relaxed">
+                          {service.procedure.map((step, pIdx) => (
+                            <p key={pIdx}>{step}</p>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* FAQs Section */}
+                    {service.faqs && service.faqs.length > 0 && (
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900 !mb-3">FAQs:</h3>
+                        <ServiceFaqAccordion faqs={service.faqs} />
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Sidebar - Desktop */}
+                  <div className="hidden lg:block w-72">
+                    <div className="sticky top-6">
+                      {/* Outer Gray Container */}
+                      <div className="bg-gray-100 rounded-lg overflow-hidden p-4">
+                        {/* Call-to-Action Section */}
+                        <div className="bg-[#2d7a9e] rounded-t-lg p-2">
+                          <h3 className="text-lg font-bold text-white mb-4">Schedule Today</h3>
+                          
+                          {/* Request Appointment Button */}
+                          <Link
+                            href="/book-appointment"
+                            className="block w-full bg-[#A1C65D] hover:bg-[#8fb04d] text-gray-600 font-medium py-2 px-2 rounded-lg text-center transition-colors mt-2 mb-4"
+                          >
+                            Request Appoinment
+                          </Link>
+                          
+                          <h3 className="text-lg font-bold text-white mb-2 text-center">Call Us Now</h3>
+                          <p className="text-lg font-bold text-white text-center">+(00) 123 5467</p>
+                        </div>
+
+                        {/* Services List */}
+                        <div className="p-4">
+                          <h4 className="text-2xl font-bold text-black mb-4">Services</h4>
+                          <ul className="space-y-0">
+                            {category.services.map((s, serviceIdx) => (
+                              <li key={s.id}>
+                                <Link 
+                                  href={s.href} 
+                                  className="block py-3 text-black hover:text-primary transition-colors"
+                                >
+                                  {s.title}
+                                </Link>
+                                {serviceIdx < category.services.length - 1 && (
+                                  <div className="border-t border-gray-300" />
+                                )}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Mobile Sidebar */}
+                <div className="lg:hidden !mb-8">
+                  {/* Outer Gray Container */}
+                  <div className="bg-gray-100 rounded-lg overflow-hidden">
+                    {/* Call-to-Action Section */}
+                    <div className="bg-[#2d7a9e] rounded-t-lg p-6">
+                      <h3 className="text-2xl font-bold text-white mb-4">Schedule Today</h3>
+                      
+                      {/* Request Appointment Button */}
+                      <Link
+                        href="/book-appointment"
+                        className="block w-full bg-[#A1C65D] hover:bg-[#8fb04d] text-gray-600 font-medium py-3 px-4 rounded-lg text-center transition-colors mb-4"
+                      >
+                        Request Appoinment
+                      </Link>
+                      
+                      <h3 className="text-2xl font-bold text-white mb-2">Call Us Now</h3>
+                      <p className="text-3xl font-bold text-white">+(00) 123 5467</p>
+                    </div>
+
+                    {/* Services List */}
+                    <div className="p-6">
+                      <h4 className="text-2xl font-bold text-black mb-4">Services</h4>
+                      <ul className="space-y-0">
+                        {category.services.map((s, serviceIdx) => (
+                          <li key={s.id}>
+                            <Link 
+                              href={s.href} 
+                              className="block py-3 text-black hover:text-primary transition-colors"
+                            >
+                              {s.title}
+                            </Link>
+                            {serviceIdx < category.services.length - 1 && (
+                              <div className="border-t border-gray-300" />
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Divider */}
+                {idx < category.services.length - 1 && (
+                  <div className="border-t border-gray-300 mt-12" />
+                )}
+              </div>
+            );
+          })}
         </div>
       </section>
 
-      {/* Services Grid */}
-      <Section background="white">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {category.services.map((service) => (
-            <Link
-              key={service.id}
-              href={service.href}
-              className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-            >
-              {/* Service Image */}
-              <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-[var(--color-accent-1)]/20 to-[var(--color-accent-2)]/20">
-                <Image
-                  src={`/images/services/${service.id}.jpg`}
-                  alt={service.title}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <h2 className="text-lg font-bold text-primary mb-2 group-hover:text-primary transition-colors">
-                  {service.title}
-                </h2>
-                <p className="text-secondary text-sm mb-4 line-clamp-2">
-                  {service.shortDescription}
-                </p>
-                <span className="inline-flex items-center text-primary font-semibold text-sm">
-                  Learn More
-                  <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-2 transition-transform duration-300" />
-                </span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </Section>
-
-      {/* Why Choose Us */}
-      <Section background="gray">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-primary mb-6">
-            Why Choose Us for {category.title}
-          </h2>
-          <div className="grid sm:grid-cols-2 gap-4 text-left">
-            {[
-              "Experienced, caring dental professionals",
-              "State-of-the-art technology and techniques",
-              "Comfortable, stress-free environment",
-              "Personalized treatment plans",
-              "Flexible scheduling options",
-              "Affordable financing available",
-            ].map((item, index) => (
-              <div key={index} className="flex items-center gap-3 bg-white rounded-lg p-4 shadow-sm">
-                <span className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
-                  <Check className="w-4 h-4 text-white" />
-                </span>
-                <span className="text-primary">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-primary to-[var(--color-accent-1)] py-16">
+      {/* <section className="bg-linear-to-r from-primary to-accent-1 py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Get Started?
-          </h2>
-          <p className="text-white/90 mb-8 max-w-xl mx-auto">
+          <h2 className="text-3xl font-bold text-white !mb-4">Ready to Get Started?</h2>
+          <p className="text-white/90 !mb-8 max-w-xl mx-auto">
             Schedule your appointment today and take the first step towards better oral health.
           </p>
           <Button href="/book-appointment" variant="secondary" size="lg">
             Book Appointment
           </Button>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }
