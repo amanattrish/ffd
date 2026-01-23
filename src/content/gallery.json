@@ -1,0 +1,50 @@
+{
+  "pageTitle": "Smile Gallery",
+  "pageDescription": "View our before and after dental restoration results",
+  "title": "Smile Gallery",
+  "items": [
+    {
+      "id": 1,
+      "title": "Smile Makeover",
+      "before": "/images/gallery/before.png",
+      "after": "/images/gallery/after.png",
+      "link": "/services/cosmetic/smile-makeover"
+    },
+    {
+      "id": 2,
+      "title": "Teeth Whitening",
+      "before": "/images/gallery/before.png",
+      "after": "/images/gallery/after.png",
+      "link": "/services/cosmetic/teeth-whitening"
+    },
+    {
+      "id": 3,
+      "title": "Dental Implants",
+      "before": "/images/gallery/before.png",
+      "after": "/images/gallery/after.png",
+      "link": "/services/restorative/dental-implants"
+    },
+    {
+      "id": 4,
+      "title": "Invisalign Treatment",
+      "before": "/images/gallery/before.png",
+      "after": "/images/gallery/after.png",
+      "link": "/services/orthodontics/invisalign"
+    },
+    {
+      "id": 5,
+      "title": "Porcelain Veneers",
+      "before": "/images/gallery/before.png",
+      "after": "/images/gallery/after.png",
+      "link": "/services/cosmetic/porcelain-veneers"
+    },
+    {
+      "id": 6,
+      "title": "Crown Restoration",
+      "before": "/images/gallery/before.png",
+      "after": "/images/gallery/after.png",
+      "link": "/services/restorative/crown-restoration"
+    }
+  ],
+  "linkText": "Read about this restoration"
+}
