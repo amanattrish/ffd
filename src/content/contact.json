@@ -13,7 +13,8 @@
       { "name": "message", "label": "Questions or Comments?", "type": "textarea", "required": true, "placeholder": "Questions or Comments?" }
     ],
     "submitButton": "Submit",
-    "successMessage": "Thank you for your message! We'll get back to you within 24 hours."
+    "successMessage": "Thank you for your message! We'll get back to you within 24 hours.",
+    "errorMessage": "Something went wrong. Please try again or contact us directly."
   },
   "clinicAddress": {
     "title": "Clinic Address",
