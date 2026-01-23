@@ -1,80 +1,41 @@
 {
   "pageTitle": "Contact Us",
   "pageDescription": "Get in touch with Freeport Family Dentistry",
-  "hero": {
-    "title": "Contact Us",
-    "subtitle": "We'd Love to Hear From You",
-    "description": "Have questions? Need to schedule an appointment? We're here to help."
-  },
-  "contactInfo": {
+  "getInTouch": {
     "title": "Get in Touch",
-    "items": [
-      {
-        "type": "address",
-        "icon": "MapPin",
-        "label": "Visit Us",
-        "value": "123 Main Street, Freeport, NY 11520",
-        "href": "https://maps.google.com/?q=123+Main+Street+Freeport+NY+11520"
-      },
-      {
-        "type": "phone",
-        "icon": "Phone",
-        "label": "Call Us",
-        "value": "+1 (516) 123-5467",
-        "href": "tel:+15161235467"
-      },
-      {
-        "type": "email",
-        "icon": "Mail",
-        "label": "Email Us",
-        "value": "info@freeportfamilydentistry.com",
-        "href": "mailto:info@freeportfamilydentistry.com"
-      },
-      {
-        "type": "whatsapp",
-        "icon": "MessageCircle",
-        "label": "WhatsApp",
-        "value": "Chat with us",
-        "href": "https://wa.me/15161235467"
-      }
-    ]
+    "description": "We’re here to help you achieve a healthy, confident smile. Reach out to us for appointments, inquiries, or emergency dental care—our team is happy to assist you."
+  },
+  "form": {
+    "fields": [
+      { "name": "name", "label": "Name", "type": "text", "required": true, "placeholder": "Name" },
+      { "name": "email", "label": "Email Address", "type": "email", "required": true, "placeholder": "Email Address" },
+      { "name": "phone", "label": "Phone Number", "type": "tel", "required": false, "placeholder": "Phone Number" },
+      { "name": "message", "label": "Questions or Comments?", "type": "textarea", "required": true, "placeholder": "Questions or Comments?" }
+    ],
+    "submitButton": "Submit",
+    "successMessage": "Thank you for your message! We'll get back to you within 24 hours.",
+    "errorMessage": "Something went wrong. Please try again or contact us directly."
+  },
+  "clinicAddress": {
+    "title": "Clinic Address",
+    "name": "Freeport Family Dentistry",
+    "street": "123 Main Street",
+    "city": "Freeport, NY 11520"
   },
   "hours": {
     "title": "Office Hours",
     "schedule": [
-      { "day": "Monday", "hours": "9:00 AM - 6:00 PM" },
-      { "day": "Tuesday", "hours": "9:00 AM - 6:00 PM" },
-      { "day": "Wednesday", "hours": "9:00 AM - 6:00 PM" },
-      { "day": "Thursday", "hours": "9:00 AM - 6:00 PM" },
-      { "day": "Friday", "hours": "9:00 AM - 5:00 PM" },
-      { "day": "Saturday", "hours": "9:00 AM - 2:00 PM" },
-      { "day": "Sunday", "hours": "Closed" }
+      { "day": "Monday – Friday", "hours": "9:00 AM – 7:00 PM" },
+      { "day": "Saturday & Sunday", "hours": "Closed" }
     ]
   },
-  "form": {
-    "title": "Send Us a Message",
-    "description": "Fill out the form below and we'll get back to you as soon as possible.",
-    "fields": [
-      { "name": "firstName", "label": "First Name", "type": "text", "required": true, "placeholder": "John" },
-      { "name": "lastName", "label": "Last Name", "type": "text", "required": true, "placeholder": "Doe" },
-      { "name": "email", "label": "Email Address", "type": "email", "required": true, "placeholder": "john@example.com" },
-      { "name": "phone", "label": "Phone Number", "type": "tel", "required": false, "placeholder": "(555) 123-4567" },
-      { "name": "subject", "label": "Subject", "type": "select", "required": true, "options": [
-        { "value": "", "label": "Select a subject" },
-        { "value": "appointment", "label": "Schedule an Appointment" },
-        { "value": "question", "label": "General Question" },
-        { "value": "insurance", "label": "Insurance Inquiry" },
-        { "value": "feedback", "label": "Feedback" },
-        { "value": "other", "label": "Other" }
-      ]},
-      { "name": "message", "label": "Message", "type": "textarea", "required": true, "placeholder": "How can we help you?" }
-    ],
-    "submitButton": "Send Message",
-    "successMessage": "Thank you for your message! We'll get back to you within 24 hours.",
-    "errorMessage": "There was an error sending your message. Please try again or call us directly."
+  "whatsapp": {
+    "title": "Chat with Us on WhatsApp",
+    "href": "https://wa.me/15161235467",
+    "text": "Whatsapp",
+    "subtext": "click to chat"
   },
   "map": {
-    "title": "Find Us",
     "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.123456789!2d-73.123456!3d40.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sFreeport%20Family%20Dentistry!5e0!3m2!1sen!2sus!4v1234567890"
   }
 }

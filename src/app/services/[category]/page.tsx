@@ -51,7 +51,7 @@ export default async function ServiceCategoryPage({ params }: Props) {
             Back to All Services
           </Link> */}
 
-          <h1 className="text-3xl font-bold text-black text-center !mb-4 bg-linear-to-br from-[#F2FDFF] to-white">
+          <h1 className="text-3xl! font-bold text-black text-center !mb-4 bg-linear-to-br from-[#F2FDFF] to-white">
             {category.title}
           </h1>
           {/* <p className="text-xl text-white/90 max-w-2xl">{category.description}</p> */}

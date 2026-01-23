@@ -1,27 +1,20 @@
 "use client";
 
 import { useState } from "react";
-import { MapPin, Phone, Mail, MessageCircle, Clock, Send, Check } from "lucide-react";
+import Image from "next/image";
+import { Book, Check } from "lucide-react";
 import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 import { contactContent } from "@/content";
-
-const iconMap: Record<string, React.ElementType> = {
-  MapPin,
-  Phone,
-  Mail,
-  MessageCircle,
-};
+import { BookAppointmentSection, CTABanner } from "@/components/sections";
 
 export default function ContactPage() {
-  const { hero, contactInfo, hours, form, map } = contactContent;
+  const { getInTouch, form, clinicAddress, hours, whatsapp, map } = contactContent;
 
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    name: "",
     email: "",
     phone: "",
-    subject: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,283 +30,218 @@ export default function ContactPage() {
     setIsSubmitting(false);
     setIsSubmitted(true);
     setFormData({
-      firstName: "",
-      lastName: "",
+      name: "",
       email: "",
       phone: "",
-      subject: "",
       message: "",
     });
   };
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary to-[var(--color-accent-1)] py-20 overflow-hidden">
-        <div className="absolute top-10 right-10 text-white/10 text-4xl font-light">+</div>
-        <div className="absolute bottom-10 left-10 text-white/10 text-3xl font-light">+</div>
-
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            {hero.title}
+      {/* Page Title */}
+      <section className="py-12 bg-linear-to-br from-[#F2FDFF] to-white text-black">
+        <div className="container mx-auto px-4">
+          <h1 className="text-3xl! font-bold text-center">
+            Contact Us
           </h1>
-          <p className="text-xl text-white/90 mb-2">{hero.subtitle}</p>
-          <p className="text-white/80 max-w-2xl mx-auto">{hero.description}</p>
         </div>
       </section>
 
-      {/* Contact Info & Form */}
+      {/* Get in Touch & Form Section */}
       <Section background="white">
-        <div className="grid lg:grid-cols-3 gap-12">
-          {/* Contact Information */}
-          <div className="lg:col-span-1">
-            <h2 className="text-2xl font-bold text-primary mb-6">
-              {contactInfo.title}
+        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+          {/* Left Column - Get in Touch */}
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <span className="text-[#4D99C6]">Get in</span>{" "}
+              <span className="text-[#90C044]">Touch</span>
             </h2>
-
-            <div className="space-y-6 mb-10">
-              {contactInfo.items.map((item, index) => {
-                const IconComponent = iconMap[item.icon] || Phone;
-                return (
-                  <a
-                    key={index}
-                    href={item.href}
-                    target={item.type === "address" ? "_blank" : undefined}
-                    rel={item.type === "address" ? "noopener noreferrer" : undefined}
-                    className="flex items-start gap-4 group"
-                  >
-                    <span className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-colors">
-                      <IconComponent className="w-5 h-5 text-primary group-hover:text-white transition-colors" />
-                    </span>
-                    <div>
-                      <p className="font-semibold text-primary">
-                        {item.label}
-                      </p>
-                      <p className="text-secondary group-hover:text-primary transition-colors">
-                        {item.value}
-                      </p>
-                    </div>
-                  </a>
-                );
-              })}
-            </div>
-
-            {/* Office Hours */}
-            <div className="bg-gray-50 rounded-2xl p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <Clock className="w-5 h-5 text-primary" />
-                <h3 className="font-bold text-primary">{hours.title}</h3>
-              </div>
-              <div className="space-y-2">
-                {hours.schedule.map((item, index) => (
-                  <div key={index} className="flex justify-between text-sm">
-                    <span className="text-secondary">{item.day}</span>
-                    <span
-                      className={
-                        item.hours === "Closed"
-                          ? "text-red-500"
-                          : "text-primary font-medium"
-                      }
-                    >
-                      {item.hours}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <p className="text-lg text-black leading-relaxed">
+              {getInTouch.description}
+            </p>
           </div>
 
-          {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <div className="bg-gray-50 rounded-2xl p-8">
-              <h2 className="text-2xl font-bold text-primary mb-2">
-                {form.title}
-              </h2>
-              <p className="text-secondary mb-6">{form.description}</p>
-
-              {isSubmitted ? (
-                <div className="text-center py-12">
-                  <span className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mx-auto mb-4">
-                    <Check className="w-8 h-8 text-white" />
-                  </span>
-                  <h3 className="text-xl font-bold text-primary mb-2">
-                    Message Sent!
-                  </h3>
-                  <p className="text-secondary">{form.successMessage}</p>
-                  <Button
-                    onClick={() => setIsSubmitted(false)}
-                    variant="outline"
-                    className="mt-6"
-                  >
-                    Send Another Message
-                  </Button>
+          {/* Right Column - Contact Form */}
+          <div>
+            {isSubmitted ? (
+              <div className="text-center py-12 bg-gray-50 rounded-2xl p-8">
+                <span className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mx-auto mb-4">
+                  <Check className="w-8 h-8 text-white" />
+                </span>
+                <h3 className="text-xl font-bold text-primary mb-2">
+                  Message Sent!
+                </h3>
+                <p className="text-secondary mb-6">{form.successMessage}</p>
+                <Button
+                  onClick={() => setIsSubmitted(false)}
+                  variant="outline"
+                >
+                  Send Another Message
+                </Button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <input
+                    type="text"
+                    id="name"
+                    required
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                    placeholder="Name"
+                  />
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label
-                        htmlFor="firstName"
-                        className="block text-sm font-medium text-primary mb-1"
-                      >
-                        First Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="firstName"
-                        required
-                        value={formData.firstName}
-                        onChange={(e) =>
-                          setFormData({ ...formData, firstName: e.target.value })
-                        }
-                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                        placeholder="John"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="lastName"
-                        className="block text-sm font-medium text-primary mb-1"
-                      >
-                        Last Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="lastName"
-                        required
-                        value={formData.lastName}
-                        onChange={(e) =>
-                          setFormData({ ...formData, lastName: e.target.value })
-                        }
-                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                        placeholder="Doe"
-                      />
-                    </div>
-                  </div>
 
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="block text-sm font-medium text-primary mb-1"
-                      >
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        required
-                        value={formData.email}
-                        onChange={(e) =>
-                          setFormData({ ...formData, email: e.target.value })
-                        }
-                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                        placeholder="john@example.com"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="phone"
-                        className="block text-sm font-medium text-primary mb-1"
-                      >
-                        Phone Number
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        value={formData.phone}
-                        onChange={(e) =>
-                          setFormData({ ...formData, phone: e.target.value })
-                        }
-                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                        placeholder="(555) 123-4567"
-                      />
-                    </div>
-                  </div>
+                <div>
+                  <input
+                    type="email"
+                    id="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                    placeholder="Email Address"
+                  />
+                </div>
 
-                  <div>
-                    <label
-                      htmlFor="subject"
-                      className="block text-sm font-medium text-primary mb-1"
-                    >
-                      Subject *
-                    </label>
-                    <select
-                      id="subject"
-                      required
-                      value={formData.subject}
-                      onChange={(e) =>
-                        setFormData({ ...formData, subject: e.target.value })
-                      }
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                    >
-                      <option value="">Select a subject</option>
-                      <option value="appointment">Schedule an Appointment</option>
-                      <option value="question">General Question</option>
-                      <option value="insurance">Insurance Inquiry</option>
-                      <option value="feedback">Feedback</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
+                <div>
+                  <input
+                    type="tel"
+                    id="phone"
+                    value={formData.phone}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                    placeholder="Phone Number"
+                  />
+                </div>
 
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medium text-primary mb-1"
-                    >
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      required
-                      rows={5}
-                      value={formData.message}
-                      onChange={(e) =>
-                        setFormData({ ...formData, message: e.target.value })
-                      }
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
-                      placeholder="How can we help you?"
-                    />
-                  </div>
+                <div>
+                  <textarea
+                    id="message"
+                    required
+                    rows={5}
+                    value={formData.message}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
+                    placeholder="Questions or Comments?"
+                  />
+                </div>
 
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full sm:w-auto"
-                  >
-                    {isSubmitting ? (
-                      "Sending..."
-                    ) : (
-                      <>
-                        <Send className="w-4 h-4 mr-2" />
-                        {form.submitButton}
-                      </>
-                    )}
-                  </Button>
-                </form>
-              )}
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  variant="secondary"
+                  className="w-40 border border-secondary bg-transparent text-black!"
+                >
+                  {isSubmitting ? "Submitting..." : form.submitButton}
+                </Button>
+              </form>
+            )}
+          </div>
+        </div>
+
+        {/* Clinic Address & Image Section */}
+        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+          {/* Left Column - Clinic Address */}
+          <div>
+            <h2 className="text-2xl font-bold text-black mb-6">
+              {clinicAddress.title}
+            </h2>
+            <div className="space-y-2 text-black">
+              <p className="text-lg">{clinicAddress.name}</p>
+              <p className="text-lg">{clinicAddress.street}</p>
+              <p className="text-lg">{clinicAddress.city}</p>
+            </div>
+          </div>
+
+          {/* Right Column - Clinic Image */}
+          <div className="relative rounded-xl overflow-hidden">
+            <div className="relative aspect-square h-64 w-full">
+              <Image
+                src="/images/clinic.png"
+                alt="Clinic Interior"
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>
-      </Section>
 
-      {/* Map Section */}
-      <Section background="gray">
-        <h2 className="text-2xl font-bold text-primary mb-6 text-center">
-          {map.title}
-        </h2>
-        <div className="rounded-2xl overflow-hidden shadow-lg">
-          <iframe
-            src={map.embedUrl}
-            width="100%"
-            height="450"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Freeport Family Dentistry Location"
-          />
+        {/* Map Section */}
+        <div className="mb-16">
+          <div className="rounded-xl overflow-hidden shadow-lg">
+            <iframe
+              src={map.embedUrl}
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Freeport Family Dentistry Location"
+            />
+          </div>
         </div>
+
+        {/* Office Hours & WhatsApp Section */}
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Left Column - Office Hours */}
+          <div>
+            <h2 className="text-2xl font-bold text-black mb-6">
+              {hours.title}
+            </h2>
+            <div className="space-y-2">
+              {hours.schedule.map((item, index) => (
+                <div key={index} className="text-black">
+                  <span className="font-medium">{item.day}:</span>{" "}
+                  <span
+                    className={
+                      item.hours === "Closed"
+                        ? "text-black"
+                        : "text-primary"
+                    }
+                  >
+                    {item.hours}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column - WhatsApp */}
+          <div>
+            <h2 className="text-2xl font-bold text-black mb-6">
+              {whatsapp.title}
+            </h2>
+            <a
+              href={whatsapp.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block transition-all hover:opacity-90"
+            >
+              <Image
+                src="/images/whatsapp-button.png"
+                alt="WhatsApp - Click to chat"
+                width={200}
+                height={60}
+                className="rounded-lg"
+              />
+            </a>
+          </div>
+        </div>
+        <CTABanner />
+        <BookAppointmentSection />
       </Section>
     </>
   );
