@@ -8,7 +8,8 @@
       "primary": { "label": "Book Appointment", "href": "/book-appointment" },
       "secondary": { "label": "Call Us", "href": "tel:+15161235467" }
     },
-    "image": "/images/hero-dentist.png"
+    "image": "/images/hero-dentist.png",
+    "enquirySuccessMessage": "Thank you! We've received your enquiry and will get back to you shortly."
   },
   "about": {
     "sectionLabel": "About Us",

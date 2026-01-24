@@ -19,6 +19,7 @@ interface FormData {
 export default function ContactForm() {
   const { form } = contactContent;
   const [status, setStatus] = useState<FormStatus>("idle");
+  const [isValidationError, setIsValidationError] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
@@ -28,15 +29,45 @@ export default function ContactForm() {
     message: "",
   });
 
+  const filterName = (v: string) => v.replace(/[^a-zA-Z\s\-'.]/g, "");
+  const maxNameChars = 20;
+  const maxMessageChars = 200;
+  const capToMaxChars = (s: string) => s.slice(0, maxMessageChars);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    let val: string;
+    if (name === "firstName" || name === "lastName") val = filterName(value).slice(0, maxNameChars);
+    else if (name === "message") val = capToMaxChars(value);
+    else val = value;
+    setFormData((prev) => ({ ...prev, [name]: val }));
+    setStatus((prev) => (prev === "error" ? "idle" : prev));
+    setIsValidationError(false);
+  };
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const validate = (): boolean => {
+    if (!formData.firstName.trim()) return false;
+    if (!formData.lastName.trim()) return false;
+    if (!formData.email.trim()) return false;
+    if (!emailRegex.test(formData.email)) return false;
+    if (!formData.subject) return false;
+    if (!formData.message.trim()) return false;
+    if (formData.message.length > maxMessageChars) return false;
+    return true;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validate()) {
+      setIsValidationError(true);
+      setStatus("error");
+      return;
+    }
+    setIsValidationError(false);
     setStatus("submitting");
 
     try {
@@ -53,6 +84,7 @@ export default function ContactForm() {
         message: "",
       });
     } catch {
+      setIsValidationError(false);
       setStatus("error");
     }
   };
@@ -81,7 +113,9 @@ export default function ContactForm() {
       {status === "error" && (
         <div className="flex items-center gap-3 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
           <XCircle className="w-5 h-5 flex-shrink-0" />
-          <p>{form.errorMessage}</p>
+          <p>{isValidationError
+            ? ((form as { validationErrorMessage?: string }).validationErrorMessage ?? "Please fill in all required fields correctly.")
+            : form.errorMessage}</p>
         </div>
       )}
 
@@ -98,6 +132,7 @@ export default function ContactForm() {
             value={formData.firstName}
             onChange={handleChange}
             required
+            maxLength={maxNameChars}
             placeholder="John"
             className="w-full"
           />
@@ -115,6 +150,7 @@ export default function ContactForm() {
             value={formData.lastName}
             onChange={handleChange}
             required
+            maxLength={maxNameChars}
             placeholder="Doe"
             className="w-full"
           />
@@ -193,6 +229,9 @@ export default function ContactForm() {
           placeholder="How can we help you?"
           className="w-full resize-none"
         />
+        <p className={`text-sm mt-1 text-right ${formData.message.length > maxMessageChars ? "text-red-500" : "text-gray-500"}`}>
+          {formData.message.length}/{maxMessageChars} characters
+        </p>
       </div>
 
       {/* Submit Button */}

@@ -6,6 +6,7 @@ import patientInfoContent from "./patient-info.json";
 import contactContent from "./contact.json";
 import legalContent from "./legal.json";
 import galleryContent from "./gallery.json";
+import testimonialsContent from "./testimonials.json";
 
 export {
   siteConfig,
@@ -16,4 +17,5 @@ export {
   contactContent,
   legalContent,
   galleryContent,
+  testimonialsContent,
 };

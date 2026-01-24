@@ -21,7 +21,7 @@ export default function Footer() {
     { label: "Services", href: "/services" },
     { label: "Gallery", href: "/gallery" },
     { label: "Contact Us", href: "/contact" },
-    { label: "Legal Pages", href: "/legal" },
+    { label: "Legal", href: "/legal" },
   ];
 
   return (

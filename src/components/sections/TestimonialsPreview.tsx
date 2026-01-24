@@ -88,7 +88,7 @@ export default function TestimonialsPreview() {
             </div>
 
             {/* Content */}
-            <p className="text-secondary mb-6 leading-relaxed line-clamp-4">
+            <p className="text-black mb-6 leading-relaxed line-clamp-4">
               {testimonial.content}
             </p>
 

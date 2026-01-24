@@ -69,8 +69,23 @@
       }
     ]
   },
+  "refundCancellation": {
+    "pageTitle": "Refund & Cancellation Policy",
+    "pageDescription": "Our policies for appointments and refunds",
+    "lastUpdated": "January 1, 2025",
+    "content": [
+      {
+        "title": "Appointment Cancellations",
+        "text": "We require 24 hours notice for appointment cancellations. Late cancellations or missed appointments may incur a fee. We understand that emergencies happen; please contact us as soon as possible if you need to reschedule."
+      },
+      {
+        "title": "Refund Policy",
+        "text": "Payments for completed services are non-refundable. Prepaid services or treatment plans may be considered for refund on a case-by-case basis. Please contact our office to discuss any concerns regarding your account."
+      }
+    ]
+  },
   "hipaa": {
-    "pageTitle": "HIPAA Compliance",
+    "pageTitle": "HIPAA Compliance Statement (US)",
     "pageDescription": "Our commitment to protecting your health information",
     "lastUpdated": "January 1, 2025",
     "content": [

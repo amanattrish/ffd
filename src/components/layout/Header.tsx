@@ -31,41 +31,40 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
-            {navigation.main.map((item) => (
-              <div key={item.label} className="relative group">
-                {item.submenu ? (
-                  <>
+              {navigation.main.map((item) => (
+                <div key={item.label} className="relative group">
+                  {item.submenu ? (
+                    <>
+                      <span
+                        className="text-gray-800 hover:text-primary transition-colors font-normal text-base cursor-default"
+                      >
+                        {item.label}
+                      </span>
+                      <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <div className="bg-white rounded-lg shadow-lg border border-gray-100 py-2 min-w-[200px]">
+                          {item.submenu.map((subitem) => (
+                            <Link
+                              key={subitem.label}
+                              href={subitem.href}
+                              className="block px-4 py-2 text-gray-800 hover:bg-primary/5 hover:text-primary transition-colors"
+                            >
+                              {subitem.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </>
+                  ) : (
                     <Link
                       href={item.href}
                       className="text-gray-800 hover:text-primary transition-colors font-normal text-base"
                     >
                       {item.label}
                     </Link>
-                    <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                      <div className="bg-white rounded-lg shadow-lg border border-gray-100 py-2 min-w-[200px]">
-                        {item.submenu.map((subitem) => (
-                          <Link
-                            key={subitem.label}
-                            href={subitem.href}
-                            className="block px-4 py-2 text-gray-800 hover:bg-primary/5 hover:text-primary transition-colors"
-                          >
-                            {subitem.label}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className="text-gray-800 hover:text-primary transition-colors font-normal text-base"
-                  >
-                    {item.label}
-                  </Link>
-                )}
-              </div>
-            ))}
-          </nav>
+                  )}
+                </div>
+              ))}
+            </nav>
 
           {/* Desktop CTA */}
           {/* <div className="hidden lg:flex items-center gap-4">
@@ -108,9 +107,7 @@ export default function Header() {
                       className="flex items-center justify-between w-full py-3 text-gray-800 font-normal"
                       onClick={() => toggleSubmenu(item.label)}
                     >
-                      <Link href={item.href} className="flex-1 text-left">
-                        {item.label}
-                      </Link>
+                      <span className="flex-1 text-left">{item.label}</span>
                       <ChevronDown
                         className={`w-5 h-5 transition-transform ${
                           openSubmenu === item.label ? "rotate-180" : ""

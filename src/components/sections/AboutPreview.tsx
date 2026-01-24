@@ -6,9 +6,9 @@ import { homeContent } from "@/content";
 // Feature icons with different colors
 const featureIcons = [
   { color: "#117598", label: "Elite Clinical Expertise" },
-  { color: "#74C6D1", label: "Precision Smile Design" },
-  { color: "#70CCB9", label: "Advanced Professional Care" },
-  { color: "#A1C65D", label: "Proven Medical Excellence" },
+  { color: "#117598", label: "Precision Smile Design" },
+  { color: "#117598", label: "Advanced Professional Care" },
+  { color: "#117598", label: "Proven Medical Excellence" },
 ];
 
 // Icon components - using SVG files
@@ -131,21 +131,21 @@ export default function AboutPreview() {
 
         {/* Content */}
         <div>
-          <span className="inline-block text-primary font-medium text-sm bg-[#F3F3F3] rounded-full px-4 py-1 mb-4">
+          <span className="inline-block text-primary font-medium text-sm bg-[#F3F3F3] rounded-full px-4 py-1 !mb-4">
             Overview of practice
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-2">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black !mb-2">
             {about.title}
           </h2>
-          <p className="text-lg text-secondary mb-4">
+          <p className="text-lg text-[#777777] !mb-4">
             Focuses on high standards and precision.
           </p>
-          <p className="text-secondary mb-8 leading-relaxed text-sm md:text-base">
-            Precision dentistry meets artistic excellence. We combine years of specialized experience with advanced medical technology to deliver transformative care and long-term oral health.
+          <p className="text-black !mb-8 leading-relaxed text-sm md:text-base">
+            Precision dentistry meets artistic excellence. We co!mbine years of specialized experience with advanced medical technology to deliver transformative care and long-term oral health.
           </p>
 
           {/* Features List - with colored icons */}
-          <ul className="space-y-3 mb-8">
+          <ul className="space-y-3 !mb-8">
             {featureIcons.map((feature, index) => (
               <li key={index} className="flex items-center gap-3">
                 <span

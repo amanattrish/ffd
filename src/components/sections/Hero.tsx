@@ -2,8 +2,35 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { Check } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { homeContent } from "@/content";
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// Allow only letters, spaces, hyphen, apostrophe, period (e.g. O'Brien, Jr.)
+const filterName = (v: string) => v.replace(/[^a-zA-Z\s\-'.]/g, "");
+// Allow only digits and / or - for DD/MM/YYYY
+const filterDate = (v: string) => v.replace(/[^0-9/\-]/g, "");
+// Allow letters, numbers, spaces, comma, period, hyphen for location/address
+const filterLocation = (v: string) => v.replace(/[^a-zA-Z0-9\s,.\-]/g, "");
+
+/** Returns: "invalid" | "past" | null (valid, today or future) */
+function checkDate(str: string): "invalid" | "past" | null {
+  const s = str.trim();
+  if (!s) return "invalid";
+  const parts = s.split(/[\/\-]/);
+  if (parts.length !== 3) return "invalid";
+  const day = parseInt(parts[0], 10);
+  const month = parseInt(parts[1], 10) - 1;
+  const year = parseInt(parts[2], 10);
+  if (isNaN(day) || isNaN(month) || isNaN(year) || month < 0 || month > 11) return "invalid";
+  const d = new Date(year, month, day);
+  if (d.getDate() !== day || d.getMonth() !== month || d.getFullYear() !== year) return "invalid";
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  d.setHours(0, 0, 0, 0);
+  return d < today ? "past" : null;
+}
 
 export default function Hero() {
   const { hero } = homeContent;
@@ -13,15 +40,40 @@ export default function Hero() {
     date: "",
     location: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validate = () => {
+    const next: Record<string, string> = {};
+    if (!formData.name.trim()) next.name = "Name is required";
+    if (!formData.email.trim()) next.email = "Email is required";
+    else if (!emailRegex.test(formData.email)) next.email = "Please enter a valid email";
+    if (!formData.date.trim()) next.date = "Date is required";
+    else {
+      const r = checkDate(formData.date);
+      if (r === "invalid") next.date = "Please enter a valid date (DD/MM/YYYY)";
+      else if (r === "past") next.date = "Please select a date today or in the future";
+    }
+    if (!formData.location.trim()) next.location = "Location is required";
+    setErrors(next);
+    return Object.keys(next).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    if (!validate()) return;
+    setIsSubmitting(true);
+    setErrors({});
+    await new Promise((r) => setTimeout(r, 800));
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    setFormData({ name: "", email: "", date: "", location: "" });
   };
 
   return (
     <section
-      className="relative overflow-visible bg-primary/10 bg-cover bg-center hero-bg mb-12 md:mb-16 lg:mb-20"
+      className="relative overflow-visible  bg-linear-to-br from-[#F2FDFF] to-white bg-cover bg-center hero-bg mb-12 md:mb-16 lg:mb-20"
     >
       {/* Curved Background Shape */}
       <div className="absolute top-0 right-0 w-full h-full pointer-events-none">
@@ -131,6 +183,22 @@ export default function Hero() {
 
         {/* Quick Inquiry Form - Mobile: Below hero section, Desktop: Overlaps */}
         <div className="relative lg:absolute inset-x-0 lg:-bottom-18 z-20 mt-8 lg:mt-0 px-4 lg:px-0">
+          {isSubmitted ? (
+            <div className="bg-white rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.15)] px-5 md:px-6 lg:px-8 py-8 md:py-10 text-center">
+              <span className="w-14 h-14 rounded-full bg-secondary flex items-center justify-center mx-auto mb-3">
+                <Check className="w-7 h-7 text-white" />
+              </span>
+              <h3 className="text-lg font-bold text-primary mb-2">Enquiry Received!</h3>
+              <p className="text-secondary text-sm mb-4">{hero.enquirySuccessMessage ?? "Thank you! We'll get back to you shortly."}</p>
+              <button
+                type="button"
+                onClick={() => setIsSubmitted(false)}
+                className="text-primary font-semibold text-sm hover:underline"
+              >
+                Send another enquiry
+              </button>
+            </div>
+          ) : (
           <form
             onSubmit={handleSubmit}
             className="bg-white rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.15)] px-5 md:px-6 lg:px-8 py-5 md:py-6"
@@ -139,65 +207,71 @@ export default function Hero() {
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 md:gap-5 lg:gap-6">
               <div className="min-w-0 col-span-1">
                 <label htmlFor="hero-name" className="block text-sm font-bold text-black mb-2">
-                  Name
+                  Name <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   id="hero-name"
                   placeholder="Your Name"
                   value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full h-8 text-sm px-4 border border-gray-300 rounded-lg bg-white placeholder:text-gray-400 focus:border-gray-400 focus:ring-2 focus:ring-primary/30 focus:outline-none"
+                  onChange={(e) => { const v = filterName(e.target.value).slice(0, 20); setFormData({ ...formData, name: v }); setErrors((p) => ({ ...p, name: "" })); }}
+                  maxLength={20}
+                  className={`w-full h-8 text-sm px-4 border rounded-lg bg-white placeholder:text-gray-400 focus:ring-2 focus:ring-primary/30 focus:outline-none ${errors.name ? "border-red-500" : "border-gray-300"}`}
                 />
+                {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
               </div>
-              {/* Place Date next to Name on mobile */}
               <div className="min-w-0 col-span-1">
                 <label htmlFor="hero-date" className="block text-sm font-bold text-black mb-2">
-                  Date
+                  Date <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   id="hero-date"
                   placeholder="DD/MM/YYYY"
                   value={formData.date}
-                  onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                  className="w-full h-8 text-sm px-4 border border-gray-300 rounded-lg bg-white placeholder:text-gray-400 focus:border-gray-400 focus:ring-2 focus:ring-primary/30 focus:outline-none"
+                  onChange={(e) => { const v = filterDate(e.target.value); setFormData({ ...formData, date: v }); setErrors((p) => ({ ...p, date: "" })); }}
+                  className={`w-full h-8 text-sm px-4 border rounded-lg bg-white placeholder:text-gray-400 focus:ring-2 focus:ring-primary/30 focus:outline-none ${errors.date ? "border-red-500" : "border-gray-300"}`}
                 />
+                {errors.date && <p className="text-red-500 text-xs mt-1">{errors.date}</p>}
               </div>
               <div className="min-w-0 col-span-1 sm:col-span-1">
                 <label htmlFor="hero-email" className="block text-sm font-bold text-black mb-2">
-                  Email
+                  Email <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="email"
                   id="hero-email"
                   placeholder="Your Email"
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full h-8 text-sm px-4 border border-gray-300 rounded-lg bg-white placeholder:text-gray-400 focus:border-gray-400 focus:ring-2 focus:ring-primary/30 focus:outline-none"
+                  onChange={(e) => { setFormData({ ...formData, email: e.target.value }); setErrors((p) => ({ ...p, email: "" })); }}
+                  className={`w-full h-8 text-sm px-4 border rounded-lg bg-white placeholder:text-gray-400 focus:ring-2 focus:ring-primary/30 focus:outline-none ${errors.email ? "border-red-500" : "border-gray-300"}`}
                 />
+                {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
               </div>
               <div className="min-w-0 col-span-1 sm:col-span-1">
                 <label htmlFor="hero-location" className="block text-sm font-bold text-black mb-2">
-                  Location
+                  Location <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   id="hero-location"
                   placeholder="Your Location"
                   value={formData.location}
-                  onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                  className="w-full h-8 text-sm px-4 border border-gray-300 rounded-lg bg-white placeholder:text-gray-400 focus:border-gray-400 focus:ring-2 focus:ring-primary/30 focus:outline-none"
+                  onChange={(e) => { const v = filterLocation(e.target.value); setFormData({ ...formData, location: v }); setErrors((p) => ({ ...p, location: "" })); }}
+                  className={`w-full h-8 text-sm px-4 border rounded-lg bg-white placeholder:text-gray-400 focus:ring-2 focus:ring-primary/30 focus:outline-none ${errors.location ? "border-red-500" : "border-gray-300"}`}
                 />
+                {errors.location && <p className="text-red-500 text-xs mt-1">{errors.location}</p>}
               </div>
               <button
                 type="submit"
-                className="col-span-2 sm:col-span-1 bg-primary text-white font-bold text-base px-8 py-3 rounded-full shadow-lg hover:bg-[#0d5f7a] transition-all duration-200 w-full sm:w-auto sm:justify-self-start"
+                disabled={isSubmitting}
+                className="col-span-2 sm:col-span-1 bg-primary text-white font-bold text-base px-8 py-3 rounded-full shadow-lg hover:bg-[#0d5f7a] transition-all duration-200 w-full sm:w-auto sm:justify-self-start disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                Send Enquiry
+                {isSubmitting ? "Sending..." : "Send Enquiry"}
               </button>
             </div>
           </form>
+          )}
         </div>
       </div>
     </section>
