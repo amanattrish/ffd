@@ -1,0 +1,79 @@
+{
+  "pageTitle": "Patient Testimonials | Freeport Family Dentistry",
+  "pageDescription": "Read what our patients say about their experience at Freeport Family Dentistry",
+  "mainTitle": "See What Our Patients Are Saying",
+  "reviewsHeading": "Freeport Family Dentistry",
+  "reviewsHighlight": "Reviews",
+  "testimonials": [
+    {
+      "id": "1",
+      "name": "Lindsay Burgee",
+      "date": "22. Oct 2025",
+      "content": "The best dentist in Freeport by far! Ashley is so talented and brilliant and kind. Her whole staff is awesome. The office is gorgeous and clean. Cleaning hygienists are fantastic. Would never go anywhere else. So happy with my Invisalign treatment and all services.",
+      "rating": 5,
+      "image": null
+    },
+    {
+      "id": "2",
+      "name": "Sarah Johnson",
+      "date": "15. Jan 2025",
+      "content": "I had an excellent experience at Freeport Family Dentistry. The staff was friendly and professional, and Dr. Smith made me feel completely at ease during my procedure.",
+      "rating": 5,
+      "image": "/images/testimonials/sarah.png"
+    },
+    {
+      "id": "3",
+      "name": "Michael Chen",
+      "date": "08. Dec 2024",
+      "content": "Best dental office I've ever been to! They really take the time to explain everything and make sure you're comfortable. Highly recommend their teeth whitening service.",
+      "rating": 5,
+      "image": "/images/testimonials/michael.png"
+    },
+    {
+      "id": "4",
+      "name": "Emily Rodriguez",
+      "date": "03. Nov 2024",
+      "content": "The entire team is wonderful. They're great with my kids and make dental visits something we actually look forward to. Thank you for taking such great care of our family!",
+      "rating": 5,
+      "image": "/images/testimonials/sarah.png"
+    },
+    {
+      "id": "5",
+      "name": "Robert Chen",
+      "date": "12. Sep 2024",
+      "content": "Had my first dental implant done here and couldn't be happier with the results. The team explained every step and made sure I was comfortable throughout. Highly recommend for anyone considering implants.",
+      "rating": 5,
+      "image": null
+    }
+  ],
+  "shareSection": {
+    "title": "Share Your Experience:",
+    "buttons": [
+      { "label": "Review Us on Yelp", "platform": "yelp", "bgColor": "#d32323" },
+      { "label": "Review Us on Google", "platform": "google", "bgColor": "#34A853" },
+      { "label": "Review Us on Facebook", "platform": "facebook", "bgColor": "#1877F2" }
+    ]
+  },
+  "services": {
+    "title": "Services",
+    "items": [
+      "Dental Exams & Cleanings",
+      "X-rays",
+      "Fillings",
+      "Root Canal Treatment",
+      "Tooth Extraction"
+    ]
+  },
+  "scheduleSection": {
+    "title": "Schedule Today",
+    "buttonLabel": "Request Appointment",
+    "buttonHref": "/book-appointment",
+    "callLabel": "Call Us Now",
+    "scheduleBgColor": "#2973AE",
+    "buttonBgColor": "#8BC34A",
+    "buttonTextColor": "#1a1a1a"
+  },
+  "cta": {
+    "description": "Give us a call. We are here to answer your questions"
+  }
+}

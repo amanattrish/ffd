@@ -19,10 +19,29 @@ export default function ContactPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const filterName = (v: string) => v.replace(/[^a-zA-Z\s\-'.]/g, "");
+  const maxMessageChars = 200;
+  const capToMaxChars = (s: string) => s.slice(0, maxMessageChars);
+
+  const validate = () => {
+    const next: Record<string, string> = {};
+    if (!formData.name.trim()) next.name = "Name is required";
+    if (!formData.email.trim()) next.email = "Email is required";
+    else if (!emailRegex.test(formData.email)) next.email = "Please enter a valid email address";
+    if (!formData.message.trim()) next.message = "Message is required";
+    else if (formData.message.length > maxMessageChars) next.message = `Maximum ${maxMessageChars} characters allowed.`;
+    setErrors(next);
+    return Object.keys(next).length === 0;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validate()) return;
     setIsSubmitting(true);
+    setErrors({});
 
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1500));
@@ -86,28 +105,32 @@ export default function ContactPage() {
                   <input
                     type="text"
                     id="name"
-                    required
                     value={formData.name}
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                    onChange={(e) => {
+                      const v = filterName(e.target.value).slice(0, 20);
+                      setFormData({ ...formData, name: v });
+                      setErrors((p) => ({ ...p, name: "" }));
+                    }}
+                    maxLength={20}
+                    className={`w-full px-4 py-3 rounded-lg border bg-gray-50 focus:ring-2 focus:ring-primary/20 outline-none transition-all ${errors.name ? "border-red-500" : "border-gray-200 focus:border-primary"}`}
                     placeholder="Name"
                   />
+                  {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                 </div>
 
                 <div>
                   <input
                     type="email"
                     id="email"
-                    required
                     value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                    onChange={(e) => {
+                      setFormData({ ...formData, email: e.target.value });
+                      setErrors((p) => ({ ...p, email: "" }));
+                    }}
+                    className={`w-full px-4 py-3 rounded-lg border bg-gray-50 focus:ring-2 focus:ring-primary/20 outline-none transition-all ${errors.email ? "border-red-500" : "border-gray-200 focus:border-primary"}`}
                     placeholder="Email Address"
                   />
+                  {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                 </div>
 
                 <div>
@@ -126,15 +149,22 @@ export default function ContactPage() {
                 <div>
                   <textarea
                     id="message"
-                    required
                     rows={5}
                     value={formData.message}
-                    onChange={(e) =>
-                      setFormData({ ...formData, message: e.target.value })
-                    }
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
+                    onChange={(e) => {
+                      const v = capToMaxChars(e.target.value);
+                      setFormData({ ...formData, message: v });
+                      setErrors((p) => ({ ...p, message: "" }));
+                    }}
+                    className={`w-full px-4 py-3 rounded-lg border bg-gray-50 focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none ${errors.message ? "border-red-500" : "border-gray-200 focus:border-primary"}`}
                     placeholder="Questions or Comments?"
                   />
+                  <div className="flex justify-between items-center gap-2 mt-1">
+                    {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
+                    <p className={`text-sm ml-auto shrink-0 ${formData.message.length > maxMessageChars ? "text-red-500" : "text-gray-500"}`}>
+                      {formData.message.length}/{maxMessageChars} characters
+                    </p>
+                  </div>
                 </div>
 
                 <Button

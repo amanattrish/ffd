@@ -44,40 +44,40 @@ export default function InsuranceSection() {
       </div>
 
       {/* Insurance Providers Section */}
-      <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-16 relative z-10">
+      <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start !mb-16 relative z-10">
         {/* Left Content */}
         <div>
           {/* Main Heading - "Insurance Providers" in teal-blue */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--color-primary)] mb-2">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--color-primary)] !mb-2">
             {insurance.title}
           </h2>
           {/* Sub-heading - "Accepted" in light green */}
-          <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--color-secondary)] mb-6">
+          <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary !mb-6">
             {insurance.titleHighlight}
           </p>
           
           {/* First paragraph */}
-          <p className="text-secondary mb-4 leading-relaxed text-base">
+          <p className="text-black !mb-4 leading-relaxed text-base">
             We accept most major dental insurance plans and are happy to help verify your
             coverage. Our team will assist in maximizing your benefits and clearly explaining
             any out-of-pocket costs before treatment begins.
           </p>
           
           {/* Second paragraph */}
-          <p className="text-secondary mb-6 leading-relaxed text-base">
+          <p className="text-black !mb-6 leading-relaxed text-base">
             If you don&apos;t see your provider listed, please contact us for confirmation.
           </p>
 
           {/* Sub-heading */}
-          <h3 className="font-bold text-primary mb-4 text-lg">
+          <h3 className="font-bold text-black !mb-4 text-lg">
             We are in-network with the following insurance carriers:
           </h3>
 
           {/* Insurance List - Bulleted list */}
-          <ul className="space-y-2 mb-8">
+          <ul className="space-y-2 !mb-8">
             {insuranceList.map((item, index) => (
-              <li key={index} className="flex items-start gap-2 text-secondary text-base">
-                <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+              <li key={index} className="flex items-start gap-2 text-black text-base">
+                <span className="w-2 h-2 rounded-full bg-black mt-2 flex-shrink-0" />
                 <span>{item}</span>
               </li>
             ))}
@@ -126,11 +126,11 @@ export default function InsuranceSection() {
       {/* CareCredit Section */}
       <div className="border-t border-gray-200 pt-12">
         {/* Centered Header */}
-        <div className="text-center lg:text-left mb-8">
-          <p className="text-primary font-bold text-lg mb-4">
+        <div className="text-center lg:text-left !mb-8">
+          <p className="text-black font-bold text-lg !mb-4">
             We finance through Care Credit, ask us how
           </p>
-          <div className="flex justify-center lg:justify-start mb-4">
+          <div className="flex justify-center lg:justify-start !mb-4">
             <Image
               src="/images/carecredit-logo.png"
               alt="CareCredit"
@@ -142,46 +142,46 @@ export default function InsuranceSection() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Left Column - Discounts & Memberships */}
+          {/* Left Column - Discounts & Me!mberships */}
           <div>
-            <h3 className="text-xl font-bold text-primary mb-4">
-              Discounts & Memberships
+            <h3 className="text-xl font-bold text-black !mb-4">
+              Discounts & Me!mberships
             </h3>
-            <p className="text-secondary mb-4 leading-relaxed">
-              For patients without insurance, we offer in-house membership plans and seasonal discounts. These plans may include:
+            <p className="text-black !mb-4 leading-relaxed">
+              For patients without insurance, we offer in-house me!mbership plans and seasonal discounts. These plans may include:
             </p>
 
-            <ul className="space-y-2 mb-6">
-              <li className="flex items-start gap-2 text-secondary">
-                <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+            <ul className="space-y-2 !mb-6">
+              <li className="flex items-start gap-2 text-black">
+                <span className="w-2 h-2 rounded-full bg-black mt-2 flex-shrink-0" />
                 <span>Routine exams and cleanings</span>
               </li>
-              <li className="flex items-start gap-2 text-secondary">
-                <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+              <li className="flex items-start gap-2 text-black">
+                <span className="w-2 h-2 rounded-full bg-black mt-2 flex-shrink-0" />
                 <span>Discounts on treatments</span>
               </li>
-              <li className="flex items-start gap-2 text-secondary">
-                <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+              <li className="flex items-start gap-2 text-black">
+                <span className="w-2 h-2 rounded-full bg-black mt-2 flex-shrink-0" />
                 <span>No waiting periods or yearly limits</span>
               </li>
             </ul>
 
-            <p className="text-secondary leading-relaxed">
+            <p className="text-black leading-relaxed">
               Contact our front desk for current offers and eligibility.
             </p>
           </div>
 
           {/* Right Column - Special Offer Card */}
           <div className="bg-white rounded-lg p-6 shadow-md border border-gray-100">
-            <span className="inline-block text-primary font-bold text-sm mb-4">
+            <span className="inline-block text-black font-bold text-sm !mb-4">
               Special Offer
             </span>
             
-            <h4 className="text-xl font-bold text-primary mb-3">
+            <h4 className="text-xl font-bold text-black !mb-3">
               $299 - New Patient Exam, X-rays and Cleaning
             </h4>
             
-            <p className="text-secondary mb-4 leading-relaxed">
+            <p className="text-black !mb-4 leading-relaxed">
               Looking for a New Dentist? We are now offering a{" "}
               <a 
                 href="/patient-info/new-patients" 
@@ -192,15 +192,15 @@ export default function InsuranceSection() {
               . Limited time offer, restrictions may apply.
             </p>
             
-            <p className="font-bold text-primary mb-3">
+            <p className="font-bold text-black !mb-3">
               No Insurance? No Problem!
             </p>
             
-            <p className="text-secondary mb-6 leading-relaxed">
+            <p className="text-black !mb-6 leading-relaxed">
               Ask us about our{" "}
               <a 
                 href="/patient-info/insurance" 
-                className="text-primary underline hover:text-primary/80"
+                className="text-black underline hover:text-primary/80"
               >
                 Wellness Program
               </a>
@@ -209,7 +209,7 @@ export default function InsuranceSection() {
             
             <Button
               href="/book-appointment"
-              className="w-50 rounded-full! px-5! py-2! bg-primary text-white shadow-lg hover:bg-primary/90 mt-2"
+              className="w-50 rounded-full! px-5! py-2! bg-primary text-white! shadow-lg hover:bg-primary/90 mt-2"
             >
               Book Appointment
             </Button>

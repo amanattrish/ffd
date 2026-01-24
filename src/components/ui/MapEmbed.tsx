@@ -9,8 +9,8 @@ export default function MapEmbed({
   className = "",
   height = "400px",
 }: MapEmbedProps) {
-  // Default to a placeholder if no URL is provided
-  const mapUrl = embedUrl || "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.123456789!2d-73.123456!3d40.123456";
+  // Default to OpenStreetMap (Freeport, NY) if no URL is provided
+  const mapUrl = embedUrl || "https://www.openstreetmap.org/export/embed.html?bbox=-73.65%2C40.64%2C-73.51%2C40.68&layer=mapnik&marker=40.6576%2C-73.5832";
 
   return (
     <div className={`rounded-xl overflow-hidden shadow-lg ${className}`}>

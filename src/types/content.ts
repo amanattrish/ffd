@@ -30,6 +30,11 @@ export interface SiteConfig {
     twitter: string;
     linkedin: string;
   };
+  reviews?: {
+    google?: string;
+    yelp?: string;
+    facebook?: string;
+  };
   navigation: Navigation;
   footer: {
     description: string;
@@ -60,6 +65,7 @@ export interface HeroSection {
     secondary?: CTAButton;
   };
   image?: string;
+  enquirySuccessMessage?: string;
 }
 
 // Service Types

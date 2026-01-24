@@ -25,6 +25,11 @@
     "twitter": "https://twitter.com/freeportdental",
     "linkedin": "https://linkedin.com/company/freeportfamilydentistry"
   },
+  "reviews": {
+    "google": "https://g.page/r/review",
+    "yelp": "https://www.yelp.com/writeareview/biz/freeport-family-dentistry",
+    "facebook": "https://www.facebook.com/freeportfamilydentistry/reviews"
+  },
   "navigation": {
     "main": [
       { 
@@ -46,15 +51,7 @@
       { "label": "Testimonials", "href": "/testimonials" },
       { "label": "Blogs", "href": "/blog" },
       { "label": "Contact Us", "href": "/contact" },
-      { 
-        "label": "Legal Pages", 
-        "href": "/legal",
-        "submenu": [
-          { "label": "Privacy Policy", "href": "/privacy-policy" },
-          { "label": "Terms of Service", "href": "/terms-of-service" },
-          { "label": "HIPAA Compliance", "href": "/hipaa" }
-        ]
-      }
+      { "label": "Legal", "href": "/legal" }
     ],
     "cta": { "label": "Book Appointment", "href": "/book-appointment" }
   },
@@ -73,9 +70,7 @@
       { "label": "Orthodontics", "href": "/services/orthodontics" }
     ],
     "legal": [
-      { "label": "Privacy Policy", "href": "/privacy-policy" },
-      { "label": "Terms of Service", "href": "/terms-of-service" },
-      { "label": "HIPAA Compliance", "href": "/hipaa" }
+      { "label": "Legal", "href": "/legal" }
     ],
     "copyright": "Freeport Family Dentistry. All rights reserved."
   },

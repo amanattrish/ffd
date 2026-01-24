@@ -51,16 +51,16 @@ export default function ServicesPreview() {
       <FrontToothDecoration className="absolute top-3 left-1 w-20 h-40 opacity-50 hidden lg:block" />
 
       {/* Header with left content and right image placeholder */}
-      <div className="grid lg:grid-cols-2 gap-12 mb-12 items-center">
+      <div className="grid lg:grid-cols-2 gap-12 !mb-12 items-center">
         <div>
-          <span className="inline-block text-secondary font-medium text-sm uppercase tracking-wider mb-2">
+          <span className="inline-block text-secondary font-medium text-sm uppercase tracking-wider !mb-2">
             {services.sectionLabel}
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-black !mb-4">
             {services.title}{" "}
-            <span className="text-primary">{services.titleHighlight}</span>
+            <span className="text-[#A1C65D]">{services.titleHighlight}</span>
           </h2>
-          <p className="text-secondary mb-6 leading-relaxed">
+          <p className="text-black !mb-6 leading-relaxed">
             {services.description}
           </p>
 
@@ -68,7 +68,7 @@ export default function ServicesPreview() {
           <ul className="space-y-3">
             {serviceHighlights.map((highlight, index) => (
               <li key={index} className="flex items-center gap-3">
-                <span className="w-5 h-5 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                <span className="w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
                   <Check className="w-3 h-3 text-white" strokeWidth={3} />
                 </span>
                 <span className="text-primary font-medium">{highlight}</span>
@@ -121,7 +121,7 @@ export default function ServicesPreview() {
               {/* Card Content */}
               <div className="p-6 flex flex-col h-full">
                 {/* Icon */}
-                <div className="mb-4 text-primary group-hover:text-white transition-colors">
+                <div className="!mb-4 text-primary group-hover:text-white transition-colors">
                   {isFirstCard ? (
                     <svg width="32" height="32" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
                       <path d="M0.223018 45.4965C0.0377505 45.1505 0 44.7773 0 44.3912C0.0026135 38.3612 0.000580777 32.3316 0.00290389 26.3016C0.00319427 25.2425 0.171039 25.0758 1.22921 25.0741C3.39697 25.0703 5.56501 25.0709 7.73276 25.0738C8.78338 25.0749 8.92422 25.2181 8.92596 26.2511C8.92771 27.2997 8.92712 27.2721 9.98646 27.2439C14.4683 27.1248 18.879 27.5265 23.0833 29.222C25.3013 30.1167 27.2599 31.409 28.754 33.3148C29.0359 33.6747 29.2343 33.6861 29.5737 33.4171C31.4398 31.9383 33.3929 30.5902 35.534 29.5311C37.148 28.7326 38.8293 28.1537 40.6262 27.9495C41.7706 27.8193 42.8677 28.0041 43.8931 28.5266C45.7504 29.4736 46.168 31.7518 44.7178 33.3625C42.0814 36.2907 39.075 38.783 35.6838 40.8036C34.143 41.7217 32.5256 42.4564 30.825 43.0344C27.7786 44.0702 24.7344 43.9125 21.6671 43.1666C19.8745 42.7309 18.1208 42.1499 16.3312 41.7177C14.1605 41.1934 11.9971 41.2314 9.9429 42.2931C9.25004 42.651 8.79296 43.0818 8.90535 43.9686C8.96894 44.4702 9.08248 45.0422 8.66665 45.4965H0.223018ZM8.92683 34.9705C8.92683 37.005 8.93119 39.0398 8.92277 41.0743C8.92132 41.4458 8.9733 41.5486 9.36067 41.3444C11.7009 40.1085 14.1762 40.0358 16.6799 40.6574C18.4487 41.0964 20.1939 41.6326 21.9595 42.0918C26.0118 43.1462 29.8519 42.6376 33.557 40.7077C36.4304 39.2109 39.0053 37.3138 41.3815 35.1355C42.3596 34.2388 43.3846 33.3721 44.133 32.2572C44.6493 31.488 44.5982 30.7223 44.0183 30.0481C43.4807 29.4228 42.7475 29.1706 41.951 29.0893C40.3733 28.9278 38.8906 29.3423 37.452 29.9122C34.5757 31.0523 32.0589 32.7946 29.6989 34.7562C28.312 35.9091 26.7817 36.2733 25.0327 36.0897C23.768 35.957 22.5757 35.591 21.4083 35.1329C20.4535 34.7582 19.5385 34.2885 18.6528 33.7665C18.3218 33.5713 18.1101 33.3137 18.3343 32.9268C18.5384 32.5741 18.8512 32.5884 19.1746 32.7655C19.3747 32.8751 19.5693 32.9944 19.7702 33.1022C21.352 33.9501 22.9822 34.6748 24.7774 34.9258C25.7232 35.058 26.6728 35.0623 27.5988 34.7562C28.1959 34.5589 28.2362 34.4395 27.8346 33.9373C27.3459 33.3264 26.7837 32.7882 26.171 32.3031C24.0355 30.6128 21.5541 29.6816 18.9354 29.1029C15.7992 28.4099 12.613 28.2789 9.41062 28.4029C8.9791 28.4195 8.92074 28.6283 8.92219 28.9812C8.93032 30.9777 8.92625 32.9744 8.92683 34.9708V34.9705ZM4.50335 30.1123C3.57323 30.1123 2.64283 30.1216 1.71271 30.1077C1.34392 30.1022 1.14965 30.2001 1.15546 30.6172C1.17259 31.8322 1.16881 33.0479 1.15749 34.2629C1.154 34.6333 1.31081 34.7672 1.66886 34.766C3.54826 34.7588 5.42765 34.757 7.30705 34.7678C7.70488 34.7701 7.83875 34.606 7.8341 34.2214C7.82016 33.0252 7.81842 31.8288 7.83468 30.6326C7.8402 30.2317 7.67962 30.0999 7.29369 30.1068C6.36386 30.1234 5.43346 30.1123 4.50306 30.1123H4.50335ZM4.48273 40.5642C5.43201 40.5642 6.38129 40.5549 7.33028 40.5689C7.69733 40.5744 7.83701 40.4315 7.83352 40.0652C7.82133 38.8501 7.82162 37.6345 7.83294 36.4194C7.83642 36.054 7.69152 35.9096 7.32795 35.9111C5.44856 35.9189 3.56917 35.9201 1.69006 35.9099C1.29891 35.9079 1.15197 36.0598 1.15662 36.4505C1.17114 37.6467 1.17172 38.8431 1.15575 40.0393C1.15052 40.4355 1.30297 40.577 1.69238 40.57C2.62221 40.5532 3.55261 40.5645 4.48273 40.5642ZM4.49144 29.0205C5.4413 29.0205 6.39087 29.0132 7.34044 29.0245C7.66481 29.0283 7.8402 28.9368 7.83178 28.576C7.81697 27.9498 7.81842 27.3223 7.8312 26.6961C7.83846 26.349 7.68368 26.2293 7.35031 26.2304C5.45088 26.2377 3.55145 26.2394 1.65202 26.2293C1.27771 26.2272 1.14733 26.3827 1.1572 26.7417C1.17259 27.3113 1.18391 27.8827 1.15342 28.4511C1.12874 28.9133 1.32185 29.0405 1.75627 29.0286C2.66722 29.0036 3.57962 29.021 4.49115 29.0205H4.49144ZM4.49144 41.6567C3.54158 41.6567 2.59201 41.6642 1.64244 41.6526C1.31023 41.6485 1.15081 41.7607 1.15836 42.1116C1.17172 42.7384 1.17143 43.3655 1.15894 43.9924C1.15197 44.3491 1.3294 44.4473 1.65202 44.4464C3.55145 44.44 5.45088 44.4374 7.35031 44.4481C7.73682 44.4505 7.84107 44.2718 7.83265 43.9241C7.81842 43.3548 7.80971 42.784 7.83497 42.2153C7.85327 41.801 7.71562 41.6369 7.28382 41.6486C6.3537 41.6735 5.42242 41.6561 4.49173 41.6567H4.49144Z" fill="currentColor"/>
@@ -166,12 +166,12 @@ export default function ServicesPreview() {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-bold text-xl mb-3 text-primary group-hover:text-white transition-colors">
+                <h3 className="font-bold text-xl !mb-3 text-primary group-hover:text-white transition-colors">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm mb-6 leading-relaxed flex-grow text-secondary group-hover:text-white/90 transition-colors">
+                <p className="text-sm !mb-6 leading-relaxed flex-grow text-black group-hover:text-white/90 transition-colors">
                   {service.description}
                 </p>
 
