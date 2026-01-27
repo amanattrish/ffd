@@ -61,19 +61,82 @@
       "description": "We believe everyone deserves access to quality dental care. We accept most insurance plans and offer flexible financing options."
     },
     "providers": {
-      "title": "Insurance Providers Accepted",
-      "description": "We are in-network with the following insurance providers:",
-      "list": [
+      "title": "Insurance Providers",
+      "titleHighlight": "Accepted",
+      "description": "We accept most major dental insurance plans and are happy to help verify your coverage. Our team will assist in maximizing your benefits and clearly explaining any out-of-pocket costs before treatment begins.",
+      "contactNote": "If you don't see your provider listed, please contact us for confirmation.",
+      "carriersHeading": "We are in-network with the following insurance carriers:",
+      "carriersList": [
+        "Aetna",
+        "Cigna",
+        "Delta Dental",
+        "Guardian",
+        "Metlife",
+        "All insurance associated with Dentemax"
+      ],
+      "logos": [
+        { "name": "Aetna", "logo": "/images/insurance/aetna.png" },
+        { "name": "Dentemax", "logo": "/images/insurance/dentamax.png" },
+        { "name": "Delta Dental", "logo": "/images/insurance/delta-dental.png" },
         { "name": "Cigna", "logo": "/images/insurance/cigna.png" },
         { "name": "MetLife", "logo": "/images/insurance/metlife.png" },
-        { "name": "Aetna", "logo": "/images/insurance/aetna.png" },
-        { "name": "Guardian", "logo": "/images/insurance/guardian.png" },
-        { "name": "Delta Dental", "logo": "/images/insurance/delta-dental.png" },
-        { "name": "United Healthcare", "logo": "/images/insurance/united.png" },
-        { "name": "Blue Cross Blue Shield", "logo": "/images/insurance/bcbs.png" },
-        { "name": "Humana", "logo": "/images/insurance/humana.png" }
+        { "name": "Guardian", "logo": "/images/insurance/guardian.png" }
       ],
       "note": "Don't see your insurance listed? Contact us to verify your coverage."
+    },
+    "careCredit": {
+      "heading": "We finance through Care Credit, ask us how",
+      "logo": "/images/carecredit-logo.png"
+    },
+    "discounts": {
+      "title": "Discounts & Memberships",
+      "description": "For patients without insurance, we offer in-house membership plans and seasonal discounts. These plans may include:",
+      "benefits": [
+        "Routine exams and cleanings",
+        "Discounts on treatments",
+        "No waiting periods or yearly limits"
+      ],
+      "contactNote": "Contact our front desk for current offers and eligibility."
+    },
+    "specialOffer": {
+      "title": "Special Offer",
+      "heading": "$299 - New Patient Exam, X-rays and Cleaning",
+      "description": {
+        "beforeLink": "Looking for a New Dentist? We are now offering a ",
+        "linkText": "New Patient Special Offer",
+        "afterLink": ". Limited time offer, restrictions may apply."
+      },
+      "noInsuranceHeading": "No Insurance? No Problem!",
+      "wellnessProgram": {
+        "beforeLink": "Ask us about our ",
+        "linkText": "Wellness Program",
+        "afterLink": " for uninsured patients."
+      },
+      "buttonLabel": "Book Appointment",
+      "buttonHref": "/book-appointment",
+      "newPatientLink": "/patient-info/new-patients",
+      "wellnessLink": "/patient-info/insurance"
+    },
+    "scheduleSection": {
+      "title": "Schedule Today",
+      "buttonLabel": "Request Appointment",
+      "buttonHref": "/book-appointment",
+      "callHeading": "Call Us Now"
+    },
+    "services": {
+      "title": "Services",
+      "list": [
+        "General Dentistry",
+        "Family Dentistry",
+        "Cosmetic Dentistry",
+        "Exam & Cleaning",
+        "Teeth Whitening",
+        "Dental Crowns",
+        "Dental Implants",
+        "Dental Fillings",
+        "Root Canal"
+      ],
+      "href": "/services"
     },
     "outOfNetwork": {
       "title": "Out-of-Network Benefits",
@@ -136,101 +199,64 @@
       ]
     },
     "cta": {
-      "title": "Questions About Insurance or Financing?",
-      "description": "Our team is happy to help you understand your options and maximize your benefits.",
-      "button": { "label": "Contact Us", "href": "/contact" }
+      "title": "Get a FREE Consultation",
+      "description": "Give us a call. We are here to answer your questions",
+      "image": "/images/dentist-doing-check-up-patient.png",
+      "imageAlt": "Dentist examining patient"
     }
   },
   "faqs": {
     "pageTitle": "Frequently Asked Questions",
     "pageDescription": "Answers to common questions about dental care",
-    "hero": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "We're Here to Help",
-      "description": "Find answers to common questions about our practice, procedures, and dental care."
-    },
     "categories": [
       {
-        "title": "General Questions",
+        "title": "General Dental",
+        "titleSuffix": "FAQs",
         "questions": [
           {
             "question": "How often should I visit the dentist?",
-            "answer": "We recommend visiting the dentist every 6 months for routine exams and cleanings. However, some patients may need more frequent visits based on their oral health needs."
+            "answer": "Every six months for routine checkups and cleanings."
           },
           {
-            "question": "Do you accept new patients?",
-            "answer": "Yes! We welcome new patients of all ages. Call us or book online to schedule your first appointment."
+            "question": "Is dental treatment painful?",
+            "answer": "Modern techniques and anesthesia make most procedures comfortable."
           },
           {
-            "question": "What are your office hours?",
-            "answer": "We're open Monday through Thursday from 9 AM to 6 PM, Friday from 9 AM to 5 PM, and Saturday from 9 AM to 2 PM. We're closed on Sundays."
+            "question": "What if I have dental anxiety?",
+            "answer": "We offer a calm environment and gentle care to help anxious patients feel at ease."
           },
           {
-            "question": "Do you offer emergency dental services?",
-            "answer": "Yes, we offer same-day emergency appointments for urgent dental issues. Call our office and follow the prompts for emergency care."
+            "question": "Do you treat children and adults?",
+            "answer": "Yes, we provide dental care for patients of all ages."
           }
         ]
       },
       {
-        "title": "Insurance & Payment",
+        "title": "Clinic-Specific",
+        "titleSuffix": "FAQs",
         "questions": [
           {
-            "question": "What insurance do you accept?",
-            "answer": "We accept most major insurance plans including Cigna, MetLife, Aetna, Guardian, Delta Dental, and more. Contact us to verify your coverage."
+            "question": "Do you accept emergency appointments?",
+            "answer": "Yes, we offer same-day appointments for dental emergencies."
           },
           {
-            "question": "What if I don't have insurance?",
-            "answer": "We offer an affordable membership plan for patients without insurance, as well as financing options through CareCredit and in-house payment plans."
+            "question": "What safety and hygiene measures do you follow?",
+            "answer": "We use advanced sterilization protocols and follow strict infection control standards."
           },
           {
-            "question": "Do you offer payment plans?",
-            "answer": "Yes, we offer flexible payment plans through CareCredit and in-house financing options to help make dental care affordable."
-          }
-        ]
-      },
-      {
-        "title": "Procedures & Treatments",
-        "questions": [
-          {
-            "question": "Is teeth whitening safe?",
-            "answer": "Yes, professional teeth whitening is safe when performed by a dental professional. We use proven whitening systems that protect your enamel while brightening your smile."
+            "question": "Can I book appointments online?",
+            "answer": "Yes, online appointment booking is available for your convenience."
           },
           {
-            "question": "How long do dental implants last?",
-            "answer": "With proper care, dental implants can last a lifetime. The crown attached to the implant may need replacement after 10-15 years due to normal wear."
-          },
-          {
-            "question": "Does getting a filling hurt?",
-            "answer": "We use local anesthesia to numb the area before any filling procedure. Most patients feel little to no discomfort during the procedure."
-          },
-          {
-            "question": "How long does Invisalign treatment take?",
-            "answer": "Invisalign treatment typically takes 12-18 months, depending on the complexity of your case. Some minor cases can be completed in as little as 6 months."
-          }
-        ]
-      },
-      {
-        "title": "Dental Health Tips",
-        "questions": [
-          {
-            "question": "How often should I brush my teeth?",
-            "answer": "You should brush your teeth at least twice a day, ideally in the morning and before bed. Use a soft-bristled brush and fluoride toothpaste."
-          },
-          {
-            "question": "Is flossing really necessary?",
-            "answer": "Yes! Flossing removes plaque and food particles from between teeth where your toothbrush can't reach. Floss at least once a day for optimal oral health."
-          },
-          {
-            "question": "What foods should I avoid for healthy teeth?",
-            "answer": "Limit sugary and acidic foods and drinks, which can cause tooth decay. Sticky candies, soda, and citrus fruits can be particularly harmful if consumed frequently."
+            "question": "Do you offer cosmetic and restorative treatments?",
+            "answer": "Yes, we provide a full range of general, cosmetic, restorative, and orthodontic services."
           }
         ]
       }
     ],
     "cta": {
-      "title": "Still Have Questions?",
-      "description": "We're happy to answer any questions you may have. Contact us or schedule a consultation.",
-      "button": { "label": "Contact Us", "href": "/contact" }
+      "title": "Get a FREE Consultation",
+      "description": "Give us a call. We are here to answer your questions"
     }
   }
 }

@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Bell } from "lucide-react";
+import { homeContent } from "@/content";
 
 // Generate calendar days for a given month
 function getCalendarDays(year: number, month: number) {
@@ -82,6 +84,8 @@ function generateTimeSlots() {
 }
 
 export default function BookAppointmentSection() {
+  const router = useRouter();
+  const { booking } = homeContent;
   const [selectedDate, setSelectedDate] = useState<number>(19);
   const [selectedTime, setSelectedTime] = useState<string | null>("09:00-09:15");
   const [currentMonth, setCurrentMonth] = useState(11); // December (0-indexed)
@@ -141,10 +145,10 @@ export default function BookAppointmentSection() {
         <div className="max-w-5xl mx-auto bg-white rounded-2xl p-6 lg:p-8">
           {/* Header */}
           <h1 className="text-2xl lg:text-3xl font-bold text-black text-center mb-2">
-            BOOK APPOINTMENT
+            {booking.title}
           </h1>
           <h2 className="text-lg! text-center font-bold text-black mb-6">
-            Select Date & Time
+            {booking.subtitle}
           </h2>
           
           <div className="grid lg:grid-cols-2 gap-8">
@@ -219,7 +223,7 @@ export default function BookAppointmentSection() {
               {/* Scheduling Summary */}
               {selectedDate && selectedTime && (
                 <div className="bg-[#A1C65D] rounded-lg p-4 text-white shadow-sm mb-3">
-                  <h4 className="font-bold text-base mb-1">Scheduling</h4>
+                  <h4 className="font-bold text-base mb-1">{booking.schedulingLabel}</h4>
                   <p className="text-sm">
                     {formatDate(selectedDate)} {formatTimeRange()}
                   </p>
@@ -230,15 +234,15 @@ export default function BookAppointmentSection() {
               <div className="bg-gray-800 rounded-lg p-4 text-white shadow-sm">
                 <div className="flex items-center gap-3 mb-1">
                   <Bell className="w-5 h-5" />
-                  <h4 className="font-bold text-base">Notification</h4>
+                  <h4 className="font-bold text-base">{booking.notificationLabel}</h4>
                 </div>
-                <p className="text-sm text-gray-300">Notify me for 1 day</p>
+                <p className="text-sm text-gray-300">{booking.notificationText}</p>
               </div>
             </div>
             
             {/* Right Column - Time Slots and Action Buttons */}
             <div className="flex flex-col">
-              <h3 className="text-lg font-bold text-black mb-4">Pick a time</h3>
+              <h3 className="text-lg font-bold text-black mb-4">{booking.pickTimeLabel}</h3>
               <div className="space-y-2 flex-1 max-h-100 overflow-y-auto pr-2 mb-6">
                 {timeSlots.map((slot) => {
                   const isSelected = selectedTime === slot.id;
@@ -280,7 +284,7 @@ export default function BookAppointmentSection() {
                     setSelectedTime("09:00-09:15");
                   }}
                 >
-                  Back
+                  {booking.backButton}
                 </button>
                 <button
                   className={`
@@ -294,14 +298,11 @@ export default function BookAppointmentSection() {
                   onClick={() => {
                     // Handle next step action
                     if (selectedDate && selectedTime) {
-                      console.log("Proceeding to next step", {
-                        date: formatDate(selectedDate),
-                        time: formatTimeRange(),
-                      });
+                      router.push("/book-appointment");
                     }
                   }}
                 >
-                  Next Step
+                  {booking.nextStepButton}
                 </button>
               </div>
             </div>

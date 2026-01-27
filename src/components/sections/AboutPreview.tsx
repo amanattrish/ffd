@@ -3,13 +3,6 @@ import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 import { homeContent } from "@/content";
 
-// Feature icons with different colors
-const featureIcons = [
-  { color: "#117598", label: "Elite Clinical Expertise" },
-  { color: "#117598", label: "Precision Smile Design" },
-  { color: "#117598", label: "Advanced Professional Care" },
-  { color: "#117598", label: "Proven Medical Excellence" },
-];
 
 // Icon components - using SVG files
 function TrophyIcon({ color }: { color: string }) {
@@ -132,21 +125,21 @@ export default function AboutPreview() {
         {/* Content */}
         <div>
           <span className="inline-block text-primary font-medium text-sm bg-[#F3F3F3] rounded-full px-4 py-1 !mb-4">
-            Overview of practice
+            {about.sectionLabel}
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black !mb-2">
             {about.title}
           </h2>
           <p className="text-lg text-[#777777] !mb-4">
-            Focuses on high standards and precision.
+            {about.shortDescription}
           </p>
           <p className="text-black !mb-8 leading-relaxed text-sm md:text-base">
-            Precision dentistry meets artistic excellence. We co!mbine years of specialized experience with advanced medical technology to deliver transformative care and long-term oral health.
+            {about.description}
           </p>
 
           {/* Features List - with colored icons */}
           <ul className="space-y-3 !mb-8">
-            {featureIcons.map((feature, index) => (
+            {about.features.map((feature, index) => (
               <li key={index} className="flex items-center gap-3">
                 <span
                   className="w-6 h-6 rounded-full flex items-center justify-center shrink-0"
