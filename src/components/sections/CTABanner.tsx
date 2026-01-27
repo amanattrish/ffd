@@ -60,7 +60,7 @@ export default function CTABanner({
           <div className="absolute right-0 lg:right-4 top-12 -translate-y-1/2 w-full lg:w-1/3 max-w-sm lg:max-w-md h-[400px] z-20">
             <div className="relative w-full h-full">
               <Image
-                src="/images/dentist-doing-check-up-patient.png"
+                src={content.image || "/images/dentist-doing-check-up-patient.png"}
                 alt="Dental care professional examining patient"
                 fill
                 className="object-contain object-bottom"

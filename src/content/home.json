@@ -9,18 +9,60 @@
       "secondary": { "label": "Call Us", "href": "tel:+15161235467" }
     },
     "image": "/images/hero-dentist.png",
-    "enquirySuccessMessage": "Thank you! We've received your enquiry and will get back to you shortly."
+    "enquirySuccessMessage": "Thank you! We've received your enquiry and will get back to you shortly.",
+    "form": {
+      "title": "Enquiry Received!",
+      "sendAnother": "Send another enquiry",
+      "submitButton": "Send Enquiry",
+      "submittingButton": "Sending...",
+      "fields": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Your Name",
+          "required": true
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Your Email",
+          "required": true
+        },
+        "date": {
+          "label": "Date",
+          "placeholder": "DD/MM/YYYY",
+          "required": true
+        },
+        "location": {
+          "label": "Location",
+          "placeholder": "Your Location",
+          "required": true
+        }
+      }
+    }
   },
   "about": {
-    "sectionLabel": "About Us",
+    "sectionLabel": "Overview of practice",
     "title": "The Modern & Clinical Approach",
     "subtitle": "To Dental Care",
-    "description": "At Freeport Family Dentistry, we combine state-of-the-art technology with compassionate care to provide you with the best dental experience possible. Our modern facility and experienced team ensure that every visit is comfortable and effective.",
+    "shortDescription": "Focuses on high standards and precision.",
+    "description": "Precision dentistry meets artistic excellence. We combine years of specialized experience with advanced medical technology to deliver transformative care and long-term oral health.",
+    "fullDescription": "At Freeport Family Dentistry, we combine state-of-the-art technology with compassionate care to provide you with the best dental experience possible. Our modern facility and experienced team ensure that every visit is comfortable and effective.",
     "features": [
-      "State-of-the-art equipment",
-      "Experienced dental professionals",
-      "Comfortable environment",
-      "Personalized treatment plans"
+      {
+        "label": "Elite Clinical Expertise",
+        "color": "#117598"
+      },
+      {
+        "label": "Precision Smile Design",
+        "color": "#117598"
+      },
+      {
+        "label": "Advanced Professional Care",
+        "color": "#117598"
+      },
+      {
+        "label": "Proven Medical Excellence",
+        "color": "#117598"
+      }
     ],
     "cta": { "label": "Learn More About Us", "href": "/about" },
     "image": "/images/about-clinic.png"
@@ -30,6 +72,13 @@
     "title": "High Quality Services",
     "titleHighlight": "For You",
     "description": "We offer comprehensive dental services to meet all your oral health needs, from routine cleanings to advanced restorative procedures.",
+    "highlights": [
+      "Experienced Team",
+      "State-Of-The-Art Technology",
+      "Comprehensive Services",
+      "Emergency Dental Services"
+    ],
+    "readMoreButton": "Read More",
     "items": [
       {
         "id": "general-dental-care",
@@ -65,6 +114,9 @@
   "testimonials": {
     "sectionLabel": "Testimonials",
     "title": "WHAT OUR CLIENTS SAYS",
+    "description": "Real stories from our valued patients who trust us with their smiles",
+    "viewAllLabel": "View All Reviews",
+    "verifiedPatientLabel": "Verified Patient",
     "items": [
       {
         "id": "1",
@@ -97,6 +149,7 @@
     "title": "Get a FREE Consultation",
     "description": "Ready to transform your smile? Schedule a free consultation with our dental experts today.",
     "phone": "+1 (516) 123-5467",
+    "image": "/images/dentist-doing-check-up-patient.png",
     "buttons": {
       "primary": { "label": "Book Appointment", "href": "/book-appointment" },
       "secondary": { "label": "Call Now", "href": "tel:+15161235467" }
@@ -107,13 +160,26 @@
     "title": "Insurance Providers",
     "titleHighlight": "Accepted",
     "description": "We are in-network with the following insurance carriers:",
+    "paragraph1": "We accept most major dental insurance plans and are happy to help verify your coverage. Our team will assist in maximizing your benefits and clearly explaining any out-of-pocket costs before treatment begins.",
+    "paragraph2": "If you don't see your provider listed, please contact us for confirmation.",
+    "heading": "We are in-network with the following insurance carriers:",
+    "list": [
+      "Aetna",
+      "Cigna",
+      "Delta Dental",
+      "Guardian",
+      "Metlife",
+      "All insurance associated with Dentemax"
+    ],
     "providers": [
       { "name": "Cigna", "logo": "/images/insurance/cigna.png" },
+      { "name": "Dentemax", "logo": "/images/insurance/dentamax.png" },
+      { "name": "Delta Dental", "logo": "/images/insurance/delta-dental.png" },
       { "name": "MetLife", "logo": "/images/insurance/metlife.png" },
       { "name": "Aetna", "logo": "/images/insurance/aetna.png" },
-      { "name": "Guardian", "logo": "/images/insurance/guardian.png" },
-      { "name": "Delta Dental", "logo": "/images/insurance/delta-dental.png" }
+      { "name": "Guardian", "logo": "/images/insurance/guardian.png" }
     ],
+    "image": "/images/insurance-person.png",
     "additionalInfo": [
       "We accept most major insurance plans",
       "Flexible payment options available",
@@ -126,6 +192,16 @@
     "sectionLabel": "Financing",
     "subtitle": "Discounts & Memberships",
     "description": "For patients without insurance, we offer flexible financing options through CareCredit and our in-house membership plans.",
+    "careCreditHeading": "We finance through Care Credit, ask us how",
+    "logo": "/images/carecredit-logo.png",
+    "discountsTitle": "Discounts & Memberships",
+    "discountsDescription": "For patients without insurance, we offer in-house membership plans and seasonal discounts. These plans may include:",
+    "discountsList": [
+      "Routine exams and cleanings",
+      "Discounts on treatments",
+      "No waiting periods or yearly limits"
+    ],
+    "contactText": "Contact our front desk for current offers and eligibility.",
     "features": [
       "0% interest financing available",
       "Flexible payment terms",
@@ -134,7 +210,16 @@
     ],
     "specialOffer": {
       "title": "Special Offer",
-      "description": "NEW PATIENT SPECIAL - Save on your first visit with our new patient package!"
+      "heading": "$299 - New Patient Exam, X-rays and Cleaning",
+      "description": "Looking for a New Dentist? We are now offering a",
+      "newPatientLink": { "label": "New Patient Special Offer", "href": "/patient-info/new-patients" },
+      "restrictions": "Limited time offer, restrictions may apply.",
+      "noInsuranceHeading": "No Insurance? No Problem!",
+      "wellnessText": "Ask us about our",
+      "wellnessLink": { "label": "Wellness Program", "href": "/patient-info/insurance" },
+      "wellnessTextEnd": "for uninsured patients.",
+      "buttonLabel": "Book Appointment",
+      "buttonHref": "/book-appointment"
     },
     "cta": { "label": "Learn About Financing", "href": "/patient-info/insurance" }
   },
@@ -142,6 +227,11 @@
     "sectionLabel": "Blog",
     "title": "BRIGHTEN YOUR OUTLOOK WITH OUR LATEST DENTAL",
     "titleHighlight": "INSIGHTS",
+    "description": "Stay informed with the latest dental health tips and news from our experts",
+    "viewAllLabel": "View All Articles",
+    "categoryBadge": "Dental Tips",
+    "readTime": "5 min read",
+    "readArticleLabel": "Read Article",
     "items": [
       {
         "id": "1",
@@ -175,6 +265,12 @@
     "title": "BOOK APPOINTMENT",
     "subtitle": "Select Date & Time",
     "description": "Choose a convenient time for your visit. We'll confirm your appointment within 24 hours.",
+    "pickTimeLabel": "Pick a time",
+    "schedulingLabel": "Scheduling",
+    "notificationLabel": "Notification",
+    "notificationText": "Notify me for 1 day",
+    "backButton": "Back",
+    "nextStepButton": "Next Step",
     "cta": { "label": "Schedule Now", "href": "/book-appointment" }
   }
 }

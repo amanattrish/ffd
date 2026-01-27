@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Check, CreditCard, Shield, Percent } from "lucide-react";
-import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 import { patientInfoContent } from "@/content";
+import { siteConfig } from "@/content";
+import { CTABanner } from "@/components/sections";
 
 export const metadata = {
   title: patientInfoContent.insurance.pageTitle,
@@ -12,197 +12,212 @@ export const metadata = {
 
 export default function InsurancePage() {
   const { insurance } = patientInfoContent;
+  const { phone } = siteConfig;
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary to-[var(--color-accent-1)] py-20 overflow-hidden">
-        <div className="absolute top-10 right-10 text-white/10 text-4xl font-light">+</div>
-        <div className="absolute bottom-10 left-10 text-white/10 text-3xl font-light">+</div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <Link
-            href="/patient-info"
-            className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Patient Info
-          </Link>
-
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+      {/* Page Title Section */}
+      <section className="bg-linear-to-br from-[#F2FDFF] to-white py-12">
+        <div className="container mx-auto px-4">
+          <h1 className="text-3xl! font-bold text-center text-gray-900">
             {insurance.hero.title}
           </h1>
-          <p className="text-xl text-white/90 mb-2">{insurance.hero.subtitle}</p>
-          <p className="text-white/80 max-w-2xl">{insurance.hero.description}</p>
         </div>
       </section>
 
-      {/* Insurance Providers */}
-      <Section background="white">
-        <div className="flex items-center gap-3 mb-6">
-          <span className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-            <Shield className="w-6 h-6 text-primary" />
-          </span>
-          <h2 className="text-2xl font-bold text-primary">
-            {insurance.providers.title}
-          </h2>
-        </div>
-        <p className="text-secondary mb-8">
-          {insurance.providers.description}
-        </p>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-          {insurance.providers.list.map((provider, index) => (
-            <div
-              key={index}
-              className="bg-gray-50 rounded-xl p-4 flex items-center justify-center h-20 hover:shadow-md transition-shadow"
-            >
-              {provider.logo ? (
-                <Image
-                  src={provider.logo}
-                  alt={provider.name}
-                  width={100}
-                  height={40}
-                  className="object-contain h-10"
-                />
-              ) : (
-                <span className="font-semibold text-secondary">
-                  {provider.name}
+      {/* Main Content - Two Column Layout */}
+      <section className="bg-white py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Left Column - Main Content (2/3 width) */}
+            <div className="lg:col-span-2 space-y-12">
+              {/* Insurance Providers Section */}
+              <div>
+                <h2 className="text-3xl! md:text-4xl! font-bold text-primary !mb-2">
+                  {insurance.providers.title}
+                </h2>
+                <span className="text-3xl! md:text-4xl! font-bold text-secondary block !mb-6">
+                  {insurance.providers.titleHighlight}
                 </span>
-              )}
+                
+                <p className="text-gray-800 !mb-4 leading-relaxed">
+                  {insurance.providers.description}
+                </p>
+                
+                <p className="text-gray-800 !mb-6 leading-relaxed">
+                  {insurance.providers.contactNote}
+                </p>
+
+                <h3 className="font-bold text-gray-900 !mb-4 text-lg">
+                  {insurance.providers.carriersHeading}
+                </h3>
+
+                <ul className="space-y-2 !mb-8">
+                  {insurance.providers.carriersList.map((item, index) => (
+                    <li key={index} className="flex items-start gap-2 text-gray-800">
+                      <span className="w-2 h-2 rounded-full bg-gray-800 mt-2 shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Insurance Logos Grid */}
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 !mb-8">
+                  {insurance.providers.logos.map((provider) => (
+                    <div
+                      key={provider.name}
+                      className="bg-white rounded-lg p-4 flex items-center justify-center border border-gray-200 hover:shadow-md transition-shadow min-h-24"
+                    >
+                      {provider.logo ? (
+                        <Image
+                          src={provider.logo}
+                          alt={provider.name}
+                          width={120}
+                          height={50}
+                          className="object-contain max-h-12 w-auto"
+                        />
+                      ) : (
+                        <span className="text-sm font-medium text-gray-700 text-center">
+                          {provider.name}
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* CareCredit Section */}
+              <div className="border-t border-gray-200 pt-8">
+                <p className="text-gray-900 font-bold text-lg !mb-4">
+                  {insurance.careCredit.heading}
+                </p>
+                <div className="!mb-8">
+                  <Image
+                    src={insurance.careCredit.logo}
+                    alt="CareCredit"
+                    width={200}
+                    height={60}
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+
+              {/* Discounts & Me!mberships Section */}
+              <div className="border-t border-gray-200 pt-8">
+                <h3 className="text-xl! font-bold text-gray-900 !mb-4">
+                  {insurance.discounts.title}
+                </h3>
+                <p className="text-gray-800 !mb-4 leading-relaxed">
+                  {insurance.discounts.description}
+                </p>
+
+                <ul className="space-y-2 !mb-6">
+                  {insurance.discounts.benefits.map((benefit, index) => (
+                    <li key={index} className="flex items-start gap-2 text-gray-800">
+                      <span className="w-2 h-2 rounded-full bg-gray-800 mt-2 shrink-0" />
+                      <span>{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <p className="text-gray-800 leading-relaxed">
+                  {insurance.discounts.contactNote}
+                </p>
+              </div>
             </div>
-          ))}
-        </div>
 
-        <p className="text-[var(--text-muted)] text-sm italic">
-          {insurance.providers.note}
-        </p>
-      </Section>
+            {/* Right Column - Sidebar (1/3 width) */}
+            <div className="lg:col-span-1 space-y-6">
+              {/* Combined Schedule Today and Services Card */}
+              <div className="bg-gray-100 rounded-lg p-6">
+                {/* Schedule Today Section */}
+                <div className="bg-primary rounded-lg p-6 text-white mb-6 text-center">
+                  <h3 className="text-2xl! font-bold !mb-4">{insurance.scheduleSection.title}</h3>
+                  <Button
+                    href={insurance.scheduleSection.buttonHref}
+                    variant="secondary"
+                    className="w-full !mb-6"
+                  >
+                    {insurance.scheduleSection.buttonLabel}
+                  </Button>
+                  <h3 className="text-3xl! font-bold !mb-2">{insurance.scheduleSection.callHeading}</h3>
+                  <a
+                    href={`tel:${phone.replace(/[^0-9+]/g, "")}`}
+                    className="text-4xl! font-bold hover:text-secondary transition-colors block"
+                  >
+                    {phone}
+                  </a>
+                </div>
 
-      {/* Out of Network */}
-      <Section background="gray">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-primary mb-4">
-            {insurance.outOfNetwork.title}
-          </h2>
-          <p className="text-secondary">
-            {insurance.outOfNetwork.description}
-          </p>
-        </div>
-      </Section>
+                {/* Services List Section */}
+                <div className="p-6">
+                  <h3 className="text-xl! font-bold text-gray-900 !mb-4">{insurance.services.title}</h3>
+                  <ul className="space-y-3!">
+                    {insurance.services.list.map((service, index) => (
+                      <li
+                        key={index}
+                        className={`text-gray-700 ${
+                          index < insurance.services.list.length - 1 ? "border-b border-gray-200 pb-3" : ""
+                        }`}
+                      >
+                        <Link
+                          href={insurance.services.href}
+                          className="hover:text-primary transition-colors"
+                        >
+                          {service}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
 
-      {/* Financing Options */}
-      <Section background="white">
-        <div className="flex items-center gap-3 mb-6">
-          <span className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
-            <CreditCard className="w-6 h-6 text-secondary" />
-          </span>
-          <h2 className="text-2xl font-bold text-primary">
-            {insurance.financing.title}
-          </h2>
-        </div>
-        <p className="text-secondary mb-8">
-          {insurance.financing.description}
-        </p>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          {insurance.financing.options.map((option, index) => (
-            <div
-              key={index}
-              className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-shadow"
-            >
-              <h3 className="text-xl font-bold text-primary mb-2">
-                {option.title}
-              </h3>
-              <p className="text-secondary mb-4 text-sm">
-                {option.description}
-              </p>
-              <ul className="space-y-2">
-                {option.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-2 text-sm">
-                    <span className="w-5 h-5 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
-                      <Check className="w-3 h-3 text-white" strokeWidth={3} />
-                    </span>
-                    <span className="text-primary">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* Membership Plans */}
-      <Section background="gray">
-        <div className="text-center mb-10">
-          <span className="w-14 h-14 rounded-full bg-[var(--color-accent-1)]/10 flex items-center justify-center mx-auto mb-4">
-            <Percent className="w-7 h-7 text-[var(--color-accent-1)]" />
-          </span>
-          <h2 className="text-3xl font-bold text-primary mb-4">
-            {insurance.membership.title}
-          </h2>
-          <p className="text-secondary max-w-2xl mx-auto">
-            {insurance.membership.description}
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {insurance.membership.plans.map((plan, index) => (
-            <div
-              key={index}
-              className={`bg-white rounded-2xl p-8 shadow-sm border-2 ${
-                index === 1
-                  ? "border-secondary"
-                  : "border-transparent"
-              }`}
-            >
-              {index === 1 && (
-                <span className="inline-block bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase">
-                  Best Value
+              {/* Special Offer Card */}
+              <div className="bg-white rounded-lg p-6 shadow-md border border-gray-200">
+                <span className="text-gray-900 font-bold text-sm block !mb-4">
+                  {insurance.specialOffer.title}
                 </span>
-              )}
-              <h3 className="text-xl font-bold text-primary mb-2">
-                {plan.title}
-              </h3>
-              <p className="text-3xl font-bold text-primary mb-6">
-                {plan.price}
-              </p>
-              <ul className="space-y-3 mb-6">
-                {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-sm">
-                    <span className="w-5 h-5 rounded-full bg-secondary flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-white" strokeWidth={3} />
-                    </span>
-                    <span className="text-primary">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <Button
-                href="/contact"
-                variant={index === 1 ? "primary" : "outline"}
-                className="w-full"
-              >
-                Get Started
-              </Button>
+                <h4 className="text-xl! font-bold text-gray-900 !mb-3">
+                  {insurance.specialOffer.heading}
+                </h4>
+                <p className="text-gray-800 !mb-4 leading-relaxed text-sm">
+                  {insurance.specialOffer.description.beforeLink}
+                  <Link
+                    href={insurance.specialOffer.newPatientLink}
+                    className="text-primary underline hover:text-primary/80"
+                  >
+                    {insurance.specialOffer.description.linkText}
+                  </Link>
+                  {insurance.specialOffer.description.afterLink}
+                </p>
+                <p className="font-bold text-gray-900 !mb-3 text-sm">
+                  {insurance.specialOffer.noInsuranceHeading}
+                </p>
+                <p className="text-gray-800 !mb-6 leading-relaxed text-sm">
+                  {insurance.specialOffer.wellnessProgram.beforeLink}
+                  <Link
+                    href={insurance.specialOffer.wellnessLink}
+                    className="text-gray-800 underline hover:text-primary/80"
+                  >
+                    {insurance.specialOffer.wellnessProgram.linkText}
+                  </Link>
+                  {insurance.specialOffer.wellnessProgram.afterLink}
+                </p>
+                <Button
+                  href={insurance.specialOffer.buttonHref}
+                  variant="primary"
+                  className="w-full"
+                >
+                  {insurance.specialOffer.buttonLabel}
+                </Button>
+              </div>
             </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* CTA Section */}
-      <section className="bg-gradient-to-r from-primary to-[var(--color-accent-1)] py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            {insurance.cta.title}
-          </h2>
-          <p className="text-white/90 mb-8 max-w-xl mx-auto">
-            {insurance.cta.description}
-          </p>
-          <Button href={insurance.cta.button.href} variant="secondary" size="lg">
-            {insurance.cta.button.label}
-          </Button>
+          </div>
         </div>
       </section>
+
+      {/* Get a FREE Consultation Banner */}
+      <CTABanner />
     </>
   );
 }

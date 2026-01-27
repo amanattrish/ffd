@@ -104,10 +104,9 @@ export default function Hero() {
           {/* Left Content - Mobile: Full width, Desktop: Left column */}
           <div className="relative z-10 lg:pt-8 w-full lg:w-auto">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold lg:leading-[1.1]">
-              <span className="text-primary text-xs md:text-5xl">Make your </span>
-              <span className="text-secondary text-xs md:text-5xl">perfect </span>
-              <span className="text-primary text-xs md:text-5xl">smile even </span>
-              <span className="text-secondary text-xs md:text-5xl">better</span>
+              <span className="text-primary text-xs md:text-5xl">{hero.title} </span>
+              <span className="text-secondary text-xs md:text-5xl">{hero.titleHighlight} </span>
+              <span className="text-primary text-xs md:text-5xl">{hero.subtitle}</span>
             </h1>
             <p className="mt-4 text-xs md:text-base text-black max-w-sm">
               {hero.description}
@@ -116,11 +115,11 @@ export default function Hero() {
             {/* Book Appointment Button and Smile Image - Mobile: Below description */}
             <div className="mt-4 lg:hidden relative z-20">
               <Button
-                href="/book-appointment"
+                href={hero.cta.primary.href}
                 size="sm"
                 className="rounded-full lg:px-5 lg:py-2 bg-transparent border border-black text-black whitespace-nowrap shadow-lg hover:bg-primary/40 hover:text-white"
               >
-                Book Appointment
+                {hero.cta.primary.label}
               </Button>
               {/* Small Smile Image - Positioned to the lower left of button */}
               <div className="relative w-24 h-16 mt-2 rounded-lg overflow-hidden shadow-md">
@@ -154,11 +153,11 @@ export default function Hero() {
             {/* Book Appointment Button - Desktop only */}
             <div className="absolute top-4 lg:top-50 z-20 hidden lg:block">
               <Button
-                href="/book-appointment"
+                href={hero.cta.primary.href}
                 size="md"
                 className="rounded-full! px-5! py-2! bg-transparent border border-black text-black whitespace-nowrap shadow-lg hover:bg-primary/40 hover:text-white"
               >
-                Book Appointment
+                {hero.cta.primary.label}
               </Button>
             </div>
 
@@ -188,14 +187,14 @@ export default function Hero() {
               <span className="w-14 h-14 rounded-full bg-secondary flex items-center justify-center mx-auto mb-3">
                 <Check className="w-7 h-7 text-white" />
               </span>
-              <h3 className="text-lg font-bold text-primary mb-2">Enquiry Received!</h3>
+              <h3 className="text-lg font-bold text-primary mb-2">{hero.form.title}</h3>
               <p className="text-secondary text-sm mb-4">{hero.enquirySuccessMessage ?? "Thank you! We'll get back to you shortly."}</p>
               <button
                 type="button"
                 onClick={() => setIsSubmitted(false)}
                 className="text-primary font-semibold text-sm hover:underline"
               >
-                Send another enquiry
+                {hero.form.sendAnother}
               </button>
             </div>
           ) : (
@@ -207,12 +206,12 @@ export default function Hero() {
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 md:gap-5 lg:gap-6">
               <div className="min-w-0 col-span-1">
                 <label htmlFor="hero-name" className="block text-sm font-bold text-black mb-2">
-                  Name <span className="text-red-500">*</span>
+                  {hero.form.fields.name.label} <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   id="hero-name"
-                  placeholder="Your Name"
+                  placeholder={hero.form.fields.name.placeholder}
                   value={formData.name}
                   onChange={(e) => { const v = filterName(e.target.value).slice(0, 20); setFormData({ ...formData, name: v }); setErrors((p) => ({ ...p, name: "" })); }}
                   maxLength={20}
@@ -222,12 +221,12 @@ export default function Hero() {
               </div>
               <div className="min-w-0 col-span-1">
                 <label htmlFor="hero-date" className="block text-sm font-bold text-black mb-2">
-                  Date <span className="text-red-500">*</span>
+                  {hero.form.fields.date.label} <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   id="hero-date"
-                  placeholder="DD/MM/YYYY"
+                  placeholder={hero.form.fields.date.placeholder}
                   value={formData.date}
                   onChange={(e) => { const v = filterDate(e.target.value); setFormData({ ...formData, date: v }); setErrors((p) => ({ ...p, date: "" })); }}
                   className={`w-full h-8 text-sm px-4 border rounded-lg bg-white placeholder:text-gray-400 focus:ring-2 focus:ring-primary/30 focus:outline-none ${errors.date ? "border-red-500" : "border-gray-300"}`}
@@ -236,12 +235,12 @@ export default function Hero() {
               </div>
               <div className="min-w-0 col-span-1 sm:col-span-1">
                 <label htmlFor="hero-email" className="block text-sm font-bold text-black mb-2">
-                  Email <span className="text-red-500">*</span>
+                  {hero.form.fields.email.label} <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="email"
                   id="hero-email"
-                  placeholder="Your Email"
+                  placeholder={hero.form.fields.email.placeholder}
                   value={formData.email}
                   onChange={(e) => { setFormData({ ...formData, email: e.target.value }); setErrors((p) => ({ ...p, email: "" })); }}
                   className={`w-full h-8 text-sm px-4 border rounded-lg bg-white placeholder:text-gray-400 focus:ring-2 focus:ring-primary/30 focus:outline-none ${errors.email ? "border-red-500" : "border-gray-300"}`}
@@ -250,12 +249,12 @@ export default function Hero() {
               </div>
               <div className="min-w-0 col-span-1 sm:col-span-1">
                 <label htmlFor="hero-location" className="block text-sm font-bold text-black mb-2">
-                  Location <span className="text-red-500">*</span>
+                  {hero.form.fields.location.label} <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   id="hero-location"
-                  placeholder="Your Location"
+                  placeholder={hero.form.fields.location.placeholder}
                   value={formData.location}
                   onChange={(e) => { const v = filterLocation(e.target.value); setFormData({ ...formData, location: v }); setErrors((p) => ({ ...p, location: "" })); }}
                   className={`w-full h-8 text-sm px-4 border rounded-lg bg-white placeholder:text-gray-400 focus:ring-2 focus:ring-primary/30 focus:outline-none ${errors.location ? "border-red-500" : "border-gray-300"}`}
@@ -267,7 +266,7 @@ export default function Hero() {
                 disabled={isSubmitting}
                 className="col-span-2 sm:col-span-1 bg-primary text-white font-bold text-base px-8 py-3 rounded-full shadow-lg hover:bg-[#0d5f7a] transition-all duration-200 w-full sm:w-auto sm:justify-self-start disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? "Sending..." : "Send Enquiry"}
+                {isSubmitting ? hero.form.submittingButton : hero.form.submitButton}
               </button>
             </div>
           </form>

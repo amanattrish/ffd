@@ -25,14 +25,14 @@ export default function BlogPreview() {
             <span className="text-primary">{blog.titleHighlight}</span>
           </h2>
           <p className="text-secondary mt-2 max-w-xl">
-            Stay informed with the latest dental health tips and news from our experts
+            {blog.description}
           </p>
         </div>
         <Link
           href={blog.cta.href}
           className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
         >
-          View All Articles
+          {blog.viewAllLabel}
           <ArrowRight className="w-4 h-4" />
         </Link>
       </div>
@@ -61,7 +61,7 @@ export default function BlogPreview() {
               {/* Category badge */}
               <div className="absolute top-4 left-4">
                 <span className="inline-block bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">
-                  Dental Tips
+                  {blog.categoryBadge}
                 </span>
               </div>
             </div>
@@ -80,7 +80,7 @@ export default function BlogPreview() {
                 </span>
                 <span className="flex items-center gap-1 text-xs text-[var(--text-muted)]">
                   <Clock className="w-3 h-3" />
-                  5 min read
+                  {blog.readTime}
                 </span>
               </div>
 
@@ -91,7 +91,7 @@ export default function BlogPreview() {
                 {post.excerpt}
               </p>
               <span className="inline-flex items-center text-primary font-semibold text-sm">
-                Read Article
+                {blog.readArticleLabel}
                 <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-2 transition-transform duration-300" />
               </span>
             </div>

@@ -17,25 +17,6 @@ function MolarToothDecoration({ className }: { className?: string }) {
 export default function InsuranceSection() {
   const { insurance, careCredit } = homeContent;
 
-  const insuranceList = [
-    "Aetna",
-    "Cigna",
-    "Delta Dental",
-    "Guardian",
-    "Metlife",
-    "All insurance associated with Dentemax",
-  ];
-
-  // Insurance providers with logos including Dentemax
-  const insuranceProviders = [
-    { name: "Cigna", logo: "/images/insurance/cigna.png" },
-    { name: "Dentemax", logo: "/images/insurance/dentamax.png" },
-    { name: "Delta Dental", logo: "/images/insurance/delta-dental.png" },
-    { name: "MetLife", logo: "/images/insurance/metlife.png" },
-    { name: "Aetna", logo: "/images/insurance/aetna.png" },
-    { name: "Guardian", logo: "/images/insurance/guardian.png" },
-  ];
-
   return (
     <Section background="white" className="relative overflow-hidden bg-[#E5F3FF]">
       {/* Faint molar tooth decoration in background (top right) */}
@@ -58,24 +39,22 @@ export default function InsuranceSection() {
           
           {/* First paragraph */}
           <p className="text-black !mb-4 leading-relaxed text-base">
-            We accept most major dental insurance plans and are happy to help verify your
-            coverage. Our team will assist in maximizing your benefits and clearly explaining
-            any out-of-pocket costs before treatment begins.
+            {insurance.paragraph1}
           </p>
           
           {/* Second paragraph */}
           <p className="text-black !mb-6 leading-relaxed text-base">
-            If you don&apos;t see your provider listed, please contact us for confirmation.
+            {insurance.paragraph2}
           </p>
 
           {/* Sub-heading */}
           <h3 className="font-bold text-black !mb-4 text-lg">
-            We are in-network with the following insurance carriers:
+            {insurance.heading}
           </h3>
 
           {/* Insurance List - Bulleted list */}
           <ul className="space-y-2 !mb-8">
-            {insuranceList.map((item, index) => (
+            {insurance.list.map((item, index) => (
               <li key={index} className="flex items-start gap-2 text-black text-base">
                 <span className="w-2 h-2 rounded-full bg-black mt-2 flex-shrink-0" />
                 <span>{item}</span>
@@ -89,7 +68,7 @@ export default function InsuranceSection() {
           {/* Dental Office Image */}
           <div className="relative w-full rounded-lg overflow-hidden shadow-lg">
             <Image
-              src="/images/insurance-person.png"
+              src={insurance.image || "/images/insurance-person.png"}
               alt="Dental office"
               width={100}
               height={100}
@@ -99,7 +78,7 @@ export default function InsuranceSection() {
 
           {/* Insurance Logos Grid */}
           <div className="grid grid-cols-3 gap-3">
-            {insuranceProviders.map((provider) => (
+            {insurance.providers.map((provider) => (
               <div
                 key={provider.name}
                 className="bg-white rounded-lg p-3 flex items-center justify-center border border-gray-100 hover:shadow-md transition-shadow min-h-20"
@@ -128,11 +107,11 @@ export default function InsuranceSection() {
         {/* Centered Header */}
         <div className="text-center lg:text-left !mb-8">
           <p className="text-black font-bold text-lg !mb-4">
-            We finance through Care Credit, ask us how
+            {careCredit.careCreditHeading}
           </p>
           <div className="flex justify-center lg:justify-start !mb-4">
             <Image
-              src="/images/carecredit-logo.png"
+              src={careCredit.logo || "/images/carecredit-logo.png"}
               alt="CareCredit"
               width={180}
               height={50}
@@ -142,76 +121,70 @@ export default function InsuranceSection() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Left Column - Discounts & Me!mberships */}
+          {/* Left Column - Discounts & Memberships */}
           <div>
             <h3 className="text-xl font-bold text-black !mb-4">
-              Discounts & Me!mberships
+              {careCredit.discountsTitle}
             </h3>
             <p className="text-black !mb-4 leading-relaxed">
-              For patients without insurance, we offer in-house me!mbership plans and seasonal discounts. These plans may include:
+              {careCredit.discountsDescription}
             </p>
 
             <ul className="space-y-2 !mb-6">
-              <li className="flex items-start gap-2 text-black">
-                <span className="w-2 h-2 rounded-full bg-black mt-2 flex-shrink-0" />
-                <span>Routine exams and cleanings</span>
-              </li>
-              <li className="flex items-start gap-2 text-black">
-                <span className="w-2 h-2 rounded-full bg-black mt-2 flex-shrink-0" />
-                <span>Discounts on treatments</span>
-              </li>
-              <li className="flex items-start gap-2 text-black">
-                <span className="w-2 h-2 rounded-full bg-black mt-2 flex-shrink-0" />
-                <span>No waiting periods or yearly limits</span>
-              </li>
+              {careCredit.discountsList.map((item, index) => (
+                <li key={index} className="flex items-start gap-2 text-black">
+                  <span className="w-2 h-2 rounded-full bg-black mt-2 flex-shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
 
             <p className="text-black leading-relaxed">
-              Contact our front desk for current offers and eligibility.
+              {careCredit.contactText}
             </p>
           </div>
 
           {/* Right Column - Special Offer Card */}
           <div className="bg-white rounded-lg p-6 shadow-md border border-gray-100">
             <span className="inline-block text-black font-bold text-sm !mb-4">
-              Special Offer
+              {careCredit.specialOffer.title}
             </span>
             
             <h4 className="text-xl font-bold text-black !mb-3">
-              $299 - New Patient Exam, X-rays and Cleaning
+              {careCredit.specialOffer.heading}
             </h4>
             
             <p className="text-black !mb-4 leading-relaxed">
-              Looking for a New Dentist? We are now offering a{" "}
+              {careCredit.specialOffer.description}{" "}
               <a 
-                href="/patient-info/new-patients" 
+                href={careCredit.specialOffer.newPatientLink.href} 
                 className="text-primary underline hover:text-primary/80"
               >
-                New Patient Special Offer
+                {careCredit.specialOffer.newPatientLink.label}
               </a>
-              . Limited time offer, restrictions may apply.
+              . {careCredit.specialOffer.restrictions}
             </p>
             
             <p className="font-bold text-black !mb-3">
-              No Insurance? No Problem!
+              {careCredit.specialOffer.noInsuranceHeading}
             </p>
             
             <p className="text-black !mb-6 leading-relaxed">
-              Ask us about our{" "}
+              {careCredit.specialOffer.wellnessText}{" "}
               <a 
-                href="/patient-info/insurance" 
+                href={careCredit.specialOffer.wellnessLink.href} 
                 className="text-black underline hover:text-primary/80"
               >
-                Wellness Program
+                {careCredit.specialOffer.wellnessLink.label}
               </a>
-              {" "}for uninsured patients.
+              {" "}{careCredit.specialOffer.wellnessTextEnd}
             </p>
             
             <Button
-              href="/book-appointment"
+              href={careCredit.specialOffer.buttonHref}
               className="w-50 rounded-full! px-5! py-2! bg-primary text-white! shadow-lg hover:bg-primary/90 mt-2"
             >
-              Book Appointment
+              {careCredit.specialOffer.buttonLabel}
             </Button>
           </div>
         </div>

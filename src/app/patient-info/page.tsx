@@ -35,17 +35,14 @@ export default function PatientInfoPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary to-[var(--color-accent-1)] py-20 overflow-hidden">
+      <section className="relative bg-linear-to-br from-[#F2FDFF] to-white py-20 overflow-hidden">
         <div className="absolute top-10 right-10 text-white/10 text-4xl font-light">+</div>
         <div className="absolute bottom-10 left-10 text-white/10 text-3xl font-light">+</div>
 
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
             Patient Information
           </h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto">
-            Everything you need to know for a smooth and comfortable visit
-          </p>
         </div>
       </section>
 

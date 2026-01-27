@@ -47,14 +47,14 @@ export default function TestimonialsPreview() {
             {testimonials.title}
           </h2>
           <p className="text-secondary mt-2 max-w-xl">
-            Real stories from our valued patients who trust us with their smiles
+            {testimonials.description}
           </p>
         </div>
         <Link
           href={testimonials.cta.href}
           className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
         >
-          View All Reviews
+          {testimonials.viewAllLabel}
           <ArrowRight className="w-4 h-4" />
         </Link>
       </div>
@@ -114,7 +114,7 @@ export default function TestimonialsPreview() {
                   <p className="font-semibold text-primary">
                     {testimonial.name}
                   </p>
-                  <p className="text-xs text-[var(--text-muted)]">Verified Patient</p>
+                  <p className="text-xs text-[var(--text-muted)]">{testimonials.verifiedPatientLabel}</p>
                 </div>
               </div>
 

@@ -35,13 +35,6 @@ function FrontToothDecoration({ className }: { className?: string }) {
 export default function ServicesPreview() {
   const { services } = homeContent;
 
-  const serviceHighlights = [
-    "Experienced Team",
-    "State-Of-The-Art Technology",
-    "Comprehensive Services",
-    "Emergency Dental Services",
-  ];
-
   return (
     <Section background="gray" className="relative overflow-hidden">
       {/* Background decorative elements */}
@@ -66,7 +59,7 @@ export default function ServicesPreview() {
 
           {/* Service Highlights */}
           <ul className="space-y-3">
-            {serviceHighlights.map((highlight, index) => (
+            {services.highlights.map((highlight, index) => (
               <li key={index} className="flex items-center gap-3">
                 <span className="w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
                   <Check className="w-3 h-3 text-white" strokeWidth={3} />
@@ -177,7 +170,7 @@ export default function ServicesPreview() {
 
                 {/* Read More Button */}
                 <div className="inline-flex items-center w-35 gap-2 px-4 py-2 rounded-full font-semibold text-sm bg-primary text-white group-hover:bg-white group-hover:text-primary transition-all duration-300">
-                  Read More
+                  {services.readMoreButton}
                   <ArrowRight className="w-4 h-4" />
                 </div>
               </div>
