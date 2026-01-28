@@ -25,12 +25,16 @@ export default function ContactPage() {
   const filterName = (v: string) => v.replace(/[^a-zA-Z\s\-'.]/g, "");
   const maxMessageChars = 200;
   const capToMaxChars = (s: string) => s.slice(0, maxMessageChars);
+  const maxPhoneDigits = 10;
 
   const validate = () => {
     const next: Record<string, string> = {};
     if (!formData.name.trim()) next.name = "Name is required";
     if (!formData.email.trim()) next.email = "Email is required";
     else if (!emailRegex.test(formData.email)) next.email = "Please enter a valid email address";
+    const phoneDigits = formData.phone.replace(/\D/g, "");
+    if (!formData.phone.trim()) next.phone = "Phone number is required";
+    else if (phoneDigits.length < 10) next.phone = "Please enter a valid phone number";
     if (!formData.message.trim()) next.message = "Message is required";
     else if (formData.message.length > maxMessageChars) next.message = `Maximum ${maxMessageChars} characters allowed.`;
     setErrors(next);
@@ -138,12 +142,15 @@ export default function ContactPage() {
                     type="tel"
                     id="phone"
                     value={formData.phone}
-                    onChange={(e) =>
-                      setFormData({ ...formData, phone: e.target.value })
-                    }
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                    onChange={(e) => {
+                      const digitsOnly = e.target.value.replace(/\D/g, "").slice(0, maxPhoneDigits);
+                      setFormData({ ...formData, phone: digitsOnly });
+                      setErrors((p) => ({ ...p, phone: "" }));
+                    }}
+                    className={`w-full px-4 py-3 rounded-lg border bg-gray-50 focus:ring-2 focus:ring-primary/20 outline-none transition-all ${errors.phone ? "border-red-500" : "border-gray-200 focus:border-primary"}`}
                     placeholder="Phone Number"
                   />
+                  {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
                 </div>
 
                 <div>
