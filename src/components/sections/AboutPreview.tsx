@@ -104,9 +104,9 @@ export default function AboutPreview({ className, style }: Props) {
       </div>
 
 
-      <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
+      <div className="grid md:grid-cols-[35%_65%] gap-12 lg:gap-16 items-center relative z-10 mt-4">
         {/* Image - Circular Frame */}
-        <div className="relative flex lg:justify-start justify-center">
+        <div className=" relative flex lg:justify-start justify-center">
           {/* Decorative + elements */}
           <div className="absolute -top-4 left-40 text-primary text-5xl font-medium">+</div>
           {/* <div className="absolute bottom-1/4 left-30 text-primary text-5xl font-medium hidden lg:block">+</div> */}
@@ -123,6 +123,7 @@ export default function AboutPreview({ className, style }: Props) {
 
             {/* Main image */}
             <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80">
+              <div className="size-20 md:size-24 bg-accent-1/46 rounded-full absolute right-8 bottom-4" />
               <Image
                 src={about.image || "/images/about-clinic.png"}
                 alt="Our clinic"
@@ -135,22 +136,22 @@ export default function AboutPreview({ className, style }: Props) {
         </div>
 
         {/* Content */}
-        <div>
-          <span className="inline-block text-primary font-medium text-sm bg-[#F3F3F3] rounded-full px-4 py-1 !mb-4">
+        <div className="">
+          <span className="inline-block text-primary font-medium text-sm bg-[#F3F3F3] rounded-full px-4 py-1 mb-4!">
             {about.sectionLabel}
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black !mb-2">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-2!">
             {about.title}
           </h2>
-          <p className="text-lg text-[#777777] !mb-4">
+          <p className="text-lg text-[#777777] mb-4!">
             {about.shortDescription}
           </p>
-          <p className="text-black !mb-8 leading-relaxed text-sm md:text-base">
+          <p className="text-black mb-8! leading-relaxed text-sm md:text-base">
             {about.description}
           </p>
 
           {/* Features List - with colored icons */}
-          <ul className="space-y-3 !mb-8">
+          <ul className="space-y-3 mb-8!">
             {about.features.map((feature, index) => (
               <li key={index} className="flex items-center gap-3">
                 <span
