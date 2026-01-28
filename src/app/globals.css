@@ -71,14 +71,14 @@
 }
 
 /* Reset margins and padding only for specific elements, not all */
-html,
+/* html,
 body,
 h1, h2, h3, h4, h5, h6,
 p, ul, ol, li,
 blockquote, pre {
   margin: 0;
   padding: 0;
-}
+} */
 
 html,
 body {
@@ -182,7 +182,7 @@ img {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+/* h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.2;
 }
@@ -215,7 +215,7 @@ h4 {
   h3 {
     font-size: 1.75rem;
   }
-}
+} */
 
 /* Card Base */
 .card {

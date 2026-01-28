@@ -99,10 +99,10 @@ export default function Hero() {
     >    
       <div className="section-container relative pt-8 pb-4 lg:pt-12 lg:pb-8">
         {/* Mobile: Stack vertically, Desktop: Grid layout */}
-        <div className="grid md:grid-cols-[60%_40%] grid-cols-2 lg:gap-8 md:gap-6 sm:gap-4 gap-2 items-start relative ">
+        <div className="grid md:grid-cols-[60%_40%] grid-cols-[45%_55%] lg:gap-8 md:gap-6 sm:gap-4 gap-2 items-start relative ">
           {/* Left Content - Mobile: Full width, Desktop: Left column */}
           <div className="relative z-10 lg:pt-8 w-full lg:w-auto">
-            <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold lg:leading-16">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold lg:leading-16">
               <span className="text-primary">{hero.title} </span>
               <span className="text-secondary">{hero.titleHighlight} </span>
               <span className="text-primary">{hero.subtitle}</span>
@@ -144,12 +144,14 @@ export default function Hero() {
             <div className="relative lg:w-[72%] md:w-[84%] w-full flex justify-end lg:justify-end h-full ">
               <div className="absolute top-4 -right-12 text-primary text-5xl font-medium hidden lg:block">+</div>
               {/* Image container */}
-              <div className="relative w-full h-full bg-accent-1/46 p-2">
+  <div className="absolute h-full w-[72%] md:w-[80%] lg:w-[68%] left-1/2 -translate-x-1/2 bg-accent-1/46 bottom-1/3"></div>
+  <div className="absolute lg:right-0 -right-4 bottom-12 size-24 rounded-full bg-accent-1/46"></div>
+              <div className="relative w-full h-full overflow-hidden">
                 <Image
                   src={hero.image || "/images/hero-dentist.png"}
                   alt="Dental care professional"
                   fill
-                  className="object-cover"
+                  className="object-cover pt-4"
                   priority
                   sizes="(max-width: 640px) 150px, (max-width: 768px) 180px, 400px"
                 />
