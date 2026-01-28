@@ -1,6 +1,5 @@
 import {
   Hero,
-  AboutPreview,
   ServicesPreview,
   TestimonialsPreview,
   CTABanner,
@@ -13,7 +12,6 @@ export default function HomePage() {
   return (
     <main className="flex flex-col">
       <Hero />
-      <AboutPreview />
       <ServicesPreview />
       <TestimonialsPreview />
       <CTABanner />

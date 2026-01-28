@@ -36,15 +36,14 @@ export default function ServicesPreview() {
   const { services } = homeContent;
 
   return (
-    <Section background="gray" className="relative overflow-hidden">
+    <Section background="gradient" isBgLtr={false} className="relative overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute top-10 right-10 text-[var(--color-accent-1)] text-3xl font-light opacity-30 hidden lg:block">+</div>
-      <div className="absolute bottom-20 left-10 text-[var(--color-accent-1)] text-2xl font-light opacity-30 hidden lg:block">+</div>
+      
             <ToothDecoration className="absolute  top-1 left-1 w-20 h-40 opacity-80 hidden lg:block" />
       <FrontToothDecoration className="absolute top-3 left-1 w-20 h-40 opacity-50 hidden lg:block" />
 
       {/* Header with left content and right image placeholder */}
-      <div className="grid lg:grid-cols-2 gap-12 !mb-12 items-center">
+      <div className="grid lg:grid-cols-2 gap-12 !mb-12 items-start">
         <div>
           <span className="inline-block text-secondary font-medium text-sm uppercase tracking-wider !mb-2">
             {services.sectionLabel}
@@ -73,9 +72,9 @@ export default function ServicesPreview() {
         {/* Service highlight image */}
         <div className="relative hidden lg:flex justify-end">
           {/* Decorative background shape */}
-          <div className="absolute -top-4 -right-4 w-full h-full max-w-md">
+          {/* <div className="absolute -top-4 -right-4 w-full h-full max-w-md">
             <div className="absolute top-0 right-0 w-3/4 h-full bg-[var(--color-accent-1)]/10 rounded-2xl" />
-          </div>
+          </div> */}
 
           {/* Decorative dots */}
           <div className="absolute top-4 right-4 flex gap-2 z-10">

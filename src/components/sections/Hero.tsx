@@ -7,6 +7,7 @@ import Button from "@/components/ui/Button";
 import { homeContent } from "@/content";
 import TextInput from "../form-elements/TextInput";
 import Label from "../form-elements/Label";
+import AboutPreview from "./AboutPreview";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 // Allow only letters, spaces, hyphen, apostrophe, period (e.g. O'Brien, Jr.)
@@ -93,9 +94,9 @@ export default function Hero() {
   };
 
   return (
+    <>
     <section
-      style={{ marginBottom: `${formHeight}px` }}
-      className=" [transition:margin-bottom_0.3s_ease] relative overflow-visible  bg-linear-to-br from-[#F2FDFF] to-white bg-cover bg-center hero-bg mb-12 md:mb-16 lg:mb-20"
+      className="relative overflow-visible  bg-linear-to-br from-[#F2FDFF] to-white bg-cover bg-center hero-bg mb-2"
     >    
       <div className="section-container relative pt-8 pb-4 lg:pt-12 lg:pb-8">
         {/* Mobile: Stack vertically, Desktop: Grid layout */}
@@ -273,5 +274,7 @@ export default function Hero() {
         </div>
       </div>
     </section>
+    <AboutPreview style={{paddingTop: `${formHeight}px`}} className="[transition:padding-top_0.3s_ease]" />
+    </>
   );
 }

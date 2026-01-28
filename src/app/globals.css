@@ -270,9 +270,6 @@ footer span[style*="display: inline-block"] {
   line-height: 0;
 }
 
-.transition-mb {
-  transition: margin-bottom 0.3s ease;
-}
 
 /* Force spacing to work even with reset */
 [class*="mb-"],

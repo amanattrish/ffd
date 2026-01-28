@@ -1,11 +1,14 @@
 import { clsx } from "clsx";
+import React from "react";
 
 interface SectionProps {
   children: React.ReactNode;
   className?: string;
   containerClassName?: string;
-  background?: "white" | "gray" | "primary" | "accent";
+  background?: "white" | "gray" | "primary" | "accent" | "gradient";
   id?: string;
+  isBgLtr?: boolean;
+  style?: React.CSSProperties;
 }
 
 const backgroundStyles: Record<string, string> = {
@@ -15,19 +18,38 @@ const backgroundStyles: Record<string, string> = {
   accent: "bg-[var(--color-accent-1)]/10",
 };
 
+const gradientStyles = {
+  ltr: "bg-linear-to-br from-[#F2FDFF] to-white",
+  rtl: "bg-linear-to-bl from-[#F2FDFF] to-white",
+};
+
 export default function Section({
   children,
   className = "",
   containerClassName = "",
   background = "white",
   id,
+  isBgLtr = true,
+  style
 }: SectionProps) {
+  const bgClass =
+    background === "gradient"
+      ? isBgLtr
+        ? gradientStyles.ltr
+        : gradientStyles.rtl
+      : backgroundStyles[background];
+
   return (
     <section
+      style={style}
       id={id}
-      className={clsx("py-16 md:py-4 lg:py-12 mb-8 md:mb-12 lg:mb-16", backgroundStyles[background], className)}
+      className={clsx(
+        "pb-16 md:pb-4 lg:pb-12",
+        bgClass,
+        className
+      )}
     >
-      <div className={clsx("container mx-auto px-4", containerClassName)}>
+      <div className={clsx("section-container", containerClassName)}>
         {children}
       </div>
     </section>
@@ -58,12 +80,14 @@ export function SectionHeader({
           {label}
         </span>
       )}
+
       <h2 className="text-3xl md:text-4xl font-bold text-primary">
         {title}{" "}
         {titleHighlight && (
           <span className="text-primary">{titleHighlight}</span>
         )}
       </h2>
+
       {description && (
         <p className="mt-4 text-secondary max-w-2xl mx-auto">
           {description}
