@@ -32,27 +32,14 @@ export default function TestimonialsPreview() {
   const { testimonials } = homeContent;
 
   return (
-    <Section background="white" className="relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-10 left-10 text-[var(--color-accent-1)] text-3xl font-light opacity-30 hidden lg:block">+</div>
-      <div className="absolute bottom-20 right-10 text-[var(--color-accent-1)] text-2xl font-light opacity-30 hidden lg:block">+</div>
+    <Section background="transparent" className="relative overflow-hidden">
 
-      {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
-        <div>
-          <span className="inline-block text-secondary font-medium text-sm uppercase tracking-wider mb-2">
-            {testimonials.sectionLabel}
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-primary">
-            {testimonials.title}
-          </h2>
-          <p className="text-secondary mt-2 max-w-xl">
-            {testimonials.description}
-          </p>
-        </div>
+      <div className="flex justify-between gap-4 items-center mb-4">
+        <span className="section-badge">{testimonials.sectionLabel}</span>
+        <h2 className="heading-3">{testimonials.title}</h2>
         <Link
           href={testimonials.cta.href}
-          className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
+          className="flex items-center gap-2 text-primary font-semibold hover:scale-105 transition-all border-primary/40 p-2 px-4 border-2 rounded-2xl"
         >
           {testimonials.viewAllLabel}
           <ArrowRight className="w-4 h-4" />
@@ -88,14 +75,14 @@ export default function TestimonialsPreview() {
             </div>
 
             {/* Content */}
-            <p className="text-black mb-6 leading-relaxed line-clamp-4">
+            <p className="mb-6 body-text">
               {testimonial.content}
             </p>
 
             {/* Author */}
             <div className="flex items-center justify-between pt-4 border-t border-gray-100">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full overflow-hidden bg-gradient-to-br from-[var(--color-accent-1)] to-[var(--color-accent-2)] flex-shrink-0">
+                <div className="w-12 h-12 rounded-full overflow-hidden bg-linear-to-br from-accent-1 to-accent-2 shrink-0">
                   {testimonial.image ? (
                     <Image
                       src={testimonial.image}
@@ -111,15 +98,15 @@ export default function TestimonialsPreview() {
                   )}
                 </div>
                 <div>
-                  <p className="font-semibold text-primary">
+                  <p className="font-semibold text-primary/90">
                     {testimonial.name}
                   </p>
-                  <p className="text-xs text-[var(--text-muted)]">{testimonials.verifiedPatientLabel}</p>
+                  <p className="text-xs text-muted">{testimonials.verifiedPatientLabel}</p>
                 </div>
               </div>
 
               {/* Quote mark */}
-              <div className="text-[var(--color-accent-1)] text-6xl font-serif leading-none opacity-30">
+              <div className="text-accent-1 text-6xl font-serif leading-none opacity-30">
                 &rdquo;
               </div>
             </div>

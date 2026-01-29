@@ -5,7 +5,7 @@ interface SectionProps {
   children: React.ReactNode;
   className?: string;
   containerClassName?: string;
-  background?: "white" | "gray" | "primary" | "accent" | "gradient";
+  background?: "white" | "gray" | "primary" | "accent" | "gradient" | "transparent";
   id?: string;
   isBgLtr?: boolean;
   style?: React.CSSProperties;
@@ -19,8 +19,8 @@ const backgroundStyles: Record<string, string> = {
 };
 
 const gradientStyles = {
-  ltr: "bg-linear-to-br from-[#F2FDFF] to-white",
-  rtl: "bg-linear-to-bl from-[#F2FDFF] to-white",
+  ltr: "custom-gradient-to-br",
+  rtl: "custom-gradient-to-l",
 };
 
 export default function Section({

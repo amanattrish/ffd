@@ -15,8 +15,9 @@
   --foreground: #000000;
   --text-primary: #000000;
   --text-secondary: #4A4A4A;
-  --color-text-muted: #6B7280;
-  --color-text-muted-light: #777777;
+  --color-muted: #6B7280;
+  --color-muted-light: #777777;
+  --color-muted-lighter: #F3F3F3;
 
   /* UI Colors */
   --border-color: #E5E7EB;
@@ -28,8 +29,9 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--color-primary);
-  --color-muted: var(--color-text-muted);
-  --color-muted-light: var(--color-text-muted-light);
+  --color-muted: var(--color-muted);
+  --color-muted-light: var(--color-muted-light);
+  --color-muted-lighter: var(--color-muted-lighter);
   --color-primary-hover: var(--color-primary-hover);
   --color-secondary: var(--color-secondary);
   --color-accent-1: var(--color-accent-1);
@@ -45,7 +47,17 @@
   --shadow-xl: 0 20px 25px -5px var(--shadow-color);
 }
 
+.custom-gradient-to-l {
+  @apply bg-linear-to-l from-[#F2FDFF] to-white
+}
 
+.custom-gradient-to-br {
+  @apply bg-linear-to-br from-[#F2FDFF] to-white
+}
+
+.section-badge {
+  @apply inline-block text-primary font-medium text-sm bg-muted-lighter rounded-full px-4 py-1
+}
 
 .heading-1 {
   @apply font-sans font-bold

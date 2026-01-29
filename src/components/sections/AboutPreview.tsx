@@ -136,10 +136,10 @@ export default function AboutPreview({ className, style }: Props) {
 
         {/* Content */}
         <div className="">
-          <span className="inline-block text-primary font-medium text-sm bg-[#F3F3F3] rounded-full px-4 py-1 mb-4!">
+          <span className="section-badge mb-4">
             {about.sectionLabel}
           </span>
-          <h2 className="heading-3 mb-2!">
+          <h2 className="heading-3 mb-2">
             {about.title}
           </h2>
           <p className="text-muted-light subheading mb-4!">

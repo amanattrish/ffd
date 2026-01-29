@@ -21,7 +21,7 @@ export default function ServicesPreview() {
   const { services } = homeContent;
 
   return (
-    <Section background="gradient" isBgLtr={false} className="relative overflow-hidden">
+    <Section background="transparent" className="relative overflow-hidden">
 
       <div className="absolute pointer-events-none top-1/3 left-20 -rotate-12 hidden lg:block">
         <ToothDecoration
@@ -33,7 +33,7 @@ export default function ServicesPreview() {
       </div>
       {/* Header with left content and right image placeholder */}
       <div className="grid md:grid-cols-2 gap-12 mb-12 items-start">
-        <div className="md:order-1 order-2">
+        <div className="md:order-1 order-2 mt-4">
           <span className="inline-block text-secondary font-medium text-sm uppercase tracking-wider mb-2!">
             {services.sectionLabel}
           </span>
