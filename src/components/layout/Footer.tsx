@@ -28,14 +28,14 @@ export default function Footer() {
     <footer className="bg-white text-gray-900">
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-16 lg:py-24!">
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 items-start">
+        <div className="grid grid-cols-4 gap-8 sm:gap-4 md:gap-8 lg:gap-12 items-start">
           {/* Column 1: Logo*/}
-          <div className="flex items-start">
+          <div className="sm:col-span-1 col-span-2 flex items-start">
             <Logo width={80} height={80} linkToHome={false} className="h-auto" />
           </div>
 
           {/* Column 2: Links */}
-          <div>
+          <div className="sm:col-span-1 col-span-2">
             <h3 className="text-base! font-bold text-gray-900 mb-4 lg:mt-10!">Links</h3>
             <ul className="space-y-2!">
               {footerLinks.map((link) => (
@@ -52,34 +52,34 @@ export default function Footer() {
           </div>
 
           {/* Column 3: Office Hours */}
-          <div>
+          <div className="lg:col-span-1 col-span-2">
             <h3 className="text-base! font-bold text-gray-900 mb-4 lg:mt-10!">Office Hours</h3>
-            <ul className="space-y-2! text-sm">
-              <li className="flex justify-between">
+            <ul className="space-y-2! sm:text-sm text-xs">
+              <li className="flex gap-4">
                 <span className="text-gray-700">Mon</span>
                 <span className="text-gray-700">{formatHours("monday")}</span>
               </li>
-              <li className="flex justify-between">
+              <li className="flex gap-4">
                 <span className="text-gray-700">Tue</span>
                 <span className="text-gray-700">{formatHours("tuesday")}</span>
               </li>
-              <li className="flex justify-between">
+              <li className="flex gap-4">
                 <span className="text-gray-700">Wed</span>
                 <span className="text-gray-700">{formatHours("wednesday")}</span>
               </li>
-              <li className="flex justify-between">
+              <li className="flex gap-4">
                 <span className="text-gray-700">Thu</span>
                 <span className="text-gray-700">{formatHours("thursday")}</span>
               </li>
-              <li className="flex justify-between">
+              <li className="flex gap-4">
                 <span className="text-gray-700">Fri</span>
                 <span className="text-gray-700">{formatHours("friday")}</span>
               </li>
-              <li className="flex justify-between">
+              <li className="flex gap-4">
                 <span className="text-gray-700">Sat</span>
                 <span className="text-gray-700">{formatHours("saturday")}</span>
               </li>
-              <li className="flex justify-between">
+              <li className="flex gap-4">
                 <span className="text-gray-700">Sun</span>
                 <span className="text-gray-700">{formatHours("sunday")}</span>
               </li>
@@ -87,7 +87,7 @@ export default function Footer() {
           </div>
 
           {/* Column 4: Contact Information and Social Media */}
-          <div>
+          <div className="md:col-span-1 col-span-2">
             <h3 className="text-base! font-bold text-gray-900 mb-2 lg:mt-10!">Phone Number</h3>
             <a
               href={`tel:${phone.replace(/[^0-9+]/g, "")}`}
