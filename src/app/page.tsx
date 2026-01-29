@@ -1,11 +1,11 @@
 import {
   Hero,
-  ServicesPreview,
   TestimonialsPreview,
   CTABanner,
   InsuranceSection,
   BlogPreview,
   BookAppointmentSection,
+  ServicesPreview,
 } from "@/components/sections";
 
 export default function HomePage() {

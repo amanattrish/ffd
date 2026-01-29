@@ -93,12 +93,12 @@ export default function AboutPreview({ className, style }: Props) {
   return (
     <Section style={style} background="gradient" isBgLtr={false} className={clsx("relative", className)}>
       {/* Decorative teeth over teeth on right - layered effect */}
-      <div className="absolute inset-0 pointer-events-none top-[92%] right-20">
+      <div className="absolute inset-0 pointer-events-none top-[92%] right-20  hidden lg:block">
         <ToothDecoration
-          className="absolute -right-1 -top-5 -translate-y-1/2 w-64 h-80 opacity-80 hidden lg:block"
+          className="absolute -right-1 -top-5 -translate-y-1/2 w-64 h-80 opacity-80"
         />
         <FrontToothDecoration
-          className="absolute -right-3 top-2 -translate-y-1/2 w-60 h-90 opacity-50 hidden lg:block"
+          className="absolute -right-6 top-2 -translate-y-1/2 w-60 h-90 opacity-80"
         />
       </div>
 
