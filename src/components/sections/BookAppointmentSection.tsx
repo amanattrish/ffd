@@ -144,10 +144,10 @@ export default function BookAppointmentSection() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto bg-white rounded-2xl p-6 lg:p-8">
           {/* Header */}
-          <h1 className="text-2xl lg:text-3xl font-bold text-black text-center mb-2">
+          <h1 className="heading-1 text-center mb-2">
             {booking.title}
           </h1>
-          <h2 className="text-lg! text-center font-bold text-black mb-6">
+          <h2 className="subheading text-center font-semibold! mb-6">
             {booking.subtitle}
           </h2>
           
