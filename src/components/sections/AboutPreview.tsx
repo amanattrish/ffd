@@ -103,31 +103,21 @@ export default function AboutPreview({ className, style }: Props) {
       </div>
 
 
-      <div className="grid md:grid-cols-[35%_65%] gap-12 lg:gap-16 items-center relative z-10 mt-4">
-        {/* Image - Circular Frame */}
+      <div className="grid md:grid-cols-[30%_70%] gap-12 lg:gap-16 items-center relative z-10 mt-4">
+
         <div className=" relative flex lg:justify-start justify-center">
           {/* Decorative + elements */}
-          <div className="absolute -top-4 left-40 text-primary text-5xl font-medium">+</div>
-          {/* <div className="absolute bottom-1/4 left-30 text-primary text-5xl font-medium hidden lg:block">+</div> */}
-          <div className="absolute bottom-0 right-1/4 text-primary text-5xl font-medium hidden lg:block">+</div>
+          <div className="absolute -top-4 left-0 text-primary text-5xl font-medium">+</div>
+          <div className="absolute bottom-0 right-12 text-primary text-5xl font-medium hidden lg:block">+</div>
 
-          {/* Circular image container */}
-          <div className="relative">
-            {/* Background decorative circles */}
-            {/* <div className="absolute -top-3 -left-3 w-full h-full rounded-full border-2 border-dashed border-accente-1/30" /> */}
-
-            {/* Small decorative dots */}
-            <div className="absolute top-1/2 -right-6 w-3 h-3 rounded-full bg-primary" />
-            <div className="absolute bottom-1/4 -left-4 w-2 h-2 rounded-full bg-secondary" />
-
-            {/* Main image */}
+          <div className="relative">         
             <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80">
-              <div className="size-20 md:size-24 bg-accent-1/46 rounded-full absolute right-8 bottom-4" />
+              <div className="size-20 md:size-24 bg-accent-1/30 rounded-full absolute right-20 bottom-8" />
               <Image
                 src={about.image || "/images/about-clinic.png"}
                 alt="Our clinic"
                 fill
-                className="object-contain"
+                className="object-contain object-left"
                 sizes="(max-width: 640px) 256px, (max-width: 768px) 288px, 320px"
               />
             </div>
