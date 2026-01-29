@@ -38,7 +38,7 @@ export default function CTABanner({
             priority
           />
           </div>
-          <h2 className="heading-2 font-bold! text-white!">
+          <h2 className="heading-2 font-semibold! text-white!">
             {displayTitle}
           </h2>
 

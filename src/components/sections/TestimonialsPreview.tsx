@@ -122,10 +122,12 @@ const ViewAllLink = ({ className }: Props) => {
   return (
     <Link
       href={testimonials.cta.href}
-      className={clsx("w-fit ml-auto flex items-center gap-2 text-primary font-semibold hover:scale-105 transition-all border-primary/40 p-2 px-4 border-2 rounded-2xl", className)}
+      className={clsx("w-fit ml-auto gap-2 text-primary font-semibold hover:scale-105 transition-all border-primary/40 p-2 px-4 border-2 rounded-xl", className)}
     >
+      <div className="inline-flex items-center gap-2">
       {testimonials.viewAllLabel}
       <ArrowRight className="w-4 h-4" />
+      </div>
     </Link>
   )
 }

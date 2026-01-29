@@ -41,7 +41,7 @@ export default function ServicesPreview() {
             {services.title}{" "}
             <span className="text-secondary">{services.titleHighlight}</span>
           </h2>
-          <p className="mb-6! text-body">
+          <p className="mb-6! body-text">
             {services.description}
           </p>
 
@@ -52,7 +52,7 @@ export default function ServicesPreview() {
                 <span className="w-5 h-5 rounded-full bg-primary flex items-center justify-center shrink-0">
                   <Check className="w-3 h-3 text-white" strokeWidth={3} />
                 </span>
-                <span className="text-body font-medium">{highlight}</span>
+                <span className="body-text font-medium">{highlight}</span>
               </li>
             ))}
           </ul>
