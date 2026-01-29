@@ -3,12 +3,12 @@ import Image from "next/image";
 import { Check, ArrowUpRight, Stethoscope, CircleDot, Sparkles, AlignCenter, LucideIcon } from "lucide-react";
 import Section from "@/components/ui/Section";
 import { homeContent } from "@/content";
-import FirstCardSvg from "./FirstCardSvg";
-import SecondCardSvg from "./SecondCardSvg";
-import ThirdCardSvg from "./ThirdCardSvg";
-import FourthCardSvg from "./FourthCardSvg";
-import { ToothDecoration } from "./ToothDecoration";
-import { FrontToothDecoration } from "./FrontToothDecoration";
+import FirstCardSvg from "../svgs/FirstCardSvg";
+import SecondCardSvg from "../svgs/SecondCardSvg";
+import ThirdCardSvg from "../svgs/ThirdCardSvg";
+import FourthCardSvg from "../svgs/FourthCardSvg";
+import { ToothDecoration } from "../svgs/ToothDecoration";
+import { FrontToothDecoration } from "../svgs/FrontToothDecoration";
 
 const iconMap: Record<string, LucideIcon> = {
   Stethoscope,
