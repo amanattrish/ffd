@@ -13,7 +13,7 @@ export default function HomePage() {
     <main className="flex flex-col">
       <Hero />
       <div className="custom-gradient-to-l">
-      <ServicesPreview />
+        <ServicesPreview />
         <TestimonialsPreview />
         <CTABanner />
         <InsuranceSection />
