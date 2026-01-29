@@ -16,6 +16,8 @@
   --text-primary: #000000;
   --text-secondary: #4A4A4A;
   --color-muted: #6B7280;
+  --color-muted-bold: ##364153;
+  --color-muted-bolder: #101828;
   --color-muted-light: #777777;
   --color-muted-lighter: #F3F3F3;
 
@@ -30,6 +32,8 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--color-primary);
   --color-muted: var(--color-muted);
+  --color-muted-bold: var(--color-muted-bold);
+  --color-muted-bolder: var(--color-muted-bolder);
   --color-muted-light: var(--color-muted-light);
   --color-muted-lighter: var(--color-muted-lighter);
   --color-primary-hover: var(--color-primary-hover);

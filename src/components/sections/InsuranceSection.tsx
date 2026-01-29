@@ -99,7 +99,7 @@ export default function InsuranceSection() {
       </div>
 
       {/* CareCredit Section */}
-      <div className="border-t border-gray-200 pt-12">
+      <div className="border-t border-(--border-color) pt-12">
         {/* Centered Header */}
         <div className="text-center lg:text-left mb-8">
           <p className="text-black font-bold text-lg mb-4">

@@ -40,7 +40,7 @@ export default function BlogPreview() {
           <Link
             key={post.id}
             href={post.href}
-            className={`group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${index === 0 ? "md:col-span-2 lg:col-span-1" : ""
+            className={`group flex flex-col bg-background rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${index === 0 ? "md:col-span-2 lg:col-span-1" : ""
               }`}
           >
             {/* Image */}

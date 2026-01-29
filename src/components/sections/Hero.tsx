@@ -83,7 +83,7 @@ export default function Hero() {
               <div className="relative lg:w-[72%] md:w-[84%] w-full flex justify-end lg:justify-end h-full ">
                 <div className="absolute top-4 -right-12 text-primary text-5xl font-medium hidden lg:block">+</div>
                 {/* Image container */}
-                <div className="absolute h-full w-[72%] md:w-[80%] lg:w-[68%] left-1/2 -translate-x-1/2 bg-accent-1/46 bottom-1/3"></div>
+                <div className="absolute h-full w-[64%] md:w-[82%] lg:w-[68%] left-[48%] lg:left-[46%] -translate-x-1/2 bg-accent-1/46 bottom-1/3"></div>
                 <div className="absolute lg:right-0 -right-4 bottom-12 size-24 rounded-full bg-accent-1/46"></div>
                 <div className="relative w-full h-full overflow-hidden">
                   <Image

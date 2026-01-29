@@ -30,23 +30,23 @@ export default function Header() {
           <Logo />
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-12">
               {navigation.main.map((item) => (
                 <div key={item.label} className="relative group">
                   {item.submenu ? (
                     <>
                       <span
-                        className="text-gray-800 hover:text-primary transition-colors font-normal text-base cursor-default"
+                        className="body-text hover:text-primary transition-colors font-semibold! text-base cursor-default"
                       >
                         {item.label}
                       </span>
                       <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                        <div className="bg-white rounded-lg shadow-lg border border-gray-100 py-2 min-w-[200px]">
+                        <div className="bg-white rounded-lg shadow-lg border border-gray-100 py-2 min-w-50">
                           {item.submenu.map((subitem) => (
                             <Link
                               key={subitem.label}
                               href={subitem.href}
-                              className="block px-4 py-2 text-gray-800 hover:bg-primary/5 hover:text-primary transition-colors"
+                              className="block font-semibold! px-4 py-2 body-text hover:bg-primary/5 hover:text-primary transition-colors"
                             >
                               {subitem.label}
                             </Link>
@@ -57,7 +57,7 @@ export default function Header() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="text-gray-800 hover:text-primary transition-colors font-normal text-base"
+                      className="body-text font-semibold! hover:text-primary! transition-colors text-base"
                     >
                       {item.label}
                     </Link>
@@ -82,7 +82,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-gray-800"
+            className="lg:hidden p-2 body-text"
             onClick={toggleMobileMenu}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           >
@@ -104,7 +104,7 @@ export default function Header() {
                 {item.submenu ? (
                   <>
                     <button
-                      className="flex items-center justify-between w-full py-3 text-gray-800 font-normal"
+                      className="flex items-center justify-between w-full py-3 body-text font-normal"
                       onClick={() => toggleSubmenu(item.label)}
                     >
                       <span className="flex-1 text-left">{item.label}</span>
@@ -132,7 +132,7 @@ export default function Header() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="block py-3 text-gray-800 font-normal hover:text-primary transition-colors"
+                    className="block py-3 body-text font-normal hover:text-primary transition-colors"
                     onClick={toggleMobileMenu}
                   >
                     {item.label}
