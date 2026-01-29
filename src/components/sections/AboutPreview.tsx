@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Section from "@/components/ui/Section";
-import Button from "@/components/ui/Button";
 import { homeContent } from "@/content";
 import clsx from "clsx";
 
@@ -140,13 +139,13 @@ export default function AboutPreview({ className, style }: Props) {
           <span className="inline-block text-primary font-medium text-sm bg-[#F3F3F3] rounded-full px-4 py-1 mb-4!">
             {about.sectionLabel}
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-2!">
+          <h2 className="heading-3 mb-2!">
             {about.title}
           </h2>
-          <p className="text-lg text-[#777777] mb-4!">
+          <p className="text-muted-light subheading mb-4!">
             {about.shortDescription}
           </p>
-          <p className="text-black mb-8! leading-relaxed text-sm md:text-base">
+          <p className=" mb-8! body-text">
             {about.description}
           </p>
 

@@ -15,7 +15,8 @@
   --foreground: #000000;
   --text-primary: #000000;
   --text-secondary: #4A4A4A;
-  --text-muted: #6B7280;
+  --color-text-muted: #6B7280;
+  --color-text-muted-light: #777777;
 
   /* UI Colors */
   --border-color: #E5E7EB;
@@ -27,6 +28,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--color-primary);
+  --color-muted: var(--color-text-muted);
+  --color-muted-light: var(--color-text-muted-light);
   --color-primary-hover: var(--color-primary-hover);
   --color-secondary: var(--color-secondary);
   --color-accent-1: var(--color-accent-1);
@@ -40,6 +43,59 @@
   --shadow-md: 0 4px 6px -1px var(--shadow-color);
   --shadow-lg: 0 10px 15px -3px var(--shadow-color);
   --shadow-xl: 0 20px 25px -5px var(--shadow-color);
+}
+
+
+
+.heading-1 {
+  @apply font-sans font-bold
+         text-3xl sm:text-4xl lg:text-5xl xl:text-6xl
+         leading-tight
+         text-[color:var(--text-primary)];
+}
+
+.heading-2 {
+  @apply font-sans font-semibold
+         text-2xl sm:text-3xl lg:text-4xl xl:text-5xl
+         leading-tight
+         text-[color:var(--text-primary)];
+}
+
+.heading-3 {
+  @apply font-sans font-semibold
+         text-xl sm:text-2xl lg:text-3xl xl:text-4xl
+         text-[color:var(--text-primary)];
+}
+
+@media (min-width: 1280px) {
+  .heading-1,
+  .heading-2 {
+    line-height: 1.1;
+  }
+}
+
+.subheading {
+  @apply font-sans font-medium
+         text-lg sm:text-xl
+}
+
+.body-text {
+  @apply font-sans
+         text-base sm:text-base
+         leading-relaxed
+         text-[color:var(--text-primary)];
+}
+
+.muted-text {
+  @apply font-sans
+         text-sm sm:text-base
+         text-[color:var(--text-muted)];
+}
+
+.helper-text {
+  @apply font-sans
+         text-xs sm:text-sm
+         text-[color:var(--text-muted)];
 }
 
 
