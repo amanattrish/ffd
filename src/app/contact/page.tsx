@@ -7,6 +7,8 @@ import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 import { contactContent } from "@/content";
 import { BookAppointmentSection, CTABanner } from "@/components/sections";
+import TextInput from "@/components/form-elements/TextInput";
+import TextArea from "@/components/form-elements/TextArea";
 
 export default function ContactPage() {
   const { getInTouch, form, clinicAddress, hours, whatsapp, map } = contactContent;
@@ -59,24 +61,23 @@ export default function ContactPage() {
   return (
     <>
       {/* Page Title */}
-      <section className="py-12 bg-linear-to-br from-[#F2FDFF] to-white text-black">
-        <div className="container mx-auto px-4">
-          <h1 className="text-3xl! font-bold text-center">
+      <Section className="relative py-12!" background="gradient">
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="heading-3">
             Contact Us
           </h1>
         </div>
-      </section>
-
+      </Section>
       {/* Get in Touch & Form Section */}
       <Section background="white">
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid lg:grid-cols-[40%_60%] gap-12 mb-16">
           {/* Left Column - Get in Touch */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="heading-3 font-bold! mb-6">
               <span className="text-[#4D99C6]">Get in</span>{" "}
               <span className="text-[#90C044]">Touch</span>
             </h2>
-            <p className="text-lg text-black leading-relaxed">
+            <p className="body-text font-semibold!">
               {getInTouch.description}
             </p>
           </div>
@@ -100,82 +101,97 @@ export default function ContactPage() {
                 </Button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4 mt-2">
+
+                {/* Name */}
                 <div>
-                  <input
-                    type="text"
+                  <TextInput
+                    className="h-12"
                     id="name"
+                    placeholder="Name"
                     value={formData.name}
+                    maxLength={20}
+                    error={errors.name}
                     onChange={(e) => {
                       const v = filterName(e.target.value).slice(0, 20);
                       setFormData({ ...formData, name: v });
                       setErrors((p) => ({ ...p, name: "" }));
                     }}
-                    maxLength={20}
-                    className={`w-full px-4 py-3 rounded-lg border bg-gray-50 focus:ring-2 focus:ring-primary/20 outline-none transition-all ${errors.name ? "border-red-500" : "border-gray-200 focus:border-primary"}`}
-                    placeholder="Name"
                   />
-                  {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                 </div>
 
+                {/* Email */}
                 <div>
-                  <input
-                    type="email"
+                  <TextInput
+                    className="h-12"
                     id="email"
+                    type="email"
+                    placeholder="Email Address"
                     value={formData.email}
+                    error={errors.email}
                     onChange={(e) => {
                       setFormData({ ...formData, email: e.target.value });
                       setErrors((p) => ({ ...p, email: "" }));
                     }}
-                    className={`w-full px-4 py-3 rounded-lg border bg-gray-50 focus:ring-2 focus:ring-primary/20 outline-none transition-all ${errors.email ? "border-red-500" : "border-gray-200 focus:border-primary"}`}
-                    placeholder="Email Address"
                   />
-                  {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                 </div>
 
+                {/* Phone */}
                 <div>
-                  <input
-                    type="tel"
+                  <TextInput
+                    className="h-12"
                     id="phone"
+                    type="tel"
+                    placeholder="Phone Number"
                     value={formData.phone}
                     onChange={(e) =>
                       setFormData({ ...formData, phone: e.target.value })
                     }
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                    placeholder="Phone Number"
                   />
                 </div>
 
+                {/* Message */}
                 <div>
-                  <textarea
+                  <TextArea
                     id="message"
                     rows={5}
+                    placeholder="Questions or Comments?"
                     value={formData.message}
+                    error={errors.message}
                     onChange={(e) => {
                       const v = capToMaxChars(e.target.value);
                       setFormData({ ...formData, message: v });
                       setErrors((p) => ({ ...p, message: "" }));
                     }}
-                    className={`w-full px-4 py-3 rounded-lg border bg-gray-50 focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none ${errors.message ? "border-red-500" : "border-gray-200 focus:border-primary"}`}
-                    placeholder="Questions or Comments?"
                   />
+
                   <div className="flex justify-between items-center gap-2 mt-1">
-                    {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
-                    <p className={`text-sm ml-auto shrink-0 ${formData.message.length > maxMessageChars ? "text-red-500" : "text-gray-500"}`}>
+                    {errors.message && (
+                      <p className="text-red-500 text-sm">{errors.message}</p>
+                    )}
+                    <p
+                      className={`text-sm ml-auto shrink-0 ${formData.message.length > maxMessageChars
+                          ? "text-red-500"
+                          : "text-gray-500"
+                        }`}
+                    >
                       {formData.message.length}/{maxMessageChars} characters
                     </p>
                   </div>
                 </div>
 
+                {/* Submit */}
                 <Button
                   type="submit"
                   disabled={isSubmitting}
                   variant="secondary"
-                  className="w-40 border border-secondary bg-transparent text-black!"
+                  className="w-40 border border-secondary bg-transparent text-black! hover:text-muted-lighter! font-semibold"
                 >
                   {isSubmitting ? "Submitting..." : form.submitButton}
                 </Button>
+
               </form>
+
             )}
           </div>
         </div>
@@ -184,13 +200,13 @@ export default function ContactPage() {
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           {/* Left Column - Clinic Address */}
           <div>
-            <h2 className="text-2xl font-bold text-black mb-6">
+            <h2 className="subheading mb-4 font-semibold!">
               {clinicAddress.title}
             </h2>
-            <div className="space-y-2 text-black">
-              <p className="text-lg">{clinicAddress.name}</p>
-              <p className="text-lg">{clinicAddress.street}</p>
-              <p className="text-lg">{clinicAddress.city}</p>
+            <div className="space-y-1 body-text font-medium">
+              <p className="">{clinicAddress.name}</p>
+              <p className="">{clinicAddress.street}</p>
+              <p className="">{clinicAddress.city}</p>
             </div>
           </div>
 
@@ -228,19 +244,20 @@ export default function ContactPage() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Column - Office Hours */}
           <div>
-            <h2 className="text-2xl font-bold text-black mb-6">
+            <h2 className="subheading font-bold! mb-4">
               {hours.title}
             </h2>
-            <div className="space-y-2">
+            <div className="space-y-1">
               {hours.schedule.map((item, index) => (
                 <div key={index} className="text-black">
                   <span className="font-medium">{item.day}:</span>{" "}
                   <span
-                    className={
+                    className={` body-text ${
+                      
                       item.hours === "Closed"
-                        ? "text-black"
-                        : "text-primary"
-                    }
+                        ? "text-black!"
+                        : "text-primary!"
+                    }`}
                   >
                     {item.hours}
                   </span>
@@ -251,7 +268,7 @@ export default function ContactPage() {
 
           {/* Right Column - WhatsApp */}
           <div>
-            <h2 className="text-2xl font-bold text-black mb-6">
+            <h2 className="subheading font-bold! mb-4">
               {whatsapp.title}
             </h2>
             <a
@@ -270,9 +287,9 @@ export default function ContactPage() {
             </a>
           </div>
         </div>
-        <CTABanner />
-        <BookAppointmentSection />
       </Section>
+        <CTABanner />
+        <BookAppointmentSection background="transparent" />
     </>
   );
 }

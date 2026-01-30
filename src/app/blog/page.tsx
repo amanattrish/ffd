@@ -1,6 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, Calendar, Clock } from "lucide-react";
 import Section from "@/components/ui/Section";
 import { homeContent } from "@/content";
 import BlogCard from "@/components/cards/BlogCard";
@@ -15,8 +12,7 @@ export default function BlogPage() {
 
   return (
     <>
-      {/* Hero Section */}
-      <Section className="relative py-12!" background="gradient" isBgLtr={false}>
+      <Section className="relative py-12!" background="gradient">
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="heading-3">
             Blogs

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Bell } from "lucide-react";
 import { homeContent } from "@/content";
+import { Section } from "../ui";
 
 // Generate calendar days for a given month
 function getCalendarDays(year: number, month: number) {
@@ -82,8 +83,11 @@ function generateTimeSlots() {
   
   return slots;
 }
+interface Props {
+  background?: "transparent" | "white" | "gray" | "primary" | "accent" | "gradient" ;
+}
 
-export default function BookAppointmentSection() {
+export default function BookAppointmentSection({ background="gradient" }: Props) {
   const router = useRouter();
   const { booking } = homeContent;
   const [selectedDate, setSelectedDate] = useState<number>(19);
@@ -133,16 +137,9 @@ export default function BookAppointmentSection() {
   };
   
   return (
-    <section className="py-12 lg:py-16 relative">
-      {/* Decorative background element - subtle dental theme */}
-      {/* <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-5 hidden lg:block">
-        <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M75 15C45 15 15 45 15 75C15 105 45 135 75 135C105 135 135 105 135 75C135 45 105 15 75 15Z" fill="#117598"/>
-        </svg>
-      </div> */}
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-5xl mx-auto bg-white rounded-2xl p-6 lg:p-8">
+    <Section background={background} className="relative py-12!">
+      <div className="relative z-10">
+        <div className="mx-auto bg-white rounded-2xl py-8">
           {/* Header */}
           <h1 className="heading-1 text-center mb-2">
             {booking.title}
@@ -309,6 +306,6 @@ export default function BookAppointmentSection() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
