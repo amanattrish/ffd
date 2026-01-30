@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ServiceFaqAccordion from "@/components/ServiceFaqAccordion";
-import { servicesContent } from "@/content";
+import { servicesContent, siteConfig } from "@/content";
 
 interface Props {
   params: Promise<{ category: string }>;
@@ -19,11 +19,11 @@ export async function generateMetadata({ params }: Props) {
   const category = servicesContent.categories.find((c) => c.id === categoryId);
 
   if (!category) {
-    return { title: "Category Not Found" };
+    return { title: servicesContent.notFoundTitle };
   }
 
   return {
-    title: `${category.title} | Freeport Family Dentistry`,
+    title: `${category.title} | ${siteConfig.siteName}`,
     description: category.description,
   };
 }
@@ -31,6 +31,8 @@ export async function generateMetadata({ params }: Props) {
 export default async function ServiceCategoryPage({ params }: Props) {
   const { category: categoryId } = await params;
   const category = servicesContent.categories.find((c) => c.id === categoryId);
+  const { sectionLabels, sidebar, defaultServiceImage } = servicesContent;
+  const { phone } = siteConfig;
 
   if (!category) {
     notFound();
@@ -39,56 +41,43 @@ export default async function ServiceCategoryPage({ params }: Props) {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-linear-to-br from-[#F2FDFF] py-16 overflow-hidden">
-
-
-        
-          {/* <Link
-            href="/services"
-            className="inline-flex items-center text-white/80 hover:text-white !mb-6 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to All Services
-          </Link> */}
-
-          <h1 className="text-3xl! font-bold text-black text-center !mb-4 bg-linear-to-br from-[#F2FDFF] to-white">
-            {category.title}
-          </h1>
-          {/* <p className="text-xl text-white/90 max-w-2xl">{category.description}</p> */}
-
+      <section className="section-container py-16 overflow-hidden custom-gradient-to-br">
+        <h1 className="heading-2 text-center mb-4">
+          {category.title}
+        </h1>
       </section>
 
       {/* Services - Detailed Sections */}
-      <section className="bg-white py-12">
-        <div className="container mx-auto px-4">
+      <section className="section py-12 bg-background">
+        <div className="container">
           {category.services.map((service, idx) => {
             const titleParts = service.title.split("&");
             const leftTitle = titleParts[0]?.trim();
             const rightTitle = titleParts[1]?.trim();
 
             return (
-              <div key={service.id} className="!mb-16 lg:!mb-20">
+              <div key={service.id} className="mb-16 lg:mb-20">
                 {/* Service Header */}
-                <div className="flex flex-col lg:flex-row gap-8 !mb-12">
+                <div className="flex flex-col lg:flex-row gap-8 mb-12">
                   {/* Main Content */}
                   <div className="flex-1">
-                    <div className="flex items-center gap-2 !mb-8">
-                      <h2 className="text-3xl lg:text-4xl font-bold">
+                    <div className="flex items-center gap-2 mb-8">
+                      <h2 className="heading-2">
                         <span className="text-primary">{leftTitle}</span>
                         {service.title.includes("&") && (
                           <>
                             <span className="text-primary px-2">&</span>
-                            <span className="text-[#A1C65D]">{rightTitle}</span>
+                            <span className="text-secondary">{rightTitle}</span>
                           </>
                         )}
                       </h2>
                     </div>
 
                     {/* Service Image */}
-                    <div className="!mb-8">
+                    <div className="mb-8">
                       <div className="relative w-full lg:w-72 h-64 rounded-lg overflow-hidden">
                         <Image
-                          src={service.image || "/images/about-clinic.png"}
+                          src={service.image || defaultServiceImage}
                           alt={service.title}
                           fill
                           className="object-cover"
@@ -97,18 +86,18 @@ export default async function ServiceCategoryPage({ params }: Props) {
                     </div>
 
                     {/* Description */}
-                    <p className="text-gray-700 !mb-6 leading-relaxed">
+                    <p className="body-text text-(--text-secondary) mb-6">
                       {service.overview}
                     </p>
 
                     {/* Symptoms Section */}
                     {service.symptoms && service.symptoms.length > 0 && (
-                      <div className="!mb-6">
-                        <h3 className="text-xl font-bold text-gray-900 !mb-3">Symptoms:</h3>
+                      <div className="mb-6">
+                        <h3 className="heading-4 mb-3">{sectionLabels.symptoms}</h3>
                         <ul className="space-y-2">
                           {service.symptoms.map((symptom, sIdx) => (
-                            <li key={sIdx} className="flex items-start gap-2 text-gray-700">
-                              <span className="text-[#2d7a9e] font-bold mt-1">•</span>
+                            <li key={sIdx} className="flex items-start gap-2 body-text">
+                              <span className="text-primary font-bold mt-1">•</span>
                               <span>{symptom}</span>
                             </li>
                           ))}
@@ -118,9 +107,9 @@ export default async function ServiceCategoryPage({ params }: Props) {
 
                     {/* Procedures Section */}
                     {service.procedure && service.procedure.length > 0 && (
-                      <div className="!mb-6">
-                        <h3 className="text-xl font-bold text-gray-900 !mb-3">Procedure:</h3>
-                        <div className="space-y-2 text-gray-700 leading-relaxed">
+                      <div className="mb-6">
+                        <h3 className="heading-4 mb-3">{sectionLabels.procedure}</h3>
+                        <div className="space-y-2 body-text leading-relaxed">
                           {service.procedure.map((step, pIdx) => (
                             <p key={pIdx}>{step}</p>
                           ))}
@@ -131,7 +120,7 @@ export default async function ServiceCategoryPage({ params }: Props) {
                     {/* FAQs Section */}
                     {service.faqs && service.faqs.length > 0 && (
                       <div>
-                        <h3 className="text-xl font-bold text-gray-900 !mb-3">FAQs:</h3>
+                        <h3 className="heading-4 mb-3">{sectionLabels.faqs}</h3>
                         <ServiceFaqAccordion faqs={service.faqs} />
                       </div>
                     )}
@@ -140,38 +129,31 @@ export default async function ServiceCategoryPage({ params }: Props) {
                   {/* Sidebar - Desktop */}
                   <div className="hidden lg:block w-72">
                     <div className="sticky top-6">
-                      {/* Outer Gray Container */}
-                      <div className="bg-gray-100 rounded-lg overflow-hidden p-4">
-                        {/* Call-to-Action Section */}
-                        <div className="bg-[#2d7a9e] rounded-t-lg p-2">
-                          <h3 className="text-lg font-bold text-white mb-4">Schedule Today</h3>
-                          
-                          {/* Request Appointment Button */}
+                      <div className="bg-muted-lighter rounded-lg overflow-hidden p-4 border border-(--border-color)">
+                        <div className="bg-primary rounded-t-lg p-2">
+                          <h3 className="subheading text-white mb-4">{sidebar.scheduleTitle}</h3>
                           <Link
-                            href="/book-appointment"
-                            className="block w-full bg-[#A1C65D] hover:bg-[#8fb04d] text-gray-600 font-medium py-2 px-2 rounded-lg text-center transition-colors mt-2 mb-4"
+                            href={sidebar.bookAppointmentHref}
+                            className="btn btn-secondary block w-full text-center py-2 px-2 rounded-lg mt-2 mb-4"
                           >
-                            Request Appoinment
+                            {sidebar.requestAppointmentLabel}
                           </Link>
-                          
-                          <h3 className="text-lg font-bold text-white mb-2 text-center">Call Us Now</h3>
-                          <p className="text-lg font-bold text-white text-center">+(00) 123 5467</p>
+                          <h3 className="subheading text-white mb-2 text-center">{sidebar.callUsNowLabel}</h3>
+                          <p className="body-text text-white font-semibold text-center">{phone}</p>
                         </div>
-
-                        {/* Services List */}
                         <div className="p-4">
-                          <h4 className="text-2xl font-bold text-black mb-4">Services</h4>
+                          <h4 className="heading-4 mb-4">{sidebar.servicesLabel}</h4>
                           <ul className="space-y-0">
                             {category.services.map((s, serviceIdx) => (
                               <li key={s.id}>
-                                <Link 
-                                  href={s.href} 
-                                  className="block py-3 text-black hover:text-primary transition-colors"
+                                <Link
+                                  href={s.href}
+                                  className="block py-3 body-text text-(--text-primary) hover:text-primary transition-colors"
                                 >
                                   {s.title}
                                 </Link>
                                 {serviceIdx < category.services.length - 1 && (
-                                  <div className="border-t border-gray-300" />
+                                  <div className="border-t border-(--border-color)" />
                                 )}
                               </li>
                             ))}
@@ -183,39 +165,32 @@ export default async function ServiceCategoryPage({ params }: Props) {
                 </div>
 
                 {/* Mobile Sidebar */}
-                <div className="lg:hidden !mb-8">
-                  {/* Outer Gray Container */}
-                  <div className="bg-gray-100 rounded-lg overflow-hidden">
-                    {/* Call-to-Action Section */}
-                    <div className="bg-[#2d7a9e] rounded-t-lg p-6">
-                      <h3 className="text-2xl font-bold text-white mb-4">Schedule Today</h3>
-                      
-                      {/* Request Appointment Button */}
+                <div className="lg:hidden mb-8">
+                  <div className="bg-muted-lighter rounded-lg overflow-hidden border border-(--border-color)">
+                    <div className="bg-primary rounded-t-lg p-6">
+                      <h3 className="heading-4 text-white mb-4">{sidebar.scheduleTitle}</h3>
                       <Link
-                        href="/book-appointment"
-                        className="block w-full bg-[#A1C65D] hover:bg-[#8fb04d] text-gray-600 font-medium py-3 px-4 rounded-lg text-center transition-colors mb-4"
+                        href={sidebar.bookAppointmentHref}
+                        className="btn btn-secondary block w-full text-center py-3 px-4 rounded-lg mb-4"
                       >
-                        Request Appoinment
+                        {sidebar.requestAppointmentLabel}
                       </Link>
-                      
-                      <h3 className="text-2xl font-bold text-white mb-2">Call Us Now</h3>
-                      <p className="text-3xl font-bold text-white">+(00) 123 5467</p>
+                      <h3 className="heading-4 text-white mb-2">{sidebar.callUsNowLabel}</h3>
+                      <p className="body-text text-white font-bold text-2xl">{phone}</p>
                     </div>
-
-                    {/* Services List */}
                     <div className="p-6">
-                      <h4 className="text-2xl font-bold text-black mb-4">Services</h4>
+                      <h4 className="heading-4 mb-4">{sidebar.servicesLabel}</h4>
                       <ul className="space-y-0">
                         {category.services.map((s, serviceIdx) => (
                           <li key={s.id}>
-                            <Link 
-                              href={s.href} 
-                              className="block py-3 text-black hover:text-primary transition-colors"
+                            <Link
+                              href={s.href}
+                              className="block py-3 body-text text-(--text-primary) hover:text-primary transition-colors"
                             >
                               {s.title}
                             </Link>
                             {serviceIdx < category.services.length - 1 && (
-                              <div className="border-t border-gray-300" />
+                              <div className="border-t border-(--border-color)" />
                             )}
                           </li>
                         ))}
@@ -226,26 +201,13 @@ export default async function ServiceCategoryPage({ params }: Props) {
 
                 {/* Divider */}
                 {idx < category.services.length - 1 && (
-                  <div className="border-t border-gray-300 mt-12" />
+                  <div className="border-t border-(--border-color) mt-12" />
                 )}
               </div>
             );
           })}
         </div>
       </section>
-
-      {/* CTA Section */}
-      {/* <section className="bg-linear-to-r from-primary to-accent-1 py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white !mb-4">Ready to Get Started?</h2>
-          <p className="text-white/90 !mb-8 max-w-xl mx-auto">
-            Schedule your appointment today and take the first step towards better oral health.
-          </p>
-          <Button href="/book-appointment" variant="secondary" size="lg">
-            Book Appointment
-          </Button>
-        </div>
-      </section> */}
     </>
   );
 }

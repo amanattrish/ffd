@@ -1,6 +1,20 @@
 {
   "pageTitle": "Our Services",
   "pageDescription": "Comprehensive dental services for the whole family",
+  "notFoundTitle": "Category Not Found",
+  "defaultServiceImage": "/images/about-clinic.png",
+  "sectionLabels": {
+    "symptoms": "Symptoms:",
+    "procedure": "Procedure:",
+    "faqs": "FAQs:"
+  },
+  "sidebar": {
+    "scheduleTitle": "Schedule Today",
+    "requestAppointmentLabel": "Request Appointment",
+    "callUsNowLabel": "Call Us Now",
+    "servicesLabel": "Services",
+    "bookAppointmentHref": "/book-appointment"
+  },
   "hero": {
     "title": "Our Dental Services",
     "subtitle": "Comprehensive Care for Your Smile",

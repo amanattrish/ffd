@@ -7,7 +7,8 @@
       "displayName": "Dr. John Smith",
       "subtitle": "DDS, FAGD",
       "role": "Founder & Chief Dental Surgeon",
-      "image": "/images/about/dr-smith.png"
+      "image": "/images/about/dr-smith.png",
+      "decorativeImage": "/images/about/polygon.png"
     },
     "bio": {
       "title": "About Dr. Smith",
@@ -240,6 +241,13 @@
     "qualificationsIcon": {
       "src": "/images/about/qualification.png",
       "alt": "Qualifications"
+    },
+    "placeholderLabels": {
+      "qualificationsIconAlt": "Qualifications Icon",
+      "doctorImage": "Doctor Image",
+      "genericImage": "Image",
+      "frontDeskLine1": "Front Desk &",
+      "frontDeskLine2": "Support Staff"
     },
     "staffSections": [
       {

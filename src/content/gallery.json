@@ -2,6 +2,8 @@
   "pageTitle": "Smile Gallery",
   "pageDescription": "View our before and after dental restoration results",
   "title": "Smile Gallery",
+  "beforeLabel": "BEFORE",
+  "afterLabel": "AFTER",
   "items": [
     {
       "id": 1,

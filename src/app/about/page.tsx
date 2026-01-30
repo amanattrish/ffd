@@ -16,6 +16,16 @@ export default function AboutPage() {
   const qualificationsIcon = overview.qualificationsIcon as
     | { src: string; alt: string }
     | undefined;
+  const placeholders = overview.placeholderLabels as
+    | {
+        qualificationsIconAlt?: string;
+        doctorImage?: string;
+        genericImage?: string;
+        frontDeskLine1?: string;
+        frontDeskLine2?: string;
+      }
+    | undefined;
+  const decorativeImage = (dentist.hero as { decorativeImage?: string }).decorativeImage;
 
   const hygienistsSection = overview.staffSections?.find(
     (s) => s.id === "hygienists",
@@ -35,24 +45,26 @@ export default function AboutPage() {
 
   return (
     <>
-        <Section className="py-16 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-[#F2FDFF] to-white">
+          <section className="section-container py-16 custom-gradient-to-br">
+          <h2 className="heading-2 text-center mb-12">
+           {dentist.pageTitle}
+           </h2>
+      </section>
+        <Section background="gradient" isBgLtr className="section-container py-16">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-center text-3xl! font-bold text-gray-900 mb-12!">
-          {dentist.pageTitle}
-        </h2>
 
         {/* Mobile-specific two-column hero layout */}
         <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-8 items-center">
           {/* Left Content */}
           <div className="col-span-1">
-            <h3 className="text-2xl md:text-3xl font-bold mb-2">
+            <h3 className="heading-3 mb-2">
               <span className="text-primary"> {dentist.hero.displayName ?? dentist.hero.title}</span>
             </h3>
-            <p className="text-base md:text-lg text-black font-semibold mb-4">
+            <p className="subheading text-(--text-primary) mb-4">
               {dentist.hero.role ?? ""}
             </p>
 
-            <p className="text-gray-700 text-sm leading-relaxed mb-4">
+            <p className="body-text text-sm mb-4">
               {dentist.bio.content[0]}
             </p>
           </div>
@@ -62,7 +74,7 @@ export default function AboutPage() {
             <div className="relative w-48 h-64 sm:w-56 sm:h-72 md:w-64 md:h-80">
               <div className="absolute inset-0 left-6 z-0 pointer-events-none">
                 <Image
-                  src="/images/about/polygon.png"
+                  src={decorativeImage ?? "/images/about/polygon.png"}
                   alt=""
                   fill
                   className="object-contain"
@@ -87,7 +99,7 @@ export default function AboutPage() {
                   />
                 ) : (
                   <div className="w-full h-full bg-linear-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                    <span className="text-gray-500">Doctor Image</span>
+                    <span className="muted-text">{placeholders?.doctorImage ?? "Doctor Image"}</span>
                   </div>
                 )}
               </div>
@@ -96,13 +108,13 @@ export default function AboutPage() {
         </div>
       </div>
     </Section>
-        <Section className="py-16 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-[#F2FDFF] to-white">
+        <Section background="gradient" isBgLtr className="section-container py-16">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Left Image/Icon */}
           <div className="flex justify-center">
             <div className="w-72 h-72 rounded-2xl flex items-center justify-center">
-              <div className="text-center text-gray-500">
+              <div className="text-center muted-text">
                 {qualificationsIcon?.src ? (
                   <div className="mb-4 flex justify-center">
                     <Image
@@ -117,22 +129,22 @@ export default function AboutPage() {
                 ) : (
                   <div className="text-6xl mb-4">📚</div>
                 )}
-                <span>{qualificationsIcon?.alt ?? "Qualifications Icon"}</span>
+                <span>{qualificationsIcon?.alt ?? placeholders?.qualificationsIconAlt ?? "Qualifications Icon"}</span>
               </div>
             </div>
           </div>
 
           {/* Right Content */}
           <div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-6!">
+            <h3 className="heading-3 mb-6">
               {dentist.qualifications.title}
             </h3>
 
             <ul className="space-y-3">
               {dentist.qualifications.items.map((qual, index) => (
-                <li key={index} className="flex gap-3 text-gray-700">
-                  <span className="text-teal-500 font-bold min-w-fit">●</span>
-                  <span className="text-sm">{qual}</span>
+                <li key={index} className="flex gap-3 body-text">
+                  <span className="text-primary font-bold min-w-fit">●</span>
+                  <span className="helper-text">{qual}</span>
                 </li>
               ))}
             </ul>
@@ -140,13 +152,14 @@ export default function AboutPage() {
         </div>
       </div>
     </Section>
-        <Section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <Section background="gradient" isBgLtr className="section-container py-16">
       <div className="max-w-7xl mx-auto">
-        <h3 className="text-center text-2xl font-bold text-gray-900 mb-12!">
+        <h3 className="heading-3 text-center mb-12">
           {overview.teamSection.title}
         </h3>
-        <h4 className="text-center text-2xl font-bold text-teal-600 mb-12!">
-          {overview.teamSection.subtitle}
+        <h4 className="heading-3 text-center text-primary mb-12">
+          <span className="text-primary">{overview.teamSection.subtitle}</span>
+ 
         </h4>
 
         <div className="space-y-12">
@@ -165,7 +178,7 @@ export default function AboutPage() {
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center">
-                      <span className="text-gray-500 text-center">{member.role}</span>
+                      <span className="muted-text text-center">{member.role}</span>
                     </div>
                   )}
                 </div>
@@ -173,10 +186,10 @@ export default function AboutPage() {
 
               {/* Content */}
               <div className={index % 2 === 1 ? 'md:col-start-1' : ''}>
-                <h5 className="text-lg font-bold text-teal-500 mb-3">
+                <h5 className="subheading text-secondary mb-3">
                   {member.name}
                 </h5>
-                <p className="text-gray-700 text-sm leading-relaxed">
+                <p className="body-text text-sm">
                   {member.bio}
                 </p>
               </div>
@@ -186,7 +199,7 @@ export default function AboutPage() {
       </div>
     </Section>
         {hygienistsSection ? (
-        <Section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <Section background="gradient" isBgLtr className="section-container py-16">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Left Content */}
@@ -202,7 +215,7 @@ export default function AboutPage() {
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center">
-                  <span className="text-gray-500">{hygienistsSection.imageAlt}</span>
+                  <span className="muted-text">{hygienistsSection.imageAlt}</span>
                 </div>
               )}
             </div>
@@ -211,18 +224,18 @@ export default function AboutPage() {
 
           {/* Right Image */}
                     <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-6!">
+            <h3 className="heading-3 mb-6">
               {hygienistsSection.title}
             </h3>
 
-            <p className="text-gray-700 text-sm leading-relaxed mb-6!">
+            <p className="body-text text-sm mb-6">
               {hygienistsSection.description}
             </p>
 
             <ul className="space-y-2 text-sm">
               {hygienistsSection.bullets.map((bullet, index) => (
-                <li key={index} className="flex gap-3 text-gray-700">
-                  <span className="text-teal-500 font-bold">●</span>
+                <li key={index} className="flex gap-3 body-text">
+                  <span className="text-primary font-bold">●</span>
                   <span>{bullet}</span>
                 </li>
               ))}
@@ -234,7 +247,7 @@ export default function AboutPage() {
     </Section>
         ) : null}
         {frontDeskSection ? (
-        <Section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <Section background="gradient" isBgLtr className="section-container py-16">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Left Image */}
@@ -250,7 +263,7 @@ export default function AboutPage() {
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center">
-                  <span className="text-gray-500">{frontDeskSection.imageAlt}</span>
+                  <span className="muted-text">{frontDeskSection.imageAlt}</span>
                 </div>
               )}
             </div>
@@ -258,24 +271,24 @@ export default function AboutPage() {
 
           {/* Right Content */}
           <div className="order-1 md:order-2">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6!">
-              {frontDeskSection.titleLines?.[0] ?? "Front Desk &"}
+            <h3 className="heading-3 mb-6">
+              {frontDeskSection.titleLines?.[0] ?? placeholders?.frontDeskLine1 ?? "Front Desk &"}
               <br />
-              {frontDeskSection.titleLines?.[1] ?? "Support Staff"}
+              {frontDeskSection.titleLines?.[1] ?? placeholders?.frontDeskLine2 ?? "Support Staff"}
             </h3>
 
-            <p className="text-gray-700 text-sm leading-relaxed mb-6!">
+            <p className="body-text text-sm mb-6">
               {frontDeskSection.description}
             </p>
 
-            <div className="flex gap-2 items-center mb-6!">
-              <span className="text-teal-500 text-xl">+</span>
+            <div className="flex gap-2 items-center mb-6">
+              <span className="text-primary text-xl">+</span>
             </div>
 
             <ul className="space-y-2 text-sm">
               {frontDeskSection.bullets.map((bullet, index) => (
-                <li key={index} className="flex gap-3 text-gray-700">
-                  <span className="text-teal-500 font-bold">●</span>
+                <li key={index} className="flex gap-3 body-text">
+                  <span className="text-primary font-bold">●</span>
                   <span>{bullet}</span>
                 </li>
               ))}
@@ -285,31 +298,31 @@ export default function AboutPage() {
       </div>
     </Section>
         ) : null}
-        <Section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <Section background="gradient" isBgLtr className="section-container py-16">
       <div className="max-w-7xl mx-auto">
-        <h3 className="text-center text-3xl font-bold text-gray-900 mb-12!">
+        <h3 className="heading-2 text-center mb-12">
           {missionValues.title}
         </h3>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
-            <h4 className="text-2xl font-bold text-blue-500 mb-6!">
+            <h4 className="heading-3 text-primary mb-6">
               {missionValues.subtitle}
             </h4>
 
-            <p className="text-gray-700 text-sm leading-relaxed mb-8!">
+            <p className="body-text text-sm mb-8">
               {missionValues.mission}
             </p>
 
             <div className="mb-8">
-              <h5 className="font-bold text-gray-900 mb-3!">
+              <h5 className="subheading text-(--text-primary) mb-3">
                 {missionValues.coreValuesLabel}
               </h5>
               <ul className="space-y-2">
                 {clinic.values.items.map((value, index) => (
-                  <li key={index} className="flex gap-3 text-gray-700 text-sm">
-                    <span className="text-teal-500 font-bold">✓</span>
+                  <li key={index} className="flex gap-3 body-text text-sm">
+                    <span className="text-primary font-bold">✓</span>
                     <span>{value.title}</span>
                   </li>
                 ))}
@@ -336,8 +349,8 @@ export default function AboutPage() {
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center">
-                        <span className="text-gray-500 text-xs text-center">
-                          Image
+                        <span className="muted-text text-xs text-center">
+                          {placeholders?.genericImage ?? "Image"}
                         </span>
                       </div>
                     )}
@@ -349,12 +362,12 @@ export default function AboutPage() {
         </div>
       </div>
     </Section>
-        <Section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <Section background="gradient" isBgLtr className="section-container py-16">
       <div className="max-w-7xl mx-auto">
-        <h3 className="text-center! text-3xl font-bold text-gray-900 mb-12!">
+        <h3 className="heading-2 text-center mb-12">
           {technologySection.title}
         </h3>
-        <p className="text-center! text-gray-600 text-sm mb-12! max-w-7xl mx-auto">
+        <p className="body-text text-center text-sm mb-12 max-w-7xl mx-auto">
           {technologySection.description}
         </p>
         <div className="space-y-12">
@@ -377,7 +390,7 @@ export default function AboutPage() {
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center">
-                        <span className="text-gray-500 text-xs text-center">{technologySection.imageAlt}</span>
+                        <span className="muted-text text-xs text-center">{technologySection.imageAlt ?? placeholders?.genericImage ?? "Image"}</span>
                       </div>
                     )}
                   </div>
@@ -385,10 +398,10 @@ export default function AboutPage() {
 
                 {/* Content */}
                 <div className={isEven ? "" : "md:order-1"}>
-                  <h4 className="font-bold text-gray-900 mb-2! text-lg">
+                  <h4 className="subheading text-(--text-primary) mb-2">
                     {tech.title}
                   </h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
+                  <p className="body-text text-sm">
                     {tech.description}
                   </p>
                 </div>
