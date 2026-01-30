@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ServiceFaqAccordion from "@/components/ServiceFaqAccordion";
 import { servicesContent, siteConfig } from "@/content";
+import { Section } from "@/components/ui";
 
 interface Props {
   params: Promise<{ category: string }>;
@@ -40,13 +41,13 @@ export default async function ServiceCategoryPage({ params }: Props) {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-container py-16 overflow-hidden custom-gradient-to-br">
-        <h1 className="heading-2 text-center mb-4">
-          {category.title}
-        </h1>
-      </section>
-
+      <Section className="relative py-12!" background="gradient">
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="heading-3">
+            {category.title}
+          </h1>
+        </div>
+      </Section>
       {/* Services - Detailed Sections */}
       <section className="section py-12 bg-background">
         <div className="container">

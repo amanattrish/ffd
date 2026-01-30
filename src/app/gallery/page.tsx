@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { galleryContent } from "@/content";
+import { Section } from "@/components/ui";
 
 export const metadata = {
   title: galleryContent.pageTitle,
@@ -12,14 +13,13 @@ export default function GalleryPage() {
 
   return (
     <>
-      {/* Page Title */}
-      <section className="section-container py-16 custom-gradient-to-br">
-        <div className="section-container">
-          <h1 className="heading-2 text-center">
+       <Section className="relative py-12!" background="gradient">
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="heading-3">
             {title}
           </h1>
         </div>
-      </section>
+      </Section>
 
       {/* Gallery Grid */}
       <section className="section-container pb-16">
