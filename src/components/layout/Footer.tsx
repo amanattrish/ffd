@@ -54,35 +54,21 @@ export default function Footer() {
           {/* Column 3: Office Hours */}
           <div className="lg:col-span-1 col-span-2">
             <h3 className="text-base! font-bold text-muted-bolder mb-4 lg:mt-10!">Office Hours</h3>
-            <ul className="space-y-2! sm:text-sm text-xs text-muted-bold">
-              <li className="flex gap-4">
-                <span >Mon</span>
+            <ul className="space-y-2! sm:text-sm text-xs text-muted-bold grid grid-cols-[24px_1fr] gap-x-4 gap-y-2">
+                <span className="font-medium">Mon</span>
                 <span >{formatHours("monday")}</span>
-              </li>
-              <li className="flex gap-4">
-                <span >Tue</span>
+                <span className="font-medium">Tue</span>
                 <span >{formatHours("tuesday")}</span>
-              </li>
-              <li className="flex gap-4">
-                <span >Wed</span>
+                <span className="font-medium">Wed</span>
                 <span >{formatHours("wednesday")}</span>
-              </li>
-              <li className="flex gap-4">
-                <span >Thu</span>
+                <span className="font-medium">Thu</span>
                 <span >{formatHours("thursday")}</span>
-              </li>
-              <li className="flex gap-4">
-                <span >Fri</span>
+                <span className="font-medium">Fri</span>
                 <span >{formatHours("friday")}</span>
-              </li>
-              <li className="flex gap-4">
-                <span >Sat</span>
+                <span className="font-medium">Sat</span>
                 <span >{formatHours("saturday")}</span>
-              </li>
-              <li className="flex gap-4">
-                <span >Sun</span>
+                <span className="font-medium">Sun</span>
                 <span >{formatHours("sunday")}</span>
-              </li>
             </ul>
           </div>
 
@@ -108,10 +94,10 @@ export default function Footer() {
                   href={social.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8  text-white flex items-center justify-center hover:bg-gray-700 transition-colors"
+                  className="w-8 h-8 text-white flex items-center justify-center group rounded-xl hover:bg-muted transition-colors"
                   aria-label="Facebook"
                 >
-                  <Facebook className="w-4 h-4" />
+                  <Facebook className="w-4 h-4 group-hover:text-muted-lighter" />
                 </a>
               )}
               {social.instagram && (
@@ -119,10 +105,10 @@ export default function Footer() {
                   href={social.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 text-white flex items-center justify-center hover:bg-gray-700 transition-colors"
+                  className="w-8 h-8 text-white flex items-center justify-center group rounded-xl hover:bg-muted transition-colors"
                   aria-label="Instagram"
                 >
-                  <Instagram className="w-4 h-4" />
+                  <Instagram className="w-4 h-4 group-hover:text-muted-lighter" />
                 </a>
               )}
               {social.twitter && (
@@ -130,10 +116,10 @@ export default function Footer() {
                   href={social.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 text-white flex items-center justify-center hover:bg-gray-700 transition-colors"
+                  className="w-8 h-8 text-white flex items-center justify-center group rounded-xl hover:bg-muted transition-colors"
                   aria-label="Twitter"
                 >
-                  <Twitter className="w-4 h-4" />
+                  <Twitter className="w-4 h-4 group-hover:text-muted-lighter" />
                 </a>
               )}
             </div>
