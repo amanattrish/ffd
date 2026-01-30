@@ -23,7 +23,7 @@ export default function BlogPreview() {
           </h2>
         </div>
         <div className="flex flex-col gap-4">
-          <p className="body-text font-medium mt-2 max-w-xl">
+          <p className="helper-text font-medium mt-2 max-w-xl">
             {blog.description}
           </p>
           <Link

@@ -15,10 +15,16 @@ export default function BlogPage() {
 
   return (
     <>
-      <Section background="gradient" isBgLtr={false} className="relative overflow-hidden">
-          <h1 className="heading-3 md:text-center my-12">
+      {/* Hero Section */}
+      <Section className="relative py-12!" background="gradient" isBgLtr={false}>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="heading-3">
             Blogs
           </h1>
+        </div>
+      </Section>
+
+      <Section background="gray" className="relative overflow-hidden">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {blog.items.map((post, index) => (
           <BlogCard key={post.id} post={post} index={index} blog={blog} />
