@@ -67,7 +67,7 @@ const BlogCard = ({ post, index, blog }: BlogCardProps) => {
               </div>
 
               {/* Title + excerpt */}
-              <h3 className="body-text font-semibold line-clamp-2 mb-1">
+              <h3 className="subheading-2 font-semibold line-clamp-2 mb-1">
                 {post.title}
               </h3>
 
