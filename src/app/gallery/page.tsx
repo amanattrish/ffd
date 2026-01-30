@@ -28,7 +28,7 @@ export default function GalleryPage() {
             {items.map((item) => (
               <div
                 key={item.id}
-                className="card overflow-hidden border border-(--border-color)"
+                className="card space-y-2 overflow-hidden border border-(--border-color)"
               >
                 {/* BEFORE Image */}
                 <div className="relative w-full aspect-square">
@@ -36,7 +36,7 @@ export default function GalleryPage() {
                     src={item.before}
                     alt={`${item.title} - Before`}
                     fill
-                    className="object-cover"
+                    className="object-cover rounded-lg"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   <span className="absolute top-2 left-2 bg-black/80 text-muted-lighter font-medium px-2 py-1 rounded">
@@ -50,7 +50,7 @@ export default function GalleryPage() {
                     src={item.after}
                     alt={`${item.title} - After`}
                     fill
-                    className="object-cover"
+                    className="object-cover rounded-lg"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   <span className="absolute top-2 left-2 bg-black/80 text-muted-lighter font-medium px-2 py-1 rounded">

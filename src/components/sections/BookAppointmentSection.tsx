@@ -87,7 +87,7 @@ interface Props {
   background?: "transparent" | "white" | "gray" | "primary" | "accent" | "gradient" ;
 }
 
-export default function BookAppointmentSection({ background="gradient" }: Props) {
+export default function BookAppointmentSection({ background="transparent" }: Props) {
   const router = useRouter();
   const { booking } = homeContent;
   const [selectedDate, setSelectedDate] = useState<number>(19);
@@ -139,7 +139,7 @@ export default function BookAppointmentSection({ background="gradient" }: Props)
   return (
     <Section background={background} className="relative py-12!">
       <div className="relative z-10">
-        <div className="mx-auto bg-white rounded-2xl py-8">
+        <div className="mx-auto bg-muted-lighter/50! rounded-2xl py-8 p-4">
           {/* Header */}
           <h1 className="heading-1 text-center mb-2">
             {booking.title}
