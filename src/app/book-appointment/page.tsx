@@ -13,17 +13,17 @@ export default function BookAppointmentPage() {
   const { hours } = contactContent;
 
   return (
-    <>
+    <div className="text-center">
       {/* Hero Section */}
       <section className="relative bg-linear-to-br from-[#F2FDFF] to-white  py-16 overflow-hidden">
-        <div className="absolute top-10 right-10 text-white/10 text-4xl font-light">+</div>
-        <div className="absolute bottom-10 left-10 text-white/10 text-3xl font-light">+</div>
+        <div className="absolute top-10 right-10 text-white/10 text-4xl! font-light">+</div>
+        <div className="absolute bottom-10 left-10 text-white/10 text-3xl! font-light">+</div>
 
         <div className="container mx-auto px-4 text-center! relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-black !mb-4">
+          <h1 className="text-3xl! font-bold text-black !mb-4">
             Book Your Appointment
           </h1>
-          <p className="text-xl text-black/90 mx-auto">
+          <p className="text-xl! text-black/90 mx-auto">
             Schedule your visit online in just a few clicks
           </p>
         </div>
@@ -31,7 +31,7 @@ export default function BookAppointmentPage() {
 
       {/* Booking Section */}
       <Section background="white">
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid gap-12">
           {/* Left Sidebar - Info */}
           <div className="lg:col-span-1 order-2 lg:order-1">
             {/* Benefits */}
@@ -47,16 +47,17 @@ export default function BookAppointmentPage() {
                   </li>
                 ))}
               </ul>
+              </div>
             </div>
 
             {/* Contact Info */}
-            <div className="bg-linear-to-br from-[#F2FDFF] to-white rounded-2xl p-6 !mb-6">
+            <div className="bg-linear-to-br from-[#F2FDFF] to-white rounded-2xl! p-6 !mb-6">
               <h3 className="font-bold text-primary !mb-4">
                 Prefer to Call?
               </h3>
               <a
                 href={`tel:${siteConfig.phone.replace(/[^0-9+]/g, "")}`}
-                className="flex items-center gap-3 text-primary font-semibold hover:underline"
+                className="flex items-center justify-center gap-3 text-primary font-semibold hover:underline"
               >
                 <Phone className="w-5 h-5" />
                 {siteConfig.phone}
@@ -64,14 +65,14 @@ export default function BookAppointmentPage() {
             </div>
 
             {/* Office Hours */}
-            <div className="bg-linear-to-br from-[#F2FDFF] to-white rounded-2xl p-6 !mb-6">
-              <div className="flex items-center gap-3 !mb-4">
+            <div className="bg-linear-to-br from-[#F2FDFF] to-white rounded-2xl! p-6 !mb-6">
+              <div className="flex items-center justify-center gap-3 !mb-4">
                 <Clock className="w-5 h-5 text-primary" />
                 <h3 className="font-bold text-primary">{hours.title}</h3>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2!">
                 {hours.schedule.map((item, index) => (
-                  <div key={index} className="flex justify-between text-sm">
+                  <div key={index} className="w-[280px] mx-auto flex justify-between text-sm">
                     <span className="text-secondary">{item.day}</span>
                     <span
                       className={
@@ -88,8 +89,8 @@ export default function BookAppointmentPage() {
             </div>
 
             {/* Location */}
-            <div className="bg-linear-to-br from-[#F2FDFF] to-white rounded-2xl p-6">
-              <div className="flex items-center gap-3 !mb-4">
+            <div className="bg-linear-to-br from-[#F2FDFF] to-white rounded-2xl! p-6">
+              <div className="flex items-center justify-center gap-3 !mb-4">
                 <MapPin className="w-5 h-5 text-primary" />
                 <h3 className="font-bold text-primary">{booking.ourLocationLabel}</h3>
               </div>
@@ -103,22 +104,22 @@ export default function BookAppointmentPage() {
           </div>
 
           {/* Calendly E!mbed */}
+          {/* 
           <div className="lg:col-span-2 order-1 lg:order-2">
-            <div className="bg-linear-to-br from-[#F2FDFF] to-white rounded-2xl p-6 lg:p-8">
-              <h2 className="text-2xl font-bold text-primary !mb-2">
+            <div className="bg-linear-to-br from-[#F2FDFF] to-white rounded-2xl! p-6 lg:p-8">
+              <h2 className="text-2xl! font-bold text-primary !mb-2">
                 Select a Date & Time
               </h2>
               <p className="text-secondary !mb-6">
                 Choose a convenient time slot for your visit. You will receive a confirmation email once your appointment is booked.
               </p>
 
-              {/* Calendly Placeholder - Replace with actual Calendly e!mbed */}
-              <div className="bg-white rounded-xl border border-gray-200 min-h-[600px] flex items-center justify-center">
+              <div className="bg-white rounded-xl! border border-gray-200 min-h-[600px] flex items-center justify-center">
                 <div className="text-center p-8">
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto !mb-4">
                     <Clock className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold text-primary !mb-2">
+                  <h3 className="text-xl! font-bold text-primary !mb-2">
                     Calendly Booking Widget
                   </h3>
                   <p className="text-secondary !mb-4 max-w-md">
@@ -130,7 +131,7 @@ export default function BookAppointmentPage() {
                 </div>
               </div>
 
-              {/* Alternative: Uncomment and configure the Calendly e!mbed script
+              Alternative: Uncomment and configure the Calendly e!mbed script
               <div
                 className="calendly-inline-widget"
                 data-url="https://calendly.com/freeportfamilydentistry/appointment"
@@ -140,16 +141,16 @@ export default function BookAppointmentPage() {
                 src="https://assets.calendly.com/assets/external/widget.js"
                 strategy="lazyOnload"
               />
-              */}
             </div>
           </div>
+          */}
         </div>
       </Section>
 
       {/* Emergency CTA */}
       <Section background="gray">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-primary !mb-4">
+        <div className="max-w-2xl! mx-auto text-center">
+          <h2 className="text-2xl! font-bold text-primary !mb-4">
             Dental Emergency?
           </h2>
           <p className="text-secondary !mb-6">
@@ -165,6 +166,6 @@ export default function BookAppointmentPage() {
           </a>
         </div>
       </Section>
-    </>
+    </div>
   );
 }

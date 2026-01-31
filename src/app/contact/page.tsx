@@ -27,6 +27,7 @@ export default function ContactPage() {
   const filterName = (v: string) => v.replace(/[^a-zA-Z\s\-'.]/g, "");
   const maxMessageChars = 200;
   const capToMaxChars = (s: string) => s.slice(0, maxMessageChars);
+  const maxPhoneDigits = 10;
 
   const validate = () => {
     const next: Record<string, string> = {};
@@ -149,6 +150,7 @@ export default function ContactPage() {
                       setFormData({ ...formData, phone: e.target.value })
                     }
                   />
+                  {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
                 </div>
 
                 {/* Message */}
