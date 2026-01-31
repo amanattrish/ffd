@@ -52,13 +52,13 @@ export default function AboutPage() {
           </h1>
         </div>
       </section>
-      <section   className="custom-gradient-to-br">
+      <section className="custom-gradient-to-br">
         <div className="section-container">
 
           {/* Mobile-specific two-column hero layout */}
-          <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-8 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-center">
             {/* Left Content */}
-            <div className="col-span-1">
+            <div className="col-span-1 md:order-1 order-2">
               <h3 className="heading-3 mb-2">
                 <span className="text-primary"> {dentist.hero.displayName ?? dentist.hero.title}</span>
               </h3>
@@ -72,7 +72,7 @@ export default function AboutPage() {
             </div>
 
             {/* Right Image */}
-            <div className="col-span-1 flex justify-center">
+            <div className="col-span-1 md:order-2 order-1 flex justify-center">
               <div className="relative w-48 h-64 sm:w-56 sm:h-72 md:w-64 md:h-80">
                 <div className="absolute inset-0 left-6 z-0 pointer-events-none">
                   <Image

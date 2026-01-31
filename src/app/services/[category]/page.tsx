@@ -42,16 +42,16 @@ export default async function ServiceCategoryPage({ params }: Props) {
 
   return (
     <>
-            <section className="py-10 md:py-14 bg-accent-3" >
-        <div className="section-container">
-          <h1 className="heading-2 text-center">
+      <Section className="relative py-12!" background="gradient">
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="heading-3">
             {category.title}
           </h1>
         </div>
-      </section>
+      </Section>
       {/* Services - Detailed Sections */}
-      <section className="section py-12 bg-background">
-        <div className="container">
+      <Section background="white">
+        <div className="">
           {category.services.map((service, idx) => {
             const titleParts = service.title.split("&");
             const leftTitle = titleParts[0]?.trim();
@@ -133,7 +133,7 @@ export default async function ServiceCategoryPage({ params }: Props) {
                     <div className="sticky top-6">
                       <div className="bg-muted-lighter rounded-lg overflow-hidden p-4 border border-(--border-color)">
                         <div className="bg-primary rounded-t-lg p-2">
-                          <h3 className="subheading text-white mb-4">{sidebar.scheduleTitle}</h3>
+                          <h3 className="subheading text-center font-semibold! text-white my-2">{sidebar.scheduleTitle}</h3>
                           <Link
                             href={sidebar.bookAppointmentHref}
                             className="btn btn-secondary block w-full text-center py-2 px-2 rounded-lg mt-2 mb-4"
@@ -141,7 +141,7 @@ export default async function ServiceCategoryPage({ params }: Props) {
                             {sidebar.requestAppointmentLabel}
                           </Link>
                           <h3 className="subheading text-white mb-2 text-center">{sidebar.callUsNowLabel}</h3>
-                          <p className="body-text text-white font-semibold text-center">{phone}</p>
+                          <p className="subheading text-white! font-semibold! text-center">{phone}</p>
                         </div>
                         <div className="p-4">
                           <h4 className="heading-4 mb-4">{sidebar.servicesLabel}</h4>
@@ -209,10 +209,10 @@ export default async function ServiceCategoryPage({ params }: Props) {
             );
           })}
         </div>
+      </Section>
+      <section className="custom-gradient-to-l py-16">
+        <CTABanner />
       </section>
-            <section className="custom-gradient-to-l py-16">
-              <CTABanner />
-            </section>
     </>
   );
 }
