@@ -12,7 +12,7 @@ export default function HomePage() {
   return (
     <main className="flex flex-col">
       <Hero />
-      <div className="custom-gradient-to-l">
+      <div className="custom-gradient-to-l flex flex-col gap-12">
         <ServicesPreview />
         <TestimonialsPreview />
         <CTABanner />

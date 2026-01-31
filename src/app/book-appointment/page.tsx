@@ -144,7 +144,6 @@ export default function BookAppointmentPage() {
             </div>
           </div>
           */}
-        </div>
       </Section>
 
       {/* Emergency CTA */}
