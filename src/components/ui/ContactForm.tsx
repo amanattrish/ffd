@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Send, Loader2, CheckCircle, XCircle } from "lucide-react";
 import Button from "@/components/ui/Button";
-import { contactContent } from "@/content";
+import { contactContent, siteConfig } from "@/content";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
@@ -15,6 +15,8 @@ interface FormData {
   subject: string;
   message: string;
 }
+
+const uiPlaceholders = siteConfig?.ui?.contactForm?.placeholders;
 
 export default function ContactForm() {
   const { form } = contactContent;
@@ -133,7 +135,7 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             maxLength={maxNameChars}
-            placeholder="John"
+            placeholder={uiPlaceholders?.firstName ?? "John"}
             className="w-full"
           />
         </div>
@@ -151,7 +153,7 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             maxLength={maxNameChars}
-            placeholder="Doe"
+            placeholder={uiPlaceholders?.lastName ?? "Doe"}
             className="w-full"
           />
         </div>
@@ -170,7 +172,7 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
-            placeholder="john@example.com"
+            placeholder={uiPlaceholders?.email ?? "john@example.com"}
             className="w-full"
           />
         </div>
@@ -186,7 +188,7 @@ export default function ContactForm() {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            placeholder="(555) 123-4567"
+            placeholder={uiPlaceholders?.phone ?? "(555) 123-4567"}
             className="w-full"
           />
         </div>
@@ -205,12 +207,16 @@ export default function ContactForm() {
           required
           className="w-full"
         >
-          <option value="">Select a subject</option>
-          <option value="appointment">Schedule an Appointment</option>
-          <option value="question">General Question</option>
-          <option value="insurance">Insurance Inquiry</option>
-          <option value="feedback">Feedback</option>
-          <option value="other">Other</option>
+          <option value="">{typeof siteConfig?.ui?.contactForm?.subjectPlaceholder === "string" ? siteConfig.ui.contactForm.subjectPlaceholder : "Select a subject"}</option>
+          {(siteConfig?.ui?.contactForm?.subjectOptions ?? [
+            { value: "appointment", label: "Schedule an Appointment" },
+            { value: "question", label: "General Question" },
+            { value: "insurance", label: "Insurance Inquiry" },
+            { value: "feedback", label: "Feedback" },
+            { value: "other", label: "Other" },
+          ]).map((opt) => (
+            <option key={opt.value} value={opt.value}>{opt.label}</option>
+          ))}
         </select>
       </div>
 
@@ -226,7 +232,7 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           rows={5}
-          placeholder="How can we help you?"
+          placeholder={uiPlaceholders?.message ?? "How can we help you?"}
           className="w-full resize-none"
         />
         <p className={`text-sm mt-1 text-right ${formData.message.length > maxMessageChars ? "text-red-500" : "text-gray-500"}`}>

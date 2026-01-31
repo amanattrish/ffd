@@ -31,7 +31,7 @@ export default function CTABanner({
             <div className="sm:hidden relative w-full aspect-square">
             <Image
             src={content.image || "/images/dentist-doing-check-up-patient.png"}
-            alt="Dental care professional examining patient"
+            alt={content.imageAlt ?? "Dental care professional examining patient"}
             fill
             className="object-contain object-top-left"
             sizes="(max-width: 1024px) 100vw, 33vw"

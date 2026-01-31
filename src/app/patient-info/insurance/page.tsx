@@ -94,7 +94,7 @@ export default function InsurancePage() {
                 <div className="!mb-8">
                   <Image
                     src={insurance.careCredit.logo}
-                    alt="CareCredit"
+                    alt={insurance.careCredit.logoAlt ?? "CareCredit"}
                     width={200}
                     height={60}
                     className="object-contain"

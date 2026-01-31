@@ -1,4 +1,30 @@
 {
+  "overview": {
+    "pageTitle": "Patient Information | Freeport Family Dentistry",
+    "pageDescription": "Everything you need to know about your visit to Freeport Family Dentistry",
+    "heroTitle": "Patient Information",
+    "learnMoreLabel": "Learn More",
+    "cards": [
+      {
+        "key": "newPatients",
+        "title": "New Patient Information",
+        "description": "What to expect on your first visit, required documents, and patient forms.",
+        "href": "/patient-info/new-patients"
+      },
+      {
+        "key": "insurance",
+        "title": "Insurance & Financing",
+        "description": "Accepted insurance providers, payment options, and membership plans.",
+        "href": "/patient-info/insurance"
+      },
+      {
+        "key": "faqs",
+        "title": "FAQs",
+        "description": "Answers to commonly asked questions about dental care and our practice.",
+        "href": "/patient-info/faqs"
+      }
+    ]
+  },
   "newPatients": {
     "pageTitle": "New Patient Information",
     "pageDescription": "Everything you need to know for your first visit",
@@ -7,6 +33,7 @@
       "titleFirst": "New",
       "titleSecond": "Patients",
       "image": "/images/new-patient.png",
+      "imageAlt": "Family at Freeport Family Dentistry",
       "description": "Your first appointment with us includes a thorough examination, gathering your medical and dental history, and discussing your goals for your smile. We take an individualized approach to your care and will work with you to create a treatment plan that fits your needs."
     },
     "mission": {
@@ -45,7 +72,10 @@
         "comments": "Questions or Comments?"
       },
       "submit": "Submit",
-      "successMessage": "Thank you! We've received your message and will get back to you shortly."
+      "submittingButton": "Sending...",
+      "successTitle": "Message Sent!",
+      "successMessage": "Thank you! We've received your message and will get back to you shortly.",
+      "validationErrorMessage": "Please fill in Name and a valid Email Address."
     },
     "cta": {
       "title": "Get a FREE Consultation",
@@ -86,7 +116,8 @@
     },
     "careCredit": {
       "heading": "We finance through Care Credit, ask us how",
-      "logo": "/images/carecredit-logo.png"
+      "logo": "/images/carecredit-logo.png",
+      "logoAlt": "CareCredit"
     },
     "discounts": {
       "title": "Discounts & Memberships",

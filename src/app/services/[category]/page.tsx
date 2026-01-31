@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import ServiceFaqAccordion from "@/components/ServiceFaqAccordion";
 import { servicesContent, siteConfig } from "@/content";
 import { Section } from "@/components/ui";
+import { CTABanner } from "@/components/sections";
 
 interface Props {
   params: Promise<{ category: string }>;
@@ -41,13 +42,13 @@ export default async function ServiceCategoryPage({ params }: Props) {
 
   return (
     <>
-      <Section className="relative py-12!" background="gradient">
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="heading-3">
+            <section className="py-10 md:py-14 bg-accent-3" >
+        <div className="section-container">
+          <h1 className="heading-2 text-center">
             {category.title}
           </h1>
         </div>
-      </Section>
+      </section>
       {/* Services - Detailed Sections */}
       <section className="section py-12 bg-background">
         <div className="container">
@@ -209,6 +210,9 @@ export default async function ServiceCategoryPage({ params }: Props) {
           })}
         </div>
       </section>
+            <section className="custom-gradient-to-l py-16">
+              <CTABanner />
+            </section>
     </>
   );
 }

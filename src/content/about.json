@@ -18,7 +18,7 @@
       ]
     },
     "qualifications": {
-      "title": "Education & Qualifications",
+      "title": "Qualifications",
       "items": [
         "Doctor of Dental Surgery (DDS) - New York University",
         "Bachelor of Science in Biology - Cornell University",
@@ -58,6 +58,8 @@
       "subtitle": "Dedicated professionals committed to your smile",
       "description": "Our team of experienced dental professionals is here to provide you with the highest quality care in a friendly, comfortable environment."
     },
+    "professionalsTitle": "Our Dental Professionals",
+    "professionalsDescription": "Each member of our team is dedicated to providing you with the best possible care.",
     "members": [
       {
         "id": "1",
@@ -123,6 +125,7 @@
     },
     "values": {
       "title": "Our Values",
+      "description": "The principles that guide everything we do.",
       "items": [
         {
           "title": "Patient-Centered Care",
@@ -187,6 +190,7 @@
     },
     "whyChooseUs": {
       "title": "Why Choose Us",
+      "description": "Experience the difference at Freeport Family Dentistry.",
       "items": [
         "Experienced, caring dental team",
         "State-of-the-art technology",

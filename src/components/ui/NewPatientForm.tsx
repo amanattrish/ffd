@@ -61,7 +61,7 @@ export default function NewPatientForm() {
     return (
       <div className="text-center py-10">
         <CheckCircle className="w-14 h-14 text-secondary mx-auto mb-4" />
-        <h3 className="text-lg font-semibold text-primary mb-2">Message Sent!</h3>
+        <h3 className="text-lg font-semibold text-primary mb-2">{form.successTitle ?? "Message Sent!"}</h3>
         <p className="text-[var(--text-secondary)]">{form.successMessage}</p>
       </div>
     );
@@ -72,7 +72,7 @@ export default function NewPatientForm() {
       {status === "error" && (
         <div className="flex items-center gap-3 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
           <XCircle className="w-5 h-5 shrink-0" />
-          <p>Please fill in Name and a valid Email Address.</p>
+          <p>{form.validationErrorMessage ?? "Please fill in Name and a valid Email Address."}</p>
         </div>
       )}
 
@@ -129,7 +129,7 @@ export default function NewPatientForm() {
           {status === "submitting" ? (
             <>
               <Loader2 className="w-4 h-4 mr-2 inline animate-spin" />
-              Sending...
+              {form.submittingButton ?? "Sending..."}
             </>
           ) : (
             form.submit

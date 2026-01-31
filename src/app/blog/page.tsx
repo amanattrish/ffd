@@ -3,8 +3,8 @@ import { homeContent } from "@/content";
 import BlogCard from "@/components/cards/BlogCard";
 
 export const metadata = {
-  title: "Blog - Freeport Family Dentistry",
-  description: "Stay informed with the latest dental health tips and news from our experts",
+  title: homeContent.blog.pageTitle,
+  description: homeContent.blog.pageDescription,
 };
 
 export default function BlogPage() {
@@ -15,7 +15,7 @@ export default function BlogPage() {
       <Section className="relative py-12!" background="gradient">
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="heading-3">
-            Blogs
+            {homeContent.blog.heroTitle}
           </h1>
         </div>
       </Section>

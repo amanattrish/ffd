@@ -7,6 +7,7 @@
   --color-secondary: #A1C65D;
   --color-accent-1: #74C6D1;
   --color-accent-2: #70CCB9;
+  --color-accent-3: #F2FDFF;
   --color-white: #FFFFFF;
   --color-black: #000000;
 
@@ -40,6 +41,7 @@
   --color-secondary: var(--color-secondary);
   --color-accent-1: var(--color-accent-1);
   --color-accent-2: var(--color-accent-2);
+  --color-accent-3: var(--color-accent-3);
 
   /* Typography */
   --font-sans: "Poppins", sans-serif;
@@ -52,11 +54,11 @@
 }
 
 .custom-gradient-to-l {
-  @apply bg-linear-to-l from-[#F2FDFF] to-white
+  @apply bg-linear-to-l from-[var(--color-accent-3)] to-white
 }
 
 .custom-gradient-to-br {
-  @apply bg-linear-to-br from-[#F2FDFF] to-white
+  @apply bg-linear-to-br from-[var(--color-accent-3)] to-white
 }
 
 .section-badge {

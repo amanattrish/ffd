@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { clsx } from "clsx";
+import { siteConfig } from "@/content";
 
 interface GalleryImage {
   src: string;
@@ -15,6 +16,8 @@ interface ImageGalleryProps {
   images: GalleryImage[];
   columns?: 2 | 3 | 4;
 }
+
+const a11y = siteConfig?.ui?.imageGallery;
 
 export default function ImageGallery({ images, columns = 3 }: ImageGalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -88,7 +91,7 @@ export default function ImageGallery({ images, columns = 3 }: ImageGalleryProps)
           <button
             className="absolute top-4 right-4 p-2 text-white hover:text-gray-300 transition-colors z-10"
             onClick={closeLightbox}
-            aria-label="Close lightbox"
+            aria-label={a11y?.closeLabel ?? "Close lightbox"}
           >
             <X className="w-8 h-8" />
           </button>
@@ -100,7 +103,7 @@ export default function ImageGallery({ images, columns = 3 }: ImageGalleryProps)
               e.stopPropagation();
               goToPrevious();
             }}
-            aria-label="Previous image"
+            aria-label={a11y?.prevLabel ?? "Previous image"}
           >
             <ChevronLeft className="w-10 h-10" />
           </button>
@@ -127,7 +130,7 @@ export default function ImageGallery({ images, columns = 3 }: ImageGalleryProps)
               e.stopPropagation();
               goToNext();
             }}
-            aria-label="Next image"
+            aria-label={a11y?.nextLabel ?? "Next image"}
           >
             <ChevronRight className="w-10 h-10" />
           </button>

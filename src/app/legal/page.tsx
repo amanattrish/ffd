@@ -2,9 +2,8 @@ import Section from "@/components/ui/Section";
 import { legalContent } from "@/content";
 
 export const metadata = {
-  title: "Legal",
-  description:
-    "Privacy Policy, Terms of Service, Refund & Cancellation Policy, and HIPAA Compliance for Freeport Family Dentistry.",
+  title: legalContent.legalPage.pageTitle,
+  description: legalContent.legalPage.pageDescription,
 };
 
 const SECTIONS = [
@@ -28,7 +27,7 @@ export default function LegalPage() {
       <Section className="relative py-12!" background="gradient">
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="heading-3">
-            Legal
+            {legalContent.legalPage.pageTitle}
           </h1>
         </div>
       </Section>

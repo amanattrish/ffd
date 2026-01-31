@@ -59,7 +59,7 @@ export default function AboutPreview({ className, style }: Props) {
               <div className="size-20 md:size-24 bg-accent-1/30 rounded-full absolute right-20 bottom-8" />
               <Image
                 src={about.image || "/images/about-clinic.png"}
-                alt="Our clinic"
+                alt={about.imageAlt ?? "Our clinic"}
                 fill
                 className="object-contain object-left"
                 sizes="(max-width: 640px) 256px, (max-width: 768px) 288px, 320px"

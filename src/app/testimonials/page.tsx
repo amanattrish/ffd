@@ -29,7 +29,7 @@ export default function TestimonialsPage() {
 
   return (
     <>
-      <section className="section-container py-10 md:py-14 custom-gradient-to-br">
+      <section className="py-10 md:py-14 custom-gradient-to-br">
         <div className="section-container">
           <h1 className="heading-2 text-center mb-10">
             {mainTitle}

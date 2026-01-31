@@ -6,8 +6,8 @@ import Button from "@/components/ui/Button";
 import { aboutContent } from "@/content";
 
 export const metadata: Metadata = {
-  title: "About the Dentist",
-  description: "Meet Dr. John Smith, our experienced dentist at Freeport Family Dentistry. Learn about his qualifications, experience, and approach to dental care.",
+  title: aboutContent.dentist.pageTitle,
+  description: aboutContent.dentist.pageDescription,
 };
 
 export default function AboutDentistPage() {

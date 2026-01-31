@@ -30,11 +30,12 @@ export default function ContactPage() {
 
   const validate = () => {
     const next: Record<string, string> = {};
-    if (!formData.name.trim()) next.name = "Name is required";
-    if (!formData.email.trim()) next.email = "Email is required";
-    else if (!emailRegex.test(formData.email)) next.email = "Please enter a valid email address";
-    if (!formData.message.trim()) next.message = "Message is required";
-    else if (formData.message.length > maxMessageChars) next.message = `Maximum ${maxMessageChars} characters allowed.`;
+    const v = form.validation;
+    if (!formData.name.trim()) next.name = v.nameRequired;
+    if (!formData.email.trim()) next.email = v.emailRequired;
+    else if (!emailRegex.test(formData.email)) next.email = v.emailInvalid;
+    if (!formData.message.trim()) next.message = v.messageRequired;
+    else if (formData.message.length > maxMessageChars) next.message = v.messageMaxChars.replace("{{max}}", String(maxMessageChars));
     setErrors(next);
     return Object.keys(next).length === 0;
   };
@@ -64,7 +65,7 @@ export default function ContactPage() {
       <Section className="relative py-12!" background="gradient">
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="heading-3">
-            Contact Us
+            {contactContent.pageTitle}
           </h1>
         </div>
       </Section>
@@ -74,8 +75,8 @@ export default function ContactPage() {
           {/* Left Column - Get in Touch */}
           <div>
             <h2 className="heading-3 font-bold! mb-6">
-              <span className="text-[#4D99C6]">Get in</span>{" "}
-              <span className="text-[#90C044]">Touch</span>
+              <span className="text-[#4D99C6]">{contactContent.getInTouchTitle?.first ?? "Get in"}</span>{" "}
+              <span className="text-[#90C044]">{contactContent.getInTouchTitle?.second ?? "Touch"}</span>
             </h2>
             <p className="body-text font-semibold!">
               {getInTouch.description}
@@ -90,14 +91,14 @@ export default function ContactPage() {
                   <Check className="w-8 h-8 text-white" />
                 </span>
                 <h3 className="text-xl font-bold text-primary mb-2">
-                  Message Sent!
+                  {form.successTitle}
                 </h3>
                 <p className="text-secondary mb-6">{form.successMessage}</p>
                 <Button
                   onClick={() => setIsSubmitted(false)}
                   variant="outline"
                 >
-                  Send Another Message
+                  {form.sendAnotherMessage}
                 </Button>
               </div>
             ) : (
@@ -108,7 +109,7 @@ export default function ContactPage() {
                   <TextInput
                     className="h-12"
                     id="name"
-                    placeholder="Name"
+                    placeholder={form.fields[0].placeholder}
                     value={formData.name}
                     maxLength={20}
                     error={errors.name}
@@ -126,7 +127,7 @@ export default function ContactPage() {
                     className="h-12"
                     id="email"
                     type="email"
-                    placeholder="Email Address"
+                    placeholder={form.fields[1].placeholder}
                     value={formData.email}
                     error={errors.email}
                     onChange={(e) => {
@@ -142,7 +143,7 @@ export default function ContactPage() {
                     className="h-12"
                     id="phone"
                     type="tel"
-                    placeholder="Phone Number"
+                    placeholder={form.fields[2].placeholder}
                     value={formData.phone}
                     onChange={(e) =>
                       setFormData({ ...formData, phone: e.target.value })
@@ -155,7 +156,7 @@ export default function ContactPage() {
                   <TextArea
                     id="message"
                     rows={5}
-                    placeholder="Questions or Comments?"
+                    placeholder={form.fields[3].placeholder}
                     value={formData.message}
                     error={errors.message}
                     onChange={(e) => {
@@ -187,7 +188,7 @@ export default function ContactPage() {
                   variant="secondary"
                   className="w-40 border border-secondary bg-transparent text-black! hover:text-muted-lighter! font-semibold"
                 >
-                  {isSubmitting ? "Submitting..." : form.submitButton}
+                  {isSubmitting ? form.submittingButton : form.submitButton}
                 </Button>
 
               </form>
@@ -215,7 +216,7 @@ export default function ContactPage() {
             <div className="relative aspect-square h-64 w-full">
               <Image
                 src="/images/clinic.png"
-                alt="Clinic Interior"
+                alt={contactContent.images?.clinicInteriorAlt ?? "Clinic Interior"}
                 fill
                 className="object-contain"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -235,7 +236,7 @@ export default function ContactPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Freeport Family Dentistry Location"
+              title={contactContent.map?.title ?? "Freeport Family Dentistry Location"}
             />
           </div>
         </div>
@@ -254,7 +255,7 @@ export default function ContactPage() {
                   <span
                     className={` body-text ${
                       
-                      item.hours === "Closed"
+                      item.hours === (contactContent.hoursClosedLabel ?? "Closed")
                         ? "text-black!"
                         : "text-primary!"
                     }`}
@@ -279,7 +280,7 @@ export default function ContactPage() {
             >
               <Image
                 src="/images/whatsapp-button.png"
-                alt="WhatsApp - Click to chat"
+                alt={contactContent.images?.whatsappAlt ?? "WhatsApp - Click to chat"}
                 width={200}
                 height={60}
                 className="rounded-lg"

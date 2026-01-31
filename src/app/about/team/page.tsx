@@ -6,8 +6,8 @@ import { aboutContent } from "@/content";
 import type { TeamMember } from "@/types/content";
 
 export const metadata: Metadata = {
-  title: "Meet the Team",
-  description: "Get to know the friendly and experienced dental team at Freeport Family Dentistry.",
+  title: aboutContent.team.pageTitle,
+  description: aboutContent.team.pageDescription,
 };
 
 export default function MeetTheTeamPage() {
@@ -31,8 +31,8 @@ export default function MeetTheTeamPage() {
       {/* Team Grid */}
       <Section background="gray">
         <SectionHeader
-          title="Our Dental Professionals"
-          description="Each member of our team is dedicated to providing you with the best possible care."
+          title={team.professionalsTitle}
+          description={team.professionalsDescription}
         />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">

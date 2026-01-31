@@ -63,7 +63,7 @@ export default function ServicesPreview() {
           <div className="relative aspect-4/3 rounded-2xl shadow-xl max-w-md w-full">
             <Image
               src="/images/dental-care.png"
-              alt="Dental services"
+              alt={services.imageAlt ?? "Dental services"}
               fill
               className="object-cover rounded-2xl"
               sizes="400px"

@@ -48,7 +48,7 @@ export default function NewPatientsPage() {
               <div className="relative w-full h-full aspect-video">
                 <Image
                   src={hero.image}
-                  alt="Family at Freeport Family Dentistry"
+                  alt={hero.imageAlt ?? "Family at Freeport Family Dentistry"}
                   fill
                   className="object-contain object-center"
                   sizes="(max-width: 1024px) 100vw, 45vw"

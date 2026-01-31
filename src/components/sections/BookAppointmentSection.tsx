@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Bell } from "lucide-react";
-import { homeContent } from "@/content";
+import { homeContent, siteConfig } from "@/content";
 import { Section } from "../ui";
 
 // Generate calendar days for a given month
@@ -156,7 +156,7 @@ export default function BookAppointmentSection({ background="transparent" }: Pro
                 <button
                   onClick={handlePrevMonth}
                   className="text-gray-600 hover:text-gray-900 transition-colors p-1"
-                  aria-label="Previous month"
+                  aria-label={siteConfig?.ui?.bookAppointment?.prevMonthLabel ?? "Previous month"}
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -168,7 +168,7 @@ export default function BookAppointmentSection({ background="transparent" }: Pro
                 <button
                   onClick={handleNextMonth}
                   className="text-gray-600 hover:text-gray-900 transition-colors p-1"
-                  aria-label="Next month"
+                  aria-label={siteConfig?.ui?.bookAppointment?.nextMonthLabel ?? "Next month"}
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

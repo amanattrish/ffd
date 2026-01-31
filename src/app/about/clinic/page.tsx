@@ -6,8 +6,8 @@ import Button from "@/components/ui/Button";
 import { aboutContent } from "@/content";
 
 export const metadata: Metadata = {
-  title: "Our Clinic",
-  description: "Tour our modern dental facility and discover why patients choose Freeport Family Dentistry for their oral health needs.",
+  title: aboutContent.clinic.pageTitle,
+  description: aboutContent.clinic.pageDescription,
 };
 
 const valueIcons: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -52,7 +52,7 @@ export default function OurClinicPage() {
       <Section background="gray">
         <SectionHeader
           title={clinic.values.title}
-          description="The principles that guide everything we do."
+          description={clinic.values.description ?? "The principles that guide everything we do."}
         />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -149,7 +149,7 @@ export default function OurClinicPage() {
       <Section background="accent">
         <SectionHeader
           title={clinic.whyChooseUs.title}
-          description="Experience the difference at Freeport Family Dentistry."
+          description={clinic.whyChooseUs.description ?? "Experience the difference at Freeport Family Dentistry."}
         />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">

@@ -1,37 +1,24 @@
 import Link from "next/link";
 import { ArrowRight, FileText, CreditCard, HelpCircle } from "lucide-react";
 import Section from "@/components/ui/Section";
+import { patientInfoContent } from "@/content";
+
+const iconMap = { newPatients: FileText, insurance: CreditCard, faqs: HelpCircle } as const;
+const colorMap = {
+  newPatients: "var(--color-primary)",
+  insurance: "var(--color-secondary)",
+  faqs: "var(--color-accent-1)",
+} as const;
 
 export const metadata = {
-  title: "Patient Information | Freeport Family Dentistry",
-  description: "Everything you need to know about your visit to Freeport Family Dentistry",
+  title: patientInfoContent.overview.pageTitle,
+  description: patientInfoContent.overview.pageDescription,
 };
 
-const patientInfoLinks = [
-  {
-    title: "New Patient Information",
-    description: "What to expect on your first visit, required documents, and patient forms.",
-    href: "/patient-info/new-patients",
-    icon: FileText,
-    color: "var(--color-primary)",
-  },
-  {
-    title: "Insurance & Financing",
-    description: "Accepted insurance providers, payment options, and membership plans.",
-    href: "/patient-info/insurance",
-    icon: CreditCard,
-    color: "var(--color-secondary)",
-  },
-  {
-    title: "FAQs",
-    description: "Answers to commonly asked questions about dental care and our practice.",
-    href: "/patient-info/faqs",
-    icon: HelpCircle,
-    color: "var(--color-accent-1)",
-  },
-];
-
 export default function PatientInfoPage() {
+  const { overview } = patientInfoContent;
+  const cards = overview.cards;
+
   return (
     <>
       {/* Hero Section */}
@@ -41,7 +28,7 @@ export default function PatientInfoPage() {
 
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
-            Patient Information
+            {overview.heroTitle}
           </h1>
         </div>
       </section>
@@ -49,8 +36,9 @@ export default function PatientInfoPage() {
       {/* Info Cards */}
       <Section background="white">
         <div className="grid md:grid-cols-3 gap-8">
-          {patientInfoLinks.map((item) => {
-            const IconComponent = item.icon;
+          {cards.map((item) => {
+            const IconComponent = iconMap[item.key as keyof typeof iconMap];
+            const color = colorMap[item.key as keyof typeof colorMap];
             return (
               <Link
                 key={item.href}
@@ -59,11 +47,11 @@ export default function PatientInfoPage() {
               >
                 <span
                   className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
-                  style={{ backgroundColor: `${item.color}15` }}
+                  style={{ backgroundColor: `${color}15` }}
                 >
                   <IconComponent
                     className="w-7 h-7"
-                    style={{ color: item.color }}
+                    style={{ color }}
                   />
                 </span>
                 <h2 className="text-xl font-bold text-primary mb-3 group-hover:text-primary transition-colors">
@@ -73,7 +61,7 @@ export default function PatientInfoPage() {
                   {item.description}
                 </p>
                 <span className="inline-flex items-center text-primary font-semibold">
-                  Learn More
+                  {overview.learnMoreLabel}
                   <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-2 transition-transform duration-300" />
                 </span>
               </Link>

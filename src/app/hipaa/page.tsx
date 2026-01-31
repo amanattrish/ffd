@@ -20,7 +20,7 @@ export default function HIPAAPage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex items-center gap-3 mb-4">
             <ShieldCheck className="w-8 h-8 text-white" />
-            <span className="text-white/80 text-sm">Legal</span>
+            <span className="text-white/80 text-sm">{legalContent.legalBreadcrumbLabel}</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             {hipaa.pageTitle}
@@ -40,9 +40,9 @@ export default function HIPAAPage() {
               <ShieldCheck className="w-8 h-8 text-white" />
             </div>
             <div>
-              <h2 className="font-bold text-primary">HIPAA Compliant Practice</h2>
+              <h2 className="font-bold text-primary">{legalContent.hipaa.compliantTitle}</h2>
               <p className="text-secondary text-sm">
-                We are committed to protecting your health information in accordance with federal law.
+                {legalContent.hipaa.commitmentText}
               </p>
             </div>
           </div>

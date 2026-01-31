@@ -20,7 +20,7 @@ export default function PrivacyPolicyPage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex items-center gap-3 mb-4">
             <Shield className="w-8 h-8 text-white" />
-            <span className="text-white/80 text-sm">Legal</span>
+            <span className="text-white/80 text-sm">{legalContent.legalBreadcrumbLabel}</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             {privacyPolicy.pageTitle}

@@ -54,7 +54,7 @@ export default function Hero() {
                 <div className="relative w-32 h-28 md:w-56 md:h-36 rounded-lg  shadow-md">
                   <Image
                     src="/images/smile-preview.png"
-                    alt="Beautiful smile"
+                    alt={hero.imageAlt ?? "Beautiful smile"}
                     fill
                     className="object-cover z-20"
                     sizes="160px"
@@ -88,7 +88,7 @@ export default function Hero() {
                 <div className="relative w-full h-full overflow-hidden">
                   <Image
                     src={hero.image || "/images/hero-dentist.png"}
-                    alt="Dental care professional"
+                    alt={hero.imageAlt ?? "Dental care professional"}
                     fill
                     className="object-cover pt-4"
                     priority

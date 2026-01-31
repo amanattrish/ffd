@@ -9,6 +9,7 @@
       "secondary": { "label": "Call Us", "href": "tel:+15161235467" }
     },
     "image": "/images/hero-dentist.png",
+    "imageAlt": "Beautiful smile",
     "enquirySuccessMessage": "Thank you! We've received your enquiry and will get back to you shortly.",
     "form": {
       "title": "Enquiry Received!",
@@ -65,7 +66,8 @@
       }
     ],
     "cta": { "label": "Learn More About Us", "href": "/about" },
-    "image": "/images/about-clinic.png"
+    "image": "/images/about-clinic.png",
+    "imageAlt": "Our clinic"
   },
   "services": {
     "sectionLabel": "What We Offer",
@@ -109,7 +111,8 @@
         "href": "/services/cosmetic-dentistry/teeth-whitening"
       }
     ],
-    "cta": { "label": "View All Services", "href": "/services" }
+    "cta": { "label": "View All Services", "href": "/services" },
+    "imageAlt": "Dental services"
   },
   "testimonials": {
     "sectionLabel": "Testimonials",
@@ -150,6 +153,7 @@
     "description": "Ready to transform your smile? Schedule a free consultation with our dental experts today.",
     "phone": "+1 (516) 123-5467",
     "image": "/images/dentist-doing-check-up-patient.png",
+    "imageAlt": "Dental care professional examining patient",
     "buttons": {
       "primary": { "label": "Book Appointment", "href": "/book-appointment" },
       "secondary": { "label": "Call Now", "href": "tel:+15161235467" }
@@ -163,6 +167,8 @@
     "paragraph1": "We accept most major dental insurance plans and are happy to help verify your coverage. Our team will assist in maximizing your benefits and clearly explaining any out-of-pocket costs before treatment begins.",
     "paragraph2": "If you don't see your provider listed, please contact us for confirmation.",
     "heading": "We are in-network with the following insurance carriers:",
+    "imageAlt": "Dental office",
+    "careCreditLogoAlt": "CareCredit",
     "list": [
       "Aetna",
       "Cigna",
@@ -189,6 +195,7 @@
   },
   "careCredit": {
     "title": "CareCredit",
+    "logoAlt": "CareCredit",
     "sectionLabel": "Financing",
     "subtitle": "Discounts & Memberships",
     "description": "For patients without insurance, we offer flexible financing options through CareCredit and our in-house membership plans.",
@@ -224,6 +231,9 @@
     "cta": { "label": "Learn About Financing", "href": "/patient-info/insurance" }
   },
   "blog": {
+    "pageTitle": "Blog - Freeport Family Dentistry",
+    "pageDescription": "Stay informed with the latest dental health tips and news from our experts",
+    "heroTitle": "Blogs",
     "sectionLabel": "Blog",
     "title": "BRIGHTEN YOUR OUTLOOK WITH OUR LATEST DENTAL",
     "titleHighlight": "INSIGHTS",
@@ -261,6 +271,17 @@
     "cta": { "label": "Read More Articles", "href": "/blog" }
   },
   "booking": {
+    "pageTitle": "Book Appointment | Freeport Family Dentistry",
+    "pageDescription": "Schedule your dental appointment online with Freeport Family Dentistry",
+    "whyBookOnlineLabel": "Why Book Online?",
+    "benefits": [
+      "Easy online scheduling",
+      "Instant confirmation",
+      "Reminder notifications",
+      "Flexible appointment times"
+    ],
+    "ourLocationLabel": "Our Location",
+    "calendlyPlaceholder": "Replace this placeholder with your Calendly embed code.",
     "sectionLabel": "Appointments",
     "title": "BOOK APPOINTMENT",
     "subtitle": "Select Date & Time",

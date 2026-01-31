@@ -65,7 +65,7 @@ export default function InsuranceSection() {
           <div className="relative w-full rounded-lg overflow-hidden shadow-lg">
             <Image
               src={insurance.image || "/images/insurance-person.png"}
-              alt="Dental office"
+              alt={insurance.imageAlt ?? "Dental office"}
               width={100}
               height={100}
               className="w-full h-auto object-contain"
@@ -108,7 +108,7 @@ export default function InsuranceSection() {
           <div className="flex justify-center lg:justify-start mb-4">
             <Image
               src={careCredit.logo || "/images/carecredit-logo.png"}
-              alt="CareCredit"
+              alt={careCredit.logoAlt ?? "CareCredit"}
               width={180}
               height={50}
               className="object-contain"
