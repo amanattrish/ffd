@@ -1,4 +1,9 @@
 {
+  "legalPage": {
+    "pageTitle": "Legal",
+    "pageDescription": "Privacy Policy, Terms of Service, Refund & Cancellation Policy, and HIPAA Compliance for Freeport Family Dentistry."
+  },
+  "legalBreadcrumbLabel": "Legal",
   "privacyPolicy": {
     "pageTitle": "Privacy Policy",
     "pageDescription": "Our commitment to protecting your privacy",
@@ -88,6 +93,8 @@
     "pageTitle": "HIPAA Compliance Statement (US)",
     "pageDescription": "Our commitment to protecting your health information",
     "lastUpdated": "January 1, 2025",
+    "compliantTitle": "HIPAA Compliant Practice",
+    "commitmentText": "We are committed to protecting your health information in accordance with federal law.",
     "content": [
       {
         "title": "Notice of Privacy Practices",

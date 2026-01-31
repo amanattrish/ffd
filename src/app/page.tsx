@@ -1,25 +1,25 @@
 import {
   Hero,
-  AboutPreview,
-  ServicesPreview,
   TestimonialsPreview,
   CTABanner,
   InsuranceSection,
   BlogPreview,
   BookAppointmentSection,
+  ServicesPreview,
 } from "@/components/sections";
 
 export default function HomePage() {
   return (
     <main className="flex flex-col">
       <Hero />
-      <AboutPreview />
-      <ServicesPreview />
-      <TestimonialsPreview />
-      <CTABanner />
-      <InsuranceSection />
-      <BlogPreview />
-      <BookAppointmentSection />
+      <div className="custom-gradient-to-l flex flex-col gap-12">
+        <ServicesPreview />
+        <TestimonialsPreview />
+        <CTABanner />
+        <InsuranceSection />
+        <BlogPreview />
+        <BookAppointmentSection />
+      </div>
     </main>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { siteConfig } from "@/content";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -11,21 +12,15 @@ const poppins = Poppins({
   display: "swap",
 });
 
+const { metadata: meta } = siteConfig;
+
 export const metadata: Metadata = {
   title: {
-    default: "Freeport Family Dentistry",
-    template: "%s | Freeport Family Dentistry",
+    default: meta.defaultTitle,
+    template: meta.titleTemplate,
   },
-  description:
-    "Your trusted family dental care provider in Freeport. Quality dental services including general dentistry, cosmetic dentistry, and emergency care.",
-  keywords: [
-    "dentist",
-    "dental care",
-    "family dentistry",
-    "Freeport",
-    "cosmetic dentistry",
-    "emergency dentist",
-  ],
+  description: meta.defaultDescription,
+  keywords: meta.keywords,
 };
 
 export default function RootLayout({

@@ -18,46 +18,42 @@ export default function InsuranceSection() {
   const { insurance, careCredit } = homeContent;
 
   return (
-    <Section background="white" className="relative overflow-hidden bg-[#E5F3FF]">
+    <Section background="transparent" className="relative overflow-hidden">
       {/* Faint molar tooth decoration in background (top right) */}
       <div className="absolute top-0 right-0 w-64 h-80 opacity-20 hidden lg:block pointer-events-none z-0">
         <MolarToothDecoration className="w-full h-full" />
       </div>
 
-      {/* Insurance Providers Section */}
-      <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start !mb-16 relative z-10">
-        {/* Left Content */}
-        <div>
-          {/* Main Heading - "Insurance Providers" in teal-blue */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--color-primary)] !mb-2">
+      <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start relative z-10">
+        <div className="flex flex-col gap-4">
+          <h2 className="heading-2 text-primary!">
             {insurance.title}
           </h2>
-          {/* Sub-heading - "Accepted" in light green */}
-          <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary !mb-6">
+          <p className="heading-3 text-secondary!">
             {insurance.titleHighlight}
           </p>
           
           {/* First paragraph */}
-          <p className="text-black !mb-4 leading-relaxed text-base">
+          <p className="body-text">
             {insurance.paragraph1}
           </p>
           
           {/* Second paragraph */}
-          <p className="text-black !mb-6 leading-relaxed text-base">
+          <p className="body-text">
             {insurance.paragraph2}
           </p>
 
           {/* Sub-heading */}
-          <h3 className="font-bold text-black !mb-4 text-lg">
+          <h3 className="font-bold text-foreground mt-4 text-lg">
             {insurance.heading}
           </h3>
 
           {/* Insurance List - Bulleted list */}
-          <ul className="space-y-2 !mb-8">
+          <ul className="space-y-1 mb-8">
             {insurance.list.map((item, index) => (
               <li key={index} className="flex items-start gap-2 text-black text-base">
-                <span className="w-2 h-2 rounded-full bg-black mt-2 flex-shrink-0" />
-                <span>{item}</span>
+                <span className="w-2 h-2 rounded-full bg-black mt-2 shrink-0" />
+                <span className="body-text">{item}</span>
               </li>
             ))}
           </ul>
@@ -69,7 +65,7 @@ export default function InsuranceSection() {
           <div className="relative w-full rounded-lg overflow-hidden shadow-lg">
             <Image
               src={insurance.image || "/images/insurance-person.png"}
-              alt="Dental office"
+              alt={insurance.imageAlt ?? "Dental office"}
               width={100}
               height={100}
               className="w-full h-auto object-contain"
@@ -103,16 +99,16 @@ export default function InsuranceSection() {
       </div>
 
       {/* CareCredit Section */}
-      <div className="border-t border-gray-200 pt-12">
+      <div className="border-t border-(--border-color) pt-12">
         {/* Centered Header */}
-        <div className="text-center lg:text-left !mb-8">
-          <p className="text-black font-bold text-lg !mb-4">
+        <div className="text-center lg:text-left mb-8">
+          <p className="text-black font-bold text-lg mb-4">
             {careCredit.careCreditHeading}
           </p>
-          <div className="flex justify-center lg:justify-start !mb-4">
+          <div className="flex justify-center lg:justify-start mb-4">
             <Image
               src={careCredit.logo || "/images/carecredit-logo.png"}
-              alt="CareCredit"
+              alt={careCredit.logoAlt ?? "CareCredit"}
               width={180}
               height={50}
               className="object-contain"
@@ -123,57 +119,57 @@ export default function InsuranceSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Column - Discounts & Memberships */}
           <div>
-            <h3 className="text-xl font-bold text-black !mb-4">
+            <h3 className="subheading font-semibold! mb-4">
               {careCredit.discountsTitle}
             </h3>
-            <p className="text-black !mb-4 leading-relaxed">
+            <p className="body-text mb-4">
               {careCredit.discountsDescription}
             </p>
 
-            <ul className="space-y-2 !mb-6">
+            <ul className="space-y-2 mb-6">
               {careCredit.discountsList.map((item, index) => (
                 <li key={index} className="flex items-start gap-2 text-black">
-                  <span className="w-2 h-2 rounded-full bg-black mt-2 flex-shrink-0" />
-                  <span>{item}</span>
+                  <span className="w-2 h-2 rounded-full bg-black mt-2 shrink-0" />
+                  <span className="body-text">{item}</span>
                 </li>
               ))}
             </ul>
 
-            <p className="text-black leading-relaxed">
+            <p className="bod-text">
               {careCredit.contactText}
             </p>
           </div>
 
           {/* Right Column - Special Offer Card */}
           <div className="bg-white rounded-lg p-6 shadow-md border border-gray-100">
-            <span className="inline-block text-black font-bold text-sm !mb-4">
+            <span className="inline-block text-black font-bold text-sm mb-4">
               {careCredit.specialOffer.title}
             </span>
             
-            <h4 className="text-xl font-bold text-black !mb-3">
+            <h4 className="text-xl font-bold text-black mb-3">
               {careCredit.specialOffer.heading}
             </h4>
             
-            <p className="text-black !mb-4 leading-relaxed">
+            <p className="body-text mb-4">
               {careCredit.specialOffer.description}{" "}
               <a 
                 href={careCredit.specialOffer.newPatientLink.href} 
-                className="text-primary underline hover:text-primary/80"
+                className="text-primary! body-text underline! font-semibold! hover:text-primary/80"
               >
                 {careCredit.specialOffer.newPatientLink.label}
               </a>
               . {careCredit.specialOffer.restrictions}
             </p>
             
-            <p className="font-bold text-black !mb-3">
+            <p className="font-bold body-text mb-3">
               {careCredit.specialOffer.noInsuranceHeading}
             </p>
             
-            <p className="text-black !mb-6 leading-relaxed">
+            <p className="text-black mb-6 leading-relaxed">
               {careCredit.specialOffer.wellnessText}{" "}
               <a 
                 href={careCredit.specialOffer.wellnessLink.href} 
-                className="text-black underline hover:text-primary/80"
+                className="body-text underline! font-semibold! hover:text-primary/80"
               >
                 {careCredit.specialOffer.wellnessLink.label}
               </a>

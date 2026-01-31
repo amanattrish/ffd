@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { galleryContent } from "@/content";
+import { Section } from "@/components/ui";
+import { CTABanner } from "@/components/sections";
 
 export const metadata = {
   title: galleryContent.pageTitle,
@@ -8,27 +10,26 @@ export const metadata = {
 };
 
 export default function GalleryPage() {
-  const { title, items, linkText } = galleryContent;
+  const { title, items, linkText, beforeLabel = "BEFORE", afterLabel = "AFTER" } = galleryContent;
 
   return (
-    <div className="">
-      {/* Page Title */}
-      <section className="py-16 bg-linear-to-br from-[#F2FDFF] to-white">
-        <div className="container mx-auto px-4">
-          <h1 className="text-3xl! font-bold text-black text-center">
+    <>
+            <section className="py-10 md:py-14 bg-accent-3" >
+        <div className="section-container">
+          <h1 className="heading-2 text-center">
             {title}
           </h1>
         </div>
       </section>
 
       {/* Gallery Grid */}
-      <section className="pb-16">
-        <div className="container mx-auto px-4">
+      <section className="custom-gradient-to-l py-16">
+        <div className="section-container">
           <div className="grid grid-cols-3 gap-2 lg:gap-4">
             {items.map((item) => (
               <div
                 key={item.id}
-                className="bg-white overflow-hidden shadow-md border border-gray-100"
+                className="card space-y-2 overflow-hidden border border-(--border-color)"
               >
                 {/* BEFORE Image */}
                 <div className="relative w-full aspect-square">
@@ -36,11 +37,11 @@ export default function GalleryPage() {
                     src={item.before}
                     alt={`${item.title} - Before`}
                     fill
-                    className="object-cover"
+                    className="object-cover rounded-lg"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
-                  <span className="absolute top-2 left-2 bg-black/80 text-white text-xs font-medium px-2 py-1 rounded">
-                    BEFORE
+                  <span className="absolute top-2 left-2 bg-black/80 text-muted-lighter font-medium px-2 py-1 rounded">
+                    {beforeLabel}
                   </span>
                 </div>
 
@@ -50,19 +51,19 @@ export default function GalleryPage() {
                     src={item.after}
                     alt={`${item.title} - After`}
                     fill
-                    className="object-cover"
+                    className="object-cover rounded-lg"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
-                  <span className="absolute top-2 left-2 bg-black/80 text-white text-xs font-medium px-2 py-1 rounded">
-                    AFTER
+                  <span className="absolute top-2 left-2 bg-black/80 text-muted-lighter font-medium px-2 py-1 rounded">
+                    {afterLabel}
                   </span>
                 </div>
 
                 {/* Link */}
-                <div className="lg:p-4 text-center text-primary bg-[#F2F2F2] flex items-center justify-center">
+                <div className="lg:p-4 text-center text-primary bg-muted-lighter flex items-center justify-center">
                   <Link
                     href={item.link}
-                    className="underline text-sm font-medium transition-colors"
+                    className="underline subheading-2 font-medium transition-colors"
                   >
                     {linkText}
                   </Link>
@@ -72,6 +73,9 @@ export default function GalleryPage() {
           </div>
         </div>
       </section>
-    </div>
+                  <section className="custom-gradient-to-l py-16">
+                    <CTABanner />
+                  </section>
+    </>
   );
 }

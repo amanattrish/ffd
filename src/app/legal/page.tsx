@@ -2,9 +2,8 @@ import Section from "@/components/ui/Section";
 import { legalContent } from "@/content";
 
 export const metadata = {
-  title: "Legal",
-  description:
-    "Privacy Policy, Terms of Service, Refund & Cancellation Policy, and HIPAA Compliance for Freeport Family Dentistry.",
+  title: legalContent.legalPage.pageTitle,
+  description: legalContent.legalPage.pageDescription,
 };
 
 const SECTIONS = [
@@ -25,13 +24,13 @@ export default function LegalPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-linear-to-br from-[#F2FDFF] to-white py-16 overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-3xl! font-bold text-black !mb-4 text-center">
-            Legal
+      <Section className="relative py-12!" background="gradient">
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="heading-3">
+            {legalContent.legalPage.pageTitle}
           </h1>
         </div>
-      </section>
+      </Section>
 
       {/* Content - all sections in one scroll */}
       <Section background="white">
@@ -42,17 +41,17 @@ export default function LegalPage() {
             const { first, second } = splitTitle(data.pageTitle);
             return (
               <article key={id} id={id} className="scroll-mt-24">
-                <h2 className="text-2xl! font-bold !mb-2">
+                <h2 className="text-2xl! font-bold mb-2!">
                   <span className="text-primary">{index + 1}. {first}</span>
-                  {second && <span className="text-[var(--color-secondary)]">{second}</span>}
+                  {second && <span className="text-secondary">{second}</span>}
                 </h2>
                 <div className="prose prose-lg">
                   {data.content.map((section, index) => (
-                    <div key={index} className="!mb-8">
-                      <h3 className="text-xl! font-bold text-black !mb-3">
+                    <div key={index} className="mb-8!">
+                      <h3 className="subheading font-bold! text-black mb-3">
                         {section.title}
                       </h3>
-                      <p className="text-black leading-relaxed">
+                      <p className="body-text">
                         {section.text}
                       </p>
                     </div>

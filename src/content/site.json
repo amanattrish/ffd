@@ -1,6 +1,12 @@
 {
   "siteName": "Freeport Family Dentistry",
   "tagline": "Your Trusted Family Dental Care Provider",
+  "metadata": {
+    "defaultTitle": "Freeport Family Dentistry",
+    "titleTemplate": "%s | Freeport Family Dentistry",
+    "defaultDescription": "Your trusted family dental care provider in Freeport. Quality dental services including general dentistry, cosmetic dentistry, and emergency care.",
+    "keywords": ["dentist", "dental care", "family dentistry", "Freeport", "cosmetic dentistry", "emergency dentist"]
+  },
   "phone": "+1 (516) 123-5467",
   "email": "info@freeportfamilydentistry.com",
   "address": {
@@ -56,6 +62,20 @@
     "cta": { "label": "Book Appointment", "href": "/book-appointment" }
   },
   "footer": {
+    "linksLabel": "Links",
+    "officeHoursLabel": "Office Hours",
+    "phoneNumberLabel": "Phone Number",
+    "addressLabel": "Address",
+    "webAccessibilityLabel": "Web Accessibility",
+    "dayLabels": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    "mainLinks": [
+      { "label": "Home", "href": "/" },
+      { "label": "About us", "href": "/about" },
+      { "label": "Services", "href": "/services" },
+      { "label": "Gallery", "href": "/gallery" },
+      { "label": "Contact Us", "href": "/contact" },
+      { "label": "Legal", "href": "/legal" }
+    ],
     "description": "Providing quality dental care for the whole family in Freeport and surrounding areas. Our experienced team is dedicated to your oral health and beautiful smile.",
     "quickLinks": [
       { "label": "About Us", "href": "/about" },
@@ -72,7 +92,42 @@
     "legal": [
       { "label": "Legal", "href": "/legal" }
     ],
-    "copyright": "Freeport Family Dentistry. All rights reserved."
+    "copyright": "Freeport Family Dentistry. All rights reserved.",
+    "designByLabel": "Dental Website Design by "
+  },
+  "accessibility": {
+    "facebookAriaLabel": "Facebook",
+    "instagramAriaLabel": "Instagram",
+    "twitterAriaLabel": "Twitter"
+  },
+  "ui": {
+    "mapEmbedTitle": "Office Location",
+    "imageGallery": {
+      "closeLabel": "Close lightbox",
+      "prevLabel": "Previous image",
+      "nextLabel": "Next image"
+    },
+    "bookAppointment": {
+      "prevMonthLabel": "Previous month",
+      "nextMonthLabel": "Next month"
+    },
+    "contactForm": {
+      "placeholders": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "john@example.com",
+        "phone": "(555) 123-4567",
+        "message": "How can we help you?"
+      },
+      "subjectPlaceholder": "Select a subject",
+      "subjectOptions": [
+        { "value": "appointment", "label": "Schedule an Appointment" },
+        { "value": "question", "label": "General Question" },
+        { "value": "insurance", "label": "Insurance Inquiry" },
+        { "value": "feedback", "label": "Feedback" },
+        { "value": "other", "label": "Other" }
+      ]
+    }
   },
   "calendlyUrl": "https://calendly.com/freeportfamilydentistry",
   "googleMapsUrl": "https://maps.google.com/?q=123+Main+Street+Freeport+NY+11520",

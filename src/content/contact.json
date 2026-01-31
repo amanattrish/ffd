@@ -13,10 +13,29 @@
       { "name": "message", "label": "Questions or Comments?", "type": "textarea", "required": true, "placeholder": "Questions or Comments?" }
     ],
     "submitButton": "Submit",
+    "submittingButton": "Submitting...",
+    "successTitle": "Message Sent!",
+    "sendAnotherMessage": "Send Another Message",
     "successMessage": "Thank you for your message! We'll get back to you within 24 hours.",
     "errorMessage": "Something went wrong. Please try again or contact us directly.",
-    "validationErrorMessage": "Please fill in all required fields correctly."
+    "validationErrorMessage": "Please fill in all required fields correctly.",
+    "validation": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "messageRequired": "Message is required",
+      "messageMaxChars": "Maximum {{max}} characters allowed."
+    }
   },
+  "getInTouchTitle": {
+    "first": "Get in",
+    "second": "Touch"
+  },
+  "images": {
+    "clinicInteriorAlt": "Clinic Interior",
+    "whatsappAlt": "WhatsApp - Click to chat"
+  },
+  "hoursClosedLabel": "Closed",
   "clinicAddress": {
     "title": "Clinic Address",
     "name": "Freeport Family Dentistry",
@@ -37,6 +56,7 @@
     "subtext": "click to chat"
   },
   "map": {
-    "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=-73.65%2C40.64%2C-73.51%2C40.68&layer=mapnik&marker=40.6576%2C-73.5832"
+    "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=-73.65%2C40.64%2C-73.51%2C40.68&layer=mapnik&marker=40.6576%2C-73.5832",
+    "title": "Freeport Family Dentistry Location"
   }
 }

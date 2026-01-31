@@ -3,9 +3,11 @@
 :root {
   /* Brand Colors */
   --color-primary: #117598;
+  --color-primary-hover: #0d5f7a;
   --color-secondary: #A1C65D;
   --color-accent-1: #74C6D1;
   --color-accent-2: #70CCB9;
+  --color-accent-3: #F2FDFF;
   --color-white: #FFFFFF;
   --color-black: #000000;
 
@@ -14,7 +16,11 @@
   --foreground: #000000;
   --text-primary: #000000;
   --text-secondary: #4A4A4A;
-  --text-muted: #6B7280;
+  --color-muted: #6B7280;
+  --color-muted-bold: ##364153;
+  --color-muted-bolder: #101828;
+  --color-muted-light: #777777;
+  --color-muted-lighter: #F3F3F3;
 
   /* UI Colors */
   --border-color: #E5E7EB;
@@ -26,9 +32,16 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--color-primary);
+  --color-muted: var(--color-muted);
+  --color-muted-bold: var(--color-muted-bold);
+  --color-muted-bolder: var(--color-muted-bolder);
+  --color-muted-light: var(--color-muted-light);
+  --color-muted-lighter: var(--color-muted-lighter);
+  --color-primary-hover: var(--color-primary-hover);
   --color-secondary: var(--color-secondary);
   --color-accent-1: var(--color-accent-1);
   --color-accent-2: var(--color-accent-2);
+  --color-accent-3: var(--color-accent-3);
 
   /* Typography */
   --font-sans: "Poppins", sans-serif;
@@ -40,6 +53,108 @@
   --shadow-xl: 0 20px 25px -5px var(--shadow-color);
 }
 
+.custom-gradient-to-l {
+  @apply bg-linear-to-l from-[var(--color-accent-3)] to-white
+}
+
+.custom-gradient-to-br {
+  @apply bg-linear-to-br from-[var(--color-accent-3)] to-white
+}
+
+.section-badge {
+  @apply inline-block text-primary font-medium text-sm bg-muted-lighter rounded-full px-4 py-1
+}
+
+.heading-1 {
+  @apply font-sans font-bold
+         text-3xl sm:text-4xl lg:text-5xl xl:text-6xl
+         leading-tight
+         text-[color:var(--text-primary)];
+}
+
+.heading-2 {
+  @apply font-sans font-semibold
+         text-2xl sm:text-3xl lg:text-4xl xl:text-5xl
+         leading-tight
+         text-[color:var(--text-primary)];
+}
+
+.heading-3 {
+  @apply font-sans font-semibold
+         text-xl sm:text-2xl lg:text-3xl xl:text-4xl
+         text-[color:var(--text-primary)];
+}
+
+.heading-4 {
+  @apply font-sans font-medium
+         text-lg sm:text-xl lg:text-2xl xl:text-3xl
+         text-[color:var(--text-primary)];
+}
+
+.heading-5 {
+  @apply font-sans font-medium
+         text-base sm:text-lg lg:text-xl xl:text-2xl
+         text-[color:var(--text-primary)];
+}
+
+@media (min-width: 1280px) {
+  .heading-1,
+  .heading-2 {
+    line-height: 1.1;
+  }
+}
+
+.subheading {
+  @apply font-sans font-medium
+         text-lg sm:text-xl
+}
+
+.subheading-2 {
+  @apply font-sans font-medium
+         text-base sm:text-lg
+}
+
+.body-text {
+  @apply font-sans
+         text-base sm:text-base
+         leading-relaxed
+         text-[color:var(--text-primary)];
+}
+
+.muted-text {
+  @apply font-sans
+         text-sm sm:text-base
+         text-[color:var(--text-muted)];
+}
+
+.helper-text {
+  @apply font-sans
+         text-xs sm:text-sm
+         text-[color:var(--text-muted)];
+}
+
+
+.section-container {
+  width: 100%;
+  margin-inline: auto; /* Centers the container */
+  
+  /* Apply responsive padding and max-widths */
+  /* Base (mobile-first): Small padding and a wider max-width (optional) */
+  @apply px-4 max-w-xl 
+
+  /* Medium screens (md: 768px+): Increased padding and appropriate screen width */
+  md:px-8 md:max-w-screen-md 
+
+  /* Large screens (lg: 1024px+): Further increased padding and screen width */
+  lg:px-12 lg:max-w-screen-lg 
+  
+  /* Extra-large screens (xl: 1280px+): Max padding and screen width */
+  xl:px-16 xl:max-w-screen-xl 
+  
+  /* 2XL screens (2xl: 1536px+): Max padding and screen width */
+  2xl:px-20 2xl:max-w-screen-2xl;
+}
+
 *,
 *::before,
 *::after {
@@ -47,14 +162,14 @@
 }
 
 /* Reset margins and padding only for specific elements, not all */
-html,
+/* html,
 body,
 h1, h2, h3, h4, h5, h6,
 p, ul, ol, li,
 blockquote, pre {
   margin: 0;
   padding: 0;
-}
+} */
 
 html,
 body {
@@ -158,7 +273,7 @@ img {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+/* h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.2;
 }
@@ -191,7 +306,7 @@ h4 {
   h3 {
     font-size: 1.75rem;
   }
-}
+} */
 
 /* Card Base */
 .card {
@@ -245,6 +360,7 @@ footer span[style*="display: inline-block"] {
   vertical-align: top;
   line-height: 0;
 }
+
 
 /* Force spacing to work even with reset */
 [class*="mb-"],

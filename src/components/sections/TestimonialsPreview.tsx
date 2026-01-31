@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Star, ArrowRight } from "lucide-react";
 import Section from "@/components/ui/Section";
 import { homeContent } from "@/content";
+import clsx from "clsx";
 
 // Google G Logo SVG
 function GoogleIcon({ className }: { className?: string }) {
@@ -32,31 +33,15 @@ export default function TestimonialsPreview() {
   const { testimonials } = homeContent;
 
   return (
-    <Section background="white" className="relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-10 left-10 text-[var(--color-accent-1)] text-3xl font-light opacity-30 hidden lg:block">+</div>
-      <div className="absolute bottom-20 right-10 text-[var(--color-accent-1)] text-2xl font-light opacity-30 hidden lg:block">+</div>
+    <Section background="transparent" className="relative overflow-hidden">
 
-      {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
-        <div>
-          <span className="inline-block text-secondary font-medium text-sm uppercase tracking-wider mb-2">
-            {testimonials.sectionLabel}
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-primary">
-            {testimonials.title}
-          </h2>
-          <p className="text-secondary mt-2 max-w-xl">
-            {testimonials.description}
-          </p>
+      <div className="flex md:flex-row flex-col justify-between gap-4 md:items-center mb-4">
+        <div className="flex justify-between items-center">
+          <span className="section-badge">{testimonials.sectionLabel}</span>
+          <ViewAllLink className="md:hidden block" />
         </div>
-        <Link
-          href={testimonials.cta.href}
-          className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
-        >
-          {testimonials.viewAllLabel}
-          <ArrowRight className="w-4 h-4" />
-        </Link>
+        <h2 className="heading-3 md:text-center grow">{testimonials.title}</h2>
+        <ViewAllLink className="md:block hidden" />
       </div>
 
       {/* Testimonials Grid */}
@@ -78,24 +63,23 @@ export default function TestimonialsPreview() {
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star
                   key={i}
-                  className={`w-5 h-5 ${
-                    i < testimonial.rating
+                  className={`w-5 h-5 ${i < testimonial.rating
                       ? "fill-yellow-400 text-yellow-400"
                       : "fill-gray-200 text-gray-200"
-                  }`}
+                    }`}
                 />
               ))}
             </div>
 
             {/* Content */}
-            <p className="text-black mb-6 leading-relaxed line-clamp-4">
+            <p className="mb-6 body-text">
               {testimonial.content}
             </p>
 
             {/* Author */}
             <div className="flex items-center justify-between pt-4 border-t border-gray-100">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full overflow-hidden bg-gradient-to-br from-[var(--color-accent-1)] to-[var(--color-accent-2)] flex-shrink-0">
+                <div className="w-12 h-12 rounded-full overflow-hidden bg-linear-to-br from-accent-1 to-accent-2 shrink-0">
                   {testimonial.image ? (
                     <Image
                       src={testimonial.image}
@@ -111,15 +95,15 @@ export default function TestimonialsPreview() {
                   )}
                 </div>
                 <div>
-                  <p className="font-semibold text-primary">
+                  <p className="font-semibold text-primary/90">
                     {testimonial.name}
                   </p>
-                  <p className="text-xs text-[var(--text-muted)]">{testimonials.verifiedPatientLabel}</p>
+                  <p className="text-xs text-muted">{testimonials.verifiedPatientLabel}</p>
                 </div>
               </div>
 
               {/* Quote mark */}
-              <div className="text-[var(--color-accent-1)] text-6xl font-serif leading-none opacity-30">
+              <div className="text-accent-1 text-6xl font-serif leading-none opacity-30">
                 &rdquo;
               </div>
             </div>
@@ -128,4 +112,22 @@ export default function TestimonialsPreview() {
       </div>
     </Section>
   );
+}
+
+interface Props {
+  className?: string;
+}
+const ViewAllLink = ({ className }: Props) => {
+  const { testimonials } = homeContent;
+  return (
+    <Link
+      href={testimonials.cta.href}
+      className={clsx("w-fit ml-auto gap-2 text-primary font-semibold hover:scale-105 transition-all border-primary/40 p-2 px-4 border-2 rounded-xl", className)}
+    >
+      <div className="inline-flex items-center gap-2">
+      {testimonials.viewAllLabel}
+      <ArrowRight className="w-4 h-4" />
+      </div>
+    </Link>
+  )
 }

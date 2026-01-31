@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Bell } from "lucide-react";
-import { homeContent } from "@/content";
+import { homeContent, siteConfig } from "@/content";
+import { Section } from "../ui";
 
 // Generate calendar days for a given month
 function getCalendarDays(year: number, month: number) {
@@ -82,8 +83,11 @@ function generateTimeSlots() {
   
   return slots;
 }
+interface Props {
+  background?: "transparent" | "white" | "gray" | "primary" | "accent" | "gradient" ;
+}
 
-export default function BookAppointmentSection() {
+export default function BookAppointmentSection({ background="transparent" }: Props) {
   const router = useRouter();
   const { booking } = homeContent;
   const [selectedDate, setSelectedDate] = useState<number>(19);
@@ -133,21 +137,14 @@ export default function BookAppointmentSection() {
   };
   
   return (
-    <section className="py-12 lg:py-16 relative">
-      {/* Decorative background element - subtle dental theme */}
-      {/* <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-5 hidden lg:block">
-        <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M75 15C45 15 15 45 15 75C15 105 45 135 75 135C105 135 135 105 135 75C135 45 105 15 75 15Z" fill="#117598"/>
-        </svg>
-      </div> */}
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-5xl mx-auto bg-white rounded-2xl p-6 lg:p-8">
+    <Section background={background} className="relative py-12!">
+      <div className="relative z-10">
+        <div className="mx-auto bg-muted-lighter/50! rounded-2xl py-8 p-4">
           {/* Header */}
-          <h1 className="text-2xl lg:text-3xl font-bold text-black text-center mb-2">
+          <h1 className="heading-1 text-center mb-2">
             {booking.title}
           </h1>
-          <h2 className="text-lg! text-center font-bold text-black mb-6">
+          <h2 className="subheading text-center font-semibold! mb-6">
             {booking.subtitle}
           </h2>
           
@@ -159,7 +156,7 @@ export default function BookAppointmentSection() {
                 <button
                   onClick={handlePrevMonth}
                   className="text-gray-600 hover:text-gray-900 transition-colors p-1"
-                  aria-label="Previous month"
+                  aria-label={siteConfig?.ui?.bookAppointment?.prevMonthLabel ?? "Previous month"}
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -171,7 +168,7 @@ export default function BookAppointmentSection() {
                 <button
                   onClick={handleNextMonth}
                   className="text-gray-600 hover:text-gray-900 transition-colors p-1"
-                  aria-label="Next month"
+                  aria-label={siteConfig?.ui?.bookAppointment?.nextMonthLabel ?? "Next month"}
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -309,6 +306,6 @@ export default function BookAppointmentSection() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

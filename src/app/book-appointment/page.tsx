@@ -1,18 +1,13 @@
 import { Phone, Clock, MapPin, Check } from "lucide-react";
 import Section from "@/components/ui/Section";
-import { contactContent, siteConfig } from "@/content";
+import { contactContent, homeContent, siteConfig } from "@/content";
+
+const booking = homeContent.booking;
 
 export const metadata = {
-  title: "Book Appointment | Freeport Family Dentistry",
-  description: "Schedule your dental appointment online with Freeport Family Dentistry",
+  title: booking.pageTitle,
+  description: booking.pageDescription,
 };
-
-const benefits = [
-  "Easy online scheduling",
-  "Instant confirmation",
-  "Reminder notifications",
-  "Flexible appointment times",
-];
 
 export default function BookAppointmentPage() {
   const { hours } = contactContent;
@@ -40,11 +35,10 @@ export default function BookAppointmentPage() {
           {/* Left Sidebar - Info */}
           <div className="lg:col-span-1 order-2 lg:order-1">
             {/* Benefits */}
-            <div className="bg-linear-to-br from-[#F2FDFF] to-white  rounded-2xl! p-6 text-primary !mb-6">
-              <h3 className="text-lg font-bold !mb-4 text-center">Why Book Online?</h3>
-              <div className="flex justify-center items-center">
-              <ul className="space-y-2! flex flex-col items-left mx-auto">
-                {benefits.map((benefit, index) => (
+            <div className="bg-linear-to-br from-[#F2FDFF] to-white  rounded-2xl p-6 text-black !mb-6">
+              <h3 className="text-lg font-bold !mb-4">{booking.whyBookOnlineLabel}</h3>
+              <ul className="space-y-3">
+                {booking.benefits.map((benefit, index) => (
                   <li key={index} className="flex items-center gap-3">
                     <span className="w-6 h-6 rounded-full bg-accent-1 flex items-center justify-center flex-shrink-0">
                       <Check className="w-3 h-3 text-black" />
@@ -98,7 +92,7 @@ export default function BookAppointmentPage() {
             <div className="bg-linear-to-br from-[#F2FDFF] to-white rounded-2xl! p-6">
               <div className="flex items-center justify-center gap-3 !mb-4">
                 <MapPin className="w-5 h-5 text-primary" />
-                <h3 className="font-bold text-primary">Our Location</h3>
+                <h3 className="font-bold text-primary">{booking.ourLocationLabel}</h3>
               </div>
               <p className="text-secondary text-sm">
                 {siteConfig.address.street}
@@ -129,8 +123,7 @@ export default function BookAppointmentPage() {
                     Calendly Booking Widget
                   </h3>
                   <p className="text-secondary !mb-4 max-w-md">
-                    The Calendly scheduling widget will be e!mbedded here.
-                    Replace this placeholder with your Calendly e!mbed code.
+                    {booking.calendlyPlaceholder}
                   </p>
                   <code className="text-sm bg-gray-100 px-4 py-2 rounded-lg block max-w-md mx-auto">
                     {`<div class="calendly-inline-widget" data-url="YOUR_CALENDLY_URL"></div>`}
@@ -151,7 +144,6 @@ export default function BookAppointmentPage() {
             </div>
           </div>
           */}
-        </div>
       </Section>
 
       {/* Emergency CTA */}

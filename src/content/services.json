@@ -1,6 +1,20 @@
 {
   "pageTitle": "Our Services",
   "pageDescription": "Comprehensive dental services for the whole family",
+  "notFoundTitle": "Category Not Found",
+  "defaultServiceImage": "/images/about-clinic.png",
+  "sectionLabels": {
+    "symptoms": "Symptoms:",
+    "procedure": "Procedure:",
+    "faqs": "FAQs:"
+  },
+  "sidebar": {
+    "scheduleTitle": "Schedule Today",
+    "requestAppointmentLabel": "Request Appointment",
+    "callUsNowLabel": "Call Us Now",
+    "servicesLabel": "Services",
+    "bookAppointmentHref": "/book-appointment"
+  },
   "hero": {
     "title": "Our Dental Services",
     "subtitle": "Comprehensive Care for Your Smile",
@@ -521,5 +535,19 @@
       "primary": { "label": "Book Appointment", "href": "/book-appointment" },
       "secondary": { "label": "Contact Us", "href": "/contact" }
     }
+  },
+  "serviceDetail": {
+    "notFoundTitle": "Service Not Found",
+    "backToLabel": "Back to",
+    "overviewLabel": "Overview",
+    "signsYouMayNeedLabel": "Signs You May Need This Treatment",
+    "otherServicesLabel": "Other {{category}} Services",
+    "haveQuestionsLabel": "Have Questions About {{service}}?",
+    "bookConsultationLabel": "Book Consultation",
+    "contactUsLabel": "Contact Us",
+    "betterOralHealthSnippet": "better oral health.",
+    "readyToScheduleTitle": "Ready to Schedule?",
+    "readyToScheduleDescription": "Book your appointment today and take the first step towards better oral health.",
+    "bookAppointmentLabel": "Book Appointment"
   }
 }

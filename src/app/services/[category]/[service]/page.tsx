@@ -4,7 +4,7 @@ import { ArrowLeft, Phone } from "lucide-react";
 import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 import ServiceFaqAccordion from "@/components/ServiceFaqAccordion";
-import { servicesContent } from "@/content";
+import { servicesContent, siteConfig } from "@/content";
 
 interface Props {
   params: Promise<{ category: string; service: string }>;
@@ -30,12 +30,13 @@ export async function generateMetadata({ params }: Props) {
   const category = servicesContent.categories.find((c) => c.id === categoryId);
   const service = category?.services.find((s) => s.id === serviceId);
 
+  const detail = servicesContent.serviceDetail;
   if (!category || !service) {
-    return { title: "Service Not Found" };
+    return { title: detail.notFoundTitle };
   }
 
   return {
-    title: `${service.title} | ${category.title} | Freeport Family Dentistry`,
+    title: `${service.title} | ${category.title} | ${siteConfig.siteName}`,
     description: service.shortDescription,
   };
 }
@@ -44,6 +45,7 @@ export default async function ServiceDetailPage({ params }: Props) {
   const { category: categoryId, service: serviceId } = await params;
   const category = servicesContent.categories.find((c) => c.id === categoryId);
   const service = category?.services.find((s) => s.id === serviceId);
+  const labels = servicesContent.serviceDetail;
 
   if (!category || !service) {
     notFound();
@@ -63,7 +65,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to {category.title}
+            {labels.backToLabel} {category.title}
           </Link>
 
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -82,7 +84,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           <div className="lg:col-span-2">
             {/* Overview */}
             <div className="mb-10">
-              <h2 className="text-2xl font-bold text-primary mb-4">Overview</h2>
+              <h2 className="text-2xl font-bold text-primary mb-4">{labels.overviewLabel}</h2>
               <p className="text-secondary leading-relaxed">
                 {service.overview}
               </p>
@@ -92,7 +94,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             {service.symptoms && service.symptoms.length > 0 && (
               <div className="mb-10">
                 <h2 className="text-2xl font-bold text-primary mb-4">
-                  Signs You May Need This Treatment
+                  {labels.signsYouMayNeedLabel}
                 </h2>
                 <ul className="space-y-3">
                   {service.symptoms.map((symptom, index) => (
@@ -143,31 +145,30 @@ export default async function ServiceDetailPage({ params }: Props) {
           <div className="lg:col-span-1">
             {/* Appointment Card */}
             <div className="bg-gradient-to-br from-primary to-[var(--color-accent-1)] rounded-2xl p-6 text-white sticky top-24">
-              <h3 className="text-xl font-bold mb-3">Ready to Schedule?</h3>
+              <h3 className="text-xl font-bold mb-3">{labels.readyToScheduleTitle}</h3>
               <p className="text-white/90 mb-6 text-sm">
-                Book your appointment today and take the first step towards
-                better oral health.
+                {labels.readyToScheduleDescription}
               </p>
               <Button
                 href="/book-appointment"
                 variant="secondary"
                 className="w-full mb-4"
               >
-                Book Appointment
+                {labels.bookAppointmentLabel}
               </Button>
               <a
-                href="tel:+15161235467"
+                href={`tel:${siteConfig.phone.replace(/[^0-9+]/g, "")}`}
                 className="flex items-center justify-center gap-2 text-white/90 hover:text-white transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                <span>+1 (516) 123-5467</span>
+                <span>{siteConfig.phone}</span>
               </a>
             </div>
 
             {/* Related Services */}
             <div className="mt-8">
               <h3 className="text-lg font-bold text-primary mb-4">
-                Other {category.title} Services
+                {labels.otherServicesLabel.replace("{{category}}", category.title)}
               </h3>
               <div className="space-y-3">
                 {category.services
@@ -195,7 +196,7 @@ export default async function ServiceDetailPage({ params }: Props) {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-primary mb-4">
-              Have Questions About {service.title}?
+              {labels.haveQuestionsLabel.replace("{{service}}", service.title)}
             </h2>
             <p className="text-secondary mb-8">
               Our team is here to help. Contact us for a consultation and learn
@@ -203,9 +204,9 @@ export default async function ServiceDetailPage({ params }: Props) {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button href="/contact" variant="outline">
-                Contact Us
+                {labels.contactUsLabel}
               </Button>
-              <Button href="/book-appointment">Book Consultation</Button>
+              <Button href="/book-appointment">{labels.bookConsultationLabel}</Button>
             </div>
           </div>
         </div>
